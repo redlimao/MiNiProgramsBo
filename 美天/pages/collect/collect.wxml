@@ -1,0 +1,36 @@
+<import src="../template/template.wxml" />
+<view class="container">
+  <view wx:if="{{emptyss==0}}">
+    <block wx:for="{{car}}" wx:key="{{item.id}}">
+      <view class="car-list" bindtap='shopName' id="{{item.id}}" data-id="{{item.type_s}}">
+        <view class="car-info">
+          <view class="car-fl">
+            <image src="{{item.banner}}" class="car-img"></image>
+          </view>
+          <view class="car-fr">
+            <text class="car-name">{{item.name}}</text>
+            <text class="car-money">￥{{item.moneys}}</text>
+          </view>
+          <text class="order-status shop-car" wx:if="{{gou==1}}">购买</text>
+          <text class="order-status shop-car" wx:if="{{gou==2}}">确认收货</text>
+          <text class="order-status miss" wx:if="{{gou==3}}">支付失败</text>
+          <text class="order-status miss" wx:if="{{od==1}}">待付款</text>
+          <text class="order-status success" wx:if="{{od==2}}">待发货</text>
+          <text class="order-status shop-car" wx:if="{{od==3}}" catchtap='queName' id="{{orders_id}}">确认收货</text>
+          <text class="order-status success" wx:if="{{od==4}}" catchtap='pingName' id="{{orders_id}}">待评价</text>
+          <text class="order-status success" wx:if="{{od==5}}">已完成</text>
+          <view class="delete" catchtap='delName' id="{{id}}" data-index="{{item.id}}" data-id='{{index}}'>
+            <image src="../../images/del.png" class="del-icon"></image>
+            <text class="cart1-del">删除商品</text>
+          </view>
+        </view>
+      </view>
+
+    </block>
+  </view>
+  <view class="empty" wx:else>
+    <image src="../../images/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无收藏的商品</text>
+  </view>
+
+</view>

@@ -1,0 +1,26 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+  <!--****************导航**********-->
+  <view class="pro_nav" bindtap="tabFun">
+    <view class="pronav-list {{curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap='yuName'>
+      预约中
+    </view>
+    <view  class="pronav-list {{curHdIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1" bindtap='gongName'>
+      工作中
+    </view>
+    <view  class="pronav-list {{curHdIndex=='2'? 'actives' : ''}}" id="tab-hd03" data-id="2" bindtap='wanName'>
+      已完成
+    </view>
+  </view>
+  <!--*********内容***********-->
+  <view class="inner" wx:if="{{empty==0}}">
+    <block wx:for="{{list}}" wx:key="{{item.id}}">
+      <template is="orderList" data="{{...item}}" />
+    </block>
+  </view>
+  <view class="empty" wx:else>
+    <image src="../image/empty.png" class="empty-icon"></image>
+    <text class="empty-text">您还未预约家服</text>
+  </view>
+</view>
+

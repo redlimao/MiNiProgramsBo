@@ -1,0 +1,77 @@
+<import src="../template/template.wxml"/>
+<view class="container-b">
+  <!-- *********个人信息********** -->
+  <view class="main-box">
+    <view class="box"></view>
+    <view class="main">
+      <!-- 个人 -->
+      <view class="main-message" bindtap='myMessage'>
+        <view class="main-photo">
+          <image src="{{photo}}" class="main-img"></image>
+        </view>
+        <view class="main-name">{{name}}</view>
+        <view class="txt-x">完善信息</view>
+      </view>
+      <!-- 需求 -->
+      <view class="main-xu">
+        <view class="xu-list" bindtap='collectName'>
+            <image class="img-a" src="../../images/collect_icon.png"></image>
+            <text class="list-name">我的收藏</text>
+        </view>
+        <!-- <view class="line"></view>
+        <view class="xu-list" bindtap='pointsName'>
+            <image class="img-b" src="../../images/yuding_icon.png"></image>
+            <text class="list-name">我的预定</text>
+        </view> -->
+      </view>
+    </view>
+  </view>
+  <!-- *********订单********** -->
+  <view class="main-order">
+    <view class="order-title">
+      <text class="title-text">我的订单</text>
+      <text class="look-more" bindtap='moreName'>全部订单</text>
+      <image class="user-list-in" src="../../images/icon-jt.png"></image>
+    </view>
+    <view class="order-box">
+     <block wx:for="{{common}}" wx:key="{{item.id}}">
+        <template is="navs" data="{{...item}}" />
+      </block>
+    </view>
+  </view>
+    <view class="user-lists">
+        <view class="user-list" bindtap="bindMember">
+            <image class="user-list-icon" src="../../images/fa03.png"></image>
+            <text class="user-list-txt">会员管理</text>
+            <image class="user-list-in" src="../../images/icon-jt.png"></image>
+        </view>
+        <view class="user-list" bindtap="bindLookMessage">
+            <image class="user-list-icon" src="../../images/fa02.png"></image>
+            <text class="user-list-txt">发布管理</text>
+            <image class="user-list-in" src="../../images/icon-jt.png"></image>
+        </view>
+        <view class="user-list" bindtap="bindMessage">
+            <image class="user-list-icon" src="../../images/fa01.png"></image>
+            <text class="user-list-txt">发布信息</text>
+            <image class="user-list-in" src="../../images/icon-jt.png"></image>
+        </view>
+        <view class="user-list" bindtap="bindAdress">
+            <image class="user-list-icon" src="../../images/user_5.png"></image>
+            <text class="user-list-txt">收货地址</text>
+            <image class="user-list-in" src="../../images/icon-jt.png"></image>
+        </view>
+        <view class="user-list" bindtap='telName'>
+            <image class="user-list-icon" src="../../images/user_6.png"></image>
+            <text class="user-list-txt">联系我们</text>
+            <image class="user-list-in" src="../../images/icon-jt.png"></image>
+        </view> 
+        <view class="user-list pr">
+            <image class="user-list-icon" src="../../images/kefu.png"></image>
+            <text class="user-list-txt">分享</text>
+            <image class="user-list-in" src="../../images/icon-jt.png"></image>
+            <button open-type='share'></button>
+        </view> 
+    </view>
+    <view class="bottom-txt" bindtap='jiName'>©技术支持博智营销</view>
+</view>
+

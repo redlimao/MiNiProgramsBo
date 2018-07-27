@@ -1,0 +1,259 @@
+/* pages/zhu_jie/zhu_jie.wxss */
+.main-box{
+  width:100%;
+  position:relative;
+  background:#fff;
+}
+/* ========个人信息==-=== */
+.main-box .main{
+  width:690rpx;
+  margin:0 auto;
+  background:#fff;
+  border-radius:6rpx;
+}
+.main .main-message{
+  width:100%;
+  height:120rpx;
+  border-bottom:1rpx solid #eee;
+  padding:20rpx 0;
+  overflow:hidden;
+}
+.main-message .main-photo{
+  width:120rpx;
+  height:120rpx;
+  background:#fff;
+  border-radius:50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  position:relative;
+  margin-right:10rpx;
+  float:left;
+}
+.main-message .main-photo .main-img{
+  width:110rpx;
+  height:110rpx;
+  border-radius:50%;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+.main-message .main-name{
+  font-size:30rpx;
+  color:rgb(55,54,52);
+  line-height:120rpx;
+  width:200rpx;
+  margin-right:10rpx;
+  float:left;
+  overflow:hidden;
+}
+.main-message .main-main{
+  float:right;
+}
+.main-message .main-main .card-icon{
+  width:26rpx;
+  height:26rpx;
+  display:block;
+  float:left;
+  margin-top:48rpx;
+  margin-right:10rpx;
+}
+.main-message .main-main .main-choose{
+  font-size:26rpx;
+  color:rgb(254,1,55);
+  line-height:120rpx;
+  display:block;
+  float:left;
+}
+.main-xu{
+  width:100%;
+  height:120rpx;
+  text-align:center;
+  line-height:120rpx;
+  font-size:36rpx;
+  color:rgb(254,1,55);
+  background:#fff;
+  position:relative;
+}
+.test{
+  position:absolute;
+  right:0;
+  top:0;
+  height:100%;
+  line-height:120rpx;
+  font-size:26rpx;
+  color:rgb(67,67,67);
+}
+.test .las{
+  width:24rpx;
+  height:24rpx;
+}
+.month-shou{
+  font-size:36rpx;
+  color:rgb(160,160,160);
+}
+.list-box{
+  overflow:hidden;
+  position:relative;
+  padding-top:230rpx;
+  width:690rpx;
+  margin:0 auto;
+  box-shadow: 0 0 20rpx rgba(0,0,0,0.05);
+  margin-top:20rpx;
+}
+.jie-box{
+  width:100%;
+  overflow:hidden;
+}
+.jie-list{
+  width:690rpx;
+  height:230rpx;
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+  background:#fff;
+  overflow:hidden;
+  position:absolute;
+  z-index:2;
+  top:0;
+}
+.jie-list .info-box{
+  height:120rpx;
+  padding:20rpx 30rpx;
+  border-bottom:1rpx solid #eee;
+}
+.jie-list  .main-photo{
+  width:120rpx;
+  height:120rpx;
+  background:#fff;
+  border-radius:50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  position:relative;
+  margin-right:20rpx;
+  float:left;
+}
+.jie-list  .main-photo .main-img{
+  width:100rpx;
+  height:100rpx;
+  border-radius:50%;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+.jie-list .jie-info{
+  float:left;
+  height:80rpx;
+  padding:20rpx 0;
+  width:300rpx;
+  overflow:hidden;
+  display:flex;
+  justify-content:space-between;
+  flex-direction: column;
+}
+.jie-info .jie-name{
+  font-size:30rpx;
+  color:rgb(55,54,52);
+}
+.jie-info .jie-phone{
+  font-size:30rpx;
+  color:rgb(55,54,52);
+}
+.jie-list .xiao-box{
+  width:120rpx;
+  height:90rpx;
+  float:right;
+}
+.jie-list .xiao-box .xiao-img{
+  width:100%;
+  height:100%;
+}
+.jie-list .jie-time{
+  height:70rpx;
+  padding:0 20rpx;
+  overflow:hidden;
+  display:flex;
+  justify-content:space-between;
+  position: relative;
+}
+.jie-timess .look-info{
+  font-size:26rpx;
+  color:#333;
+  margin-right:10rpx;
+}
+.jie-list .jie-time .xiala{
+  width:24rpx;
+  height:24rpx;
+  transition: all 0.5s linear;
+}
+.xiala.icon_actives{
+  transform:rotate(180deg);
+}
+.jie-time .jie-text{
+  font-size:26rpx;
+  color:rgb(177,174,171);
+  text-align:right;
+  line-height:70rpx;
+}
+.jie-time .jie-times{
+  font-size:26rpx;
+  color:rgb(177,174,171);
+  text-align:right;
+}
+.jie-list .del{
+  width:150rpx;
+  height:80rpx;
+  float:right;
+}
+.jie-list .del .del-icon{
+  width:44rpx;
+  height:50rpx;
+  display:block;
+  margin:0 auto;
+  margin-top:18rpx;
+}
+.list-box .fei-box{
+  width:100%;
+  background:#fff;
+  height:0;
+  transform: translateY(-100rpx);
+  transition: all 0.5s linear;
+  overflow:hidden;
+  position:relative;
+}
+.list-box  .fei-bg{
+ background:rgb(248,248,248);
+}
+.list-box .fei-box.box_actives{
+  transform: translateY(0rpx);
+  height:auto;
+}
+.list-box .fei-box .xiaofei{
+  width:690rpx;
+  line-height:90rpx;
+  font-size:28rpx;
+  margin:0 auto;
+  border-bottom:1rpx solid #eee;
+}
+.list-box .fei-info{
+  height:110rpx;
+  display:flex;
+  justify-content:space-between;
+  background:#fff;
+  padding:0 30rpx;
+  border-bottom:1rpx solid #eee;
+}
+.list-box .fei-info .riqi{
+  display:block;
+  line-height:110rpx;
+  font-size:32rpx;
+  color:rgb(177,174,171);
+}
+.list-box .fei-info .fei-money{
+  display:block;
+  line-height:110rpx;
+  font-size:32rpx;
+  color:rgb(254,1,55);
+}

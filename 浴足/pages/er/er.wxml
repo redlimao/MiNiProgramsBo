@@ -1,0 +1,15 @@
+<!--pages/er/er.wxml-->
+<view class="container">
+  <view class="er-box">
+    <view class="box"></view>
+    <view class="er-img">
+      <image src="{{img}}"></image>
+    </view>
+  </view>
+  <view class="er-bot">
+    <text class="keep" bindtap='keepName'>保存到手机</text>
+    <view class="share">
+      <button open-type='share'>分享</button>
+    </view>
+  </view>
+</view>

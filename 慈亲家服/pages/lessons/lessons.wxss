@@ -1,0 +1,73 @@
+.menu{width: 100%;padding: 0 20rpx;box-sizing: border-box;display: flex;justify-content: space-around;background-color: #fff;}
+    .item{height: 90rpx;line-height: 90rpx;border-bottom:4rpx solid transparent;box-sizing: border-box;font-size: 30rpx;color: #B1AEAB;}
+    .item.on{border-bottom:4rpx solid #FF9E1F;color:#FF9E1F;}
+.s-wrap{width: 100%;position: relative;margin-bottom: 20rpx;}
+    .s-box{width: 100%;}
+    .w-img{width: 100%;}
+    .swiper-dots{position: absolute;bottom: 30rpx;left: 50%;transform: translate(-50%,0);display: flex;}
+        .dots{width: 40rpx;height: 4rpx;background-color: rgba(255,255,255,0.5);margin: 0 10rpx;}
+        .dots.on{background-color: rgba(255,255,255,1);}
+    .bg-dots{width:100%;position:absolute;left:0;bottom:0;height:80rpx;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.3));}
+.l-wrap{width: 100%;padding: 0 20rpx;box-sizing: border-box;background-color: #fff;}
+    .tit{height: 76rpx;width: 100%;display: flex;align-items: center;}
+        .title{font-size: 34rpx;color: #2B2B2B;font-weight: bold;}
+        .t-txt{flex: 1;font-size: 28rpx;color: #979797;text-align: right;}
+    .s-menu{width: 100%;white-space: nowrap;}
+        .s-item{width: 160rpx;height: 48rpx;border-radius: 24rpx;text-align: center;line-height: 48rpx;font-size: 28rpx;color: #9C9C9C;background-color: #F8F8F8;margin-right: 30rpx;display: inline-block;}
+        .s-item.on{color: #fff;background-color: #FC9C20;}
+.l-box {width: 100%;position: relative;background-color: #fff;}
+
+.select {
+  position: absolute;
+  right: -80rpx;
+  top: 80rpx;
+}
+
+.l-box.on {
+  overflow: visible;
+  transform: translateX(-80rpx);
+}
+
+.l-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  width: 710rpx;
+}
+
+.l-img {
+  height: 140rpx;
+  width: 248rpx;
+  border-radius: 5rpx;
+}
+
+.l-info {
+  flex: 1;
+  padding-left: 10rpx;
+  position: relative;
+}
+
+.l-title {
+  line-height: 36rpx;
+  font-size: 28rpx;
+  color: #2b2b2b;
+  font-weight: bold;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.l-infos {
+  padding-top: 4rpx;
+  font-size: 22rpx;
+  color: #9c9c9c;
+}
+
+.moneys {
+  position: absolute;
+  font-size: 22rpx;
+  color: #ff2613;
+  right: 0;
+  bottom: 0;
+}

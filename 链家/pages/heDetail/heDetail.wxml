@@ -1,0 +1,25 @@
+<!--detail.wxml-->
+<view class="container pb-40">
+   <image class="banner" src="{{info.info_banner}}"></image>
+   <view class="wrap">
+        <image class="t-wrap" src="../../images/bg_t.png"></image>
+        <view class="con">
+            <view class="con-info">
+                <view class="c-title">{{info.name}}</view>
+                <view class="c-txt">{{info.intro}}</view>
+                  
+                <view class="c-time">有效期{{info.start_at}}至{{info.end_at}}</view>         
+            </view>
+            <view wx:if="{{list != 1}}">
+                <view class="wrap-a" wx:for="{{list}}" wx:key="{{index}}">
+                    <image class="w-img" src="{{item.headimgurl}}"></image>
+                    <view class="w-info">
+                        <view class="w-tit">{{item.nickname}}</view>
+                        <view class="w-txt">核销时间：{{item.create_at}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <image class="b-wrap" src="../../images/bg_b.png"></image>
+   </view>
+</view>

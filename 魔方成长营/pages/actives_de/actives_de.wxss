@@ -1,0 +1,225 @@
+/* pages/details/details.wxss */
+page{
+  background:#f8f8f8;
+}
+.container{
+  padding-bottom:220rpx;
+  background:#f8f8f8; 
+}
+.title{
+  width:100%;
+  height:100rpx;
+  text-align:center;
+  line-height:100rpx;
+  font-size:36rpx;
+  color:#434545;
+}
+image{
+  width:100%;
+}
+.fix-box{
+  width:100%;
+  height:220rpx;
+  overflow:hidden;
+  position:fixed;
+  bottom:0;
+}
+.fix{
+  width:100%;
+  height:100rpx;
+  overflow:hidden;
+  border-top:2rpx solid #e5e5e5;
+  position:absolute;
+  bottom:0;
+}
+.fix .zi{
+  width:50%;
+  display:block;
+  float:left;
+  line-height:100rpx;
+  text-align:center;
+  background:#fff;
+  color:#434545;
+  font-size:36rpx;
+  position:relative;
+}
+.fix .order{
+  width:50%;
+  display:block;
+  float:left;
+  line-height:100rpx;
+  text-align:center;
+  background:#ff9a0e;
+  color:#fff;
+  font-size:36rpx;
+}
+button{
+  display:block;
+  width:100%;
+  height:100%;
+  position:absolute;
+  left:0;
+  top:0;
+  border:none;
+  background:rgba(0,0,0,0);
+}
+button:after{
+  border:none;
+}
+/*==========优惠卷==============*/
+.you{
+  width:100%;
+  height:100rpx;
+  background:#fff;
+  text-align:center;
+  line-height:100rpx;
+  color:#696969;
+  border-bottom:2rpx solid #e5e5e5;
+  position:absolute;
+  left:0;
+  bottom:100rpx;
+}
+.you image{
+  display:block;
+  width:30rpx;
+  height:30rpx;
+  position:absolute;
+  right:30rpx;
+  top:35rpx;
+  transform:rotate(90deg)
+}
+.yong{
+  height:100rpx;
+  background:#fff;
+  text-align:center;
+  line-height:100rpx;
+  color:#696969;
+  position:absolute;
+  left:0;
+  bottom:0;
+  margin:0 30rpx;
+  width:690rpx;
+}
+.yong text{
+  position:absolute;
+  left:0;
+  display:block;
+  font-size:28rpx;
+  line-height:95rpx;
+  width:25%;
+  text-align:center;
+}
+.yong input{
+  width:50%;
+  height:70rpx;
+  font-size:28rpx;
+  float:left;
+  margin-top:15rpx;
+  background:#f8f8f8;
+  position:relative;
+  padding-left:25%;
+  text-align:left;
+}
+.yong .choose{
+  float:right;
+  width:120rpx;
+}
+.yong-list{
+  width:100%;
+  height:104rpx;
+  position:absolute;
+  bottom:101rpx;
+  border-top:2rpx solid #e5e5e5;
+  border-bottom:2rpx solid #e5e5e5;
+  background:#fff;
+}
+.collect{
+  width:100%;
+  height:500rpx;
+  overflow:hidden;
+  background:#fff;
+  border-bottom:2rpx solid #e5e5e5;
+}
+.collect .banner{
+  width:100%;
+  height:300rpx;
+}
+.collect .title{
+  width:690rpx;
+  padding:0 30rpx;
+  height:100rpx;
+  line-height:100rpx;
+  font-size:28rpx;
+  color:#333;
+  text-align:left;
+  display:block;
+  overflow:hidden;
+}
+.collect .money{
+  width:690rpx;
+  padding:0 30rpx;
+  height:100rpx;
+  overflow:hidden;
+}
+.collect .money .moneys{
+  width:300rpx;
+  float:left;
+  font-size:28rpx;
+  color:#f00;
+  line-height:100rpx;
+}
+.collect .money .shou{
+  width:300rpx;
+  float:right;
+  height:100rpx;
+}
+.collect .money .shou image{
+  width:35rpx;
+  height:33rpx;
+  display:block;
+  margin-left:260rpx;
+  margin-top:20rpx;
+}
+.collect .money .shou text{
+  display:block;
+  font-size:24rpx;
+  color:#b2b2b2;
+  text-align:right;
+}
+.mask{
+  width:100%;
+  height:100%;
+  position:fixed;
+  left:0;
+  top:0;
+  background:rgba(0,0,0,0.7);
+}
+.mask .share{
+  width:100%;
+  height:300rpx;
+  position:absolute;
+  left:0;
+  bottom:0;
+  background:#fff;
+}
+.share text{
+  display:block;
+  width:100%;
+  height:100rpx;
+  text-align:center;
+  line-height:100rpx;
+  border-top:2rpx solid #e5e5e5;
+  box-sizing:border-box;
+  font-size:28rpx;
+}
+.share .text{
+  display:block;
+  width:100%;
+  height:100rpx;
+  text-align:center;
+  line-height:100rpx;
+  border-top:2rpx solid #e5e5e5;
+  box-sizing:border-box;
+  font-size:28rpx;
+  position:relative;
+}

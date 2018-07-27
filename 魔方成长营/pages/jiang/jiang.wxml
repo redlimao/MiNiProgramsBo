@@ -1,0 +1,13 @@
+<!--pages/jiang/jiang.wxml-->
+<view class="container">
+  <view class="box"  bindtap="tabFun">
+    <view  wx:for="{{list}}" class="list {{tabArr.curHdIndex==item.jiang ? 'active' : ''}}" wx:for="{{list}}" id="tab-hd01" data-id="{{item.jiang}}">
+      <image src="{{item.img}}"></image>
+      <text class="title">{{item.title}}</text>
+    </view>
+  </view>
+  <view class="tishi">提示：请在规定时间内进行抽奖，逾期作废，中奖后工作人员会在3个工作日内与您联系</view>
+  <view class="begin" bindtap='chouName' wx:if="{{order==2}}">开始抽奖</view>
+  <view class="begin" bindtap='orderName' wx:elif="{{order==1}}">预约报名</view>
+  <view class="begins"  wx:elif="{{order==3}}">抽奖结束</view>
+</view>

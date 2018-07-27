@@ -1,0 +1,71 @@
+/* pages/main/main.wxss */
+page{
+  background:#f8f8f8;
+}
+.company_img{
+  width:100%;
+  height:200rpx;
+  margin-bottom:20rpx;
+  background:#fff;
+}
+.company_img .company_banner{
+  width:100%;
+  height:100%;
+}
+.company_info{
+  padding:30rpx;
+  background:#fff;
+  margin-bottom:20rpx;
+}
+.company_title .company_icon{
+  width:36rpx;
+  height:36rpx;
+  margin-top:2rpx;
+  float:left;
+  margin-right:10rpx;
+}
+.company_center{
+  text-align:center;
+  font-weight:bold;
+}
+.company_title{
+  height:40rpx;
+  overflow:hidden;
+  margin-bottom:30rpx;
+}
+.company_title .company_titles{
+  font-size:32rpx;
+  color:#FF9E1F;
+  float:left;
+}
+.company_cont{
+  font-size:32rpx;
+}
+
+.company_adds{
+  padding:30rpx;
+  background:#fff;
+  margin-bottom:20rpx;
+}
+.company_adds .company_map{
+  width:690rpx;
+  height:276rpx;
+  margin:0 auto;
+  display: block;
+  margin-bottom:10rpx;
+}
+.company_adds .company_add-info{
+  font-size:32rpx;
+  color:#353433;
+}
+
+.company_tels{
+  width:534rpx;
+  height:133rpx;
+  margin:0 auto;
+  margin-top:80rpx;
+}
+.company_tels .company_phone{
+  width:100%;
+  height:100%;
+}

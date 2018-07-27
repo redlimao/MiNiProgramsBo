@@ -1,0 +1,12 @@
+/* pages/peng/peng.wxss */
+@import '../xun/xun.wxss';
+.nav .nav-list{
+  display:block;
+  line-height:90rpx;
+  font-size:30rpx;
+  color:#ada6a8;
+}
+.nav .nav-list.actives{
+  color:rgb(255,127,174);
+  border-bottom:8rpx solid rgb(255,127,174);
+}

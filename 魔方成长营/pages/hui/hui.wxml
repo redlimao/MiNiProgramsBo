@@ -1,0 +1,9 @@
+<!--pages/hui/hui.wxml-->
+<view class="container" wx:if="{{empty==0}}">
+  <view class="list" wx:for="{{list}}">
+    <image src="../../image/bg.png"></image>
+    <text class="money">￥{{item.money}}</text>
+    <text class="tui" bindtap="tiName" data-id="{{item.id}}">申请退款</text>
+  </view>
+</view>
+<view class="empty" wx:else>暂无</view>

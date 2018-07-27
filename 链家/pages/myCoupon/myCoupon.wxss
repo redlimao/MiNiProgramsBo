@@ -1,0 +1,26 @@
+/**myCoupon.wxss**/
+.wrap{padding:0 20rpx;}
+    .item{margin-top:30rpx;width:710rpx;height:250rpx; background:rgba(255,255,255,1);box-shadow:0rpx 10rpx 20rpx 0rpx rgba(0,0,0,0.15);border-radius:14rpx ;box-sizing:border-box;position:relative;transition:transform .2s ease;transform:translateX(0);overflow:hidden;}
+    .item.on{transform:translateX(-100rpx);overflow:visible;}
+    .s-imgs{width:710rpx;height:250rpx;}
+        .t-info{display:flex;}
+            .t-img{width:160rpx;height:160rpx;background-color:#eee;}
+            .info-txt{padding-top:15rpx;height:145rpx;margin-left:20rpx;border-bottom:1rpx dotted #58BDF4;flex:1;}
+                .t-tit{font-size:34rpx;color:#003041;display:block;line-height:34rpx;}
+                .t-txt{font-size:34rpx;color:#FF2D51;line-height:34rpx;padding-top:20rpx;}
+                    .t-txt-f{font-size:48rpx;}
+        .b-info{display:flex;align-items:center;font-size:26rpx;color:#667176;height:80rpx;}
+            .b-txt{width:160rpx;}
+            .b-intro{flex:1;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;padding-left:20rpx;}
+        .btn-get,.btn-got{position:absolute;top:20rpx;right:20rpx;width:144rpx;height:44rpx;border-radius:4rpx;font-size:28rpx;color:#FF2D51;text-align:center;line-height:44rpx;border:1rpx solid #FF2D51;box-sizing:border-box;}
+        .btn-got{color:#C6C6C6;border:1rpx solid #C6C6C6;}
+        .icon-box{position:absolute;top:84rpx;right:-100rpx;}
+
+.btn-box{position:fixed;left:0;bottom:0;z-index:2;width:100%;height:90rpx;border-top:1rpx solid #eee;}
+    .btn-man{width:100%;height:90rpx;text-align:center;line-height:90rpx;color:#fff;background-color:#58BDF4;font-size:38rpx;}
+    .btn-man.on{display:none;}
+    .btns{width:100%;display:none;text-align:center;font-size:38rpx;color:#fff;}
+    .btns.on{display:flex;}
+        .btn-del{background-color:#fff;flex:1;line-height:90rpx;height:90rpx;color:#FF2D51;}
+        .btn-cancel{background-color:#58BDF4;flex:1;line-height:90rpx;height:90rpx;}   
+.empty{width:224rpx;height:384rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}

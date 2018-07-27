@@ -1,0 +1,37 @@
+<!--pages/ation/ation.wxml-->
+<view class="container">
+  <view class="top">
+    <image src="../../image/ation.png"></image>
+    <text class="top-text">上传公司认真材料</text>
+  </view>
+  <view class="bottom">
+    <view class="bottom-info">
+      <view class="photo">
+        <image src="{{photo}}"></image>
+      </view>
+      <view class="text-info">
+        <text class="name">{{school}}</text>
+        <!-- <text class="job">{{school}}</text> -->
+      </view>
+      <view class="ren" wx:if="{{choose==1}}">
+        <image src="../../image/warm.png"></image>
+        <text class="warm-info">未认证</text>
+      </view>
+      <view class="ren choose_ren" wx:if="{{choose==3}}">
+        <text class="warm-info">认证失败</text>
+      </view>
+    </view>
+    <view class="chuan-box" bindtap="chooseName">
+      <view class="chuan" wx:if="{{flag==0}}">
+        <image src="../../image/shang.png"></image>
+        <text class="chuan-text">上传公司的经营资质</text>
+        <text class="chuan-text">(<text class="style">经营资质</text>拍照或截图)</text>
+      </view>
+      <view class="chuan"  wx:else>
+         <image src="{{tempFilePaths}}" class="chuan-tu"></image>
+      </view>
+    </view>
+    <view class="sub" wx:if="{{flag==0}}" bindtap="subName">提交</view>
+    <view class="subs" wx:else bindtap="subName">提交</view>
+  </view>
+</view>

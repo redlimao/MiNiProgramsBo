@@ -1,0 +1,32 @@
+<!--pages/order/order.wxml-->
+<view class="container">
+  <view class="box">
+    <form  bindsubmit="formSubmit">
+      <view class="test">
+          <text>姓名</text>
+          <input type="text" name="username"  value="{{name}}"/>
+      </view>
+      <view class="test">
+          <text>手机号</text>
+          <input type="text" name="phone"  value="{{phon}}"/>
+      </view>
+      <view class="test">
+          <!-- <text>到访日期</text>
+          <input type="digit" name="date"  value="{{date}}"/> -->
+          <text>到访日期</text>
+          <picker class="area" bindchange="areaNames" mode="date" value="{{date}}" start="2017-08-01" end="2018-01-01">{{date}}
+            <image src="../../image/jian.png"></image>
+          </picker>    
+      </view>
+      <view class="test">
+          <text>宝宝年龄</text>
+          <input type="text" name="age"  value="{{age}}"/>
+      </view>
+      <view class="test">
+          <text>所在社区</text>
+          <input type="digit" name="area"  value="{{area}}"/>
+      </view>
+      <button formType="submit">预约</button>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,78 @@
+<!--pages/appointmentdetails/appointmentdetails.wxml-->
+<view class="container">
+    <view class="box-f">
+        <!-- 项目信息 -->
+        <view class="model mt-20">
+            <text class="tit">{{list.goods_name}}</text>
+            <text class="txt-a flex-1 pl-20">{{list.lei}}</text>
+            <view class="box-txt2">{{list.nums}}份</view>
+        </view>
+        <!-- 附带服务 -->
+        <view class="model-list bb-1" wx:if="{{list_fu != 1}}">
+            <view class="model bt-1" wx:for="{{list_fu}}" wx:key="{{index}}">
+                <icon type="success" size="18" color="#59d0d0"/>
+                <text class="tit pl-20">{{item.name}}</text>
+                <text class="txt-a flex-1 pl-30">{{item.moneys}}元</text>
+            </view>        
+        </view>
+        <!-- 联系姓名 -->
+        <view class="model bb-1 mt-20">
+            <image class="icon-c" src="../../images/mess_icon4.png"></image>
+            <text class="txt-b pl-20">联系姓名</text>
+            <input type='text' name="name" value="{{list.name}}" class="input-txt" disabled='true'>{{list.name}}</input>
+        </view>
+        <!-- 联系电话 -->
+        <view class="model bb-1">
+            <image class="icon-c" src="../../images/mess_icon1.png"></image>
+            <text class="txt-b pl-20">联系电话</text>
+            <input type='number' name="phone" value="{{list.phone}}" class="input-txt" disabled='true'>{{list.phone}}</input>
+        </view>
+        <!-- 上门时间 -->
+        <view class="model bb-1">
+            <image class="icon-c" src="../../images/mess_icon2.png"></image>
+            <text class="txt-b pl-20">上门时间</text>
+            <text class="tit pl-20">{{list.shang_at}}</text>
+        </view>
+        <!-- 服务地点 -->
+        <view class="model-d bb-1">
+            <image class="icon-c mt-28" src="../../images/mess_icon3.png"></image>
+            <text class="txt-b pl-20">服务地点</text>
+            <text class="txt-d tit flex-1 pl-20">{{list.address}}</text>
+        </view>
+        <!-- 备注信息 -->
+        <view class="model-a">
+            <text class="txt-c">备注信息</text>
+            <text class="texts">{{list.ding_zhu}}</text>
+        </view>
+        <view class="tags" wx:if="{{tags != 1}}">
+            <view class="item" wx:for="{{tags}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <!-- 价格 -->
+        <view class="model mt-20">
+            <text class="tit flex-1">订单总价</text>
+            <text class="txt-a">¥{{list.zong_moneys}}</text>
+        </view>
+        <view class="model bt-1">
+            <text class="tit flex-1">优惠券</text>
+            <text class="txt-a">{{list.coupons}}</text>
+        </view>
+        <view class="model bt-1">
+            <text class="tit flex-1">订单实际支付金额</text>
+            <text class="txt-a color-c">¥{{list.moneys}}</text>
+        </view>
+        <!-- 信息 -->
+        <view class="model mt-20">
+            <view class="txt-a">订单编号：{{list.trade_no}}</view>
+        </view>
+        <view class="model bt-1">
+            <view class="txt-a">创建时间：{{list.create_at}}</view>
+        </view>
+        <view class="model-c mt-20">
+            <view class="m-item" bindtap='bindPhone' data-phone='{{list.company}}'>
+                <image class="m-icon" src="../../images/message2_icon.png"></image>
+                <text class="m-txt">联系客服</text>
+            </view>
+        </view>
+    </view>
+</view>
+

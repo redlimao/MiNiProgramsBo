@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/actives/actives",
+    "pages/main/main",
+    "pages/info/info",
+    "pages/message/message",
+    "pages/ation/ation",
+    "pages/list/list",
+    "pages/order/order",
+    "pages/collect/collect",
+    "pages/miss/miss",
+    "pages/er/er",
+    "pages/jiang/jiang",
+    "pages/rank/rank",
+    "pages/chong/chong",
+    "pages/xieyi/xieyi",
+    "pages/mingxi/mingxi",
+    "pages/hui/hui",
+    "pages/actives_de/actives_de",
+    "pages/details/details"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "魔方成长营",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/actives/actives",
+        "text": "成长营",
+        "iconPath": "image/active.png",
+        "selectedIconPath": "image/active1.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "我的",
+        "iconPath": "image/main.png",
+        "selectedIconPath": "image/main1.png"
+      }
+    ],
+    "color": "#858585",
+    "selectedColor": "#FFD161"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

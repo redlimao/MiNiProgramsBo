@@ -1,0 +1,23 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+  <!-- ***详情图*** -->
+  <view class="xun-tu">
+    <image src="{{xun_img}}"></image>
+  </view>
+  <!-- ***详情*** -->
+  <view class="xun-message">
+    <view class="common-title">
+      <text class="common-border"></text>
+      <text class="common-text">培训介绍</text>
+    </view>
+    <view class="xun-cont">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+</view>
+
+<!-- ***报名*** -->
+<view class="xun-order">
+  <text class="pu" bindtap='orderName' id="1">普通大课</text>
+  <text class="vip" bindtap='orderName' id="2">VIP专享</text>
+</view>

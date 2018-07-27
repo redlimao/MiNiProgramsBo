@@ -1,0 +1,44 @@
+<!--pages/actives_de/actives_de.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="collect">
+  <image src="{{img}}" class="banner"></image>
+  <text class="title">{{title}}</text>
+  <view class="money">
+    <text class="moneys">￥{{moneys}}</text>
+    <view class="shou" wx:if="{{shou==2}}" bindtap='shouName' id="{{id}}">
+      <image src="../../image/shou.png"></image>
+      <text>收藏</text>
+    </view>
+    <view class="shou" wx:else bindtap='shouName' id="{{id}}">
+      <image src="../../image/shou1.png"></image>
+      <text>已收藏</text>
+    </view>
+  </view>
+</view>
+<view class="container">
+  <view class="title">{{title}}</view>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+<view class="fix-box" wx:if="{{money==0}}">
+  <view class="fix">
+    <view class="zi" bindtap='shareName'>分享</view>
+    <text class="order" bindtap="orderName">订购  ￥{{moneys}}</text>
+  </view>
+  <view class="yong-list" wx:if="{{dou!=0}}">
+    <view class="yong">
+      <input value="{{value}}" bindblur="moName" wx:if="{{flag==1}}"/>
+      <text wx:if="{{flag==0}}">使用魔豆</text>
+      <text wx:else>可使用魔豆</text>
+      <view class="choose">
+       <switch  bindchange="switchChange" color="#ff9a0e"/>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="mask" wx:if="{{share==1}}">
+  <view class="share">
+     <view class="text"><button open-type='share'></button>转发给好友</view> 
+    <text bindtap='erName'>生成朋友圈二维码</text>
+    <text bindtap='quxiao'>取消</text>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+@import "../template/template.wxss";
+.car-list .car-info{
+  width:690rpx;
+}
+.car-list .car-info .car-fr{
+  width:330rpx;
+}

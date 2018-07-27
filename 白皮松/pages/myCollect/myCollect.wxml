@@ -1,0 +1,22 @@
+<!--myCollect.wxml-->
+<view class="container">
+    <view class="seckill-lists" wx:if="{{empty == 0}}">
+      <view class="seckill-list" bindtap="tapName" wx:for="{{myCollect}}" wx:key="{{item.index}}">
+        <image class="seckill-list-img" src="{{item.banner}}"></image>
+        <view class="seckill-list-context">
+          <text class="seckill-list-tit">{{item.name}}</text>
+          <view class="seckill-list-pro">
+            <text class="seckill-list-time">库存仅剩{{item.nums}}件</text>
+          </view>
+          <view class="seckill-result">
+            <view class="seckill-money">￥{{item.moneys}}</view>
+            <view class="btn-seckill" id="{{item.id}}">立即购买</view>
+          </view>
+        </view>
+      </view>
+    </view> 
+    <view class="empty" wx:else>
+      <image src="../../images/empty.png" class="empty-icon"></image>
+      <text class="empty-text">暂无内容</text>
+  </view>
+</view>

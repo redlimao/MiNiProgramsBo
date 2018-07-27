@@ -1,0 +1,61 @@
+<view class="title">自定义套餐</view>
+<view class="item">
+    <view class="i-tit">门店</view>
+    <view class="i-txt">{{store_name}}</view>
+</view>
+<view class="item">
+    <view class="i-tit">日期</view>
+    <view class="i-txt">{{date}}</view>
+</view>
+<view class="item">
+    <view class="i-tit">到店时间</view>
+    <view class="i-txt">{{time_start}}--{{ time_end}}</view>
+</view>
+<view class="item">
+    <view class="i-tit">香</view>
+    <view class="i-txt" wx:if="{{tag_one.length != 0}}">
+        <text wx:for="{{tag_one}}" wx:key="{{index}}">{{item.name}},</text>
+    </view>
+    <view class="i-txt" wx:else>未选择</view>
+</view>
+<view class="item">
+    <view class="i-tit">茶艺师</view>
+    <view class="i-txt" wx:if="{{tag_two.length != 0}}">
+        <text wx:for="{{tag_two}}" wx:key="{{index}}">{{item.name}},</text>
+    </view>
+    <view class="i-txt" wx:else>未选择</view>
+</view>
+<view class="item">
+    <view class="i-tit">水</view>
+    <view class="i-txt" wx:if="{{tag_three.length != 0}}">
+        <text wx:for="{{tag_three}}" wx:key="{{index}}">{{item.name}},</text>
+    </view>
+    <view class="i-txt" wx:else>未选择</view>
+</view>
+<view class="item">
+    <view class="i-tit">茶点</view>
+    <view class="i-txt" wx:if="{{tag_four.length != 0}}">
+        <text wx:for="{{tag_four}}" wx:key="{{index}}">{{item.name}},</text>
+    </view>
+    <view class="i-txt" wx:else>未选择</view>
+</view>
+<view class="item">
+    <view class="i-tit">茶</view>
+    <view class="i-txt" wx:if="{{tea_arr.length != 0}}">
+        <text wx:for="{{tea_arr}}" wx:key="{{index}}">{{item.name}},</text>
+    </view>
+    <view class="i-txt" wx:else>未选择</view>
+</view>
+<view class="item">
+    <view class="i-tit">价格</view>
+    <view class="i-txt">¥{{money}}/人</view>
+</view>
+<view class="item">
+    <view class="i-tit">人数</view>
+    <view class="i-txt">{{num}}</view>
+</view>
+<!-- 总金额  -->
+<view class="foot">
+    <view class="f-txt">合计金额：¥{{total_money}}</view>
+    <view class="btn-pay" bindtap='bindPay'>立即支付</view>
+</view>

@@ -1,0 +1,165 @@
+<import src="../template/template.wxml"/>
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+  <view class="back" bindtap='backName'>
+    <image src="../../images/backss.png" class="back-icon back-icons"></image>
+  </view>
+  <!-- *******商品信息****** -->
+  <view class="shop-message">
+          <!--**轮播***-->
+      <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"indicator-dots="true" indicator-active-color="#fff" indicator-color="rgba(255,255,255,0.3)"> 
+        <swiper-item wx:for="{{shop_img}}" wx:key="{{item.id}}" id="{{id}}">  
+           <image src="{{item}}" class="shopde-img"></image>  
+        </swiper-item>
+      </swiper>
+    <view class="shop-names">
+      <text class="shop-name">{{shop_name}}</text>
+      <view class="share">
+        <image src="../../images/share.png" class="share-icon"></image>
+        <text class="share-text">分享</text>
+        <button open-type='share'></button>
+      </view>
+    </view>
+  </view>
+  <!-- *******详情和评论****** -->
+  <view class="shop-inner"> 
+    <view class="shopInner-nav" bindtap="tabFun">
+      <text class="shopInner-name {{curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0">产品详情</text>
+      <text class="shopInner-name {{curHdIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1" bindtap='pingName'>买家评论</text>
+    </view>
+    <view class="shopInner-info right-item {{curHdIndex=='0'? 'actives' : ''}}">
+      <view class="ben">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+      </view>
+    </view>
+    <view class="shopInner-ping right-item {{curHdIndex=='1'? 'actives' : ''}}">
+      <view wx:if="{{empty==0}}">   
+        <!-- 评论等级 -->
+        <view class="c-tabs">
+            <view class="tab-items" bindtap='bindTag' data-id='1'>好评({{ping_cont.great_one}})</view>
+            <view class="tab-items" bindtap='bindTag' data-id='2'>一般({{ping_cont.great_two}})</view>
+            <view class="tab-items" bindtap='bindTag' data-id='3'>不满意({{ping_cont.great_three}})</view>
+        </view>
+        <!-- 评论内容 -->
+        <view class="c-list bb-1" wx:if="{{empty != 1}}">
+            <view class="c-list-top">
+                <image class="c-list-img" src='{{ping.headimgurl}}'></image>
+                <text class="c-list-name">{{ping.nickname}}</text>
+            </view>
+            <text class="c-list-txt">{{ping.content}}</text>
+            <view class="c-list-bottom">
+                <text class="c-list-time">{{ping.create_at}}</text>
+            </view>
+        </view>
+        <!-- 查看更多 -->
+        <view class="look_more" bindtap='bindAllcomments'>查看更多</view>
+      </view>
+      <view class="empty" wx:else>
+        <image src="../../images/ping_empty.png" class="empty-icon"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- *******购买导航****** -->
+<view class="buy-nav">
+   <view class="buy-list" bindtap='collectName'>
+    <block wx:if="{{collect==2}}">
+      <image src="../../images/collect1.png" class="buy-icon"></image>
+      <text class="buy-text buy-texts">收藏</text>
+    </block>
+      <block wx:else>
+      <image src="../../images/collect.png" class="buy-icon"></image>
+      <text class="buy-text buy-textss">已收藏</text>
+    </block>
+  </view>
+
+  <view class="buy-list" bindtap='shopName'>
+    <image src="../../images/kefu.png" class="buy-icon"></image>
+    <text class="buy-text">客服</text>
+    <button open-type='contact' show-message-card="true" hover-class="none"></button>   
+  </view>
+ 
+  <view class="buy-list buy-lists" bindtap='yueNames' wx:if="{{bot_type==2}}">
+    <image src="../../images/order-icon.png" class="buy-icon"></image>
+    <text class="buy-text">预约</text>
+  </view>
+  <view class="buy-order" bindtap='orderName'>
+    <text class="fu-money">￥{{shop_money}}</text>
+    <text class="fu-ti">下单</text>
+  </view>
+</view>
+<!-- *******购买信息****** -->
+<view class="dan-box" wx:if="{{dan==1}}">
+  <view class="dan" wx:for="{{carts}}" id="{{item.id}}" wx:key="{{item.id}}" >
+    <!-- 基础信息 -->
+    <view class="dan-message">
+      <view class="dan-img">
+        <image src="{{item.shop_img[0]}}" class="dan-imgs"></image>
+      </view>
+      <view class="dan-jia">
+        <text class="dan-money">￥{{totalPrice}}</text>
+        <text class="dan-name">{{item.shop_name}}</text>
+      </view>
+      <view class="close" catchtap='closeName'>
+        <image src="../../images/close.png"></image>
+      </view>
+    </view>
+    <!-- 规格 -->
+    <view class="gui">
+      <text class="gui-title">型号</text>
+      <view class="gui-box">
+        <text class="gui-list {{styleIndex ==index ? 'actives' : ''}}"   catchtap="tabFuns"  id="tab-hd0{{index}}" data-id="{{index}}" data-money="{{item.size_money}}" data-name="{{item.size_name}}" wx:for="{{item.size}}" wx:key="{{item.id}}">{{item.size_name}}</text>
+      </view>
+    </view>
+    <!-- 数量 -->
+    <view class="dan-num">
+      <text class="num-title">数量</text>
+      <view class="num-box">
+          <text class="jian" catchtap="minusCount" data-index="{{index}}">-</text>
+          <text class="dan-number">{{item.shop_num}}</text>
+          <text class="jia" catchtap="addCount" data-index="{{index}}">+</text>
+      </view>
+    </view>
+    <!-- 积分 -->
+    <view class="fen"  wx:if="{{car==0}}">
+      <view class="fens">
+        <input value="{{points}}" catchblur="moName" wx:if="{{flag==1}}"/>
+        <text class="shi-fen" wx:if="{{flag==0}}">使用积分</text> 
+        <text class="shi-fen" wx:else>可使用积分</text>
+      </view>
+      <view class="choose">
+       <switch  bindchange="switchChange" color="#FF7FAE"/>
+      </view>
+    </view>
+    <!-- **优惠券** -->
+    <!-- <block wx:if="{{car==0}}">
+      <view class="quan" wx:if="{{quan_yong==1}}">
+        <view class="quan-choose">
+          <text class="quan-title">暂无可用优惠券</text>
+        </view> 
+      </view>
+      <view class="quan" wx:else>
+        <view class="quan-choose" bindtap='quanName' id="{{totalPrices}}" data-id="{{quan_id}}" data-ids="{{item.id}}">
+          <text class="quan-title" wx:if="{{quan==1}}">已自动为您选择优惠券</text>
+          <text class="quan-title" wx:else>使用优惠券</text>
+          <image src="../../images/more.png" class="quan-more"></image>
+        </view>
+        <view class="quan-quan" wx:if="{{quan==1}}">
+          <text class="quans">优惠券</text>
+          <text class="quan-jian">-￥{{jian}}</text>
+          <text class="quan-man">满{{man}}可用</text>
+        </view>
+      </view>
+    </block> -->
+    <view class="zhi" wx:if="{{car==0}}" catchtap='zhiName'>
+      确认
+    </view>
+    <view class="zhi" wx:else catchtap='jiaName'>
+      加入购物车
+    </view>
+  </view>
+</view>
+
+<view class="buy-car" bindtap='orderNames'>
+  <image src="../../images/fu-car.png" class="buy-icon"></image>
+</view>

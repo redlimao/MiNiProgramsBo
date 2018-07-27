@@ -1,0 +1,7 @@
+<view class="container">
+    <form bindsubmit="formSubmit" class="box-form">
+        <textarea class="area" value='{{area}}' name="area" placeholder="请输入您的反馈意见或建议"></textarea>
+        <button formType="submit" class="btn-sure">提交</button>
+    </form>
+</view>
+

@@ -1,0 +1,22 @@
+<!--pages/shop/shop.wxml-->
+<view class="i-wrap">
+    <image class="i-img" src='../../../images/e_bg.png'></image>
+    <view class="i-num">¥500.00</view>
+</view>
+<view class="tit">我的收益</view>
+<view class="list" wx:if="{{empty == 1}}">
+    <view class="item" wx:for="{{lists}}" wx:key="{{index}}">
+        <view class="i-info">
+            <view class="i-info-tit">{{item.name}}</view>
+            <view class="i-info-time">{{item.time}}</view>
+        </view>
+        <view class="i-money">打赏：<text class="i-moneys">¥{{item.money}}</text></view>
+    </view>
+</view>
+<view class="empty" wx:else>暂无收益</view>
+<!-- 列表页 -->
+<view class="b-wrap">
+    <view class="btn-con" bindtap='bindCon'> <image src="../../../images/ti.png" class="ti-icon"></image> <text>提现须知</text> </view>
+    <view class="btn-money" bindtap='bindMoney'>申请提现</view>
+</view>
+

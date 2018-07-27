@@ -1,0 +1,15 @@
+<!--findTreePeople.wxml-->
+<view class="container">
+  <image class="banner" src='{{tu}}'></image>
+  <view class="list" wx:for="{{trees}}" wx:key="{{item.id}}">
+    <view class="text-box">
+      <text class="tit">挖树人：{{item.name}}</text>
+      <text class="txt-a">所在地：{{item.address}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="btn" bindtap='telName' id="{{item.phone}}">
+      <image class="btn-icon" src="../../images/tel.png"></image>
+      <text class="btn-txt">联系他</text>
+    </view>
+  </view>
+</view>

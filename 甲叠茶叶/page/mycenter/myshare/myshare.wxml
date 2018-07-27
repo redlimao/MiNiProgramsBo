@@ -1,0 +1,31 @@
+<view class="menu">
+    <view class="m-item {{current == 1 ? 'on' : ''}}" data-index='1' bindtap='bindTap' >我的名片</view>
+    <view class="m-item {{current == 2 ? 'on' : ''}}" data-index='2' bindtap='bindTap' >我的好友</view>
+</view>
+<!-- 我的名片 -->
+<view class="c-list" wx:if="{{current == 1}}">
+    <view class="er-img">
+        <image class="img" src='{{img}}' mode='widthFix' ></image>
+    </view>
+    <view class='info' selectable="true">
+        <text selectable="true" class="i-txt">邀请码：{{sharenum}}</text>   
+        <view class="btn-copy" bindtap="bindCopy" data-sharenum="{{sharenum}}">一键复制</view>
+    </view>
+    <view class="btns">
+        <view class="btn-in" bindtap='bindImg'>保存到手机</view>
+        <button class="btn-in" open-type='share'>分享</button>
+    </view>
+</view>
+<!-- 我的好友-->
+<view class="c-list" wx:if="{{current == 2}}">
+    <view class="box" wx:if="{{empty==1}}">
+        <view class="shou-list" wx:for="{{list}}" wx:key="{{item.id}}">
+            <view class="list-fl">
+                <text class="text">{{item.nickname}}</text>
+                <text class="time">{{item.create_at}}</text>
+            </view>
+            <view class="list-fr">+{{item.covers}}积分</view>
+        </view>
+    </view>
+    <view class="empty" wx:else>暂无信息</view>
+</view>

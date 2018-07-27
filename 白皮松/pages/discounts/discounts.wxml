@@ -1,0 +1,51 @@
+<!--discounts.wxml-->
+<view class="container">
+    <!-- 搜索区域 -->
+    <view class="search-box">
+        <form>
+            <view class="search">
+                <image class="search-icon {{icon_flag == true ? '' : 'on'}}" src="../../images/search.png"></image>
+                <image class="search-icon1 {{icon_flag1 == false ? '' : 'on'}}" src="../../images/search.png" bindtap='search'></image>
+                <input class="search-input" bindinput='bindInput' bindconfirm='search' placeholder='搜索特产' />
+            </view>
+        </form>
+    </view>
+  <view class="banner">
+        <swiper class="swiper" style="height:280rpx" circular="true" indicator-color="rgba(255,255,255,0.8)" indicator-active-color="rgba(255,255,255,1)" indicator-dots="true" autoplay="false" interval="5000" duration="1000">
+            <block wx:for="{{lun}}" wx:key="{{item.index}}" id="{{item.id}}">
+                <swiper-item>
+                    <image bindtap='bindDetails' src="{{item.img}}" class="bannner-img" height="280" id="{{item.id}}"/>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- 选择 -->
+    <view class="chose-tit">
+        <view class="chose-list" bindtap='tagChange'><text class="txt-tip {{currentIndex == 1 ? 'on':''}}" data-id='1'>推荐</text></view>
+        <view class="chose-list" bindtap='tagChange'><text class="txt-tip {{currentIndex == 2 ? 'on':''}}" data-id='2'>新品</text></view>
+        <view class="chose-list">
+            <picker bindchange="bindpriceChange" class="chose-picker" value="{{price_index}}" range="{{price}}" >{{price[price_index]}}</picker>
+            <image src="../../images/la.png" class="pick-img"></image> 
+        </view>
+        <view class="chose-list">
+            <picker bindchange="bindnumberChange" class="chose-picker" value="{{numbers_index}}" range="{{numbers}}">{{numbers[numbers_index]}}</picker>
+            <image src="../../images/la.png" class="pick-img"></image> 
+        </view>
+    </view>
+    <view class="list-boxs" wx:if="{{empty==0}}">
+        <view class="list-box"  wx:for="{{list}}" wx:key="{{item.index}}" bindtap='bindDetails' id='{{item.id}}'>
+            <image class="list-img" src="{{item.banner}}"></image>
+            <text class="list-tit">{{item.name}}</text>
+            <view class="list-con">
+                <text class="money_icon">¥</text>
+                <text class="money">{{item.moneys}}</text>
+                <text class="cutmoney">¥{{item.yuan_moneys}}</text>
+                <view class="btn-buy">购买</view>
+            </view>
+        </view>
+    </view>
+    <view class="empty" wx:else >
+        <image src="../../images/empty.png" class="empty-icon"></image>
+        <text class="empty-text">暂无内容</text>
+    </view>
+</view>

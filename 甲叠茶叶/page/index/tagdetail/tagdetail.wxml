@@ -1,0 +1,65 @@
+<!--tagdetail.wxml-->
+<!-- 选择时间段 -->
+<view class="con">  
+    <!-- 选择香 -->
+    <view class="p-tit">选择香</view>
+    <view class="p-tags">
+        <view bindtap='bindTagOne' class="p-item {{item.flag == 2 ? 'on' : ''}}" wx:for="{{tag_one}}" wx:key="{{index}}" data-index='{{index}}'>
+            <icon class="p-tip" wx:if="{{item.flag == 2}}" type='success' color='#826540' size='20'></icon>
+            <image class="p-img" src='{{item.img}}' mode='aspectFill' ></image>
+            <view class="p-txt">{{item.name}}</view>
+        </view>
+    </view>
+    <!-- 选择茶艺师 -->
+    <view class="p-tit">选择茶艺师</view>
+    <view class="p-tags">
+        <view bindtap='bindTagTwo' class="p-item {{item.flag == 2 ? 'on' : ''}}" wx:for="{{tag_two}}" wx:key="{{index}}" data-index='{{index}}'>
+            <icon class="p-tip" wx:if="{{item.flag == 2}}" type='success' color='#826540' size='20'></icon>
+            <image class="p-img" src='{{item.img}}' mode='aspectFill' ></image>
+            <view class="p-txt">{{item.name}}</view>
+        </view>
+    </view>
+    <!-- 选择水 -->
+    <view class="p-tit">选择水<text class="p-tit-txt">（选择种类个数不能超过预定人数）</text></view>
+    <view class="p-tags">
+        <view bindtap='bindTagThree' class="p-item {{item.flag == 2 ? 'on' : ''}}" wx:for="{{tag_three}}" wx:key="{{index}}" data-index='{{index}}'>
+            <icon class="p-tip" wx:if="{{item.flag == 2}}" type='success' color='#826540' size='20'></icon>
+            <image class="p-img" src='{{item.img}}' mode='aspectFill' ></image>
+            <view class="p-txt">{{item.name}}</view>
+        </view>
+    </view>
+    <!-- 选择茶点 -->
+    <view class="p-tit">选择茶点<text class="p-tit-txt">（选择种类个数不能超过预定人数）</text></view>
+    <view class="p-tags">
+        <view bindtap='bindTagFour' class="p-item {{item.flag == 2 ? 'on' : ''}}" wx:for="{{tag_four}}" wx:key="{{index}}" data-index='{{index}}'>
+            <icon class="p-tip" wx:if="{{item.flag == 2}}" type='success' color='#826540' size='20'></icon>
+            <image class="p-img" src='{{item.img}}' mode='aspectFill' ></image>
+            <view class="p-txt">{{item.name}}</view>
+        </view>
+    </view>
+    <!-- 选择茶 -->
+    <view class="p-tit">选择茶<text class="p-tit-txt">（选择种类个数不能超过预定人数）</text></view>    
+    <view class="p-con">  
+        <!-- 分类一  -->
+        <picker class="pick-box" mode="multiSelector" bindchange="bindClassify" bindcolumnchange='bindColumnChange' value="{{classify_index}}" range="{{classify_arr}}" >
+            <view class="pick-txt">
+                <view class="pick-txts">{{classify_arr[0][classify_index[0]]}}</view>
+                <view class="pick-txts">{{classify_arr[1][classify_index[1]]}}</view>
+                <view class="pick-txts">{{classify_arr[2][classify_index[2]]}}</view>
+                <image class="pick-icon" src='../../../images/icon_in.png'></image>
+            </view>
+        </picker>
+    </view>
+    <view class="p-tags" wx:if="{{empty == 1}}">
+        <view bindtap='bindTagFive' class="p-item {{item.flag == 2 ? 'on' : ''}}" wx:for="{{tag_five}}" wx:key="{{index}}" data-index='{{index}}' data-id='{{item.id}}'>
+            <icon class="p-tip" wx:if="{{item.flag == 2}}" type='success' color='#826540' size='20'></icon>
+            <image class="p-img" src='{{item.banner}}' mode='aspectFill' ></image>
+            <view class="p-txt">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="empty" wx:else>暂无您所选的茶叶</view>
+</view>
+<view class="btn-next" bindtap='bindnext' data-types='1'>下一步</view>
+
+
+

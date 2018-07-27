@@ -1,0 +1,37 @@
+<!--pages/xun/xun.wxml-->
+<view class="container">
+  <view class="banner">
+    <image src="{{img}}"  class="banner-img"></image>
+  </view>
+  <view class="form">
+    <form bindsubmit="formSubmit">
+      <view class="form-title">
+        <text class="form-form">预约表单</text>
+        <text class="form-time">营业时间 {{y_time}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="form-list">
+        <text class="list-title">姓名</text>
+        <input type='input' name="username" placeholder='请输入名字' />
+      </view>
+      <view class="form-list">
+        <text class="list-title">电话</text>
+        <input type='input' name="tel" placeholder='请输入电话' />
+      </view>
+      <view class="form-list">
+        <text class="list-title">到访时间</text>
+        <picker class="time-picker time-pickers" mode="date" value="{{date}}" start="1917-09-01" end="2050-09-01" bindchange="bindDateChange">{{date}}</picker>
+        <picker class="time-picker" mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">{{time}}</picker>
+      </view>
+      <view class="form-list">
+        <text class="list-title">预约类型</text>
+        <picker class="time-pickerss" value="{{arr_index}}" range="{{array}}" bindchange="arrChange">
+          {{arr[arr_index].name}}
+        </picker>
+      </view>
+      <button formType="submit">
+          提交
+        </button>
+    </form>
+  </view>
+</view>

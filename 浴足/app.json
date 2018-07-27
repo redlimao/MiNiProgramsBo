@@ -1,0 +1,56 @@
+{
+    "pages":[
+        "pages/enter/enter",
+        "pages/index/index",
+        "pages/details/details",
+        "pages/orders/orders",
+        "pages/personage/personage",
+        "pages/healthylist/healthylist",
+        "pages/healthydetails/healthydetails",
+        "pages/collectlist/collectlist",
+        "pages/servelist/servelist",
+        "pages/appointmentdetails/appointmentdetails",
+        "pages/couponlist/couponlist",
+        "pages/allcomments/allcomments",
+        "pages/publishcomments/publishcomments",       
+        "pages/messages/messages",
+        "pages/personagedata/personagedata",
+        "pages/ideadata/ideadata",
+        "pages/aboutus/aboutus",
+        "pages/newpage/newpage",
+        "pages/address/address",
+        "pages/addAddress/addAddress",
+        "pages/jie/jie",
+        "pages/er/er"
+    ],
+    "window":{
+        "backgroundTextStyle":"light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "浴足",
+        "navigationBarTextStyle":"black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/tab-icon1-1.png",
+                "selectedIconPath": "images/tab-icon1-2.png"
+            },
+            {
+                "pagePath": "pages/orders/orders",
+                "text": "订单",
+                "iconPath": "images/tab-icon2-1.png",
+                "selectedIconPath": "images/tab-icon2-2.png"
+            },
+            {
+                "pagePath": "pages/personage/personage",
+                "text": "个人中心",
+                "iconPath": "images/tab-icon3-1.png",
+                "selectedIconPath": "images/tab-icon3-2.png"
+            }
+        ],
+        "color": "#7f8389",
+        "selectedColor": "#59d0d0"
+    }
+}

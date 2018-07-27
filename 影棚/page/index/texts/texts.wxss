@@ -1,0 +1,4 @@
+/* page/index/text/texts.wxss */
+.con{width: 100%;box-sizing: border-box;padding: 0 20rpx 85rpx 20rpx;}
+.btn-box{position: fixed;left: 0;bottom: 0;width: 100%;height: 83rpx;display: flex;align-items: center;justify-content: space-around;z-index: 2;background-color: #fff;box-shadow:0rpx -5rpx 10rpx 0rpx rgba(0,0,0,0.1);}
+    .btn-collect,.btn-appoint{width: 355rpx;height: 66rpx;text-align: center;line-height: 66rpx;border-radius: 4rpx;font-size: 34rpx;color: #2B2B2B;background-color: #FDCF44;}

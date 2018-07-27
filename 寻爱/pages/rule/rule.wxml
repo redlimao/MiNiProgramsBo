@@ -1,0 +1,11 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+  <view class="back" bindtap='backName'>
+    <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="tops">协议说明</view>
+  <view class="inner">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</view>
+

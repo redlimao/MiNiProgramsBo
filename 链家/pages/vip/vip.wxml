@@ -1,0 +1,92 @@
+<!--vip.wxml-->
+<view class="container pb-100">
+    <view class="top">
+        <view class="tip" bindtap='bindLocation'>
+            <image class="icon_gps" src='../../images/icon_gps.png'></image>
+            <text class="tip-txt">西安</text>
+        </view>
+        <view class="search" bindtap='bindSearch'>
+            <image src='../../images/icon_search1.png' class="icon-search"></image>
+            <input class="search-txt" disabled='true' placeholder='输入商家优惠活动名称' placeholder-class='p-c'></input>
+        </view>
+        <image wx:if="{{he == 1}}" class="btn-er" bindtap='bindCode' src='../../images/icon_code.png'></image>
+    </view>
+    <view class="s-wrap">
+        <swiper style="width:750rpx;height:299rpx;" bindchange='bindHint' circular="true">
+            <swiper-item wx:for="{{imgs}}" wx:key="{{index}}">
+                <image src="{{item.img}}" class="slide-image" data-status='{{item.status}}' data-lunid='{{item.lun_id}}' catchtap='bindSDetail'/>
+            </swiper-item>
+        </swiper>
+        <view class="menu">
+            <view class="item {{current == index ? 'on' : ''}}" wx:for="{{imgs}}" wx:key="{{index}}"></view>
+        </view>    
+    </view>
+    <view class="con">
+        <view class="c-tit">
+            <image class="c-tip" src="../../images/icon_pin.png"></image>
+            <text class="c-title">品牌馆</text>
+        </view>
+        <view class="s-list">
+            <scroll-view scroll-x="true" style="width: 100%">
+                <view class="s-box">
+                    <view class="s-item" wx:for="{{list_z}}" wx:key="{{index}}" data-dian="{{item.id}}" bindtap='bindPinPai'>
+                        <!-- <image class="s-img" src="{{item.img}}"></image>
+                        <view class="s-name">{{item.name}}</view>
+                        <view class="s-btn" wx:if="{{item.choose === 1}}">立即领取</view> 
+                        <view class="s-btns" wx:if="{{item.choose === 2}}">已领取</view>  -->
+                        <image class="s-imgs" src="{{item.img}}"></image>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="g-list" wx:if="{{news != 1}}">
+            <swiper autoplay="ture" circular="true" vertical="true"  style="height:80rpx">
+                <swiper-item wx:for="{{news}}" wx:key="{{index}}">
+                    <image src="{{item.img}}" class="slide-images" data-status='{{item.status}}' data-lunid='{{item.lun_id}}' catchtap='bindSDetail'/>
+                </swiper-item>
+            </swiper>
+        </view>
+        <!-- 滑动菜单 -->
+        <view class="c-list {{flag_menu == 1 ? '' : 'on'}}">
+            <view class="c-bg" bindtap='bindMenu'>
+                <image class="c-bg-img" src='../../images/bg_cover1.png'></image>
+                <image class="img-menu {{flag_menu == 1 ? '' : 'on'}}" src='../../images/icon_menu1.png'></image>
+            </view>
+            <view class="c-titles" style='opacity:{{c_opacity}}'>全部分类</view>
+            <scroll-view scroll-x="true" style="width: 100%;" class="c-scroll {{flag_menu == 1 ? '' : 'on'}}">
+                <view class="c-box">
+                    <view class="c-item {{current == item.id ? 'on' : ''}}" wx:for="{{menu}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap='bindTab'>
+                        <image class="c-img" src='{{item.img}}'></image>
+                        <view class="c-txt">{{item.ty}}</view>
+                    </view>
+                </view>
+            </scroll-view>
+            <view class="b-menu" style="transform:translateY({{c_height}}px);opacity:{{c_opacity}}">
+                <view class="c-item {{current == item.id ? 'on' : ''}}" wx:for="{{menu}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap='bindTab'>
+                    <image class="c-img" src='{{item.img}}'></image>
+                    <view class="c-txt">{{item.ty}}</view>
+                </view>
+            </view>
+        </view>
+        <!-- list -->
+        <view class="wrap" wx:if="{{empty == 1}}" style="transform:translateY({{t_height}}px);">
+            <view class="w-item" wx:for="{{lists}}" wx:key="{{index}}" bindtap='bindDetail' data-couponid="{{item.id}}">
+                <!-- <view class="t-info">
+                    <image class="t-img" src="{{item.img}}"></image>
+                    <view class="info-txt">
+                        <text class="t-tit">{{item.name}}</text>
+                        <view class="t-txt"><text class="t-txt-f">{{item.num}}</text>{{item.intro}}</view>
+                    </view>
+                </view>
+                <view class="b-info">
+                    <text class="b-txt">{{item.mi}}</text>
+                    <text class="b-intro">{{item.miao}}</text>
+                </view>
+                <view class="btn-get" wx:if="{{item.choose === 1}}">立即领取</view>
+                <view class="btn-got" wx:if="{{item.choose === 2}}">已领取</view>  -->
+                <image class="w-img" src="{{item.img}}"></image>
+            </view>
+        </view>
+        <view class="empty" wx:else style="transform:translateY({{t_height}}px);">暂无内容</view>
+    </view>
+</view>

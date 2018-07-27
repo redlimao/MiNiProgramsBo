@@ -1,0 +1,3 @@
+.box-form{width: 100%;box-sizing: border-box;}
+    .area{width: 100%;line-height: 60rpx;color: #333;padding:24rpx;height: 288rpx;background-color: #fff;box-sizing: border-box;font-size: 28rpx;}
+    .btn-sure{background:#26b4fc;color:#fff;width:670rpx;height:94rpx;margin:0 auto;margin-top:500rpx;border-radius: 5rpx;}

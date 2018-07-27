@@ -1,0 +1,5 @@
+<!--enter.wxml-->
+<view class="box">
+    <view style="background-image:url({{img}})" class="banner"></view>
+</view>
+<view class="enter {{hide == 1 ? 'on' : ''}}" bindtap="bind_index">跳过{{num}}</view>

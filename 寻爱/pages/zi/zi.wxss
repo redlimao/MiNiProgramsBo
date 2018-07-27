@@ -1,0 +1,145 @@
+/* pages/zi/zi.wxss */
+.zi{
+  margin-top:30rpx;
+  background:#fff;
+  padding:20rpx;
+}
+.zi-title{
+  font-size:30rpx;
+  border-left:6rpx solid #FF7FAE;
+  color:#FF7FAE;
+  margin-bottom:30rpx;
+  padding-left:10rpx;
+  font-weight: bold;
+  height:30rpx;
+  line-height:30rpx;
+}
+.zi-box{
+  overflow:hidden;
+}
+.zi-box .zi-list{
+  overflow:hidden;
+  height:100rpx;
+  display:flex;
+  border-bottom:1rpx solid #eee;
+  justify-content:space-between;
+}
+.zi-list:nth-last-child(1){
+  border:none;
+}
+.zi-text{
+  font-size:30rpx;
+  color:rgb(73,70,71);
+  line-height:100rpx;
+}
+.more-icon{
+  display:block;
+  width:24rpx;
+  height:24rpx;
+  margin-top:38rpx;
+}
+/*===底部导航====  */
+.tab-bar{
+  position:fixed;
+  left:0;
+  bottom:0;
+  z-index:3;
+  overflow:hidden;
+  height:100rpx;
+  width:100%;
+  background:#fff;
+}
+.tab-bar .fl{
+  display:block;
+  float:left;
+  width:50%;
+  text-align:center;
+  line-height:100rpx;
+  font-size:30rpx;
+  color:rgb(73,70,71);
+}
+button {
+  display:block;
+  width:50%;
+  height:100rpx;
+  position:absolute;
+  left:0;
+  top:0;
+  border:none;
+  background:rgba(0,0,0,0);
+}
+button:after{
+  border:none;
+}
+.border{
+  display:block;
+  float:left;
+  height:48rpx;
+  color:#f8f8f8;
+  overflow:hidden;
+  margin-top:26rpx;
+}
+.tab-bar .fr{
+  display:block;
+  float:left;
+  width:190rpx;
+  height:60rpx;
+  background:#FF7FAE;
+  text-align:center;
+  line-height:60rpx;
+  font-size:30rpx;
+  color:#fff;
+  border-radius:4rpx;
+  margin-left:100rpx;
+  margin-top:20rpx;
+}
+
+/* =====常见问题答案==== */
+.mask-box{
+  width:100%;
+  height:100%;
+  position:fixed;
+  left:0;
+  top:0;
+  z-index:9;
+}
+.mask{
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  position:absolute;
+  z-index:1;
+}
+.answer{
+  width:750rpx;
+  height:1000rpx;
+  background:#fff;
+  position:absolute;
+  z-index:2;
+  left:0;
+  bottom:0;
+  border-top-left-radius:50rpx;
+  border-top-right-radius:50rpx;
+}
+.answer .close{
+  width:150rpx;
+  height:48rpx;
+  text-align:center;
+  line-height:48rpx;
+  border:1rpx solid #FF7FAE;
+  color:#FF7FAE;
+  border-radius:50rpx;
+  float:right;
+  margin-right:30rpx;
+  margin-top:50rpx;
+  font-size:30rpx;
+}
+.cont{
+  width:650rpx;
+  height:800rpx;
+  overflow:auto;
+  margin:0 auto;
+  font-size:30rpx;
+  color:rgb(73,70,71);
+  margin-top:160rpx;
+}

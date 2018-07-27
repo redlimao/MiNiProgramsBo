@@ -1,0 +1,70 @@
+<view class="container">
+  <!-- *********个人信息********** -->
+  <view class="main-box">
+    <view class="box"></view>
+    <view class="main">
+      <!-- 个人 -->
+      <view class="main-message">
+        <view class="main-photo">
+          <image src="{{headimg}}" class="main-img"></image>
+        </view>
+        <view class="main-name">{{nickname}}</view>
+        <view class="main-main" bindtap='pointsName'>
+          <image src="../../images/rule.png" class="card-icon"></image>
+          <text class="main-choose">转介规则</text>
+        </view> 
+      </view>
+    </view>
+  </view>
+  <!--****************导航**********-->
+  <view class="pro_nav" bindtap="tabFun">
+    <view  class="pronav-list {{curHdIndex=='2'? 'actives' : ''}}" id="tab-hd03" data-id="2" bindtap='weiName'>
+      关注人数
+    </view>
+    <view class="pronav-list {{curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap='dianName'>
+      已消费
+    </view>
+    <view class="pronav-list {{curHdIndex=='1'? 'actives' : ''}}" id="tab-hd2" data-id="1" bindtap='wanName'>
+      未消费
+    </view>
+  </view>
+   <!--****************内容**********-->
+   <view class="jie-box" wx:if="{{empty==0}}">
+    <view class="list-box {{item.pan=='1'? 'list_actives' : ''}}" wx:for="{{list}}" wx:key="{{item.id}}" id="{{item.id}}" data-id="{{index}}" bindlongpress="anName">
+      <!-- *转介详情** -->
+      <view class="jie-list" catchtap='laName' data-id="{{index}}">
+        <view class="main-photo">
+          <image src="{{item.headimgurl}}" class="main-img"></image>
+        </view>
+        <view class="jie-info">
+          <text class="jie-name">{{item.nickname}}</text>
+          <text class="jie-phone">{{item.phone}}</text>
+        </view>
+         <view class="jie-time" wx:if="{{curHdIndex==2}}" >
+          <text class="jie-text">转介日期</text>
+          <text class="jie-times">{{item.create_at}}</text>
+        </view> 
+        <view class="jie-time " wx:else>
+          <image src="../../images/xia.png" class="xiala {{item.pan=='1'? 'icon_actives' : ''}}"></image>
+        </view> 
+      </view>
+      <!-- **消费记录** -->
+      <view class="fei-box  {{item.pan=='1'? 'box_actives' : ''}}" wx:if="{{curHdIndex==0 || curHdIndex==1}}">
+          <view class="xiaofei"  wx:if="{{item.zhuan==1}}">暂无消费记录</view>
+          <view class="xiaofei" wx:else>消费记录</view>
+          <block  wx:if="{{item.zhuan!=1}}">
+            <view class="fei-info" wx:for="{{item.zhuan}}"  wx:key="{{item.goods_id}}">
+              <text class="riqi">{{item.create_at}}</text>
+              <text class="fei-money">￥{{item.moneys}}</text>
+            </view>
+          </block>
+          
+      </view>
+    </view>
+   </view>
+   <view class="empty" wx:else>
+      <image src="../../images/empty.png" class="empty-icon"></image>
+      <text class="empty-text">您暂时还未介绍好友</text>
+   </view>
+</view> 
+

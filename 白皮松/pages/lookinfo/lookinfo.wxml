@@ -1,0 +1,48 @@
+<import src="../template/template.wxml"/>
+<!--index.wxml-->
+<view class="container">
+    <!-- 白皮松 -->
+    <view class="context">
+      <!--**内容***-->
+    <view class="lists" wx:if="{{empty==0}}" bindtap='bindDetails'>
+      <view  wx:for="{{goods}}" wx:key="{{item.id}}" class="list-box" bindtap='shopName' id="{{id}}">
+                  <view class="img-box">
+                      <text class="img-icon">{{item.ji_bie}}级</text>
+                      <image class="list-img" src="{{item.banner}}"></image>
+                  </view>
+                  <view class="list-content">
+                      <text class="list-tit">{{item.name}}</text>
+                      <view class="con1">
+                          <view class="icon">{{item.tags}}</view>
+                      </view>
+                      <view class="list-txt2">
+                      <view>
+                          <text class="txt-you">¥{{item.moneys}}</text>
+                      </view>
+                      <!-- <view>
+                          <text class="txt-you1">{{item.user_name}}</text>
+                      </view>
+                      <view>
+                          <text class="txt-you2">{{item.phone}}</text>
+                      </view>
+                      <view>
+                          <text class="txt-you3">{{item.address}}</text>
+                      </view>
+                      <view>
+                          <text class="txt-you4">{{item.trade_no}}</text>
+                      </view>
+                      <view>
+                          <text class="txt-you5">{{item.create_at}}</text>
+                      </view> -->
+                          <view class="btn-get" wx:if='{{item.status==2}}'>交易进行中</view>
+                          <view class="btn-gets" wx:if='{{item.status!=2}}'>交易已完成</view>
+                      </view>
+                  </view>
+       </view>
+    </view>
+        <view class="empty" wx:else>
+            <image src="../../images/empty.png" class="empty-icon"></image>
+            <text class="empty-text">暂无内容</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+page{background-color: #fff;}
+.wrap{width: 100%;padding: 60rpx 30rpx 0 30rpx;box-sizing: border-box;display: flex;justify-content: space-between;flex-wrap: wrap;}
+    .item{width: 330rpx;height: 280rpx;overflow: hidden;background:rgba(255,255,255,1);
+box-shadow: 0rpx 10rpx 20rpx 0rpx rgba(0,0,0,0.07);border-radius: 16rpx;margin-bottom: 60rpx;display: flex;align-items: center;flex-direction: column;}
+        .i-top{height: 12rpx;width:100%}
+            .i-top.color-a{background:linear-gradient(-135.7deg,rgba(255,205,66,1),rgba(255,158,31,1));}
+            .i-top.color-b{background:linear-gradient(-135deg,rgba(112,228,137,1),rgba(61,196,81,1));}
+            .i-top.color-c{background:linear-gradient(135deg,rgba(127,138,255,1),rgba(171,186,255,1));}
+            .i-top.color-d{background:linear-gradient(135deg,rgba(255,93,96,1),rgba(252,148,147,1));}
+            .i-img{width: 160rpx;height: 160rpx;display: block;margin-top: 30rpx;}
+            .i-txt{padding-top: 20rpx;font-size: 36rpx;color: #373634;font-weight: bold;}

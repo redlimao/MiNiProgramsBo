@@ -1,0 +1,15 @@
+<!--collect.wxml-->
+<!-- 菜单 -->
+<view class="menu">
+    <view class="m-item" bindtap='bindTap' data-index='{{index+1}}' wx:for="{{menu_one}}" wx:key="{{index}}">
+        <view class="m-txt">{{item}}</view>
+        <view class="m-bg" wx:if="{{current == index + 1}}"></view>
+    </view>
+</view> 
+<view class="con" wx:if="{{empty == 1}}">
+    <view class="c-item" wx:for="{{list}}" wx:key="{{index}}" bindtap='bindDetail' data-index='{{item.index}}' data-types='{{item.types}}' data-planid='{{item.plan_id}}' data-cid="{{item.c_id}}" data-mid='{{item.m_id}}' data-did='{{item.d_id}}' data-propsid='{{item.props_id}}' data-placeid='{{item.place_id}}' >
+        <image class="c-img" src='{{item.photo}}' mode='widthFix'></image>
+        <view class="c-txt">{{item.name}}</view>
+    </view>
+</view>
+<view class="empty" wx:else>暂无收藏</view>

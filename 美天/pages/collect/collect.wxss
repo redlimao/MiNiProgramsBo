@@ -1,0 +1,17 @@
+@import "../template/template.wxss";
+.car-list .car-info{
+  width:680rpx;
+}
+.car-list .car-info .car-fr{
+  width:330rpx;
+  position: relative;
+}
+.car-list .car-info .shop-car{
+  position:absolute;
+  right:36rpx;
+  top: 44rpx;
+}
+
+.delete{height: 60rpx;display: flex;flex-flow: row nowrap;justify-content: flex-end;align-items: center;padding:0 35rpx;position: absolute;right: 0;bottom: 0;}
+.delete .del-icon{width:11px;height:14px;margin-right:10rpx;}
+.delete .cart1-del{font-size: 24rpx;color: #d62a2c;}

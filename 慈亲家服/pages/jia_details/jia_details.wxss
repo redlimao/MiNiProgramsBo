@@ -1,0 +1,129 @@
+/* pages/jia_details/jia_details.wxss */
+@import "../template/template.wxss";
+.container{
+  padding-bottom:150rpx;
+}
+.inner-list{
+  margin:0;
+}
+/*======成交量=======*/
+.info{
+  width:100%;
+  height:50rpx;
+  padding:20rpx 0;
+  display:flex;
+  background:#fff;
+  border-bottom:1rpx solid #eee;
+}
+.cheng{
+  flex-grow:1;
+  border-right:1rpx solid #eee;
+  text-align:center;
+  font-size:30rpx;
+  color:rgb(177,174,171);
+  line-height:50rpx;
+  width:50%;
+  box-sizing: border-box;
+}
+.cheng .cheng-num{
+  color:rgb(250,0,43);
+  line-height:50rpx;
+}
+.collect{
+  flex-grow:1;
+  overflow:hidden;
+  width:50%;
+}
+.collect image{
+  display:block;
+  float:left;
+  width:30rpx;
+  height:30rpx;
+  margin-top:10rpx;
+  margin-left:15%;
+  margin-right:5%;
+}
+.collect .collect-text{
+  font-size:30rpx;
+  color:rgb(177,174,171);
+  display:block;
+  float:left;
+  line-height:50rpx;
+}
+.collect .collect-texts{
+  color:rgb(255,1,43);
+}
+/*======服务内容=======*/
+.fu-inner{
+  width:100%;
+  background:#fff;
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+}
+.look-more{
+  font-size:26rpx;
+  color:rgb(177,174,171);
+  display:block;
+  line-height:30rpx;
+  float:right;
+}
+.fu-cont{
+  padding:20rpx 30rpx;
+  font-size:30rpx;
+}
+/*======顾客评价=======*/
+.customer{
+  width:100%;
+  background:#fff;
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+  position:relative;
+}
+
+/*======预约=======*/
+.customer-order{
+  width:100%;
+  height:99rpx;
+  overflow:hidden;
+  background:#fff;
+  position: fixed;
+  left:0;
+  bottom:0;
+}
+.customer-order .zhuang{
+  width:500rpx;
+  display:block;
+  float:left;
+  line-height:99rpx;
+  color:rgb(250,0,43);
+  font-size:32rpx;
+  padding-left:30rpx;
+  overflow:hidden;
+}
+.customer-order .zhuangs{
+  color:#3DC451;
+}
+.customer-order .customer-orders{
+  display:block;
+  float:right;
+  width:220rpx;
+  text-align:center;
+  line-height:99rpx;
+  background:rgb(255,158,31);
+  color:#fff;
+  font-size:36rpx;
+}
+.empty{
+  top:150rpx;
+  bottom:0;
+}
+
+.tab-menu{background-color: #fff;padding: 0 20rpx;width: 100%;box-sizing: border-box;display: flex;justify-content: space-around;margin-top: 20rpx;}
+    .menus{height: 80rpx;line-height: 80rpx;color: #B1AEAB;font-size: 30rpx;}
+    .menus.on{color: #FF9E1F;}
+.customer-ping{padding: 50rpx 30rpx;width: 100%;box-sizing: border-box;}
+    .ping-item{height: 88rpx;display:flex;align-items: center;justify-content:space-between;}
+        .ping-txt{color: #373634;font-size: 30rpx;font-weight: bold;}
+        .ping-txt.col{color:#FF9E1F;}
+        .stars-wrap{display: flex;}
+            .stars{width: 32rpx;height: 32rpx;margin-right: 8rpx;display: flex;}

@@ -1,0 +1,84 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- banner切换 -->
+    <view class="banner">
+        <swiper class="swiper" style="height:300rpx" circular="true" indicator-color="rgba(255,255,255,0.8)" indicator-active-color="rgba(255,255,255,1)" indicator-dots="true" autoplay="false" interval="5000" duration="1000">
+            <block wx:for="{{lun}}" wx:key="{{index}}" id="{{item.id}}">
+                <swiper-item>
+                    <image src="{{item.img}}" class="bannner-img" data-goodsid='{{item.goods_id}}' data-id='{{item.id}}' data-type='{{item.type}}' bindtap='bindDetail'></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- 主导航栏 -->
+    <view class="nav">
+        <navigator open-type='navigate' class="nav-list" wx:for="{{type}}" wx:key="{{index}}" url="{{item.url}}?id={{item.id}}" hover-class="none">
+            <image class="nav-icon" src="{{item.img}}"></image>
+            <text class="nav-text">{{item.name}}</text>
+        </navigator>
+    </view>
+    <!-- 优惠券跳转 -->
+    <view class="img-boxs {{img_flag == 1 ? 'hide' : ''}}"  wx:if="{{coupons == 2}}">
+        <image class="close-img" src="../../images/close_icon1.png" bindtap='bindcloseimg'></image>
+        <image class="img-box" src="{{counts_img}}" bindtap='bindopenpop'></image>
+    </view>
+    <!-- 滑动菜单 -->
+    <view class="content mt-20">
+        <view class="slider-wrap">
+            <scroll-view scroll-x="true" bindtap="tabs" style="width: 100%">
+                <view class="slider-box d-box">
+                    <view class="slider-menu {{currentIndex == 0 ? 'on':''}}" id="0" data-id='0'>推荐</view>
+                    <view class="slider-menu {{currentIndex == index+1 ? 'on':''}}" data-id='{{index+1}}' wx:for="{{all_type}}" id="{{item.name}}" wx:key="{{index}}">{{item.name}}</view>
+                </view>
+            </scroll-view>
+        </view>
+        <!-- 列表 -->
+        <view class="list bt-1" wx:if="{{empty == 1}}">
+            <view class="item bb-1" wx:for="{{goods}}" wx:key="{{index}}" bindtap='bindDetails' data-id='{{item.id}}'>
+                <image class="item-img" src="{{item.banner}}"></image>
+                <view class="info">
+                    <view class="wrap">
+                        <!-- 标题和选的人数 -->
+                        <text class="tit lc-1">{{item.name}}</text>
+                        <text class="nums">{{item.xiao}}</text>
+                    </view>
+                    <!-- 介绍 -->
+                    <text class="texts lc-1">{{item.ad_list}}</text>
+                    <view class="wrap pt-12">
+                        <text class="people-num">{{item.fu}}</text>
+                        <view class="wrap-txt">
+                            <text class="color-a">{{item.moneys_one}}</text>{{item.moneys_two}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="empty-box" wx:else>
+            <image class="empty-icon"  src="../../images/empty_icon.png"></image>
+            <text class="empty-txt">暂无内容</text>
+        </view>    
+    </view>
+</view>
+
+<!-- 弹窗 -->
+<view class="pop-bg {{pop_flag == 1 ? '' : 'on'}}" bindtap='bindclosepop'></view>
+<view class="pop {{pop_flag == 1 ? '' : 'on'}}">
+    <image class="pop-img" src="../../images/pop_bg.png"></image>
+    <view class="pop-content">
+        <view class="p-coupon-view">
+            <view class="p-item" wx:for="{{coupon_info}}" wx:key="{{index}}">
+                <image class="p-item-img" src="../../images/coupon_bg.png"></image>
+                <view class="p-item-con">
+                    <view class="p-money">
+                        <text class="p-money-icon">¥</text>
+                        <text class="p-moneys">{{item.money}}</text>
+                    </view>
+                    <text class="p-txts">满¥{{item.man}}可用</text>
+                </view>
+            </view>
+        </view>
+        <text class="p-texts">优惠券领取成功请到“我”-“优惠券”查看</text>
+        <view class="p-btn" bindtap='bind_coupon' data-id='{{user_id}}'>查看详情</view>
+    </view>
+    <image class="p-close" bindtap='bindclosepop' src="../../images/close_icon.png"></image>
+</view>

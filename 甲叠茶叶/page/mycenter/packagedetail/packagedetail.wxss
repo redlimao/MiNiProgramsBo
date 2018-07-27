@@ -1,0 +1,10 @@
+/* createpackage */
+.title{height: 100rpx;line-height: 100rpx;padding: 0 20rpx;width: 100%;font-size: 30rpx;color: #333;background-color: #fff;margin-bottom: 10rpx;}
+.item{height: 90rpx;padding: 0 20rpx;width: 100%;box-sizing: border-box;background-color: #fff;align-items: center;justify-content: space-between;display: flex;border-bottom: 1rpx solid #ECECEC;}
+.item:last-child{border-bottom: 1rpx solid transparent;}
+    .i-tit{font-size: 26rpx;color: #333;}
+    .i-txt{font-size: 26rpx;color: #666;}
+/* 底部 */
+.foot{width: 100%;position: fixed;bottom: 0;left: 0;box-sizing: border-box;background-color: #fff;display: flex;align-items: center;height: 100rpx;}
+    .btns{height:60rpx;text-align: center;line-height: 60rpx;font-size: 26rpx;flex: 1;margin: 0 20rpx;border-radius: 40rpx;border: 1rpx solid #999999;color: #333333;box-sizing: border-box;}
+

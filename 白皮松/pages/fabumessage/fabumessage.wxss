@@ -1,0 +1,21 @@
+/* pages/fabumessage/fabumessage.wxss */
+.form-box{display: block;padding-bottom: 40rpx;}
+    .box-img{display: flex;justify-content:space-between;padding:24rpx;background-color: #fff;flex-wrap: wrap;}
+        .box-img1{width: 340rpx;}
+        .box-img2{background-color: #fff;padding-top: 20rpx;}
+            .img-box.m-auto{margin: 0 auto;}
+            .img-box{width: 340rpx;height: 340rpx;background-color: #ccc;position: relative;}
+            .upload-img1{height: 340rpx;width: 340rpx;}
+            .upload-img2{height: 227rpx;width: 340rpx;}
+            .upload-txt{line-height:90rpx;font-size: 30rpx;color: #333;text-align: center;}
+.model{display: flex;width: 100%;padding: 0 24rpx;height: 90rpx;align-items: center;background-color: #fff;}
+    .m-txt{font-size: 30rpx;color: #333;width: 150rpx;padding-right: 20rpx;}
+    .m-box{flex: 1;font-size: 30rpx;color: #333;height: 80rpx;line-height: 80rpx;padding: 0 20rpx;}
+    .list{flex: 1;display: flex;padding: 0 20rpx;flex-wrap:wrap;}
+        .item{padding: 0 18rpx;height: 50rpx;border-radius: 5rpx;background-color: #ededed;text-align: center;line-height: 50rpx;color:rgb(175,175,175);font-size: 26rpx;margin-right: 10rpx;margin-bottom:10rpx;}
+        .item.on{background-color: #4fb94b;color: #fff}
+.model-a{display: flex;width: 100%;padding:24rpx;align-items: center;background-color: #fff;box-sizing: border-box;}
+.area-b{padding: 20rpx;flex: 1;font-size: 30rpx;color: #333;height: 200rpx;background-color: #ededed;}
+button{background:#24b24b;color:#fff;width:670rpx;height:94rpx;margin:0 auto;margin-top:30rpx;}
+.model-b{display: flex;width: 100%;padding:24rpx;align-items: center;box-sizing: border-box;background-color: #fff;}
+.txt-aa{font-size: 30rpx;text-align: center; line-height: 60rpx;height: 60rpx;background-color: #fff;color: #f44444;}

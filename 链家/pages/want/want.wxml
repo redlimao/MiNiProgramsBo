@@ -1,0 +1,19 @@
+<!--pages/want/want.wxml-->
+<view class="container">
+    <form class="wrap" bindsubmit='bindMessage' report-submit="true">
+        <view class="wrap-area">
+            <textarea name="texts" class="areas" placeholder='反馈内容（不能为空）' placeholder-class='astyle' value='{{texts}}' bindinput='bindInput' focus="{{flag_focus}}" maxlength="50"></textarea>
+            <view class="area-tip">您已输入<text class="tip-color">{{num}}</text>/50个字</view>
+        </view>
+        <view class="wrap-img">
+            <view class="upload-img">
+                <view class="close-box {{flag_img == 1 ? '' : 'on'}}"></view>
+                <image class="upload-close {{flag_img == 1 ? '' : 'on'}}" src='../../images/icon_close.png' bindtap='closeImg'></image>
+                <image class="upload-bg" src='../../images/bg_img.png'></image>
+                <image class="upload-imgs" src='{{upload_img}}' bindtap='uploadImg'></image>
+            </view>
+            <view class="upload-txt">上传附件用于辅助说明</view>
+        </view>
+        <button class="btn-true" formType="submit">保存</button>
+    </form>
+</view>

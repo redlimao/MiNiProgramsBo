@@ -1,0 +1,55 @@
+<!--pages/qian/qian.wxml-->
+<view class="container">
+  <view class="back" bindtap='backName'>
+    <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="tops" >签到</view>
+  <!-- ******签到***** -->
+  <view class="qian">
+    <!-- <view class="month">{{yue}}</view>
+    <view class="date">
+      <text class="date-list {{item.pan==2?'active':''}}" wx:for="{{zhou}}" wx:key="{{index}}">{{item.day}}</text>
+    </view> -->
+     <canvas canvas-id="lineCanvas" disable-scroll="false" class="canvas" bindtouchstart="touchHandler" />
+     <view class="all_points">总积分：{{all}}</view>
+    <view class="qian-ci">{{tian}}</view>
+    <view class="all-box">
+      <view class="qian-btn" bindtap='qian' wx:if="{{qian!=1}}">签到</view>
+      <view class="qian-btns"  wx:else>已签到</view>
+      <view class="covers_all"  bindtap='pointsName'>
+        <image src="../../images/rule.png" class="covers-icon"></image>
+        <text class="covers-text">积分规则</text>
+      </view>
+    </view>
+    
+  </view>
+  <!-- ******积分***** -->
+  <view class="point">
+   <view class="nav">
+    <text class="nav-list {{currentIndex==1 ? 'actives' : ''}}" bindtap='tabFun' data-id="1">积分收益</text>
+    <text class="nav-list nav-lists {{currentIndex==2 ? 'actives' : ''}}" bindtap='tabFun' data-id="2">积分支出</text>
+   </view>
+    <view class="inner">
+      <view class="points-shou" >
+          <view class="box" wx:if="{{empty==0}}">
+            <view class="shou-list" wx:for="{{list}}" wx:key="{{index}}">
+              <view class="list-fl">
+                <text class="text">{{item.type}}</text>
+                <text class="time">{{item.create_at}}</text>
+              </view>
+              <view class="list-fr {{currentIndex=='2'? 'list-frs' : ''}}">{{item.covers}}</view>
+            </view>
+          </view>
+           <view class="empty" wx:else>
+            <image src="../../images/empty.png" class="empty-icon"></image>
+            <text class="empty-text">暂无积分记录</text>
+          </view> 
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- *****进入商城**** -->
+<view class="in" bindtap='shopname'>进入商城</view>

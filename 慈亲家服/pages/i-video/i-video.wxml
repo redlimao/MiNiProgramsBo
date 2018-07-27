@@ -1,0 +1,96 @@
+<!--pages/i-video/i-video.wxml-->
+<view class="container">
+  <!-- ***视频*** -->
+  <view class="video">
+    <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" wx:if="{{play}}" autoplay="{{play}}">
+    </video>
+    <image src="../image/img5.png" class="video-img" wx:else bindtap='playName'  mode="aspectFill"></image>
+    <cover-image src="../image/play.png" class="play-icon"  bindtap='playName'  wx:if="{{!play}}"></cover-image>
+    <view class="video-title" wx:if="{{!play}}" >“眼周年轻化”-复杂眼袋矫正的手术要领”</view>
+  </view>
+  <view class="video-info">
+    <text class="video-money">￥500</text>
+    <view class="video-class">
+      <text class="video-ke">已开10节课 | 共26节课</text>
+      <text class="video-study">15689人学习</text>
+    </view>
+  </view>
+   <!-- *****导航**** -->
+  <view class="navs">
+    <text class="navs-list {{currentIndex==1?'active':''}}" bindtap='tabFun' data-id="1" >课程</text>
+    <text class="navs-list {{currentIndex==2?'active':''}} " bindtap='tabFun' data-id="2" >介绍</text>
+  </view>
+  <!-- *****内容***** -->
+  <view class="inner">
+    <view class="class {{currentIndex==1?'active':''}}">
+      <scroll-view class="scroll" scroll-x >
+        <text class="class-nav {{navIndex==0?'active':''}}" bindtap='navFun'  data-id="0">1-10节课</text>
+        <text class="class-nav {{navIndex==1?'active':''}}" bindtap='navFun' data-id="1">1-20节课</text>
+        <text class="class-nav {{navIndex==2?'active':''}}" bindtap='navFun' data-id="2">1-30节课</text>
+        <text class="class-nav {{navIndex==3?'active':''}}" bindtap='navFun' data-id="3">1-40节课</text>
+        <text class="class-nav {{navIndex==4?'active':''}}" bindtap='navFun' data-id="4">1-50节课</text>
+      </scroll-view>
+      <view class="class-box">
+        <view class="class-list {{listIndex==1?'active':''}}" bindtap='lookVideo'>
+          <text class="class-name">1.这里是课程标题</text>
+          <text class="class-free">免费试看</text>
+          <text class="class-time">12:00</text>
+        </view>
+        <view class="class-list" bindtap='lookVideo'>
+          <text class="class-name">1.这里是课程标题</text>
+          <text class="class-free">免费试看</text>
+          <text class="class-time">12:00</text>
+        </view>
+        <view class="class-list {{listIndex==1?'active':''}}" bindtap='lookVideo'>
+          <text class="class-name">1.这里是课程标题</text>
+          <text class="class-free">免费试看</text>
+          <text class="class-time">12:00</text>
+        </view>
+        <view class="class-list" bindtap='lookVideo'>
+          <text class="class-name">1.这里是课程标题</text>
+          <text class="class-free">免费试看</text>
+          <text class="class-time">12:00</text>
+        </view>
+        <view class="class-list {{listIndex==1?'active':''}}" bindtap='lookVideo'>
+          <text class="class-name">1.这里是课程标题</text>
+          <text class="class-free">免费试看</text>
+          <text class="class-time">12:00</text>
+        </view>
+        <view class="class-list" bindtap='lookVideo'>
+          <text class="class-name">1.这里是课程标题</text>
+          <text class="class-free">免费试看</text>
+          <text class="class-time">12:00</text>
+        </view>
+        <view class="class-list {{listIndex==1?'active':''}}" bindtap='lookVideo'>
+          <text class="class-name">1.这里是课程标题</text>
+          <text class="class-free">免费试看</text>
+          <text class="class-time">12:00</text>
+        </view>
+        <view class="class-list" bindtap='lookVideo'>
+          <text class="class-name">1.这里是课程标题</text>
+          <text class="class-free">免费试看</text>
+          <text class="class-time">12:00</text>
+        </view>
+      </view>
+    </view>
+    <view class="intro {{currentIndex==2?'active':''}}">
+      123465789
+    </view>
+  </view>
+  <!--****底部导航****-->
+  <view class="bar">
+    <view class="share">
+      <image src="../image/share1.png" class="share-icon"></image>
+      <text class="text">推荐课程</text>
+    </view>
+    <view class="share">
+      <image src="../image/i-collect.png" class="share-icon"></image>
+      <text class="text">推荐课程</text>
+    </view>
+    <view class="buy">购买课程</view>
+  </view>
+</view>
+
+<view class="hui" bindtap='topName'>
+  <image src="../image/top.png" class="top-icon"></image>
+</view>

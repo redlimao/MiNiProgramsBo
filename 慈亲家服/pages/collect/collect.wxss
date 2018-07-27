@@ -1,0 +1,70 @@
+@import "../template/template.wxss";
+.car-list .car-info{
+  width:690rpx;
+}
+.car-list .car-info .car-fr{
+  width:330rpx;
+}
+.l-box {
+    padding: 0 20rpx;
+    box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+ background-color: #fff;
+}
+
+.select {
+  position: absolute;
+  right: -80rpx;
+  top: 80rpx;
+}
+
+.l-box.on {
+  overflow: visible;
+  transform: translateX(-80rpx);
+}
+
+.l-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  width: 710rpx;
+}
+
+.l-img {
+  height: 140rpx;
+  width: 248rpx;
+  border-radius: 5rpx;
+}
+
+.l-info {
+  flex: 1;
+  padding-left: 10rpx;
+  position: relative;
+}
+
+.l-title {
+  line-height: 36rpx;
+  font-size: 28rpx;
+  color: #2b2b2b;
+  font-weight: bold;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.l-infos {
+  padding-top: 4rpx;
+  font-size: 22rpx;
+  color: #9c9c9c;
+}
+
+.moneys {
+  position: absolute;
+  font-size: 22rpx;
+  color: #ff2613;
+  right: 0;
+  bottom: 0;
+}

@@ -1,0 +1,34 @@
+<!--publishcomments.wxml-->
+<view class="container">
+    <form bindsubmit="formSubmit" class="form-box">
+        <textarea class="area bt-1" placeholder="服务换满意您的期待吗？说说它的优点以及美中不足的地方吧。" name="area" value="{{area}}"></textarea>
+        <view class="model bt-1" bindtap="bindIcon">
+            <icon type="success" size="18" color="#dbe1e2" wx:if="{{flag_icon == 1}}"/>
+            <icon type="success" size="18" color="#59d0d0" wx:else  />
+            <text class="tit pl-20 fw-b">匿名</text>
+            <text class="txt-a flex-1 pl-30">你写的评价会以匿名形式展示</text>
+        </view>
+        <view class="box mt-20">
+            <view class="model">
+                <image class="publish-icon" src="../../images/publish_icon.png"></image>
+                <text class="tit pl-20 fw-b">综合评价</text>
+            </view>
+            <view class="model-a">
+                <text class="tit">描述相符</text>
+                <view class="stars-big">
+                    <image class="star-big{{index}} {{item.flag == 1 ? '' : 'actives'}}" src="../../images/bigstar_icon.png" bindtap='bindstar1' wx:for="{{star1}}"  wx:key="{{index}}" data-id='{{index}}'></image>
+                    <image class="star-big{{index}}" src="../../images/bigstargrey_icon.png" wx:for="{{star1}}"  wx:key="{{index}}" data-id='{{index}}' bindtap='bindstar1'></image>
+                </view>
+            </view>
+            <view class="model-a">
+                <text class="tit">服务质量</text>
+                <view class="stars-big">
+                    <image class="star-big{{index}} {{item.flag == 1 ? '' : 'actives'}}" src="../../images/bigstar_icon.png" bindtap='bindstar2' wx:for="{{star2}}"  wx:key="{{index}}" data-id='{{index}}'></image>
+                    <image class="star-big{{index}}" src="../../images/bigstargrey_icon.png" wx:for="{{star2}}"  wx:key="{{index}}" data-id='{{index}}' bindtap='bindstar2'></image>
+                </view>
+            </view>        
+        </view>
+
+        <button formType="submit" class="btn-sure">提交</button>
+    </form>
+</view>

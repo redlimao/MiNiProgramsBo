@@ -1,0 +1,233 @@
+/* pages/zhu_jie/zhu_jie.wxss */
+.main-box{
+  width:100%;
+  height:240rpx;
+  position:relative;
+}
+/* ========个人信息==-=== */
+.main-box .box{
+  width:100%;
+  height:150rpx;
+  background: #bd8a39;
+  position:absolute;
+  left:0;
+  top:0;
+}
+.main-box .main{
+  width:690rpx;
+  height:160rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  top:60rpx;
+  background:#fff;
+  border-radius:6rpx;
+  box-shadow: 0 4rpx 20px rgba(0,0,0,0.05);
+}
+.main .main-message{
+  width:100%;
+  height:120rpx;
+  border-bottom:1rpx solid #eee;
+  padding:20rpx 0;
+  overflow:hidden;
+}
+.main-message .main-photo{
+  width:120rpx;
+  height:120rpx;
+  background:#fff;
+  border-radius:50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  position:relative;
+  margin-left:20rpx;
+  margin-right:10rpx;
+  float:left;
+}
+.main-message .main-photo .main-img{
+  width:100rpx;
+  height:100rpx;
+  border-radius:50%;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+.main-message .main-name{
+  font-size:30rpx;
+  color:rgb(55,54,52);
+  line-height:120rpx;
+  width:200rpx;
+  margin-right:10rpx;
+  float:left;
+  overflow:hidden;
+}
+.main-message .main-main{
+  float:right;
+  margin-right:20rpx;
+}
+.main-message .main-main .card-icon{
+  width:26rpx;
+  height:26rpx;
+  display:block;
+  float:left;
+  margin-top:48rpx;
+  margin-right:10rpx;
+}
+.main-message .main-main .main-choose{
+  font-size:26rpx;
+  color:rgb(254,1,55);
+  line-height:120rpx;
+  display:block;
+  float:left;
+}
+.list-box{
+  overflow:hidden;
+  margin-top:20rpx;
+  position:relative;
+  padding-top:164rpx;
+}
+.jie-box{
+  width:100%;
+  overflow:hidden;
+}
+.jie-list{
+  width:690rpx;
+  height:120rpx;
+  padding:20rpx 30rpx;
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+  background:#fff;
+  overflow:hidden;
+  position:absolute;
+  z-index:2;
+  top:0;
+}
+.jie-list .main-photo{
+  width:120rpx;
+  height:120rpx;
+  background:#fff;
+  border-radius:50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  position:relative;
+  margin-right:20rpx;
+  float:left;
+}
+.jie-list .main-photo .main-img{
+  width:100rpx;
+  height:100rpx;
+  border-radius:50%;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+.jie-list .jie-info{
+  float:left;
+  height:80rpx;
+  padding:20rpx 0;
+  width:300rpx;
+  overflow:hidden;
+  display:flex;
+  justify-content:space-between;
+  flex-direction: column;
+}
+.jie-info .jie-name{
+  font-size:30rpx;
+  color:rgb(55,54,52);
+}
+.jie-info .jie-phone{
+  font-size:30rpx;
+  color:rgb(55,54,52);
+}
+.jie-list .jie-time{
+  float:right;
+  width:150rpx;
+  height:80rpx;
+  padding:20rpx 0;
+  overflow:hidden;
+  display:flex;
+  justify-content:space-between;
+  flex-direction: column;
+  position: relative;
+}
+.jie-list .jie-time .xiala{
+  width:24rpx;
+  height:24rpx;
+  display:block;
+  position:absolute;
+  top:0;
+  bottom:0;
+  margin:auto;
+  right:0;
+  transition: all 0.5s linear;
+}
+.xiala.icon_actives{
+  transform:rotate(180deg);
+}
+.jie-time .jie-text{
+  font-size:26rpx;
+  color:rgb(177,174,171);
+  text-align:right;
+}
+.jie-time .jie-times{
+  font-size:26rpx;
+  color:rgb(177,174,171);
+  text-align:right;
+}
+.jie-list .del{
+  width:150rpx;
+  height:80rpx;
+  float:right;
+}
+.jie-list .del .del-icon{
+  width:44rpx;
+  height:50rpx;
+  display:block;
+  margin:0 auto;
+  margin-top:18rpx;
+}
+.list-box .fei-box{
+  width:100%;
+  background:#fff;
+  height:0;
+  transform: translateY(-100rpx);
+  transition: all 0.5s linear;
+  overflow:hidden;
+  position:relative;
+}
+.list-box .fei-box.box_actives{
+  transform: translateY(0rpx);
+  height:auto;
+}
+.list-box .fei-box .xiaofei{
+  width:690rpx;
+  line-height:90rpx;
+  font-size:28rpx;
+  margin:0 auto;
+  border-bottom:1rpx solid #eee;
+}
+.list-box .fei-info{
+  width:690rpx;
+  height:90rtpx;
+  display:flex;
+  justify-content:space-between;
+  background:#fff;
+  padding:0 30rpx;
+  border-bottom:1rpx solid #eee;
+}
+.list-box .fei-info .riqi{
+  display:block;
+  line-height:90rpx;
+  font-size:32rpx;
+  color:rgb(177,174,171);
+}
+.list-box .fei-info .fei-money{
+  display:block;
+  line-height:90rpx;
+  font-size:32rpx;
+  color:rgb(254,1,55);
+}

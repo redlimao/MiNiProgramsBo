@@ -1,0 +1,71 @@
+<view class="p-wrap">
+    <view class="p-item">
+        <view class="p-txt">礼仪礼节</view>
+        <view class="p-stars">
+            <image class="star-grey" src='../image/star-grey.png' wx:for="{{star1}}" wx:key="{{index}}" bindtap='bindStarOne' data-id='{{index}}'></image>
+            <image class="star{{index+1}} {{item.flag == true ? 'on' : ''}}" src='../image/star-light.png' wx:for="{{star1}}" wx:key="{{index}}" bindtap='bindStarOne' data-id='{{index}}'></image> 
+        </view>
+        <view class="p-txts" wx:if="{{num1 == 1}}">差</view>
+        <view class="p-txts" wx:if="{{num1 == 2}}">一般</view>
+        <view class="p-txts" wx:if="{{num1 == 3}}">好</view>
+        <view class="p-txts" wx:if="{{num1 == 4}}">很好</view>
+        <view class="p-txts" wx:if="{{num1 == 5}}">非常好</view>
+    </view>
+    <view class="p-item">
+        <view class="p-txt">服务技能</view>
+        <view class="p-stars">
+            <image class="star-grey" src='../image/star-grey.png' wx:for="{{star2}}" wx:key="{{index}}" bindtap='bindStarTwo' data-id='{{index}}'></image>
+            <image class="star{{index+1}} {{item.flag == true ? 'on' : ''}}" src='../image/star-light.png' wx:for="{{star2}}" wx:key="{{index}}" bindtap='bindStarTwo' data-id='{{index}}'></image> 
+        </view>
+        <view class="p-txts" wx:if="{{num2 == 1}}">差</view>
+        <view class="p-txts" wx:if="{{num2 == 2}}">一般</view>
+        <view class="p-txts" wx:if="{{num2 == 3}}">好</view>
+        <view class="p-txts" wx:if="{{num2 == 4}}">很好</view>
+        <view class="p-txts" wx:if="{{num2 == 5}}">非常好</view>
+    </view>
+    <view class="p-item">
+        <view class="p-txt">语言沟通</view>
+        <view class="p-stars">
+            <image class="star-grey" src='../image/star-grey.png' wx:for="{{star3}}" wx:key="{{index}}" bindtap='bindStarThree' data-id='{{index}}'></image>
+            <image class="star{{index+1}} {{item.flag == true ? 'on' : ''}}" src='../image/star-light.png' wx:for="{{star3}}" wx:key="{{index}}" bindtap='bindStarThree' data-id='{{index}}'></image> 
+        </view>
+        <view class="p-txts" wx:if="{{num3 == 1}}">差</view>
+        <view class="p-txts" wx:if="{{num3 == 2}}">一般</view>
+        <view class="p-txts" wx:if="{{num3 == 3}}">好</view>
+        <view class="p-txts" wx:if="{{num3 == 4}}">很好</view>
+        <view class="p-txts" wx:if="{{num3 == 5}}">非常好</view>
+    </view>
+    <view class="p-item">
+        <view class="p-txt">流程操作</view>
+        <view class="p-stars">
+            <image class="star-grey" src='../image/star-grey.png' wx:for="{{star4}}" wx:key="{{index}}" bindtap='bindStarFour' data-id='{{index}}'></image>
+            <image class="star{{index+1}} {{item.flag == true ? 'on' : ''}}" src='../image/star-light.png' wx:for="{{star4}}" wx:key="{{index}}" bindtap='bindStarFour' data-id='{{index}}'></image> 
+        </view>
+        <view class="p-txts" wx:if="{{num4 == 1}}">差</view>
+        <view class="p-txts" wx:if="{{num4 == 2}}">一般</view>
+        <view class="p-txts" wx:if="{{num4 == 3}}">好</view>
+        <view class="p-txts" wx:if="{{num4 == 4}}">很好</view>
+        <view class="p-txts" wx:if="{{num4 == 5}}">非常好</view>
+    </view>
+</view>
+<view class="m-wrap">
+    <view class="m-tit">家政服务不易，给TA一点鼓励吧~</view>
+    <view class="tags">
+        <view bindtap='bindChooseMoney' class="t-item {{item.flag == true ? 'on' : ''}}" wx:for="{{tags}}" wx:key="{{index}}" data-index='{{index}}'>¥{{item.name}}</view>
+    </view>
+    <view class="btn-in" bindtap='bindOpenPop'>自定义金额：{{moneys}}</view>
+</view>
+<view class="btn-submit" bindtap='bindApp'>提交评价</view>
+<!-- 弹窗 -->
+<view class="bg-fix {{flag_pop == true ? 'on' : ''}}" bindtap='bindHidePop'></view>
+<view class="bg-view {{flag_pop == true ? 'on' : ''}}">
+    <view class="v-tit">TA能感受你的心意</view>
+    <view class="v-box">
+        <view class="btn-num" bindtap='bindSubtract'>-</view>
+        <input class="v-input" type='number' value='{{money}}' bindinput="bindInput"></input>
+        <view class="btn-num on" bindtap='bindAdd'>+</view>
+    </view>
+    <view class="btn-on" data-money='{{money}}' bindtap='bindfind'>确认</view>
+    <view class="v-txt">打赏成功后不支持退款</view>
+    <image class="btn-close" src="../image/icon-close.png" bindtap='bindHidePop'></image>
+</view>

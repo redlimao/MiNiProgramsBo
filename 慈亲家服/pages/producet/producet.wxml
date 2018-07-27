@@ -1,0 +1,118 @@
+<import src="../template/template.wxml"/>
+<!--****************导航**********-->
+  <view class="pro_nav" bindtap="tabFun">
+    <view class="pronav-list {{curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0">
+      良心食品
+    </view>
+    <view  class="pronav-list {{curHdIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1">
+    产后恢复
+    </view>
+     <view  class="pronav-list {{curHdIndex=='2'? 'actives' : ''}}" id="tab-hd03" data-id="2">
+     环保车居
+    </view>
+  </view>
+<!--*****************内容**********-->
+  <swiper current="{{curHdIndex}}" bindchange="innerName" style="height:1200rpx;padding-bottom:50rpx;" id="swiper-inner"> 
+    <!-- 良心产品 -->
+    <swiper-item>
+      <!--**轮播***-->
+      <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"indicator-dots="true" indicator-active-color="#fff" indicator-color="rgba(255,255,255,0.3)"> 
+        <swiper-item  bindtap="bannerName"  wx:for="{{banner1}}" wx:key="{{item.id}}" id="{{item.id}}">  
+          <image src="{{item.banner}}"/>   
+        </swiper-item>
+      </swiper>
+      <!--**分类***-->
+      <view class="choe-title" >
+        <view class="choe-list {{curFenIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap="tabFuns">
+          <text class="time">综合</text>
+        </view>
+        <view class="choe-list {{curFenIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1"  data-type="{{types}}" bindtap="tabFuns">
+          <text class="time">销量</text>
+        </view>
+        <view class="choe-list {{curFenIndex=='2'? 'actives' : ''}}" id="tab-hd03" data-id="2" bindtap="tabFuns">
+          <text class="time">新品</text>
+        </view>  
+        <view class="choe-list {{curFenIndex=='3'? 'actives' : ''}}" id="tab-hd04" data-id="3"  data-type="{{types}}" bindtap="tabFuns">
+          <text class="time">价格</text>
+        </view>  
+      </view>
+      <!--**内容***-->
+      <view class="shop-box" wx:if="{{empty1==0}}">
+        <block wx:for="{{list1}}" wx:key="{{item.id}}">
+          <template is="shopList" data="{{...item}}" />
+        </block> 
+      </view>
+      <view class="empty" wx:else>
+        <image src="../image/empty.png" class="empty-icon"></image>
+        <text class="empty-text">暂无内容</text>
+      </view>
+    </swiper-item>  
+     <!-- 生态家居 -->
+    <swiper-item>
+      <!--**轮播***-->
+      <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"indicator-dots="true" indicator-active-color="#fff" indicator-color="rgba(255,255,255,0.3)"> 
+        <swiper-item  bindtap="bannerName"  wx:for="{{banner2}}" wx:key="{{item.id}}" id="{{item.id}}">  
+          <image src="{{item.banner}}"/>   
+        </swiper-item>
+      </swiper>
+      <!--**分类***-->
+      <view class="choe-title" >
+        <view class="choe-list {{curFenIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap="tabFuns">
+          <text class="time">综合</text>
+        </view>
+        <view class="choe-list {{curFenIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1" data-type="{{types}}"bindtap="tabFuns">
+          <text class="time">销量</text>
+        </view>
+        <view class="choe-list {{curFenIndex=='2'? 'actives' : ''}}" id="tab-hd03" data-id="2" bindtap="tabFuns">
+          <text class="time">新品</text>
+        </view>  
+        <view class="choe-list {{curFenIndex=='3'? 'actives' : ''}}" id="tab-hd04" data-id="3" data-type="{{types}}"bindtap="tabFuns">
+          <text class="time">价格</text>
+        </view>  
+      </view>
+      <!--**内容***-->
+      <view class="shop-box" wx:if="{{empty2==0}}">
+        <block wx:for="{{list2}}" wx:key="{{item.id}}">
+          <template is="shopList" data="{{...item}}" />
+        </block> 
+      </view>
+      <view class="empty" wx:else>
+        <image src="../image/empty.png" class="empty-icon"></image>
+        <text class="empty-text">暂无内容</text>
+      </view>
+    </swiper-item>   
+     <!-- 环保车居 --> 
+    <swiper-item>
+      <!--**轮播***-->
+      <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"indicator-dots="true" indicator-active-color="#fff" indicator-color="rgba(255,255,255,0.3)"> 
+        <swiper-item  bindtap="bannerName" wx:for="{{banner3}}" wx:key="{{item.id}}" id="{{item.id}}">  
+          <image src="{{item.banner}}"/>     
+        </swiper-item>
+      </swiper>
+      <!--**分类***-->
+      <view class="choe-title" >
+        <view class="choe-list {{curFenIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap="tabFuns">
+          <text class="time">综合</text>
+        </view>
+        <view class="choe-list {{curFenIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1" data-type="{{types}}"bindtap="tabFuns">
+          <text class="time">销量</text>
+        </view>
+        <view class="choe-list {{curFenIndex=='2'? 'actives' : ''}}" id="tab-hd03" data-id="2" bindtap="tabFuns">
+          <text class="time">新品</text>
+        </view>  
+        <view class="choe-list {{curFenIndex=='3'? 'actives' : ''}}" id="tab-hd04" data-id="3" data-type="{{types}}"bindtap="tabFuns">
+          <text class="time">价格</text>
+        </view>  
+      </view>
+      <!--**内容***-->
+      <view class="shop-box" wx:if="{{empty3==0}}">
+        <block wx:for="{{list3}}" wx:key="{{item.id}}">
+          <template is="shopList" data="{{...item}}" />
+        </block> 
+      </view>
+      <view class="empty" wx:else>
+        <image src="../image/empty.png" class="empty-icon"></image>
+        <text class="empty-text">暂无内容</text>
+      </view>
+    </swiper-item>   
+  </swiper>

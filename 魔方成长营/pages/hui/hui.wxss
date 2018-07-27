@@ -1,0 +1,49 @@
+/* pages/hui/hui.wxss */
+page{
+  background:#f8f8f8;
+}
+.list{
+  width:730rpx;
+  height:355rpx;
+  position:relative;
+  margin-bottom:20rpx;
+}
+.list image{
+  width:100%;
+  height:100%;
+  position:absolute;
+  left:0;
+  top:0;
+}
+.list .money{
+  display:block;
+  width:430rpx;
+  position:absolute;
+  left:0;
+  top:0;
+  text-align:center;
+  line-height:355rpx;
+  font-size:110rpx;
+  color:#fff;
+  height:355rpx;
+}
+.list .tui{
+  display:block;
+  width:300rpx;
+  position:absolute;
+  right:0;
+  top:0;
+  text-align:center;
+  line-height:355rpx;
+  height:355rpx;
+  font-size:32rpx;
+  color:#fff;
+}
+.empty{
+  width:100%;
+  height:600rpx;
+  line-height:600rpx;
+  text-align:center;
+  font-size:48rpx;
+  color:#b2b2b2;
+}

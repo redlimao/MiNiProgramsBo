@@ -1,0 +1,30 @@
+<!--pages/quan/quan.wxml-->
+<view class="container" wx:if="{{empty==0}}">
+  <view class="juan-list" wx:for="{{list}}" wx:key="{{item.id}}">
+    <view class="juan-fr">
+      <image src="../../images/logo1.png" class="juan-logo"></image>
+    </view>
+    <view class="juan-fl">
+      <view class="juan-box">
+       <text class="juan-money">￥{{item.money}}</text>
+        <text class="juan-tiao">[满{{item.man}}元可用]</text>
+      </view>
+      <view class="juan-time">
+        {{item.start_at}} -- {{item.end_at}}
+      </view>
+    </view>
+    <view class="choose" wx:if="{{item.masks==1}}">
+      <icon type="success" color="#f84033"  wx:if="{{item.select}}" bindtap="selectList" data-index="{{index}}"/> 
+      <icon type="circle" wx:else bindtap="selectList" data-index="{{index}}"/> 
+    </view>
+    <view class="mask" wx:if="{{item.mask==1}}"></view>
+  </view>
+</view>
+<view class="empty" wx:else>
+  <image src="../../images/empty.png" class="empty-icon"></image>
+  <text class="empty-text">暂无内容</text>
+</view>
+
+<view class="ok" wx:if="{{ok==0}}" bindtap='okName'>
+  <view class="que">确定</view>
+</view>

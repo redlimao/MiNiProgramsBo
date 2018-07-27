@@ -1,0 +1,59 @@
+<!-- 收货地址 -->
+ <view class="wrap-address" bindtap='bindAddress' wx:if="{{address_info != 1}}"> 
+    <image class="icon-address" src='../../../images/icon-address.png'></image>
+    <view class="w-infos">
+        <view class="w-infos-tit">
+            <view class="w-infos-txt">收货人：{{name}}</view>
+            <view class="w-infos-txt">{{phone}}</view>
+        </view>
+        <view class="w-infos-txts">{{address}}</view>
+    </view>
+    <image class="icon-in" src='../../../images/icon_in.png'></image>
+</view> 
+<view class="wrap-address" wx:else>
+    <view class="btn-address" bindtap='bindAddress'>请选择收货地址</view>
+</view>
+<!-- 分割线 -->
+<image src='../../../images/bottom-line.png' class="line"></image>
+<!-- 商品详情 -->
+<view class="con">
+    <!-- <view class="c-tit">{{store_name}}</view> -->
+    <view class="c-box">
+        <image class="c-img" src='{{shop_img}}'></image>
+        <view class="c-info">
+            <view class="c-title">{{shop_name}}</view>
+            <view class="c-tag">已选标签:{{tag_name}}</view>
+            <view class="c-infos">
+                <view class="c-infos-txt1">{{shop_money}}</view>
+                <view class="c-infos-txt2">x{{numbers}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 积分 优惠券 -->
+<view class="list">
+    <view class="item" wx:if="{{flag_coupons == 2}}" bindtap='bindChooseCoupons'>
+        <view class="item-txt">优惠券</view>
+        <view class="item-info" wx:if="{{coupons_num == 0}}">未选择优惠券</view>
+        <view class="item-info" wx:if="{{coupons_num == 1}}">满{{man_money}}减{{cut_money}}</view>
+        <image class="icon-in" src='../../../images/icon_in.png'></image>
+    </view>
+    <view class="item">
+        <view class="item-txt">积分</view>
+        <view class="item-info">可使用{{use_integra}}积分抵用{{integra_money}}元</view>
+        <view class="i-switch">
+            <switch bindchange="bindIntegral" checked='{{flag_check ? true : false}}' />
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-txt">我的积分：{{my_integra}}</view>
+    </view>
+    <view class="item">
+        <view class="item-txt">我的余额：{{account}}</view>
+    </view>
+</view>
+<!-- 总金额  -->
+<view class="foot">
+    <view class="f-txt">合计金额：¥{{total_money}}</view>
+    <view class="btn-pay" bindtap='bindPay'>立即支付</view>
+</view>

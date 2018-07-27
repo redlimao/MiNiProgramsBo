@@ -1,0 +1,25 @@
+<view class="container">
+ <form bindsubmit="formSubmit">
+ <!--*********时间***********-->
+  <view class="time-box">
+    <view class="time-list">
+      <text class="date">我的状态</text>
+       <picker class="time-picker" value="{{arr_index}}" range="{{arr}}" bindchange="arrChange">
+          {{arr[arr_index]}}
+        </picker> 
+    </view>
+    <view class="time-list">
+      <text class="date">起始日期</text>
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange" class="time-picker">{{date}}</picker>    
+    </view>
+    <view class="time-list">
+      <text class="date">截止日期</text>
+      <picker mode="date" value="{{dates}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChanges" class="time-picker">{{dates}}</picker>    
+    </view>
+  </view>  
+  <button formType="submit" plain="true">
+    提交
+  </button>
+  </form>
+</view>
+ 

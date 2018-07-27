@@ -1,0 +1,5 @@
+<!--pages/miss/miss.wxml-->
+<form bindsubmit="formSubmit">
+    <textarea placeholder="如果你在软件使用和体验当中发现任何问题或者建议,请在此处填写." placeholder-style="color:#b2b2b2;" name="textarea"  maxlength="500"/>
+    <button formType="submit">提交</button>
+</form>

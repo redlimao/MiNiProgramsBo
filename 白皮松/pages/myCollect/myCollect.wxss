@@ -1,0 +1,19 @@
+/**myCollect.wxss**/
+/*我的收藏列表 */
+.seckill-lists{background-color: #fff;}
+	.seckill-list{display: flex;padding: 14rpx 24rpx;border-top:1rpx solid rgb(238,238,238);}
+		.seckill-list-img{width: 210rpx;height: 210rpx;border-radius: 6rpx;}
+		.seckill-list-context{flex: 1;margin-left: 26rpx;display: flex;flex-direction: column;align-content: space-between;}
+			.seckill-list-tit{font-size: 34rpx;color: rgb(51,51,51);line-height: 45rpx;height: 90rpx;overflow: hidden;}
+      .seckill-list-pro{height: 45rpx;display: flex;align-items: center;}
+        .seckill-list-time{color: #9a9a9a;font-size: 24rpx;}
+        .seckill-list-time1{color: #9a9a9a;font-size: 22rpx;padding-left: 15rpx;}
+        .seckill-list-action{width: 65rpx;height: 32rpx;border-radius: 6rpx;color: #ffffff;font-size: 22rpx;text-align: center;background-color: #bdbdbd;line-height: 32rpx;margin-left: 15rpx;}
+        .seckill-list-action.hide{display: none;}
+			.seckill-result{height: 56rpx;display: flex;align-items: flex-end;flex: 1;}
+				.seckill-money{font-size: 40rpx;color: rgb(244,68,68);line-height: 1;flex: 1;}
+      	.detail-icons{display: flex;align-items: center;height: 56rpx;padding: 0 24rpx;}
+			    .detail-icon1{width: 6rpx;height: 6rpx;border-radius: 50%;background: #626262;margin-left: 6rpx;}
+
+				.btn-seckill{width: 140rpx;height: 56rpx;line-height: 56rpx;text-align: center;color: #ffffff;font-size: 24rpx;border-radius: 6rpx;background-color: #f44444;}
+

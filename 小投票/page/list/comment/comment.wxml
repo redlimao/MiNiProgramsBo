@@ -1,0 +1,21 @@
+<!--pages/comment/comment.wxml-->
+<view class="container">
+    <view class="list" wx:if="{{empty == 1}}">
+        <view class="item" wx:for="{{list}}" wx:key="{{index}}">
+            <view class="info-t">
+                <image class="info-img" src='{{item.img}}'></image>
+                <view class="info-name">{{item.name}}</view>
+                <view class="info-time">{{item.time}}</view>
+            </view>
+            <view class="info-txt">{{item.texts}}</view>
+        </view>
+    </view>
+    <view class="empty" wx:else>暂无评论</view>
+</view>
+<!-- 输入框 -->
+<view class="i-wrap">
+    <view class="i-box">
+        <input type="text" class="i-input" placeholder='来说说你的想法' placeholder-class='c-l' bindinput='bindContent'></input>
+    </view>
+    <view class="btn" bindtap='bindsubmit'>发送</view>
+</view>

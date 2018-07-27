@@ -1,0 +1,184 @@
+.jie-box{
+  width:100%;
+  overflow:hidden;
+}
+.list-box{
+  overflow:hidden;
+  position:relative;
+  padding-top:280rpx;
+  width:690rpx;
+  margin:0 auto;
+  margin-top:20rpx;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+.jie-list{
+  width:690rpx;
+  height:280rpx;
+  background:#fff;
+  overflow:hidden;
+  position:absolute;
+  z-index:2;
+  top:0;
+}
+.jie-list .car-info{
+  height:160rpx;
+  overflow:hidden;
+  padding:25rpx 20rpx;
+  border-bottom:1rpx solid #eee;
+}
+.car-info .car-fl{
+  width:240rpx;
+  height:160rpx;
+  float:left;
+  margin-right:20rpx;
+}
+.car-info .car-fl .car-img{
+  width:100%;
+  height:100%;
+}
+.car-info .car-fr{
+  width:250rpx;
+  height:120rpx;
+  padding:20rpx 0;
+  float:left;
+  margin-left:20rpx;
+  position:relative;
+}
+.car-info .car-fr .car-name{
+  font-size:30rpx;
+  color:rgb(67,67,67);
+  display:block;
+  margin-bottom:20rpx;
+}
+.car-info .car-fr .car-money{
+  font-size:26rpx;
+  color:rgb(254,1,55);
+  display:block;
+}
+.jie-list .jie-time{
+  height:30rpx;
+  padding:20rpx;
+  overflow:hidden;
+  display:flex;
+  justify-content:space-between;
+  position: relative;
+}
+.jie-timess .look-info{
+  font-size:26rpx;
+  color:#333;
+}
+.jie-list .jie-time .xiala{
+  width:24rpx;
+  height:24rpx;
+  transition: all 0.5s linear;
+  margin-left:15rpx;
+}
+.xiala.icon_actives{
+  transform:rotate(180deg);
+}
+.jie-time .jie-text{
+  font-size:26rpx;
+  color:rgb(177,174,171);
+  text-align:right;
+}
+.jie-time .jie-times{
+  font-size:26rpx;
+  color:rgb(67,67,67);
+  text-align:right;
+}
+.jie-list .del{
+  width:150rpx;
+  height:80rpx;
+  float:right;
+}
+.jie-list .del .del-icon{
+  width:44rpx;
+  height:50rpx;
+  display:block;
+  margin:0 auto;
+  margin-top:18rpx;
+}
+.list-box .fei-box{
+  width:100%;
+  background:#fff;
+  height:0;
+  transform: translateY(-100rpx);
+  transition: all 0.5s linear;
+  overflow:hidden;
+  position:relative;
+}
+.list-box .fei-box.box_actives{
+  transform: translateY(0rpx);
+  height:auto;
+}
+.list-box .fei-box .xiaofei{
+  width:690rpx;
+  line-height:90rpx;
+  font-size:28rpx;
+  margin:0 auto;
+  border-bottom:1rpx solid #eee;
+}
+.list-box .fei-info{
+  height:110rpx;
+  overflow:hidden;
+  background:#fff;
+  padding:0 20rpx;
+  border-bottom:1rpx solid #eee;
+}
+.list-box  .fei-bg{
+ background:rgb(248,248,248);
+}
+.list-box .fei-info .ci-box{
+  width:50rpx;
+  height:50rpx;
+  border:1rpx solid #816540;
+  border-radius:50%;
+  position:relative;
+  margin-top:30rpx;
+  box-sizing: border-box;
+  float:left;
+  margin-right:20rpx;
+}
+.list-box .fei-info .ci-box .ci{
+  display:block;
+  width:40rpx;
+  height:40rpx;
+  border-radius:50%;
+  background:#816540;
+  color:#fff;
+  text-align: center;
+  line-height:40rpx;
+  font-size:26rpx;
+  position: absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+.list-box .fei-info .ci-boxs{
+  border:1rpx solid #A0A0A0;
+}
+.list-box .fei-info .ci-boxs .cis{
+  background:#A0A0A0;
+}
+.list-box .fei-info .riqi{
+  display:block;
+  line-height:110rpx;
+  font-size:30rpx;
+  color:rgb(160,160,160);
+  float:left;
+}
+.list-box .fei-info .ripis{
+  color:rgb(67,67,67);
+}
+.list-box .fei-info .fei-money{
+  display:block;
+  line-height:110rpx;
+  font-size:30rpx;
+  color:rgb(160,160,160);
+  float:right;
+}
+.list-box .fei-info .fei-moneys{
+  color:rgb(254,1,55);
+}

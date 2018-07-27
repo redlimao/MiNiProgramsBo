@@ -1,0 +1,228 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<!--**********导航**********-->
+<!-- ****通过types来添加class区分样式**** -->
+<template name="navs">
+  <navigator class="{{types == 1 ? 'order-list' : 'nav-list'}}" url="{{url}}" open-type='navigate' hover-class="no" data-id='{{id}}' id="{{id}}">
+    <image src="{{nav_icon}}" class="nav-icon"></image>
+    <text class="nav-text">{{nav_name}}</text>
+  </navigator>
+</template>
+<!--**********首页内容列表(图文+预约)****************-->
+<template name="orderList">
+  <view class="inner-list" bindtap='detailsName' id="{{id}}">
+    <image class="inner-img" src="{{order_img}}"></image>
+    <view class="inner-md">
+      <text class="inner-text">{{order_info}}</text>
+      <view class="inner-status">
+        <block wx:for="{{xing}}" wx:key="{{index}}">
+          <image src="../image/start.png" class="xing"></image>
+        </block>
+        <block wx:for="{{xings}}" wx:key="{{index}}">
+          <image src="../image/start1.png" class="xing"></image>
+        </block>
+      </view>
+    </view>
+    <view class="inner-fr">
+      <text class="order" wx:if="{{status==1}}">预约</text>
+      <text class="orders" wx:if="{{status==2}}">工作中</text>
+      <text class="orderss" wx:if="{{status==3}}">空档期</text>
+      <text class="order" wx:if="{{status==5}}" catchtap='tiName'>提醒</text>
+       <text class="order" wx:if="{{status==6}}" catchtap='pingjiaName' id="{{homes_yue_id}}">评价</text>
+      <text class="order-money">￥{{order_money}}</text>
+    </view>
+  </view> 
+</template>
+<!--*******************顾客评价*********************-->
+<template name="customerPing">
+  <view class="ping-list">
+    <view class="list-box">
+        <image class="customer-photo" src="{{customer_photo}}"></image>
+        <text class="list-name">{{nickname}}</text>
+        <text class="list-time">{{create_at}}</text>
+    </view>
+    <text class="customer-text">{{customer_text}}</text>
+  </view>
+</template>
+<!--*******************雇主列表*********************-->
+<template name="guList">
+  <view class="gu_list {{pan ? 'actives' : ''}}" bindtap='guName' data-id="{{index}}" id="{{id}}">
+    <view class="gu_fl">
+      <text class="gu_xu">{{count}}</text>
+      <view class="gu_add">服务地址：<text>{{address}}</text> </view>
+    </view>
+    <view class="gu_fr">
+      <text class="gu_tel">联系他</text>
+      <text class="gu_time">{{time}}</text>
+    </view>
+  </view>
+</template>
+<!--*******************商城列表*********************-->
+<template name="shopList">
+  <!-- <view class="shop-list" bindtap='shopName' id="{{id}}">
+    <image src="{{banner}}" class="shop-img"></image>
+    <text class="shop-info">{{name}}</text>
+    <view class="shop-buy">
+      <text class="shop-money">￥{{moneys}}</text>
+      <text class="buys">购买</text>
+    </view>
+  </view> -->
+
+              <view class="list-box" bindtap='shopName' id="{{id}}">
+                  <view class="img-box">
+                      <text class="img-icon">{{ji_bie}}级</text>
+                      <image class="list-img" src="{{banner}}"></image>
+                  </view>
+                  <view class="list-content">
+                      <text class="list-tit">{{name}}</text>
+                      <view class="con1">
+                          <view class="icon">{{tags}}</view>
+                      </view>
+                      <view class="list-txt2">
+                          <text class="txt-you">¥{{moneys}}</text>
+                          <view class="btn-get">查看详情</view>
+                      </view>
+                  </view>
+              </view>
+        
+</template>
+<!--*******************购物车列表*******************-->
+<template name="carList">
+  <view class="car-list" bindtap='shopName'>
+    <view class="car-choose">
+      <icon type="success" color="#fa7070"  bindtap="selectList" data-index="{{index}}"/>
+      <!-- <icon type="circle"  bindtap="selectList" data-index="{{index}}"/> -->
+    </view>
+    <view class="car-info">
+      <view class="car-fl">
+        <image src="../image/personal.png" class="car-img"></image>
+      </view>
+      <view class="car-fr">
+        <text class="car-name">商品名称</text>
+        <text class="car-money">￥300</text>
+      </view>
+    </view>
+    <view class="car-del">
+      <image src="../image/del.png" class="del-icon"></image>
+      <text class="del-text">删除</text>
+    </view>
+  </view>
+</template>
+<!--*******************购物车列表1******************-->
+<template name="carList1">
+  <view class="cart1-list">
+      <view class="cart1-top">
+        <view class="cart1-name">
+          <text class="cart1-names">{{store_name}}</text>
+          <image src="../../images/more.png" class="cart1-icon"></image>
+        </view>
+      </view>
+      <view class="cart1-middle">
+        <view class="cart1-choose">
+          <icon type="success" color="#41b9ad"  wx:if="{{selected}}" bindtap="selectList" data-index="{{id}}"/>
+          <icon type="circle" wx:else bindtap="selectList" data-index="{{id}}"/> 
+        </view>
+        <image src="{{shop_img}}" class="cart1-img"></image>
+        <view class="cart1-info cart1-infos">
+          <text class="product-name">{{shop_name}}</text>
+          <text class="product-money">￥{{shop_money}}</text>
+        </view>
+        <view class="cart1-num">x{{shop_num }}</view>
+      </view>
+      <view class="cart1-bottom">
+         <view class="delete" bindtap='catchName' id="{{id}}">
+          <image src="../../images/del.png" class="del-icon"></image>
+          <text class="cart1-del">删除商品</text>
+        </view> 
+      </view>
+  </view>
+</template>
+<!--******************订单列表**********************-->
+<template name="ordersList">
+  <view class="car-list" bindtap='shopName' id="{{id}}">
+    <view class="car-info">
+      <view class="car-fl">
+        <image src="{{banner}}" class="car-img"></image>
+      </view>
+      <view class="car-fr">
+        <text class="car-name">{{name}}</text>
+        <text class="car-money">￥{{moneys}}</text>
+        <text class="order-status shop-car" wx:if="{{gou==1}}">购买</text>
+        <text class="order-status shop-car" wx:if="{{gou==2}}">确认收货</text>
+        <text class="order-status miss"     wx:if="{{gou==3}}">支付失败</text>
+        <text class="order-status miss"  wx:if="{{od==1}}">待付款</text>
+        <text class="order-status success"  wx:if="{{od==2}}">待发货</text>
+        <text class="order-status shop-car"  wx:if="{{od==3}}" catchtap='queName' id="{{orders_id}}">确认收货</text>
+        <text class="order-status success"  wx:if="{{od==4}}" catchtap='pingName' id="{{orders_id}}">待评价</text>
+        <text class="order-status success"  wx:if="{{od==5}}">已完成</text>   
+      </view>
+    </view>
+  </view>
+</template>
+<!--******************订单列表1*********************-->
+<template name="ordersList1">
+   <view class="cart1-list" bindtap='shopName' id="{{id}}">
+
+       <view class="cart1-middle">
+        <image src="{{banner}}" class="cart1-img"></image>
+        <view class="cart1-info">
+          <text class="product-name">{{name}}</text>
+          <text class="product-money">￥{{moneys}}</text>
+          <view class="box-cart">
+            <view class="cart1-num">x{{nums}}</view>
+            <view class="but-delete" wx:if="{{od==1 || od==5}}" catchtap='delName' id="{{orders_id}}" data-id="{{od}}">删除商品</view>
+            <view class="status-box">
+              <text class="cart1-status"  wx:if="{{od==1}}" catchtap='shopName' id="{{id}}" data-id='{{orders_id}}'>去付款</text>
+              <text class="cart1-status" wx:if="{{od==2}}"  catchtap='tiName'>提醒发货</text>
+              <text class="cart1-status" wx:if="{{od==3}}" catchtap='queName' id="{{orders_id}}">确认收货</text>
+              <text class="cart1-status" wx:if="{{od==4}}" catchtap='pingName' id="{{orders_id}}">去评价</text>
+              <text class="cart1-status" wx:if="{{od==5}}">已完成</text>  
+            </view>
+          </view>
+          
+        </view>
+        
+      </view>
+      <!-- <view class="cart1-bottom">
+         <view class="danHao" wx:if="{{od==3 || od==4}}">
+          <text class="kuai-name">{{names}}</text>
+          <text class="kuai-hao">复制单号：{{numbers}}</text>
+        </view>  
+        
+      </view>
+      <view class="cart1-top">
+        <view class="cart1-name">
+          <text class="cart1-names">{{store_name}}</text>
+          <image src="../../images/more.png" class="cart1-icon"></image>
+        </view>
+
+      </view> -->
+   </view>   
+</template>
+<!--******************公司简介页面*******************-->
+<template name="company">
+  <view class="company_img">
+    <image src="{{banner}}" class="company_banner"></image>
+  </view>
+  <view class="company_info">
+    <view class="company_title">
+      <image src="../image/info.png" class="company_icon"></image>
+      <text class="company_titles">公司简介</text>
+    </view>
+    <view class="company_cont">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+  <view class="company_adds">
+    <view class="company_title">
+      <image src="../image/adds.png" class="company_icon"></image>
+      <text class="company_titles">公司地址</text>
+    </view>
+    <view class="company_cont" bindtap="mapName">
+      <image src="{{map_img}}" class="company_map"></image>
+      <text class="company_add-info">{{address}}</text>
+    </view>
+  </view>
+  <view class="company_tels" bindtap='telName'>
+    <image src="{{phone_img}}" class="company_phone"></image>
+  </view>
+</template>

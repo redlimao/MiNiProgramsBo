@@ -1,0 +1,34 @@
+<view class="menu">
+    <view class="m-item {{current == 1 ? 'on' : ''}}" data-index='1' bindtap='bindTap' >未到店</view>
+    <view class="m-item {{current == 2 ? 'on' : ''}}" data-index='2' bindtap='bindTap' >已到店</view>
+</view>
+<!-- 未到店 -->
+<view class="c-list" wx:if="{{current == 1}}">
+    <view class="con" wx:if="{{empty == 1}}">
+        <view class="c-item" wx:for="{{list_one}}" wx:key="{{index}}" bindtap='bindDetail' id="{{item.id}}" data-types='{{item.type}}'>
+            <view class="c-tit">{{item.project}}</view>
+            <view class="c-tit">到店人数<text class="pl">{{item.num}}/人</text></view>
+            <view class="c-txt">预约时间<text class="pl">{{item.start}}</text></view>
+            <view class="btns">
+                <view class="btn-in" catchtap='bindTrue' id="{{item.id}}">确认到店</view>
+            </view>
+        </view>   
+    </view>
+    <view class="empty" wx:else>暂无内容</view>
+</view>
+<!-- 已到店 -->
+<view class="c-list" wx:if="{{current == 2}}">
+    <view class="con" wx:if="{{empty == 1}}">
+        <view class="c-item" wx:for="{{list_two}}" wx:key="{{index}}" bindtap='bindDetail' id="{{item.id}}" data-types='{{item.type}}' data-status='{{item.status}}'>
+            <view class="c-tit">{{item.project}}</view>
+            <view class="c-tit">到店人数<text class="pl">{{item.num}}/人</text></view>
+            <view class="c-txt">预约时间<text class="pl">{{item.start}}</text></view>
+            <view class="btns">
+                <view class="btn-in" catchtap='bindDelete' data-index='{{index}}' wx:if="{{item.status == 3 || item.type == 1}}" id="{{item.id}}">删除</view>
+                <view class="btn-in" catchtap='bindEvaluate' id="{{item.id}}" wx:if="{{item.status != 3 && item.type == 2}}">评价</view>
+                <view class="btn-in" wx:if="{{item.status == 3 && item.type == 2}}">已评价</view>
+            </view>
+        </view>
+    </view>
+    <view class="empty" wx:else>暂无内容</view>
+</view>

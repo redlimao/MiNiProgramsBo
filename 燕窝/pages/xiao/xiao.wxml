@@ -1,0 +1,47 @@
+<view class="container">
+  <!-- *********个人信息********** -->
+  <view class="main-box">
+    <view class="box"></view>
+    <view class="main">
+      <!-- 个人 -->
+      <view class="main-message">
+        <view class="main-photo">
+          <image src="{{logo}}" class="main-img"></image>
+        </view>
+        <view class="main-name">{{name}}</view>
+         <view class="main-main" bindtap='fenName'>
+          <image src="../../images/rule.png" class="card-icon"></image>
+          <text class="main-choose">分销规则</text>
+        </view> 
+      </view>
+      <!-- 需求 -->
+      <view class="main-xu">
+        年营业额：￥{{all_money}}
+      </view>
+    </view>
+  </view>
+  <!-- *********积分********** -->
+  <view class="points">
+    <view class="points-nav">
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2058" bindchange="bindDateChange" fields="year">{{date}}</picker>
+      <image src="../image/xiala.png" class="picker-icon"></image>
+    </view>
+    <view class="points-inner">
+      <!--*******内容********-->
+      <view class="points-shou">
+          <view class="box" wx:if="{{empty==0}}">
+            <view class="shou-list" wx:for="{{list}}" wx:key="{{item.id}}">
+              <view class="list-fl">
+                {{item.yue}}
+              </view>
+              <view class="list-fr">{{item.money}}</view>
+            </view>
+          </view>
+          <view class="empty" wx:else>
+            <image src="../image/empty.png" class="empty-icon"></image>
+            <text class="empty-text">暂无内容</text>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

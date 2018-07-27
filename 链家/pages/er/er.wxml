@@ -1,0 +1,11 @@
+<!--er.wxml-->
+<view class="container c-bg">
+    <view class="wrap">
+        <image wx:if="{{vip == 2}}" class="vip-bg" src="../../images/bg_icon.png"></image>
+        <image class="t-wrap" src="../../images/bg_t.png"></image>
+        <image class="er-img" src='{{img}}'></image>
+        <image class="b-wrap" src="../../images/bg_b.png"></image>
+    </view>
+    <view class="txt">请您向商家出示此二维码</view>
+    <view class="er-true" bindtap='bindIndex'>返回</view>
+</view>

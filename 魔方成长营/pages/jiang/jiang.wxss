@@ -1,0 +1,77 @@
+/* pages/jiang/jiang.wxss */
+page{
+  background:#f8f8f8;
+}
+.box{
+  width:700rpx;
+  height:680rpx;
+  border:10rpx solid #ff9a0e;
+  overflow:hidden;
+  margin:0 auto;
+  margin-top:30rpx;
+  border-radius:10rpx;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  padding-top:20rpx;
+}
+.box .list{
+  width:200rpx;
+  height:200rpx;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background:#fff;
+  border-radius:10rpx;
+}
+.box .list image{
+  display:block;
+  width:120rpx;
+  height:120rpx;
+  margin:0 auto;
+  margin-top:10rpx;
+  border-radius:50%;
+}
+.box .list text{
+  display:block;
+  width:100%;
+  text-align:center;
+  line-height:60rpx;
+  height:60rpx;
+  font-size:28rpx;
+  color:#f00;
+}
+.begin{
+  width:690rpx;
+  height:100rpx;
+  text-align:center;
+  line-height:100rpx;
+  font-size:36rpx;
+  color:#fff;
+  border-radius:10rpx;
+  background: #ff9a0e;
+  margin:0 auto;
+  margin-top:200rpx;
+}
+.begins{
+  width:690rpx;
+  height:100rpx;
+  text-align:center;
+  line-height:100rpx;
+  font-size:36rpx;
+  color:#333;
+  border-radius:10rpx;
+  background: #b2b2b2;
+  margin:0 auto;
+  margin-top:200rpx;
+}
+.box .active{
+  background:#ff9a0e;
+}
+.box .active text{
+  color:#fff;
+}
+.tishi{
+  width:700rpx;
+  margin:0 auto;
+  font-size:24rpx;
+  color:#b2b2b2;
+}

@@ -1,0 +1,56 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+  <view class="company_img">
+    <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"> 
+      <swiper-item  bindtap="bannerName"  wx:for="{{banner}}" wx:key="{{index}}">  
+        <image src="{{item}}"  class="company_banner"/>   
+      </swiper-item>
+    </swiper> 
+  </view>
+
+  <view class="company_info">
+    <view class="company_title companys" bindtap="tabFun">
+      <text class="company_titles {{tabArr.curHdIndex=='1'? 'active' : ''}}" id="1" data-id="1">中贸店</text>
+      <text class="company_titles {{tabArr.curHdIndex=='2'? 'active' : ''}}" id="2" data-id="2" bindtap='teamName'>曲江店</text>  
+    </view>
+    <view class="company-inner">
+      <view class="company_cont company_conts " >
+        <view class="gong-jie">
+         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        </view>
+        <view class="company_adds">
+          <view class="company_title">
+            <image src="../../images/add.png" class="company_icon"></image>
+            <text class="company_titles">公司地址</text>
+          </view>
+          <view class="company_cont" bindtap="mapName">
+            <image src="{{map_img}}" class="company_map"></image>
+            <text class="company_add-info">{{address}}</text>
+          </view>
+        </view>
+        <view class="company_tels" bindtap='telName'>
+          <image src="../../images/phone.png" class="company_phone"></image>
+        </view>
+      </view>
+      <!-- *团队介绍* -->
+      <!-- <view class="company_people right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+        <view class="people-list" wx:for="{{team}}" wx:key="{{item.id}}" id="{{item.id}}">
+          <view class="people-box" bindtap='yuanName' data-id="{{item.img}}">
+            <image src="{{item.img}}" class="people-img"></image>
+          </view>
+          <view class="people-cont">
+            <text class="people-name">{{item.name}}</text>
+            <text class="people-info">
+              {{item.intro}}
+            </text>
+          </view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+
+</view>
+
+<view class="mask" wx:if="{{flag==1}}" bindtap='huiName'>
+  <image src="{{src}}" mode='widthFix' class="yuan"></image>
+</view>

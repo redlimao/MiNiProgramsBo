@@ -1,0 +1,47 @@
+<!--myorder.wxml-->
+<view class="con">
+    <!-- 切换菜单 自定义套餐 和 固定套餐-->
+    <view class="menu">
+        <view class="m-item {{current == 5 ? 'on' : ''}}" data-index='5' bindtap='bindTap' >全部订单</view>
+        <view class="m-item {{current == 1 ? 'on' : ''}}" data-index='1' bindtap='bindTap' >待付款</view>
+        <view class="m-item {{current == 2 ? 'on' : ''}}" data-index='2' bindtap='bindTap' >待发货</view>
+        <view class="m-item {{current == 3 ? 'on' : ''}}" data-index='3' bindtap='bindTap' >待收货</view>
+        <view class="m-item {{current == 4 ? 'on' : ''}}" data-index='4' bindtap='bindTap' >待评价</view>
+    </view>
+</view>
+<view class="wrap" wx:if="{{empty == 1}}">
+
+    <view class="list" wx:for="{{list}}" wx:key="{{index}}" data-types='{{item.status}}'  bindtap='bindDetail' data-id='{{item.orders_id}}'>
+        <view class="b-infos">
+            <image src='{{item.store_img}}' class='b-img'></image>
+            <view class="c-tit">{{item.store_name}}</view>
+            <view class="tip" wx:if="{{current == 5 && item.status == 1}}">待付款</view>
+            <view class="tip" wx:if="{{current == 5 && item.status == 2}}">待发货</view>
+            <view class="tip" wx:if="{{current == 5 && item.status == 3}}">待收货</view>
+            <view class="tip" wx:if="{{current == 5 && item.status == 4}}">待评价</view>
+            <view class="tip" wx:if="{{current == 5 && item.status == 5}}">交易成功</view>
+        </view>
+        <view class="c-box">
+            <image class="c-img" src='{{item.banner}}'></image>
+            <view class="c-info">
+                <view class="c-title">{{item.name}}</view>
+                <view class="c-tag">已选标签:{{item.xing}}</view>
+                <view class="c-infos">
+                    <view class="c-infos-txt1">{{item.dan_moneys}}</view>
+                    <view class="c-infos-txt2">x{{item.nums}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="b-txts">共{{item.nums}}件商品  合计：¥{{item.total}}元</view>
+        <view class="b-infos end">
+            <view class="b-btns" catchtap='bindDelete' data-index='{{index}}' wx:if="{{item.status == 5 || item.status == 1}}" data-id='{{item.orders_id}}'>删除订单</view>
+            <view class="b-btns" wx:if="{{item.status == 5}}">已评价</view>
+            <view class="b-btns" data-id='{{item.orders_id}}' catchtap='bindDetail' wx:if="{{item.status == 1}}">立即支付</view>
+            <view class="b-btns" catchtap='bindSend' wx:if="{{item.status == 2}}">提醒发货</view>
+            <view class="b-btns" data-id='{{item.orders_id}}' catchtap='bindTake' wx:if="{{item.status == 3}}">确认收货</view>
+            <view class="b-btns" data-id='{{item.orders_id}}' catchtap='bindEvaluate' wx:if="{{item.status == 4}}">立即评价</view>
+        </view>
+    </view>
+</view>
+<view class="empty" wx:else>没有相关订单</view>
+

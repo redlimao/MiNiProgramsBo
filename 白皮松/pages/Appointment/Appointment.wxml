@@ -1,0 +1,32 @@
+<!--myCollect.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<import src="../template/template.wxml"/>
+<view class="container">
+ <form bindsubmit="formSubmit">
+  <view class="form-box">
+    <text class="txt-a">姓名</text>
+    <input name="name" class="input-box" placeholder="请输入您的姓名" value="{{name}}"></input>
+    <text class="txt-a">电话</text>
+    <input name="phone" class="input-box" placeholder="请输入您的电话" value="{{phone}}"></input>
+    <text class="txt-a">备注</text>
+    <textarea name="infos" class="input-box1" value="{{infos}}"></textarea>
+  </view>
+  <view class="select">
+    <icon type='success' color="#24b24b" size='20' bindtap="bindSelected" wx:if="{{selected}}" ></icon>
+    <icon type='circle' size='20' bindtap="bindSelected" wx:else></icon>
+    <text class="select-txt">定金缴纳服务条款</text>
+    <text class="read" bindtap='showDetail'>阅读服务条款</text>
+  </view>
+  <button formType="submit" class="btn-buy">支付定金:¥{{money}}</button>
+</form>
+</view>
+
+ <view class="container-b {{flag ? 'active' : ''}}" bindtap='hideDetail'>
+</view>
+<view class="container-bg {{flag ? 'active' : ''}}">
+  <text class="title">定金缴纳服务条款</text>
+  <view class="content">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+  <view class="btn" bindtap='hideDetail'>确认</view>
+</view>

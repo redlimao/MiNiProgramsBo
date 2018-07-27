@@ -1,0 +1,59 @@
+<!--pages/fabumessage/fabumessage.wxml-->
+<form class="form-box" bindsubmit="formSubmit">
+    <text class="txt-aa">仅可上传树木信息，不可上传违规、违法、色情信息</text>
+    <view class="box-img2" bindtap='bindChossimg1'>
+        <view class="img-box m-auto">
+            <image src="{{img1}}" class="upload-img1"></image>
+        </view>
+        <text class="upload-txt">展示图</text> 
+    </view>
+    <view class="box-img" wx:if="{{hui == 2}}">
+        <view class="box-img1" bindtap='bindChossimg2'>
+            <view class="img-box">
+                <image src="{{img2}}" class="upload-img1"></image>
+            </view>
+            <text class="upload-txt">详情图</text> 
+        </view>
+        <view class="box-img1" bindtap='bindChossimg3'>
+            <view class="img-box">
+                <image src="{{img3}}" class="upload-img1"></image>
+            </view>
+            <text class="upload-txt">详情图</text> 
+        </view>
+    </view>
+     <view class="model mt-20 bb-1">
+        <text class="m-txt">标题</text>
+        <input name="title" type='text' class="m-box" placeholder="请输入标题" value="{{title}}"></input>
+    </view> 
+    <view class="model">
+        <text class="m-txt">树木级别</text>
+        <picker class="m-box" value="{{index}}" range="{{grade}}" bindchange="bindPickerChange">{{grade[index]}}</picker>
+    </view>
+    <view class="model bt-1">
+        <text class="m-txt">树高</text>
+        <picker class="m-box" value="{{h_index}}" range="{{high}}" bindchange="bindHighChange">{{high[h_index]}}</picker>
+    </view>
+     <view class="model-b bt-1">
+        <text class="m-txt">标签</text>
+        <view class="list">
+            <view wx:for="{{tags}}" wx:key="{{index}}" data-id='{{index}}' data-name='{{item.name}}' class="item {{item.pan == 1 ? '' : 'on'}}" bindtap='bindTag'>{{item.name}}</view>
+        </view>
+    </view> 
+    <view class="model bt-1">
+        <text class="m-txt">联系电话</text>
+        <input name="phone" type='number' class="m-box" placeholder="请输入电话" value="{{phone}}"></input>
+    </view>
+     <view class="model bt-1">
+        <text class="m-txt">价格</text>
+        <input name="money" type='number' class="m-box" placeholder="请输入价格" value="{{money}}"></input>
+    </view>
+    <view class="model bt-1">
+        <text class="m-txt">存库</text>
+        <input name="nums" type='number' class="m-box" placeholder="请输入存库数量" value="{{nums}}"></input>
+    </view>
+    <view class="model-a bt-1">
+        <text class="m-txt">简介</text>
+        <textarea name="area"  type="text" class="area-b" placeholder="请输入简介" value="{{intro}}"></textarea>
+    </view>     
+    <button formType="submit">提交</button>
+</form>

@@ -1,0 +1,77 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+  <!--****************导航**********-->
+  <view class="pro_nav" bindtap="tabFun">
+    <view class="pronav-list {{curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0">
+      家政
+    </view>
+    <view  class="pronav-list {{curHdIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1">
+      雇主
+    </view>
+    <view  class="pronav-list {{curHdIndex=='2'? 'actives' : ''}}" id="tab-hd03" data-id="2">
+      商品
+    </view>
+    <view  class="pronav-list {{curHdIndex=='3'? 'actives' : ''}}" id="tab-hd03" data-id="3">
+      课程
+    </view>
+  </view>
+  <!--*****************内容**********-->
+  <swiper current="{{curHdIndex}}" bindchange="innerName" style="height:1200rpx;padding-bottom:50rpx;" id="swiper-inner"> 
+    <!-- 家政 -->
+    <swiper-item>
+      <view wx:if="{{empty==0}}">
+        <block wx:for="{{list}}" wx:key="{{item.id}}">
+          <template is="orderList" data="{{...item}}" />
+        </block>  
+      </view>
+      <view class="empty" wx:else>
+        <image src="../image/empty.png" class="empty-icon"></image>
+        <text class="empty-text">暂无收藏的家政</text>
+      </view> 
+    </swiper-item>  
+     <!-- 雇主 -->
+    <swiper-item>
+      <view wx:if="{{emptys==0}}">
+        <block wx:for="{{lists}}" wx:key="{{item.id}}">
+          <template is="guList" data="{{...item}}" />
+        </block> 
+      </view>
+      <view class="empty" wx:else>
+        <image src="../image/empty.png" class="empty-icon"></image>
+        <text class="empty-text">暂无收藏的雇主</text>
+      </view>
+    </swiper-item>  
+     <!-- 商品 -->
+    <swiper-item>
+      <view wx:if="{{emptyss==0}}">
+        <block wx:for="{{car}}" wx:key="{{item.id}}">
+          <template is="ordersList" data="{{...item}}" />
+        </block> 
+      </view>
+      <view class="empty" wx:else>
+        <image src="../image/empty.png" class="empty-icon"></image>
+        <text class="empty-text">暂无收藏的商品</text>
+      </view>
+    </swiper-item>  
+    <!-- 课程 -->
+    <swiper-item>
+      <view wx:if="{{emptysss==0}}">
+        <view class="l-box" wx:for="{{list}}" wx:key="{{index}}">
+            <view class="l-item" bindtap='bindDetail'>
+                <image class="l-img" src='{{item.img}}'></image>
+                <view class="l-info">
+                    <view class="l-title">{{item.title}}</view>
+                    <view class="l-infos">已开{{item.num1}}节课 | 共{{item.num2}}节课</view>
+                    <view class="l-infos">15689人学习</view>
+                    <view class="moneys">¥100</view>
+                </view>
+            </view>
+        </view>
+      </view>
+      <view class="empty" wx:else>
+        <image src="../image/empty.png" class="empty-icon"></image>
+        <text class="empty-text">暂无收藏的商品</text>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,94 @@
+/* pages/message/message.wxss */
+/*====身份选择====*/
+.card{
+  background:#fff;
+  border-top:2rpx solid #e5e5e5;
+  height:100rpx;
+  margin-bottom:20rpx;
+}
+ picker{
+    display:block;
+    text-align: center;
+    font-size:28rpx;
+    height:100rpx;
+    line-height:100rpx;
+    color:#434545;
+    position:relative;
+    margin:0 auto;
+}
+ picker image{
+    width:20rpx;
+    height:20rpx;
+    position:absolute;
+    top:40rpx;
+}
+/*============设置信息==========  */
+.self-message{
+  width:100%;
+}
+.self-message form{
+  display:block;
+  width:100%;
+  height:100%;
+}
+.self-message .commont{
+  width:100%;
+  height:100%;
+  margin-bottom:30rpx;
+  background:#fff;
+  margin-top:30rpx;
+  border-top:2rpx solid #e5e5e5;
+}
+.self-message .personal{
+  width:100%;
+  height:100%;
+  border-top:2rpx solid #e5e5e5;
+}
+.self-list{
+  padding:0 20rpx;
+  overflow:hidden;
+  border-bottom:2rpx solid #e5e5e5;
+  background:#fff;
+}
+.com-box{
+  border-top:2rpx solid #e5e5e5;
+}
+.self-list .list-name{
+  display:block;
+  font-size:28rpx;
+  color:#434545;
+  float:left;
+  margin-right:20rpx;
+  height:90rpx;
+  line-height:90rpx;
+  width:160rpx;
+}
+.self-list input{
+  display:block;
+  font-size:28rpx;
+  color:#434545;
+  float:left;
+  height:90rpx;
+  min-height:90rpx;
+  line-height:90rpx;
+  width:500rpx;
+}
+.self-list picker{
+  display:block;
+  font-size:28rpx;
+  color:#434545;
+  float:left;
+  height:90rpx;
+  min-height:90rpx;
+  line-height:90rpx;
+  width:500rpx;
+  text-align:left;
+}
+button{
+  background:#ff9a0e;
+  color:#fff;
+  width:670rpx;
+  height:94rpx;
+  margin:0 auto;
+  margin-top:200rpx;
+}

@@ -1,0 +1,78 @@
+<!--personage.wxml-->
+<import src="../template/template.wxml"/>
+<view class="container">
+    <!-- 用户头像和名字 -->
+    <view class="top">
+        <image class="bg" src="../../images/person_bg.png"></image>
+        <image class="img-user" src='{{info.headimgurl}}'></image>
+        <text class="txt-name">{{info.nickname}}</text>
+    </view>
+    <!-- 收藏 优惠券 -->
+    <view class="box">
+        <!-- <view class="box-item" bindtap='chongName' data-id='{{info.id}}'>
+            <view class="box-items">
+                <text class="info-nums">{{info.bi}}</text>
+                <text class="info-txt">充值</text>
+            </view>        
+        </view> -->
+        <view class="box-item" bindtap='jieName' data-id='{{info.id}}'>
+            <view class="box-items">
+                <text class="info-nums">{{info.zhuan}}</text>
+                <text class="info-txt">邀请好友</text>
+            </view>        
+        </view>
+         <view class="box-item" bindtap='collectName' data-id='{{info.id}}'>
+            <view class="box-items">
+                <text class="info-nums">{{info.collect}}</text>
+                <text class="info-txt">我的收藏</text>
+            </view>        
+        </view>
+        <!-- <view class="box-item" bindtap='quanName' data-id='{{info.id}}'>
+            <view class="box-items">
+                <text class="info-nums">{{info.coupons}}</text>
+                <text class="info-txt">优惠券</text>
+            </view>        
+        </view>  -->
+    </view>
+    <!-- *********订单********** -->
+    <!-- <view class="main-order">
+      <view class="order-title">
+        <text class="title-text">我的订单</text>
+        <text class="look-more" bindtap='orderName'>全部订单</text>
+      </view>
+      <view class="order-box">
+      <block wx:for="{{common}}" wx:key="{{item.id}}">
+          <template is="navs" data="{{...item}}" />
+        </block>
+      </view>
+    </view> -->
+    <!-- ***展示列表****** -->
+    <view class="lists">
+    <!-- <view class="list" bindtap='collectName' data-id='{{info.id}}'>
+        <image class="icon-user" src="../../images/user_6.png"></image>
+        <text class="list-txt">我的收藏</text>
+        <image class="icon-in" src="../../images/icon_in.png"></image>
+      </view> -->
+      <view class="list" bindtap='bindMessage' data-id='{{info.id}}'>
+        <image class="icon-user" src="../../images/user_1.png"></image>
+        <text class="list-txt">个人资料</text>
+        <image class="icon-in" src="../../images/icon_in.png"></image>
+      </view>
+       <view class="list" bindtap='erName' data-id='{{info.id}}'>
+        <image class="icon-user" src="../../images/er.png"></image>
+        <text class="list-txt">我的二维码</text>
+        <image class="icon-in" src="../../images/icon_in.png"></image>
+      </view>
+      <view class="list" bindtap='bindPhone' data-phone='{{info.phones}}'>
+        <image class="icon-user" src="../../images/user_3.png"></image>
+        <text class="list-txt">联系客服</text>
+        <image class="icon-in" src="../../images/icon_in.png"></image>
+      </view>
+      <view class="list" bindtap='bindIdea'>
+        <image class="icon-user" src="../../images/user_4.png"></image>
+        <text class="list-txt">意见反馈</text>
+        <image class="icon-in" src="../../images/icon_in.png"></image>
+      </view>
+    </view>
+    <view class="bottom-txt" bindtap='jiName'>©技术支持博智营销</view>
+</view>

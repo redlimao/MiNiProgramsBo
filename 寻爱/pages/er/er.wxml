@@ -1,0 +1,20 @@
+<!--pages/er/er.wxml-->
+<view class="container">
+  <view class="back" bindtap='backName'>
+    <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="tops">我的二维码</view>
+  <view class="er-box">
+    <view class="box"></view>
+    <view class="er-img">
+      <image src="{{img}}"></image>
+    </view>
+  </view>
+  <view class="er-bot">
+    <text class="keep" bindtap='keepName'>保存到手机</text>
+    <view class="share">
+      分享
+      <button open-type='share'></button>
+    </view>
+  </view>
+</view>

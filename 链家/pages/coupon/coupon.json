@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "免费优品",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true,
+    "backgroundTextStyle":"dark"
+}

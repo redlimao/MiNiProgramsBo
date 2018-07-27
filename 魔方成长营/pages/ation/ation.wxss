@@ -1,0 +1,139 @@
+/* pages/ation/ation.wxss */
+.top{
+  width:100%;
+  height:400rpx;
+  overflow:hidden;
+}
+.top image{
+  width:120rpx;
+  height:120rpx;
+  border-radius:50%;
+  margin:0 auto;
+  margin-top:70rpx;
+  margin-bottom:10rpx;
+  display:block;
+}
+.top .top-text{
+  width:100%;
+  display:block;
+  text-align:center;
+  font-size:38rpx;
+  color:#000;
+}
+.bottom{
+  overflow:hidden;
+}
+.bottom-info{
+  height:150rpx;
+  padding:25rpx;
+  border-bottom:2rpx solid #e5e5e5;
+  border-top:2rpx solid #e5e5e5;
+  overflow:hidden;
+}
+.bottom-info .photo{
+  width:150rpx;
+  height:150rpx;
+  float:left;
+}
+.bottom-info .photo image{
+  width:100%;
+  height:100%;
+}
+.bottom-info .text-info{
+  display:block;
+  float:left;
+  margin-top:35rpx;
+  margin-left:30rpx;
+  overflow:hidden;
+  width:400rpx;
+}
+.text-info .name{
+  display:block;
+  font-size:32rpx;
+  color:#000;
+  margin-bottom:5rpx;
+}
+.text-info .job{
+  display:block;
+  font-size:32rpx;
+  color:#000;
+}
+.ren{
+  float:right;
+  height:30rpx;
+  margin-top:60rpx;
+  overflow:hidden;
+  width:100rpx;
+}
+.ren image{
+  display:block;
+  width:24rpx;
+  height:24rpx;
+  float:left;
+}
+.ren .warm-info{
+  display:block;
+  float:left;
+  font-size:24rpx;
+  color:#b1b1b1;
+  line-height:30rpx;
+}
+.choose_ren .warm-info{
+  display:block;
+  float:left;
+  font-size:24rpx;
+  color:#f00;
+  line-height:30rpx;
+}
+.chuan-box{
+  width:100%;
+  height:500rpx;
+  overflow:hidden;
+}
+.chuan-box .chuan{
+  margin:30rpx;
+  border:2rpx dashed #e5e5e5;
+  height:440rpx;
+  width:690rpx;
+}
+.chuan-box .chuan image{
+  width:76rpx;
+  height:76rpx;
+  margin:0 auto;
+  margin-top:85rpx;
+  display:block;
+  margin-bottom:50rpx;
+}
+.chuan-box .chuan .chuan-text{
+  display:block;
+  width:100%;
+  text-align:center;
+  font-size:32rpx;
+  color:#b1b1b1;
+}
+.chuan-box .chuan .chuan-text .style{
+  color:#ff9a0e;
+}
+.chuan-box .chuan .chuan-tu{
+  width:100%;
+  height:100%;
+  margin:0;
+}
+.sub{
+  width:100%;
+  height:100rpx;
+  text-align:center;
+  line-height:100rpx;
+  color:#fff;
+  font-size:32rpx;
+  background:#dbdbdb;
+}
+.subs{
+  width:100%;
+  height:100rpx;
+  text-align:center;
+  line-height:100rpx;
+  color:#fff;
+  font-size:32rpx;
+  background:#ff9a0e;
+}

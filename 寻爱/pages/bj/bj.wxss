@@ -1,0 +1,22 @@
+/* pages/bj/bj.wxss */
+page{
+  background:#fff;
+}
+.container{
+  padding-top:35rpx;
+}
+.bj-list{
+  width:690rpx;
+  margin:0 auto;
+  margin-bottom:40rpx;
+  border-radius:20rpx;
+}
+.bj-list.actives{
+  box-shadow:0 10rpx 20px rgba(0,0,0,0.2);
+  border:5rpx solid #FFF;
+}
+.bj-list image{
+  width:690rpx;
+  border-radius:20rpx;
+  display:block;
+}

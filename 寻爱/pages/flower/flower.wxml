@@ -1,0 +1,44 @@
+<!--pages/xiao/xiao.wxml-->
+<view class="container">
+  <view class="back" bindtap='backName'>
+    <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="tops">我的鲜花</view>
+  <!-- ***内容*** -->
+  <view class="inner">
+    <block wx:if="{{list!=1}}">
+      <view class="list" wx:for="{{list}}" wx:key="{{index}}">
+        <view class="list-list {{del==2 ? 'dels' : ''}}">
+          <view class="photo-box">
+            <image src="{{item.avatar}}" class="photo-icon" mode="aspectFill" ></image>
+          </view>
+          <view class="name-box">
+            <text class="name">{{item.nickname}}</text>
+            <text class="hao">送给你{{item.nums}}朵鲜花</text>
+          </view>
+          <view class="del-box">
+            <icon type="success" color="#FF7FAE" bindtap="choose" wx:if="{{item.select}}" size="20" data-id="{{index}}" />  
+            <icon type="circle" bindtap="choose" size="22" wx:else data-id="{{index}}" />
+          </view> 
+          <view class="time-box">
+            <text class="time">{{item.create_at}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="empty" wx:else>
+      <image src="../../images/xiao_empty.png" class="empty-icon"></image>
+    </view>
+  </view>
+</view>
+
+<!-- ****删除消息**** -->
+<view class="del" bindtap='delName' wx:if="{{list!=1}}">
+  <image src="../../images/del.png" class="del-icon"></image>
+  <text class="del-text">删除消息</text>
+  <block wx:if="{{del==2}}">
+    <icon type="success" color="#FF7FAE" catchtap="all" wx:if="{{select}}" size="20" />  
+    <icon type="circle" catchtap="all" size="22" wx:else/>
+  </block>
+  <text class="all" wx:if="{{del==2}}" catchtap="all">全选</text>
+</view>

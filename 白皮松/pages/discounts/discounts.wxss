@@ -1,0 +1,36 @@
+/**discount.wxss**/
+/*搜索*/
+.search-box{width: 100%;padding: 10rpx 0;}
+	.search{width:710rpx;margin:0 auto;border-radius:5rpx;background:#fff;border:2rpx solid #e8e9ea;position: relative;}
+		.search-icon,.search-icon1{width: 27rpx;height: 27rpx;position: absolute;top: 16rpx;}
+      .search-icon{left: 275rpx;}
+      .search-icon1{right:20rpx;display: none;z-index:3;}
+      .search-icon.on{display: none;}
+      .search-icon1.on{display: block;}
+		.search-input{width:670rpx;padding: 0 20rpx;height: 56rpx;line-height: 56rpx;color: rgb(153,153,153);font-size: 24rpx;text-align: center;}
+
+.slider-top{padding:0 40rpx;height:80rpx;border-top:1rpx solid rgb(238,238,238);background-color: #fff;}
+	.slider-top-box{width: 100%;height:80rpx;display:flex;justify-content: space-around;}
+	.slider-top-menus{width:112rpx;height:80rpx;line-height: 80rpx;font-size:28rpx;color:rgb(51,51,51);}
+	.slider-top-menus.on{border-bottom:4rpx solid #f44444;}
+.bannner-img{width:100%;height:280rpx;background:#fff;}
+
+.chose-tit{padding: 0 24rpx;height:80rpx;border-top:1rpx solid rgb(238,238,238);display:flex;align-items: center; justify-content:space-around; background:#fff;}
+  .txt-tip{height:80rpx;width: 88rpx;line-height:80rpx; font-size:32rpx;text-align: center;color:#888;}    
+    .txt-tip.on{color:#4fb94b;}
+	.chose-list{display: flex; align-items: center;}
+	.chose-picker{display:block;font-size:32rpx;color:#888;}
+    .chose-picker.on{color:#4fb94b;}
+	.pick-img{width:16rpx;height:8rpx;margin-left:16rpx;}
+
+/* 商品列表 */
+.list-boxs{padding: 0 10rpx;display: flex;flex-wrap: wrap;justify-content: space-between;}
+    .list-box{width:360rpx;margin-top: 10rpx;padding: 10rpx 10rpx 20rpx 10rpx;background-color: #fff;overflow: hidden;}
+        .list-img{width: 340rpx;height: 340rpx;background-color: #ccc;}
+        .list-tit{height: 50rpx;line-height: 50rpx;padding-top: 10rpx;font-size: 30rpx;color: rgb(51,51,51);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+        .list-con{display: flex;height: 50rpx;align-items: baseline;flex: 1;}
+            .money_icon{font-size: 28rpx;color: rgb(255,105,91);}
+            .money{font-size: 36rpx;color: rgb(255,105,91);}
+            .cutmoney{font-size: 24rpx;color: rgb(153,153,153);text-decoration: line-through;flex: 1;padding-left: 8rpx;}
+            .btn-buy{width: 100rpx;height: 40rpx;text-align: center;background-color:rgb(255,105,91);line-height: 40rpx;color: #fff;font-size: 24rpx;border-radius: 5rpx;}
+

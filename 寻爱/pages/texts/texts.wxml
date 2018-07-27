@@ -1,0 +1,19 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+  <view class="back" bindtap='backName'>
+    <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="tops">详情</view>
+<view class="container">
+  <!-- <text class="title">{{title}}</text> -->
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+
+<view class="botBar" wx:if="{{lei==2}}">
+  <view class="tel" bindtap='huiName' data-id="{{vip_moneys}}">
+    <text wx:if="{{vip_moneys!=0}}">￥{{vip_moneys}}</text>
+    会员报名
+  </view>
+  <view class="buy"  bindtap='feiName' data-id="{{moneys}}">
+    ￥{{money}}非会员报名
+  </view>
+</view>

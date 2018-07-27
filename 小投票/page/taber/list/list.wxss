@@ -1,0 +1,21 @@
+/* pages/list/list.wxss */
+/* 切换菜单 */
+.menu{width: 100%;height: 84rpx;background-color: #fff;display:flex;align-items: center;justify-content: center;background:rgba(255,255,255,1);box-shadow: 0rpx 5rpx 20rpx 0rpx rgba(0,76,152,0.1);}
+    .m-item1,.m-item2{width: 285rpx;height: 60rpx;line-height: 56rpx;text-align: center;color: #238BED;font-size: 34rpx;box-sizing: border-box;border-top: 2rpx solid #238BED;border-bottom: 2rpx solid #238BED;}
+    .m-item1{border-radius: 30rpx 0 0 30rpx;border-left: 2rpx solid #238BED;}
+    .m-item2{border-radius: 0 30rpx 30rpx 0;border-right: 2rpx solid #238BED;}
+    .m-item1.on,.m-item2.on{background:linear-gradient(-135deg,rgba(73,191,247,1),rgba(35,139,237,1));color: #fff;border-top: 2rpx solid transparent;border-bottom: 2rpx solid transparent;}
+    .m-item1.on{border-left: 2rpx solid transparent;}
+    .m-item2.on{border-left: 2rpx solid transparent;}
+
+/* 列表 */
+.con{padding: 30rpx 20rpx;width: 100%;box-sizing: border-box;}
+    .item{width: 710rpx;height: 260rpx;padding: 20rpx;box-sizing: border-box;background:rgba(255,255,255,1);box-shadow: 0rpx 10rpx 30rpx 0rpx rgba(0,76,152,0.1);border-radius: 20rpx;position: relative;margin-bottom: 30rpx;}
+        .tip{width: 70rpx;height: 70rpx;border-radius: 0 0 35rpx 35rpx;background-color: #ccc;position: absolute;z-index: 2;top: 0;right: 40rpx;}
+        .info-t{display: flex;height: 64rpx;align-items: center;padding-right: 100rpx;}
+            .info-img{width: 64rpx;height: 64rpx;border-radius: 50%;display: block;background-color: #ccc;}
+            .info-name{font-size: 30rpx;color: #9EA5B9;padding-left: 20rpx;flex: 1;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;}
+        .info-tit{font-size: 34rpx;color: #27282B;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;line-height: 48rpx;padding-top: 13rpx;}
+        .info-b{display: flex;padding-top: 21rpx;justify-content:space-between;}
+            .info-txt{font-size: 26rpx;color: #9EA5B9;}
+            .col{color: #FF1557;}

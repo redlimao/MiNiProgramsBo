@@ -1,0 +1,179 @@
+@import "../template/template.wxss";
+/* ========搜索=========*/
+.container{
+  padding-top:150rpx;
+}
+.choe-title .choe-list{
+  width:20%;
+  overflow:hidden;
+}
+.choe-title .choe-list .choe-picker{
+  width:80%;
+  overflow:hidden;
+}
+.search-box{
+  width:100%;
+  height:150rpx;
+  background:rgb(255, 158, 31);
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:2
+}
+.search-box .search{
+  width:640rpx;
+  height:50rpx;
+  padding:20rpx 25rpx;
+  background:#fff;
+  border-radius:6rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+  box-shadow: 0 10rpx 20rpx rgba(99,57,0,0.15);
+}
+.search-box .search image{
+  width:57rpx;
+  height:50rpx;
+  float:left;
+  display:block;
+  margin-right:20rpx;
+}
+.search-box .search  .border{
+  width:4rpx;
+  height:36rpx;
+  background: rgb(255, 158, 31);
+  margin-top:8rpx;
+  float:left;
+}
+.search-box .search input{
+  height:50rpx;
+  width:400rpx;
+  float:left;
+  display:block;
+  padding-left:10rpx;
+  font-size:36rpx;
+  color:rgb(177, 174, 171);
+}
+.search-box .search button{
+  height:50rpx;
+  width:80rpx;
+  float:right;
+  display:block;
+  background:none;
+  border:none;
+  padding:0;
+  margin:0;
+  line-height:50rpx;
+  font-size:36rpx;
+  color:rgb(255, 158, 31);
+  font-weight:bold;
+}
+button:after{
+  border:none;
+}
+/* ========导航=========*/
+.nav{
+  width:100%;
+  background:#fff;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+}
+/* ========内容=========*/
+.inner{
+  padding-bottom:20rpx;
+}
+.time-list{
+  background:#fff;
+}
+.time-box{
+  box-shadow: 0 10rpx 20rpx rgba(0,0,0,0.2);
+  padding:20rpx 0;
+  background:#fff;
+}
+.time-box .time-list{
+  background:#fff;
+  height:60rpx;
+  line-height:60rpx;
+}
+.time-box .date{
+  font-size:28rpx;
+  color:rgb(55,54,52);
+  line-height:60rpx;
+}
+.time-box .time-picker{
+  font-size:28rpx;
+  line-height:60rpx;
+}
+/* ====筛选== */
+.shai{
+  background:#fff;
+  transition: all 0.5s linear ;
+  overflow:hidden;
+}
+.shai.on{
+  height:436rpx;
+  padding:30rpx;
+}
+.shai.hide{
+   height:0rpx;
+   padding:0rpx 30rpx;
+}
+.shai .shai-list{
+  width:100%;
+  margin-bottom:20rpx;
+  overflow:hidden;
+  height:64rpx;
+}
+.shai .shai-list .shai-title{
+  display:block;
+  float:left;
+  font-size:30rpx;
+  color:rgb(55,54,52);
+  width:20%;
+  line-height:60rpx;
+  margin-right:15%;
+  margin-left:3%;
+}
+.shai .shai-list .shai-border{
+  float:left;
+  width:10%;
+  line-height:60rpx;
+  text-align:center;
+}
+.shai .shai-list .time-list{
+  float:left;
+  width:25%;
+}
+.shai .shai-list .time-list .time-picker{
+  font-size:26rpx;
+  text-align:center;
+  line-height:60rpx;
+  border:none;
+  background:#f8f8f8;
+  color:#888;
+}
+.shai .shai-list .time-list input{
+  font-size:26rpx;
+  color:rgb(55,54,52);
+  text-align:center;
+  line-height:60rpx;
+  border:none;
+  height:60rpx;
+  min-height:60rpx;
+}
+.shai button{
+  width:25%;
+  height:60rpx;
+  line-height:60rpx;
+  background: -webkit-linear-gradient(left top, #ff9e1f , #ffcd42);
+  background: -moz-linear-gradient(left top, #ff9e1f , #ffcd42);
+  color:#fff;
+  font-size:30rpx;
+  margin-left:500rpx;
+  margin-top:50rpx;
+  border-radius:4rpx;
+}

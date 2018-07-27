@@ -1,0 +1,33 @@
+<!--pages/kefu/kefu.wxml-->
+<view class="chose">
+  请选择一名客服进行咨询
+</view> 
+<view class="top">
+    <view class="top-fl">
+        <image src="../../images/class-img4.png"></image>
+    </view>
+    <view class="top-fr">
+      <text class="school-name">小致</text>
+      <!-- <text class="school-type">我是客服小橙</text> -->
+    </view>
+    <button  open-type="contact" hover-class="none" ></button>
+  </view>
+  <view class="top">
+    <view class="top-fl">
+        <image src="../../images/class-img5.png"></image>
+    </view>
+    <view class="top-fr">
+      <text class="school-name">小清</text>
+      <!-- <text class="school-type">我是客服小旭</text> -->
+    </view>
+    <button  open-type="contact" hover-class="none" ></button>
+  </view>
+  <view class="top">
+    <view class="top-fl">
+        <image src="../../images/class-img6.png"></image>
+    </view>
+    <view class="top-fr">
+      <text class="school-name">小龢</text>
+    </view>
+    <button  open-type="contact" hover-class="none" ></button>
+  </view>

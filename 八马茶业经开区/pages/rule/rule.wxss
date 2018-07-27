@@ -1,0 +1,8 @@
+/* pages/rule/rule.wxss */
+page{
+  background:#fff;
+}
+.container{
+  width:690rpx;
+  padding:30rpx;
+}

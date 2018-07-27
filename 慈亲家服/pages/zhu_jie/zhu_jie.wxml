@@ -1,0 +1,52 @@
+<view class="container">
+  <!-- *********个人信息********** -->
+  <view class="main-box">
+    <view class="box"></view>
+    <view class="main">
+      <!-- 个人 -->
+      <view class="main-message">
+        <view class="main-photo">
+          <image src="{{headimg}}" class="main-img"></image>
+        </view>
+        <view class="main-name">{{nickname}}</view>
+         <view class="main-main" bindtap='pointsName'>
+          <image src="../image/rule.png" class="card-icon"></image>
+          <text class="main-choose">转介规则</text>
+        </view> 
+      </view>
+    </view>
+  </view>
+  <!--****************导航**********-->
+  <view class="pro_nav" bindtap="tabFun">
+    <view class="pronav-list {{curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap='wanName'>
+      已完成订单
+    </view>
+    <view  class="pronav-list {{curHdIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1" bindtap='weiName'>
+      未完成订单
+    </view>
+  </view>
+   <!--****************内容**********-->
+   <view class="jie-box" wx:if="{{empty==0}}">
+    <view class="jie-list {{item.pan== '0' ? 'actives' : ''}}" bindtouchstart="mytouchstart" bindtouchmove="mytouchmove" wx:for="{{list}}" wx:key="{{item.id}}" id="{{item.id}}" data-id="{{index}}">
+      <view class="main-photo">
+        <image src="{{item.headimgurl}}" class="main-img"></image>
+      </view>
+      <view class="jie-info">
+        <text class="jie-name">{{item.nickname}}</text>
+        <text class="jie-phone">{{item.phone}}</text>
+      </view>
+      <view class="del" catchtap='delName' id="{{item.id}}">
+        <image src="../image/del.png" class="del-icon"></image>
+      </view>
+      <view class="jie-time">
+        <text class="jie-text">转介日期</text>
+        <text class="jie-times">{{item.create_at}}</text>
+      </view>
+    </view>
+   </view>
+   <view class="empty" wx:else>
+      <image src="../image/empty.png" class="empty-icon"></image>
+      <text class="empty-text">您暂时还未介绍好友</text>
+   </view>
+</view> 
+

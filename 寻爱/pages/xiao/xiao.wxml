@@ -1,0 +1,54 @@
+<!--pages/xiao/xiao.wxml-->
+<view class="container">
+  <view class="back" bindtap='backName'>
+    <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="tops">我的消息</view>
+  <!-- ***内容*** -->
+  <view class="inner">
+    <view class="nav">
+      <text class="nav-list {{currentIndex==1 ? 'actives' : ''}}" bindtap='tabFun' data-id="1">已接收</text>
+      <text class="nav-list nav-lists {{currentIndex==2 ? 'actives' : ''}}" bindtap='tabFun' data-id="2">已申请</text>
+    </view>
+    <block wx:if="{{list!=1}}">
+      <view class="list" wx:for="{{list}}" wx:key="{{index}}">
+        <view class="list-list {{del==2 ? 'dels' : ''}}">
+          <view class="photo-box">
+            <image src="{{item.avatar}}" class="photo-icon" mode="aspectFill" ></image>
+          </view>
+          <view class="name-box">
+            <text class="name">{{item.nick_name}}</text>
+            <text class="hao" wx:if="{{item.status==3}}">微信号：{{item.wechat}}</text>
+            <text class="hao" wx:if="{{item.status==3}}">QQ号：{{item.qq}}</text>
+          </view>
+          <view class="del-box">
+            <icon type="success" color="#FF7FAE" bindtap="choose" wx:if="{{item.select}}" size="20" data-id="{{index}}" />  
+            <icon type="circle" bindtap="choose" size="22" wx:else data-id="{{index}}" />
+          </view> 
+          <view class="time-box">
+            <text class="time">2017-8-9</text>
+            <text class="no" wx:if="{{item.status==1&&currentIndex==1}}" bindtap='juName' id="{{item.id}}">拒绝</text>
+             <text class="tong" wx:if="{{item.status==1&&currentIndex==1}}" bindtap='tongName' id="{{item.id}}">同意</text>
+            <text class="que" wx:if="{{item.status==3}}">已同意</text>
+            <text class="no" wx:if="{{item.status==1&&currentIndex==2}}">待同意</text>
+            <text class="no" wx:if="{{item.status==2}}">已拒绝</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="empty" wx:else>
+      <image src="../../images/xiao_empty.png" class="empty-icon"></image>
+    </view>
+  </view>
+</view>
+
+<!-- ****删除消息**** -->
+<view class="del" bindtap='delName' wx:if="{{list!=1}}">
+  <image src="../../images/del.png" class="del-icon"></image>
+  <text class="del-text">删除消息</text>
+  <block wx:if="{{del==2}}">
+    <icon type="success" color="#FF7FAE" catchtap="all" wx:if="{{select}}" size="20" />  
+    <icon type="circle" catchtap="all" size="22" wx:else/>
+  </block>
+  <text class="all" wx:if="{{del==2}}" catchtap="all">全选</text>
+</view>

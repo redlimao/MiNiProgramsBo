@@ -1,0 +1,67 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+  <!--*********服务内容***********-->
+  <view class="fu-inner">
+    <view class="common-title">
+      <text class="common-border"></text>
+      <text class="common-text">需求信息</text>
+      <text class="common-time">发布时间：{{time}}</text>
+    </view>
+    <view class="fu-cont" wx:for="{{list}}" wx:key="{{item.id}}">
+     <view class="fu-list">
+      <text class="fu-message">姓　　名：</text>
+      <text class="fu-info">{{item.names}}</text>
+     </view>
+     <view class="fu-list">
+      <text class="fu-message">岗　　位：</text>
+      <text class="fu-info">{{item.homes_name}}</text>
+     </view>
+     <view class="fu-list">
+      <text class="fu-message">地　　址：</text>
+      <text class="fu-info">{{item.address}}</text>
+     </view>
+     <view class="fu-list">
+      <text class="fu-message">上户时间：</text>
+      <text class="fu-info">{{item.start_at}}</text>
+     </view>
+     <view class="fu-list">
+      <text class="fu-message">薪资范围：</text>
+      <text class="fu-info">{{item.moneys}}</text>
+     </view>
+     <view class="fu-list">
+      <text class="fu-message">年龄要求：</text>
+      <text class="fu-info">{{item.age}}</text>
+     </view>
+     <view class="fu-list">
+      <text class="fu-message">基本技能：</text>
+      <text class="fu-info">{{item.ji}}</text>
+     </view>
+     <view class="fu-list">
+      <text class="fu-message">烹饪技能：</text>
+      <text class="fu-info">{{item.peng}}</text>
+     </view>
+     <view class="fu-list">
+      <text class="fu-message">服务类型：</text>
+      <text class="fu-info">{{item.fu_time}}</text>
+     </view>
+    </view>
+  </view>
+</view>
+<!--*********联系***********-->
+<view class="customer-order" wx:if="{{gu_types==1}}">
+  <view class="collect" bindtap='collectName'>
+    <block wx:if="{{collect==2}}">
+      <image src="../image/collect1.png"></image>
+      <text class="collect-text">收藏</text>
+    </block>
+      <block wx:else>
+      <image src="../image/collect.png"></image>
+      <text class="collect-text collect-texts">已收藏</text>
+    </block> 
+  </view>
+  <text class="customer-orders" bindtap='telName'>联系他</text>
+</view>
+<!--*********修改***********-->
+<!-- <view class="customer-order" wx:else bindtap='gaiName'>
+  修改
+</view> -->

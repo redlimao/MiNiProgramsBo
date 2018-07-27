@@ -1,0 +1,72 @@
+
+<view class="container">
+ <form bindsubmit="formSubmit">
+ <!--*********时间***********-->
+  <view class="time-box">
+    <view class="message">
+        <view class="time-list">
+          <text class="date">岗位</text>
+          <picker class="time-picker" value="{{arr_index}}" range="{{arr}}" bindchange="arrChange">
+            {{arr[arr_index]}}
+          </picker>
+        </view>
+        <view class="time-list">
+          <text class="date">服务地址</text>
+          <input type="text" name="add" placeholder='请选择服务地址' placeholder-style='font-size:32rpx;color:#808080' value="{{address}}" class="adds" />
+          <view class="add" bindtap='chooseName'></view>
+        </view>
+        <view class="time-list">
+          <text class="date">上户时间</text>
+          <picker class="time-picker" mode="date" value="{{date}}" start="1917-09-01" end="2050-09-01" bindchange="bindDateChange">{{date}}</picker>
+        </view>
+        <view class="time-list time-listss">
+          <text class="date">服务价格</text>
+          <view class="qujian">
+            <input type="number" name="m_o" placeholder='起始价' placeholder-style='font-size:32rpx;color:#808080' />
+            <text class="qujian-text">至</text>
+            <input type="number" name="m_t" placeholder='截止价' placeholder-style='font-size:32rpx;color:#808080' />
+          </view>
+        </view>
+        <view class="time-list time-listss">
+          <text class="date">年龄要求</text>
+          <view class="qujian">
+            <input type="number" name="a_o" placeholder='起始' placeholder-style='font-size:32rpx;color:#808080' />
+            <text class="qujian-text">至</text>
+            <input type="number" name="a_t" placeholder='截止' placeholder-style='font-size:32rpx;color:#808080' />
+          </view>
+        </view>
+        <view class="time-list time-lists time-style">
+          <text class="date">基本技能</text>
+          <checkbox-group bindchange="checkboxChange">
+            <view class="checkbox" wx:for="{{ji}}" wx:key="">
+              <checkbox value="{{index}}" class="check"/>
+              <text class="label-text">{{item}}</text>
+            </view>
+          </checkbox-group>
+        </view>
+        <view class="time-list time-lists">
+          <text class="date">烹饪能力</text>
+          <checkbox-group bindchange="checkboxChanges">
+            <view class="checkbox" wx:for="{{peng}}" wx:key="">
+              <checkbox value="{{index}}" class="check"/>
+              <text class="label-text">{{item}}</text>
+            </view>
+          </checkbox-group>
+        </view>
+        <view class="time-list time-lists">
+          <text class="date">服务状态</text>
+          <checkbox-group bindchange="checkboxChangess">
+            <view class="checkbox" wx:for="{{fu}}" wx:key="">
+              <checkbox value="{{index}}" class="check"/>
+              <text class="label-text">{{item}}</text>
+            </view>
+          </checkbox-group>
+        </view>
+      </view>
+    </view>  
+  <button formType="submit" plain="true">
+    提交
+  </button>
+  </form>
+</view>
+ 

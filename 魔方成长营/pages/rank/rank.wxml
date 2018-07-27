@@ -1,0 +1,29 @@
+<!--pages/rank/rank.wxml-->
+<view class="school">
+    <view class="list-titles">
+      <view class="list-box">
+        <text class="order-list">名次</text>
+        <text class="school-list">昵称</text>
+        <text class="area-list">魔豆值</text>
+      </view>
+    </view>
+    <view class="list" >
+         <view class="list-title" wx:for="{{zy}}">
+            <text class="order-list  {{item.pai<'4' ? 'active' : '' }}">{{item.pai}}</text>
+            <text class="school-list">{{item.nickname}}</text>
+            <text class="area-list">{{item.integral}}</text>
+        </view>
+    </view>
+    <view class="my-rank">
+      <view class="list-box">
+        <text class="order-list">{{pai}}</text>
+        <text class="school-list">{{name}}</text>
+        <text class="area-list" bindtap="qianName" wx:if="{{flag==0}}">
+          <text class="qian">签到</text>
+        </text>
+        <text class="area-list"wx:else>
+          <text class="dou" >{{zhi}}</text>
+        </text>
+      </view>
+    </view>
+</view>

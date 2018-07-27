@@ -1,0 +1,71 @@
+<view class="container">
+ <form bindsubmit="formSubmit">
+ <!--*********时间***********-->
+  <view class="time-box">
+    <view class="message">
+      <view class="time-list">
+        <text class="date">姓名</text>
+        <input placeholder='请输入姓名' name="username" value="{{name}}" />
+      </view>
+      <view class="time-list">
+        <text class="date">性别</text>
+       <picker class="time-picker" value="{{sex_index}}" range="{{sex}}" bindchange="sexChange">
+            {{sex[sex_index]}}
+          </picker>
+      </view>
+      <view class="time-list" wx:if="{{types==2}}">
+        <text class="date">店铺名称</text>
+        <input placeholder='请输入店铺名称' name="shopname" value="{{shopName}}" />
+      </view>
+       <view class="time-list" wx:if="{{types==5}}">
+        <text class="date">公司名称</text>
+        <input placeholder='请输入公司名称' name="gongname" value="{{gongname}}" />
+      </view>
+      <view class="time-list">
+        <text class="date">手机号</text>
+        <input placeholder='请输入正确的手机号' name="phone" value="{{phone}}" />
+      </view>
+    </view>
+    <view class="message" wx:if="{{types==4}}">
+       <view class="time-list">
+          <text class="date">所在公司</text>
+          <picker class="time-picker" value="{{company_index}}" range="{{company}}" bindchange="companyChange">
+            {{company[company_index]}}
+          </picker>
+        </view>
+        <view class="time-list">
+          <text class="date">第一岗位</text>
+          <picker class="time-picker" value="{{arr_index}}" range="{{arr}}" bindchange="arrChange">
+            {{arr[arr_index]}}
+          </picker>
+        </view>
+        <view class="time-list time-lists" wx:if="{{types==4}}">
+          <text class="date">第二岗位</text>
+          <checkbox-group bindchange="checkboxChange">
+            <view class="checkbox" wx:for="{{arrs}}" wx:key="">
+              <checkbox value="{{index}}" class="check"  checked="{{item.check}}"/>
+              <text class="label-text">{{item.name}}</text>
+            </view>
+          </checkbox-group>
+        </view>
+        <view class="time-list">
+          <text class="date">服务市区</text>
+          <picker class="time-picker" bindchange="cityChange" value="{{city_index}}" range="{{city}}">{{city[city_index]}}</picker>
+        </view>
+        <view class="time-list">
+          <text class="date">服务地区</text>
+          <picker class="time-picker" bindchange="areaChange" value="{{area_index}}" range="{{area}}">{{area[area_index]}}</picker>
+        </view>
+        <view class="time-list">
+          <text class="date">出生日期</text>
+          <picker class="time-picker" mode="date" value="{{date}}" start="1917-09-01" end="2050-09-01" bindchange="bindDateChange">{{date}}</picker>
+        </view>
+
+      </view>
+    </view>  
+  <button formType="submit" plain="true">
+    提交
+  </button>
+  </form>
+</view>
+ 

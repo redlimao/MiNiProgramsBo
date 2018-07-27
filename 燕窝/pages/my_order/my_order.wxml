@@ -1,0 +1,30 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+  <!--****************导航**********-->
+  <view class="pro_nav" bindtap="tabFun" wx:if="{{types!=1}}">
+    <view class="pronav-list {{curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0">
+      待付款
+    </view>
+    <view  class="pronav-list {{curHdIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1">
+      待发货
+    </view>
+    <view  class="pronav-list {{curHdIndex=='2'? 'actives' : ''}}" id="tab-hd03" data-id="2">
+      待收货
+    </view>
+    <view  class="pronav-list {{curHdIndex=='3'? 'actives' : ''}}" id="tab-hd04" data-id="3">
+      待评价
+    </view>
+     <view  class="pronav-list {{curHdIndex=='4'? 'actives' : ''}}" id="tab-hd05" data-id="4">
+      已完成
+    </view> 
+  </view>
+  <!--***************内容**********-->
+  <view class="order-box" wx:if="{{empty==0}}">
+     <block wx:for="{{list}}" wx:key="{{item.id}}">
+      <template is="ordersList1" data="{{...item}}" />
+    </block> 
+  </view>
+  <view class="empty" wx:else>
+    <image src="../../images/emptys.png" class="empty-icon"></image>
+  </view>
+</view>

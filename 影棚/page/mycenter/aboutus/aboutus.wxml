@@ -1,0 +1,30 @@
+<import src="../../../wxParse/wxParse.wxml"/> 
+<view class="container">
+  <view class="company_img">
+    <image src="{{banner}}" mode='widthFix' class="company_banner"></image>
+  </view>
+
+  <view class="company_info">
+    <view class="company_title">
+      <text class="company_titles">公司简介</text>
+    </view>
+    <view class="company_cont">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+
+  <view class="company_adds">
+    <view class="company_title">
+      <text class="company_titles">公司地址</text>
+    </view>
+    <view class="company_cont" bindtap="mapName">
+      <text class="company_add-info">{{address}}</text>
+    </view>
+  </view>
+
+  <view class="company_tels" bindtap='telName'>
+   拨打电话
+  </view>
+</view>
+
+

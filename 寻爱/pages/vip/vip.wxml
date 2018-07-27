@@ -1,0 +1,74 @@
+<!--pages/vip/vip.wxml-->
+<view class="container">
+  <!--**轮播***-->
+  <view class="banner">
+    <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"> 
+      <swiper-item wx:for="{{lun}}" wx:key="{{index}}" id="{{item.lun_id}}" data-status="{{item.status}}" bindtap="bannerName">  
+         <image src="{{item.img}}" class="company_banner"></image>   
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--**公告信息**-->
+  <view class="index-info">
+    <view class="info-hui">
+      <image src="../../images/index-icon1.png" class="index-icon1"></image>
+      <swiper class="swipers" autoplay="true" interval="5000" duration="1000" circular="true" vertical="true"> 
+        <swiper-item  wx:for="{{gong}}" wx:key="{{item.id}}" bindtap="guangName" id="{{item.id}}">  
+          <text class="info-intro">{{item.title}}</text>  
+        </swiper-item> 
+      </swiper>
+    </view>
+  </view>
+  <!--**选择等级***-->
+  <view class="choose choose1">
+    <swiper class="choose_swipers"  interval="5000" duration="1000" circular="true" indicator-dots="true" indicator-active-color="rgba(255,127,174,0.3)" indicator-color="#FF7FAE" style="height:{{height}}rpx" >
+      <swiper-item wx:for="{{list}}" wx:key="{{indexs}}" wx:for-index='indexs'>  
+        <view class="choose-title">
+          {{item.name}}
+        </view>
+        <block wx:if="{{item.info!=1}}">
+          <view class="choose-list" wx:for="{{item.info}}" wx:key="{{index}}" bindtap="choose" data-id="{{index}}" data-ids="{{indexs}}">
+            <view class="vip-list">
+              <text class="choose-info">{{item.tags}}</text>
+              <text class="choose-money">￥{{item.moneys}}</text>
+              <icon type="success" color="#E5C999"  wx:if="{{item.selected}}" size="20"  /> 
+              <icon type="circle"  wx:else size="22" />
+            </view>
+            <view class="vip-intro">
+              {{item.intro}}
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="empty">
+            <image src="../../images/empty.png" class="empty-icon"></image>
+            <text class="empty-text">暂无内容</text>
+          </view>
+        </block>
+        <!-- <image src="../../images/vip_left.png" class="vip-fl"></image>
+        <image src="../../images/vip_right.png" class="vip-fr"></image> -->
+      </swiper-item>
+    </swiper>
+  </view>
+   <!--**会员说名***-->
+   <view class="choose">
+    <view class="choose-title">
+      会员说明
+    </view>
+    <view class="vip-infos">
+     {{vip_info}}
+    </view>
+   </view>
+    <!--**会员说名***-->
+   <view class="choose">
+    <view class="choose-title">
+      安全征婚说明
+    </view>
+    <view class="vip-infos">
+     {{hun_info}}
+    </view>
+   </view>
+    <view class="buy" bindtap='buy'>
+      <image src="../../images/buys.png" class="buy-icon"></image>
+    </view>
+</view>

@@ -1,0 +1,280 @@
+/* pages/info/info.wxss */
+.banner{
+  width:100%;
+  height:520rpx;
+  border-bottom:2rpx solid #e5e5e5;
+  margin-bottom:20rpx;
+  background:#fff;
+  position:relative;
+}
+.banner .collect{
+  display:block;
+  width:200rpx;
+  height:60rpx;
+  background:rgba(0,0,0,0.5);
+  border-radius:50rpx;
+  position:absolute;
+  right:30rpx;
+  top:320rpx;
+  text-align:center;
+  line-height:60rpx;
+  color:#fff;
+  font-size:28rpx;
+}
+.banner image{
+  width:100%;
+  height:400rpx;
+  display:block;
+}
+.banner .text{
+  width:100%;
+  height:120rpx;
+  overflow:hidden;
+}
+.banner .banner-text .name{
+  display:block;
+  float:left;
+  height:120rpx;
+  font-size:32rpx;
+  color:#000;
+  line-height:120rpx;
+  margin-left:30rpx;
+}
+.banner .banner-text .money{
+  display:block;
+  float:right;
+  height:120rpx;
+  font-size:28rpx;
+  color:#ff9a0e;
+  line-height:120rpx;
+  margin-right:30rpx;
+}
+.banner .banner-text image{
+  width:73rpx;
+  height:73rpx;
+  display:block;
+  float:right;
+  margin-right:30rpx;
+  margin-top:25rpx;
+}
+.address{
+  height:40rpx;
+  padding:30rpx;
+  border-top:2rpx solid #e5e5e5;
+  border-bottom:2rpx solid #e5e5e5;
+  background:#fff;
+  margin-bottom:20rpx;
+  overflow:hidden;
+}
+.address .left{
+  width:30rpx;
+  height:40rpx;
+  float:left;
+  margin-right:20rpx;
+}
+.address .left image{
+  width:100%;
+  height:100%;
+}
+.address .middle{
+  height:100%;
+  line-height:40rpx;
+  font-size:28rpx;
+  color:#b2b2b2;
+  float:left;
+  width:600rpx;
+  overflow:hidden;
+}
+.address .right{
+  width:20rpx;
+  height:100%;
+  float:right;
+}
+.address .right image{
+  width:100%;
+  height:30rpx;
+  margin-top:5rpx;
+}
+/*==============nav===========  */
+.inner-box{
+  width:100%;
+  height:150rpx;
+  background:#fff;
+  border-top:2rpx solid #e5e5e5;
+  border-bottom:2rpx solid #e5e5e5;
+  overflow:hidden;
+  margin-bottom:20rpx;
+}
+.inner{
+  width:100%;
+  height:100rpx;
+  margin-top:25rpx;
+  overflow:hidden;
+  display:flex;
+}
+.inner .fl:nth-last-child(1){
+  border:none;
+}
+.fl{
+  flex-grow: 1;
+  border-right:2rpx solid #e5e5e5;
+  box-sizing:border-box;
+}
+.fl image{
+  width:51rpx;
+  height:60rpx;
+  display:block;
+  margin:0 auto;
+  margin-bottom:10rpx;
+}
+.fl text{
+  display:block;
+  width:100%;
+  text-align:center;
+  color:#888;
+  font-size:24rpx;
+}
+/*============学校介绍===========*/
+.school-info{
+  background:#fff;
+  padding:30rpx;
+  margin-bottom:20rpx;
+  border-top:2rpx solid #e5e5e5;
+  border-bottom:2rpx solid #e5e5e5;
+}
+.school-info .school-title{
+  height:36rpx;
+  border-left:6rpx solid #ff9a0e;
+  color:#ff9a0e;
+  font-size:36rpx;
+  padding-left:10rpx;
+  margin-bottom:10rpx;
+  font-weight:bold;
+}
+.school-info .info-inner{
+  width:100%;
+  font-size:28rpx;
+  color:#434545;
+  display:block;
+  margin-bottom:10rpx;
+}
+.school-info .more{
+  display:block;
+  text-align:right;
+  height:35rpx;
+  overflow:hidden;
+}
+.school-info .more-message{
+  display:block;
+  float:right;
+  height:35rpx;
+  line-height:35rpx;
+  color:#b2b2b2;
+  font-size:24rpx;
+  margin-right:10rpx;
+}
+.school-info .more image{
+  width:46rpx;
+  height:35rpx;
+  float:right;
+  display:block;
+}
+/*============食谱==========  */
+.food{
+  width:100%;
+  background:#fff;
+  border-top:2rpx solid #e5e5e5;
+  border-bottom:2rpx solid #e5e5e5;
+}
+.food .food-title{
+  width:100%;
+  height:90rpx;
+  text-align:center;
+  line-height:90rpx;
+  font-size:38rpx;
+  color:#ff9a0e;
+  border-bottom:2rpx solid #e5e5e5;
+  font-weight:bold;
+}
+.food .week{
+  width:100%;
+  border-bottom:2rpx solid #e5e5e5;
+  display:flex;
+  height:90rpx;
+}
+.food .week text{
+  flex-grow: 1;
+  font-size:28rpx;
+  color:#434545;
+  text-align: center;
+  line-height:90rpx;
+  display:block;
+}
+.food .week .active{
+  color:#ff9a0e;
+}
+.food-info{
+  padding:0 30rpx;
+  padding-top:30rpx;
+}
+.food-food{
+  display:block;
+  font-size:28rpx;
+  color:#696969;
+  margin-bottom:20rpx;
+}
+/* .food-list{
+  display:none;
+}
+.food-list.active{
+  display:block;
+} */
+/*===============入群===========  */
+.jia{
+  width:100%;
+  height:200rpx;
+  overflow:hidden;
+}
+.jia .qun{
+  display:block;
+  width:690rpx;
+  height:100rpx;
+  text-align:center;
+  line-height:100rpx;
+  background:#ff9a0e;
+  color:#fff;
+  font-size:36rpx;
+  border-radius:8rpx;
+  margin:0 auto;
+  margin-top:50rpx;
+}
+.info-empty{
+  width:100%;
+  display:block;
+  line-height:60rpx;
+  font-size:36rpx;
+  color:#b2b2b2;
+}
+/*============意见反馈============*/
+.message-feedback{
+  width:200rpx;
+  height:100rpx;
+  line-height:100rpx;
+  margin:0 auto;
+  overflow:hidden;
+}
+.message-feedback text{
+  font-size:32rpx;
+  line-height:100rpx;
+  color:#ff9a0e;
+  display:block;
+  float:left;
+  margin-right:20rpx;
+}
+.message-feedback image{
+  width:36rpx;
+  height:34rpx;
+  display:block;
+  float:left;
+  margin-top:36rpx;
+}

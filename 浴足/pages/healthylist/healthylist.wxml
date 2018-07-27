@@ -1,0 +1,19 @@
+<!--pages/healthylist/healthylist.wxml-->
+<view class="container">
+    <view class="list" wx:if="{{empty == 1}}">
+        <view class="item bb-1" wx:for="{{list}}" wx:key="{{index}}" bindtap='bindDetail' data-id='{{item.id}}'>
+            <image class="img" src="{{item.img}}"></image>
+            <view class="infos">
+                <text class="tit lc-1">{{item.title}}</text>
+                <view class="tit-box">
+                    <text class="texts">{{item.nums}}</text>
+                    <text class="texts">{{item.create_at}}</text>               
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="empty-box" wx:else>
+        <image class="empty-icon"  src="../../images/empty_icon.png"></image>
+        <text class="empty-txt">暂无内容</text>
+    </view>
+</view>

@@ -1,0 +1,88 @@
+<!--pages/main/main.wxml-->
+<view class="container">
+  <view class="main-box">
+     <!--*****************轮播**********-->
+       <image src="../../image/banner.png" class="banner"/> 
+    <!--**************个人信息展示***********-->
+    <view class="message">
+      <image src="{{userInfo.avatarUrl}}"></image>
+      <text class="name">{{name}}</text>
+      <text class="dirnary" wx:if="{{flag==1}}">游客</text>
+      <text class="dirnarys" wx:elif="{{flag==2}}">认证商家</text>
+      <text class="dirnarys" wx:elif="{{flag==3}}">未认证</text>
+      <text class="dirnary" wx:elif="{{flag==4}}">普通会员</text>
+    </view>
+  </view>
+  <!--**********导航**************-->
+  <view class="inner-box">
+    <view class="inner">
+      <view class="fl" bindtap="rankName">
+        <image src="../../image/qian.png"></image>
+        <text class="collect">打卡签到</text>
+      </view>
+      <view class="fl" bindtap="tuiName">
+        <text class="dou">{{dou}}</text>
+        <text class="collect">余额</text>
+      </view>
+      <view class="fr" wx:if="{{flag==1}}"  bindtap="detailName">
+        <image src="../../image/guan.png"></image>
+        <text class="collect">我已参与</text>
+      </view>
+      <view class="fr" wx:else  bindtap="detailName">
+        <image src="../../image/join.png"></image>
+        <text class="collect">我的活动</text>
+      </view>
+    </view>
+  </view>
+
+  <!--**********设置**************-->
+  <view class="box">
+    <view class="box-list">
+      <view class="list" bindtap="chongName">
+        <image src="../../image/chong.png" class="symbol"></image>
+        <text class="font">会员卡</text>
+        <image src="../../image/jian.png" class="more"></image>
+      </view>
+      <!-- <view class="list" bindtap="tiName">
+        <image src="../../image/ti.png" class="symbol"></image>
+        <text class="font">提现</text>
+        <image src="../../image/jian.png" class="more"></image>
+      </view> -->
+       <view class="list" bindtap="mingName">
+        <image src="../../image/ming.png" class="symbol"></image>
+        <text class="font">明细</text>
+        <image src="../../image/jian.png" class="more"></image>
+      </view>
+    </view>
+    <view class="box-list">
+      <view class="list" bindtap="selfName">
+        <image src="../../image/Settings_100.png" class="symbol"></image>
+        <text class="font">个人信息</text>
+        <image src="../../image/jian.png" class="more"></image>
+      </view>
+       <!-- <view class="list" bindtap="selfNames" wx:if="{{flag!=2}}">
+        <image src="../../image/zheng.png" class="symbol"></image>
+        <text class="font">商家认证</text>
+        <image src="../../image/jian.png" class="more"></image>
+      </view> -->
+       <view class="list" bindtap="collectName">
+        <image src="../../image/Urine-Collection_100.png" class="symbol"></image>
+        <text class="font">收藏</text>
+        <image src="../../image/jian.png" class="more"></image>
+      </view>
+    </view>
+     <view class="box-list">
+      <view class="list">
+        <button open-type="share"></button>
+        <image src="../../image/Share_100.png" class="symbol"></image>
+        <text class="font">分享</text>
+        <image src="../../image/jian.png" class="more"></image>
+      </view>
+      <view class="list"  bindtap="missName">
+        <image src="../../image/Poll-Topic_100.png" class="symbol"></image>
+        <text class="font">反馈</text>
+        <image src="../../image/jian.png" class="more"></image>
+      </view>
+    </view>
+  </view>
+</view>

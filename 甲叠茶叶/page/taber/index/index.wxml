@@ -1,0 +1,96 @@
+<!--index.wxml-->
+<!-- 首页轮播 -->
+<swiper indicator-dots="true" style="width:750rpx;height:300rpx;" loop>
+    <swiper-item wx:for="{{img}}" wx:key="{{index}}" id="{{item.lun_id}}" data-status="{{item.status}}" bindtap="bindImgDetail" >
+        <image src="{{item.banner}}" class="slide-image"  mode='aspectFill' />
+    </swiper-item>
+</swiper>
+<view class="con">
+    <!-- 店铺标题 -->
+    <view class="title">
+        <image class="title-img" src='../../../images/icon-store.png' mode='aspectFill'></image>
+        <view class="title-name">店铺展示</view>
+    </view>
+    <!-- 店铺列表 -->
+    <view class="list">
+        <view class="l-item" wx:for="{{company}}" wx:key="{{index}}" id="{{item.id}}" bindtap='bindStoreDetail'>
+            <image class="l-img" src='{{item.two}}' mode='aspectFill'></image>
+            <view class="l-txt">{{item.name}}</view>
+            <view class="btn-in">详情</view>
+        </view>
+    </view>
+</view>
+<view class="con1">
+    <!-- 切换菜单 自定义套餐 和 固定套餐-->
+    <view class="menu">
+        <view class="m-item {{current == 1 ? 'on' : ''}}" data-index='1' bindtap='bindTap' >自定义套餐</view>
+        <view class="m-item {{current == 2 ? 'on' : ''}}" data-index='2' bindtap='bindTap' >固定套餐</view>
+    </view>
+    <!-- 自定义套餐 -->
+    <view class="c-wrap" wx:if="{{current == 1}}">
+        <!-- 选择店铺 -->
+        <view class="p-con2">   
+            <view class="p-tit">选择店铺</view>
+            <picker class="pick-box" value="{{store_index}}" range-key='name' range="{{conpany_list}}" bindchange="bindStore" >
+                <view class="pick-txt">{{conpany_list[store_index].name}}</view>
+            </picker>
+            <image class="icon-in" src='../../../images/icon_in.png' mode='aspectFill'></image>
+        </view>
+        <!-- 时间 -->
+        <view class="p-con2">   
+            <view class="p-tit">选择日期</view>
+            <picker class="pick-box" mode="date" start='{{date}}' bindchange="bindDate" value="{{date}}" >
+                <view class="pick-txt">{{date}}</view>
+            </picker>
+            <image class="icon-in" src='../../../images/icon_in.png'></image>
+        </view>
+        <!-- 选择时间段 -->
+        <view class="p-con1">   
+            <view class="p-tit">选择时间段</view>
+            <view class="p-tags">
+                <view bindtap='bindTags' class="p-item {{item.flag == 2 ? 'on' : ''}}" wx:for="{{tags}}" wx:key="{{index}}" data-index='{{index}}'>{{item.start}}-{{item.end}}</view>
+            </view>
+        </view>
+        <view class="p-con2">   
+            <view class="p-tit">人数<text class="p-tit-txt">(最少1人，最多6人)</text> </view>
+            <view class="p-boxs">
+                <view class="p-btn" bindtap='bindMinus' >-</view>
+                <view class="p-txt">{{numbers}}</view>
+                <view class="p-btn" bindtap='bindAdd' >+</view>
+            </view>
+        </view>
+        <view class="p-txts">*以上都为必填内容，点击下一步添加选填内容</view>
+        <view class="btn-next" bindtap='bindnext' >下一步</view>
+    </view>
+    <!-- 固定套餐 -->
+    <view class="c-list" wx:if="{{current == 2}}">
+        <view class="c-item" wx:for="{{list}}" wx:key="{{index}}" bindtap='bindDetail' id="{{item.id}}">
+            <image class="c-img" src='{{item.img}}' mode='aspectFill'></image>
+            <view class="c-tit">{{item.name}}</view>
+            <view class="c-txt">¥{{item.money}}/人</view>
+        </view>
+    </view>
+</view>
+
+<!--邀请码 弹窗 -->
+<view class='invitPop' wx:if="{{pop_flag == 0}}"></view>
+<view wx:if="{{pop_flag == 0}}"> 
+    <view class='invitation' >
+        <view class='logo'>
+            <image src='{{logo}}'></image> 
+        </view>
+        <view class='info'>{{pop_text}}</view>
+        <view class='main'>
+            <input name="invit_num" bindinput='bindInput' placeholder='请输入邀请码'></input>
+        </view>
+        <view class='butt-list'>
+            <view class='text'>无邀请码
+                <button lang="zh_CN" open-type="getUserInfo" bindgetuserinfo='getUserInfo' data-types='1'> </button> 
+            </view>
+            <view class='lineq'></view>
+            <view class='button'>确认
+                <button lang="zh_CN" open-type="getUserInfo" bindgetuserinfo='getUserInfo' data-types='2'> </button> 
+            </view>
+        </view>
+    </view>
+</view> 

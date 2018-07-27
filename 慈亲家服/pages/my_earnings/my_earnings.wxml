@@ -1,0 +1,21 @@
+<view class="con">
+    <view class="money">200.00</view>
+    <view class="con-wrap">
+        <image class="con-img" src=""></image>
+        <view class="con-txt">提现须知</view>
+    </view>
+</view>
+<view class="tit">收益记录</view>
+<view class="list" wx:if="{{empty == 1}}">
+    <view class="item">
+        <view class="info">
+            <view class="i-title">佛佛法</view>
+            <view class="i-txts">2018-80-88</view>
+        </view>
+        <view class="i-txt">打赏¥200.00</view>
+    </view>
+</view>
+<view class="empty" wx:else>
+    <image src="../image/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无收益记录</text>
+</view>

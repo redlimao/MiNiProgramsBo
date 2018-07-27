@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="slider-top">
+        <scroll-view scroll-x class="wrap-c" bindtap='bindMenu' scroll-with-animation="true" scroll-into-view="{{view_id}}" scroll-left="{{left}}" bindscroll="bindScroll">
+            <view class="box-c">
+                <view class="c-item {{currentIndex == index+1 ? 'on' : ''}}" data-id='{{index+1}}' wx:for="{{menu}}" wx:key="{{index}}" id="{{'a' + index}}" data-types='{{item.id}}'>{{item.name}}</view>        
+                <view class="tip"></view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="wrap" wx:if="{{empty == 1}}">
+        <view class="weekend-list" wx:for="{{weekend_list}}" wx:key="{{item.index}}" bindtap="guangName" data-id='{{item.id}}'>
+            <image class="weekend-list-img" src="{{item.banner}}"></image>
+            <text class="weekend-tit">{{item.name}}</text>
+        </view>    
+    </view>
+    <view class="empty" wx:else>
+        <image src="../../images/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无内容</text>
+</view>
+
+</view>
+
+
+

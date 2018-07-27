@@ -1,0 +1,31 @@
+/**allcomments.wxss**/
+.info{padding: 45rpx 0 40rpx 0;width: 100%;background-color: #fff;display: flex;}
+    .info-a{width: 245rpx;text-align: center;border-right: 1rpx solid #d0d0d0;}
+        .txt-1{line-height: 40rpx;color: #9b9b9b;font-size: 24rpx;}
+        .txt-box{width: 100%;height: 46rpx;display: flex;align-items: baseline;justify-content: center;}
+            .txt-2{line-height: 46rpx;font-size: 40rpx;color: #FF7FAE;padding-right:10rpx;}
+        .stars-small{display: flex;width: 106rpx;margin: 0 auto;margin-top: 7rpx;}
+        .star-s-box{width: 18rpx;height: 18rpx;margin-right: 4rpx;}
+    .info-b{padding-top: 10rpx;width: 520rpx;}
+        .info-box{display: flex;height: 48rpx;align-items: center;width: 100%;}
+            .txt-3{padding: 0 22rpx 0 40rpx;font-size: 28rpx;color: #666666;}
+            .stars-medium{display: flex;width:190rpx;height: 30rpx;}
+                .stars-m-box{width: 30rpx;height:30rpx;margin-right: 10rpx;}     
+            .txt-4{padding-left: 22rpx;font-size: 24rpx;color: #FF7FAE;}
+/* 评论 */
+.c-tabs{width: 100%;box-sizing: border-box; height: 104rpx;padding: 0 24rpx;align-items: center;display: flex;background-color: #fff;}
+    .tab-items{height: 52rpx;padding: 0 20rpx;background-color: #f8f8f8;color: #FF7FAE;line-height: 52rpx;font-size: 24rpx;margin-right: 20rpx;border-radius: 5rpx;}
+    .tab-items.on{color: #fff;background-color: #FF7FAE;}
+/* 评论内容 */
+.c-lists{width: 100%;padding: 0 24rpx;box-sizing: border-box;background-color: #fff;border-bottom: 1rpx solid #eee;}
+.c-list{border-bottom:1rpx solid #eee;}
+    .c-list-top{height: 76rpx;display: flex;align-items: center;}
+        .c-list-img{height: 54rpx;width: 54rpx;border-radius: 50%;border: 1rpx solid #ccc;box-sizing: border-box;background-color:#ccc;}
+        .c-list-name{font-size: 28rpx;color: #333333;padding-left: 15rpx;flex: 1;}
+        .c-list-item{font-size: 26rpx;color: #9a9a9a;}
+    .c-list-txt{line-height: 56rpx;font-size: 28rpx;color: #333333;}
+    .c-list-bottom{height: 56rpx;display: flex;align-items: center;}
+        .c-list-time{font-size: 20rpx;color: #9a9a9a;flex: 1;text-align: right;}
+
+
+

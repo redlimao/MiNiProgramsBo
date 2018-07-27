@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/guang_details/guang_details",
+    "pages/shop/shop",
+    "pages/shop_details/shop_details",
+    "pages/jie/jie",
+    "pages/kefu/kefu",
+    "pages/rule/rule",
+    "pages/xiao/xiao",
+    "pages/produtce/produtce",
+    "pages/message/message",
+    "pages/cart/cart",
+    "pages/collect/collect",
+    "pages/my_order/my_order",
+    "pages/my_points/my_points",
+    "pages/fabu/fabu",
+    "pages/er/er",
+    "pages/main/main",
+    "pages/bozhi/bozhi"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "致清龢品牌燕窝",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tab-icon1-1.png",
+        "selectedIconPath": "images/tab-icon1.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "商城",
+        "iconPath": "images/tab-icon3-3.png",
+        "selectedIconPath": "images/tab-icon3.png"
+      },
+      {
+        "pagePath": "pages/kefu/kefu",
+        "text": "客服",
+        "iconPath": "images/tab-icon2-2.png",
+        "selectedIconPath": "images/tab-icon2.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "我的",
+        "iconPath": "images/tab-icon4-4.png",
+        "selectedIconPath": "images/tab-icon4.png"
+      }
+    ],
+    "color": "#a0a0a0",
+    "selectedColor": "#826540"
+  }
+}

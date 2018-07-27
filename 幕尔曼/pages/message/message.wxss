@@ -1,0 +1,99 @@
+page{
+    height:100%;
+    float:left;
+    background:#f8f8f8;
+}
+.view-message{
+    margin:30rpx 0;
+}
+page .margin{
+  margin-bottom:0;
+}
+.view-messages{
+    margin-bottom:60rpx;
+}
+.view-messages .name{
+   border-top:none;
+}
+.test{
+    width:100%;
+    height:80rpx;
+    border-bottom:1px solid #f2f2f2;
+    overflow:hidden;
+    position:relative;
+    background:#fff;
+}
+.name{
+    border-top:1px solid #f2f2f2;
+}
+.test text{
+    display:block;
+    height:100%;
+    line-height:80rpx;
+    width:22%;
+    float:left;
+    font-size:32rpx;
+    color:#434545;
+    padding-left:8%;
+}
+.test .phone{
+    height:80rpx;
+    line-height:80rpx;
+    width:70%;
+    position: absolute;
+    right:0;
+    top:0;
+    z-index:2;
+    margin:0;
+    border:none;
+   background:rgba(0,0,0,0);
+
+}
+button:after{
+  border:none;
+}
+.test input{
+    display:block;
+    height:100%;
+    line-height:80rpx;
+    width:70%;
+    float:left;
+    font-size:32rpx;
+}
+.test .phones{
+    position: absolute;
+    right:0;
+    top:0;
+    z-index:1;
+}
+ .area{
+   display:block;
+    height:100%;
+    line-height:80rpx;
+    width:70%;
+    float:left;
+    font-size:32rpx;
+    color:#888;
+}
+.area image{
+    width:16rpx;
+    height:26rpx;
+    display:block;
+    overflow:hidden;
+    float:right;
+    margin-top:27rpx;
+    margin-right:60rpx;
+}
+.test radio{
+    float:right;
+    margin-right:20rpx;
+    margin-top:15rpx;
+}
+button{
+    background:#b481bb;
+    color:#fff;
+    width:670rpx;
+    height:94rpx;
+    margin:0 auto;
+    margin-top:500rpx;
+}

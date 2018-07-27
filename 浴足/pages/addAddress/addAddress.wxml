@@ -1,0 +1,18 @@
+<!--address.wxml-->
+<view class="container">
+    <form bindsubmit="formSubmit" class="box-form">
+        <view class="box bt-1">
+            <text class="lable-txt">姓名</text>
+            <input placeholder='请填写姓名' type="text" name="name" class="input-txt" value="{{name}}"></input>
+        </view>
+        <view class="box bt-1">
+            <text class="lable-txt">电话</text>
+            <input placeholder='请填写电话' type="number" name="name" class="input-txt" value="{{phone}}"></input>
+        </view>
+        <view class="box bt-1 bb-1">
+            <text class="lable-txt">服务地址</text>
+            <input placeholder='请填写地址' type="number" name="name" class="input-txt" value="{{address}}"></input>
+        </view>
+        <button class="btn-submit" form-type='submit'>保存</button>
+    </form>
+</view>

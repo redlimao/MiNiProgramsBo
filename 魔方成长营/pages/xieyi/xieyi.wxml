@@ -1,0 +1,6 @@
+<!--pages/xieyi/xieyi.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="xieyi">
+  <view class="title">充值协议</view>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>

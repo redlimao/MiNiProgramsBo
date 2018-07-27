@@ -1,0 +1,37 @@
+.inner{background:#fff;position:relative;width:100%;padding: 0 20rpx;box-sizing: border-box;margin-top: 20rpx;}
+.lists{background-color:#fff;border-top: 1rpx solid #f8f8f8;}
+    .list{display:flex;align-items:center;height:94rpx;position: relative;}
+    button{width:100%;height:94rpx;position:absolute;left:0;top:0;background:none;border:none;margin:0;padding:0;opacity: 0;}
+    button::after{border:none;}
+    .list-icon{display:block;width:34rpx;height:34rpx;margin-right:10rpx;}
+    .list-txt{font-size:28rpx;color:#3E3E3E;flex:1;}
+    .bottom-txt{height:30rpx;margin-top: 50rpx;line-height:30rpx;color:rgb(177, 174, 171);font-size:24rpx;text-align:center;}
+.icon-in{width: 24rpx;height: 24rpx;}
+.top{box-sizing: border-box;height: 248rpx;padding-top: 25rpx;width: 100%;position: relative;background-color: #fff;}
+    .btn-box{width: 130rpx;height: 130rpx;margin: 0 auto;position: relative;z-index: 2;}
+        .btn{width: 130rpx;height: 130rpx;position: absolute;top: 0;left: 0;opacity: 0;display: none;z-index: 3;}
+        .btn-login{width: 130rpx;height: 130rpx;position: absolute;top: 0;left: 0;text-align: center;display: none;}
+        .btn.on,.btn-login.on{display: block;}
+        .img-user{width: 130rpx;height: 130rpx;border-radius: 50%;box-sizing: border-box;border:4rpx solid #fff;background-color: #ccc;position: absolute;left:0;top:0;display: none;}
+        .img-user.on{display: block;}
+
+    .txt-name{padding-top: 25rpx;font-size: 32rpx;color: #333;text-align: center;width: 100%;display: block;position: relative;z-index: 2;}
+
+/* 收藏 优惠券 */
+.box{display: flex; justify-content: space-around; width: 100%;background-color: #fff;padding: 0 24rpx;box-sizing: border-box;}
+    .box-item{height: 134rpx;flex: 1;display: flex;align-items: center;justify-content: center;}
+        .box-items{width: 120rpx;text-align: center;}
+            .info-nums{line-height: 38rpx;font-size: 26rpx;display:block;}
+            .info-txt{height: 38rpx;position: relative;}
+                .m-txt{font-size: 30rpx;color:#3E3E3E;line-height: 38rpx;position: relative;z-index: 2;}
+/* 订单 */
+.con{background-color: #fff;border-top: 1rpx solid #f8f8f8;}
+    .c-tit{padding: 0 20rpx;width: 100%;box-sizing: border-box;height: 90rpx;display: flex;align-items: center;border-bottom: 1rpx solid #f8f8f8;}
+        .c-title{font-size: 26rpx;color: #333;flex: 1;}
+        .c-more{font-size: 24rpx;color: #666;}
+    .c-list{display: flex;width: 100%;padding: 0 20rpx;box-sizing: border-box;justify-content:space-around;}
+        .c-item{height: 150rpx;display: flex;align-items: center;justify-content: center;flex-direction: column;flex: 1;position: relative;}
+            .c-tip{position: absolute;z-index: 2;top: 20rpx;right: 20rpx;background-color: #ef4136;border-radius: 50%;color: #fff;font-size: 20rpx;width: 30rpx;height: 30rpx;line-height: 30rpx;text-align: center;}
+            .c-img{width: 54rpx;height: 54rpx;display: block;}
+            .c-txt{font-size: 26rpx;color: #333;padding-top:10rpx;}
+.bottom-txt{height:30rpx;margin: 50rpx 0;line-height:30rpx;color:rgb(177, 174, 171);font-size:24rpx;text-align:center;}

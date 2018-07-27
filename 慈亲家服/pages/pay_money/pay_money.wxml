@@ -1,0 +1,25 @@
+<view class="wrap">
+    <!-- 我的乐豆 -->
+    <view class="card">
+        <image class="card-bg" src="../image/card-bg.png"></image>
+        <view class="card-txt">200.00</view>
+    </view>
+    <view class="tit">
+        <view class="title">充值乐豆</view>
+        <view class="pay-in" bindtap='bindIn'>乐斗明细</view>
+    </view>
+    <!-- 充值列表 -->
+    <view class="list">
+        <view class="item {{item.flag == true ? 'on' : ''}}" wx:for="{{pays}}" wx:key="{{index}}" bindtap='bindchoose' data-index='{{index}}'>
+            <view class="i-tit">{{item.name}}</view>
+            <view class="i-txt">售价：¥{{item.money}}</view>
+        </view>
+    </view>
+    <view class="txts" bindtap='bindSelect'>
+        <icon color='#FE9E22' size='17' type='success' wx:if="{{flag == true}}"></icon>
+        <icon color='#FE9E22' size='17' type='circle' wx:else></icon>
+        <!-- <icon color='' size='17'></icon> -->
+        <view class="t-txt">已阅读，并同意<text class="t-col">【充值须知】</text></view>
+    </view>
+    <view class="btn-pay" bindtap='bindPay'>确认支付</view>
+</view>

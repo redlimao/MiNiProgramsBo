@@ -1,0 +1,38 @@
+/* createorder */
+/* 收货地址 */
+.wrap-address{height: 200rpx;display: flex;align-items: center;padding:20rpx;width: 100%;box-sizing: border-box;background-color: #fff;}
+    .icon-address{width: 27rpx;height: 35rpx;display: block;}
+    .w-infos{padding: 0 20rpx;width: 100%;box-sizing: border-box;flex: 1;}
+        .w-infos-tit{height: 60rpx;display: flex;align-items: center;justify-content: space-between;}
+            .w-infos-txt{font-size: 30rpx;color: #333;}
+        .w-infos-txts{height: 90rpx;line-height: 45rpx;font-size: 26rpx;color: #333;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+    /* 收货地址按钮 */
+    .btn-address{height: 90rpx;padding: 0 40rpx;border-radius: 10rpx;border:1rpx solid #ed622b;color: #ed622b;font-size: 30rpx;line-height: 90rpx;margin: 0 auto;}
+    .icon-in{width: 24rpx;height: 24rpx;display: block;}
+/* 分割线 */
+.line{width: 100%;height: 9rpx;display: block;}
+/* 商品详情 */
+.con{width: 100%;box-sizing: border-box;margin-top: 20rpx;}
+    .c-tit{height: 90rpx;line-height: 90rpx;background-color: #fff;font-size: 26rpx;color: #333;padding: 0 20rpx;box-sizing: border-box;}
+    .c-box{height: 240rpx;width: 100%;padding: 10rpx 20rpx;display: flex;box-sizing: border-box;background-color: #FaFaFa;}
+        .c-img{height: 220rpx;width: 220rpx;display: block;}
+        .c-info{flex: 1;padding-left: 20rpx;}
+            .c-title{height: 80rpx;line-height: 40rpx;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;font-size: 30rpx;color: #333;}
+            .c-tag{font-size: 26rpx;color: #999999;height: 80rpx;line-height: 80rpx;}
+            .c-infos{display: flex;justify-content: space-between;align-items: center;height: 60rpx;}
+                .c-infos-txt1{font-size: 34rpx;color:#333;}
+                .c-infos-txt1::before{content:'¥';font-size: 24rpx;color: #333;padding-left:5rpx;}
+                .c-infos-txt2{font-size: 30rpx;color: #666;}
+/* 优惠券 积分 */
+.list{width: 100%;background-color: #fff;padding: 0 20rpx;box-sizing:border-box;}
+    .item{height: 90rpx;align-items: center;display: flex;justify-content: space-between;border-bottom: 1rpx solid #f8f8f8;}
+        .item-txt{font-size: 26rpx;color: #333333;}
+        .item-txts{font-size: 26rpx;color: #ed622b;flex: 1;text-align: right;padding: 0 20rpx;}
+
+/* 底部 */
+.foot{width: 100%;position: fixed;bottom: 0;left: 0;box-sizing: border-box;background-color: #fff;display: flex;align-items: center;height: 100rpx;justify-content:flex-end;}
+    .f-txt{flex: 1;font-size: 32rpx;color: #ef4136;text-align: right;padding-right: 20rpx;}
+    .btn-pay{height:100rpx;width: 220rpx;background-color:#ed622b;color: #fff;text-align: center;line-height: 100rpx;font-size: 32rpx;}
+    .f-btn{padding: 0 40rpx;height: 60rpx;border: 1rpx solid #666;color: #666;font-size: 26rpx;line-height: 62rpx;border-radius: 40rpx;margin-left: 40rpx;margin-right: 20rpx;}
+
+

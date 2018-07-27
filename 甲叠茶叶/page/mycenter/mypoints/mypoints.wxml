@@ -1,0 +1,46 @@
+<view class="container">
+  <!-- *********个人信息********** -->
+  <view class="main-box">
+    <view class="box"></view>
+    <view class="main">
+      <!-- 个人 -->
+      <view class="main-message">
+        <view class="main-photo">
+          <image src="{{img}}" class="main-img"></image>
+        </view>
+        <view class="main-name">{{name}}</view>
+         <view class="main-main" bindtap='bindPointstext'>
+          <image src="../../../images/rule.png" class="card-icon"></image>
+          <text class="main-choose">积分规则</text>
+        </view> 
+      </view>
+      <!-- 需求 -->
+      <view class="main-xu">{{point}}积分</view>
+    </view>
+  </view>
+  <!-- *********积分********** -->
+  <view class="points">
+    <view class="points-nav" bindtap="tabFun">
+      <text class="{{current=='0'? 'active' : ''}}" id="1" data-id="0">收入</text>
+      <text class="{{current=='1'? 'active' : ''}}"  id="2" data-id="1">支出</text>
+    </view>
+    <view class="points-inner">
+      <!--*******收入********-->
+      <view class="points-shou">
+          <view class="box" wx:if="{{empty==0}}">
+            <view class="shou-list" wx:for="{{list}}" wx:key="{{item.id}}">
+              <view class="list-fl">
+                <text class="text">{{item.name}}</text>
+                <text class="time">{{item.time}}</text>
+              </view>
+              <view class="list-fr {{current=='1'? 'list-frs' : ''}}">{{item.money}}</view>
+            </view>
+          </view>
+          <view class="empty" wx:else>
+            <image src="../image/empty.png" class="empty-icon"></image>
+            <text class="empty-text">暂无积分记录</text>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

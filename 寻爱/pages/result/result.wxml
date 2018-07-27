@@ -1,0 +1,19 @@
+<!--pages/result/result.wxml-->
+<view class="container">
+  <view class="back" bindtap='backName'>
+      <image src="../../images/back.png" class="back-icon" mode="aspectFill" ></image>
+    </view>
+    <view class="tops">测试结果</view>
+    <view class="result">
+      <view class="message">
+        <image src="{{info.avatar}}" class="photo"></image>
+        <text class="name">{{info.nick_name}}</text>
+      </view>
+      <view class="result-cont">
+        {{content}}
+      </view>
+      <!-- <view class="share">
+        <button open-type='share' hover-class='none'>分享给好友</button>
+      </view> -->
+    </view>
+</view>

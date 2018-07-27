@@ -1,0 +1,43 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+  <view class="company_img">
+     <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"> 
+        <swiper-item   wx:for="{{banner}}" wx:key="{{item.id}}" id="{{id}}">  
+           <image src="{{item.img}}" class="company_img"></image>  
+        </swiper-item>
+      </swiper>
+  </view>
+  <view class="product">
+    <view class="product-title">
+      <image src="../../images/product.png" class="product-title"></image>
+    </view>
+     <view class="nav">
+      <block wx:for="{{nav}}" wx:key="{{item.id}}">
+        <template is="navs" data="{{...item}}" />
+      </block>
+     </view>
+  </view>
+  <view class="video" bindtap='videoName'>
+    <view class="product-title">
+      <image src="../../images/movie.png"  class="product-title"></image>
+    </view>
+    <view class="video-img">
+      <image src="{{video_img}}"  class="video-img"></image>
+      <view class="mask">
+        <image src="../../images/play.png" class="plays"></image>
+      </view>
+    </view>
+  </view>
+  <view class="img-details">
+    <view class="details-list" wx:for="{{details_list}}" wx:key="{{index}}">
+      <image src="{{item.img}}" mode="widthFix" class="shop_img"></image>
+      <text class="details-text">{{item.intro}}</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="video-mask"  wx:if="{{hiddens}}" >
+  <image src="../../images/close.png" class="close" bindtap='pauseName'></image>
+  <video controls src="{{video_url}}" hidden="{{hidden}}" id="myVideo"></video>
+</view>

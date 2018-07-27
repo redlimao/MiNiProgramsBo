@@ -1,0 +1,27 @@
+page{padding-bottom: 40rpx;}
+.time-wrap{display:flex;align-items: center;border-bottom: 1rpx solid #EEEEEE;background-color: #fff;}
+    .t-box{flex: 1;display: flex;justify-content: center;}    
+        .picker-box{width: 100%;}
+            .picker{width: 100%;display: flex;justify-content: center;align-items: center;height: 88rpx;}
+                .p-txt{color: #373634;font-size: 30rpx;padding-right: 8rpx;}
+                .t-img{width: 16rpx;height: 14rpx;display: block;}
+.data-wrap{width: 100%;background-color: #fff;padding: 0 20rpx;box-sizing: border-box;}
+    .data-list{display: -webkit-box;display: flex;}
+        .data-time{height: 130rpx;display: flex;align-items: center;justify-content: center;flex-direction: column;padding: 0 21rpx;}
+            .d-txt1{font-size: 24rpx;color: #B1AEAB;}
+            .d-txt2{font-size: 36rpx;color: #373634;width: 60rpx;height: 60rpx;margin-top: 14rpx;text-align: center;border-radius: 50%;line-height: 60rpx;background-color: transparent;}
+            .d-txt2.on{color: #fff;background-color:#FDCF44;}
+
+.time-box{width: 100%;padding: 40rpx 20rpx;box-sizing: border-box;}
+    .time-tit{height: 42rpx;position: relative;text-align: center;line-height: 42rpx;font-size: 24rpx;color: #9C9C9C;}
+    .time-tip{width: 100rpx;position: absolute;left: 0;top:0;}
+        .m-txt{font-size: 30rpx;color:#2B2B2B;line-height: 38rpx;position: relative;z-index: 2;}
+        .m-bg{position: absolute;left: 0;bottom:0rpx;background-color:#FDCF44;width: 100%;height: 15rpx;}
+    .t-boxs{padding: 17rpx 66rpx;width: 100%;box-sizing: border-box;}
+        .t-item{height: 90rpx;width: 100%;display: flex;align-items: center;}
+            .t-txt1,.t-txt2,.t-txt3{font-size: 36rpx;color: #2B2B2B;}
+            .t-txt1{padding-left: 10rpx;}
+            .t-txt2{font-size: 48rpx;padding-left: 114rpx;}
+            .t-txt3{padding-left: 114rpx;}
+.btn{width: 520rpx;height: 80rpx;text-align: center;line-height: 80rpx;font-size: 34rpx;color: #2B2B2B;background-color: #FDCF44;border-radius: 5rpx;margin: 0 auto;margin-top: 30rpx;}
+

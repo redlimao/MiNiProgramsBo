@@ -1,0 +1,19 @@
+<!--pages/shop/shop.wxml-->
+<view class="con">
+    <!-- 侧边菜单 -->
+    <view class="side-menu">
+        <view class="s-item {{current == (index + 1) ? 'on' : ''}}" wx:for="{{menu_one}}" wx:key="{{index}}" data-index='{{index + 1}}' bindtap='bindMenu' id='{{item.id}}' >{{item.name}}</view>
+    </view>
+    <!-- 主体内容 -->
+    <view class="wrap">
+        <view class="box"  wx:for="{{menu_two}}" wx:key="{{index}}" wx:for-item='list'>
+            <view class="tit">{{list.name}}</view>
+            <view class="list">
+                <view class="l-item" wx:for="{{list.children}}" wx:key="{{index}}" bindtap='bindDetail' id="{{item.id}}">
+                    <image src='{{item.img}}' class="l-img"></image>
+                    <view class="l-txt">{{item.name}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

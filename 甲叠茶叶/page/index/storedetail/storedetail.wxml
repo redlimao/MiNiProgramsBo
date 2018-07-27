@@ -1,0 +1,34 @@
+<!--storedetail.wxml-->
+<import src="../../../wxParse/wxParse.wxml"/> 
+<view class="con">
+    <!-- 店铺名称 -->
+    <view class="l-item">
+        <image class="l-img" src='{{store_img}}'></image>
+        <view class="l-txt">{{store_name}}</view>
+    </view>  
+</view>
+<view class="item mt20" bindtap='bindPhone'>
+    <view class="tit">服务电话</view>
+    <view class="txts">{{phone}}</view>
+</view>
+<view class="item" bindtap='bindLocation'>
+    <view class="tit">店铺地址</view>
+    <view class="txts">{{address}}</view>
+    <image class="icon-address" src='../../../images/icon-address.png' mode='aspectFill'></image>
+</view>
+<!-- 店铺展示 -->
+<view class="item mt20">
+    <view class="tit">店铺展示</view>
+</view>
+<view class="scroll-x">
+    <scroll-view scroll-x>
+        <image class="item-img" wx:for="{{img}}" wx:key="{{index}}"  src='{{item}}' bindtap='bindPerview' data-url='{{item}}' mode='aspectFill' ></image>
+    </scroll-view>
+</view>
+<view class="item mt20">
+    <view class="tit">店铺展示</view>
+</view>
+<view class="con-wxParse">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+

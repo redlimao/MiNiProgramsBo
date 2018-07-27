@@ -1,0 +1,26 @@
+<view class="wrap">
+    <!-- 我的乐豆 -->
+    <view class="card">
+        <image class="card-bg" src="../../../images/card-bg.png"></image>
+        <view class="card-txt">{{account}}</view>
+    </view>
+    <view class="tit">
+        <view class="title">充值金额</view>
+        <view class="pay-in" bindtap='bindIn' type>金额明细</view>
+    </view>
+    <view class="input-box">
+        <input class="input-txt" type='number' placeholder='请输入充值金额' bindinput="bindInput" value='{{numbers}}' ></input>
+    </view>
+    <!-- 充值列表 -->
+    <!-- <view class="list">
+        <view class="item {{item.flag == 1 ? '' : 'on'}}" wx:for="{{moneys}}" wx:key="{{index}}" bindtap='bindchoose' data-index='{{index}}' id="{{item.id}}">
+            <view class="i-tit">{{item.num}}元</view>
+        </view>
+    </view> -->
+    <view class="txts" bindtap='bindSelect'>
+        <icon color='#826540' size='17' type='success' wx:if="{{flag == true}}"></icon>
+        <icon color='#826540' size='17' type='circle' wx:else></icon>
+        <view class="t-txt">已阅读，并同意<text class="t-col" catchtap='bindPaytext'>【充值须知】</text></view>
+    </view>
+    <view class="btn-pay" bindtap='bindPay'>确认支付</view>
+</view>

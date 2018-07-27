@@ -1,0 +1,42 @@
+<view class="search">
+    <!-- 搜索框 -->
+    <view class="s-box" bindtap='bindSearch'>
+        <image class="s-img" src='../../../images/search.png'></image>
+        <view class="s-txt">请输入要搜索的内容</view>
+    </view>
+</view>
+<view class="btn-c" bindtap='bindShow' wx:if="{{coupons != 1}}">领取优惠券</view>
+<!-- 主体 -->
+<view class="con" wx:if="{{empty == 1}}">
+    <view class="c-item" wx:for="{{list}}" wx:key="{{index}}" bindtap='bindDetail' id="{{item.id}}">
+        <image class="c-img" src='{{item.banner}}' mode='aspectFill'></image>
+        <view class="c-txt">{{item.name}}</view>
+        <view class="info">
+            <view class="info-txt">{{item.xian_moneys}}</view>
+            <image class="info-btn" src="../../../images/icon-buy.png"></image>
+        </view>
+    </view>
+</view>
+<view class="empty" wx:else>暂无商品</view>
+<!-- *****优惠卷弹窗**** -->
+<view class="pop-bg {{pop_flag == 1 ? '' : 'on'}}" bindtap='bindHide'></view>
+<view class="pop {{pop_flag == 1 ? '' : 'on'}}">
+    <image class="pop-img" src="../../../images/pop_bg.png"></image>
+    <view class="pop-content">
+        <view class="p-coupon-view">
+            <view class="p-item" wx:for="{{coupons}}" wx:key="{{index}}">
+                <image class="p-item-img" src="../../../images/coupon_bg.png"></image>
+                <view class="p-item-con">
+                    <view class="p-money">
+                        <text class="p-money-icon">¥</text>
+                        <text class="p-moneys">{{item.money}}</text>
+                    </view>
+                    <text class="p-txts">满¥{{item.man}}可用</text>
+                </view>
+            </view>
+        </view>
+        <text class="p-texts">优惠券领取成功请到“我”-“优惠券”查看</text>
+        <view class="p-btn" bindtap='bindCoupons'>查看详情</view>
+    </view>
+    <image class="p-close" bindtap='bindHide' src="../../../images/close_icon.png"></image>
+</view>

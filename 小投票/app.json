@@ -1,0 +1,66 @@
+{
+    "pages": [
+        "page/taber/index/index",
+        "page/taber/list/list",
+        "page/taber/mycenter/mycenter"
+    ],
+    "subPackages": [
+        {
+            "root": "page/index/",
+            "pages": [
+                "textVoting/textVoting",
+                "wordLook/wordLook",
+                "picVoting/picVoting",
+                "picLook/picLook"
+            ]
+        },{
+            "root": "page/list/",
+            "pages": [
+                "wordLook/wordLook",
+                "picLook/picLook",
+                "warnVoting/warnVoting",
+                "comment/comment"
+            ]
+        },
+        {
+            "root": "page/mycenter/",
+            "pages": [
+                "earnings/earnings"
+            ]
+        }
+    ],
+    "window": {
+        "navigationBarBackgroundColor":"#FFFFFF",
+        "navigationBarTextStyle":"black",
+        "navigationBarTitleText": "小投票"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "page/taber/index/index",
+                "text": "创建投票",
+                "iconPath": "images/tab-icon1-1.png",
+                "selectedIconPath":"images/tab-icon1.png"
+            },
+            {
+                "pagePath": "page/taber/list/list",
+                "text": "投票箱",
+                "iconPath": "images/tab-icon2-2.png",
+                "selectedIconPath": "images/tab-icon2.png"
+            },
+            {
+                "pagePath": "page/taber/mycenter/mycenter",
+                "text": "个人中心",
+                "iconPath": "images/tab-icon3-3.png",
+                "selectedIconPath": "images/tab-icon3.png"
+            }
+        ],
+        "position": "bottom",
+        "color":"#9EA5B9",
+        "selectedColor":"#474D55"
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    }
+}

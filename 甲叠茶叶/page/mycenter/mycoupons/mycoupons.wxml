@@ -1,0 +1,10 @@
+<view class="con">
+    <view class="list" wx:if="{{empty == 1}}">
+        <view class="item" wx:for="{{list}}" wx:key="{{index}}">
+            <view class="tit">{{item.name}}</view>
+            <view class="txt">满{{item.man}}件{{item.money}}</view>
+            <view class="time">使用期限：{{item.start_at}}~{{item.end_at}}</view>
+        </view>
+    </view>
+    <view class="empty" wx:else>暂无优惠券</view>
+</view>

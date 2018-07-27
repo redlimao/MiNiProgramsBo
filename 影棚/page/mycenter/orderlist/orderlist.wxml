@@ -1,0 +1,15 @@
+<!--orderlist.wxml-->
+<!-- 菜单 -->
+<view class="menu">
+    <view class="m-item" bindtap='bindTap' data-index='{{index+1}}' wx:for="{{menu_one}}" wx:key="{{index}}">
+        <view class="m-txt">{{item}}</view>
+        <view class="m-bg" wx:if="{{current == index + 1}}"></view>
+    </view>
+</view> 
+<view class="con">
+    <view class="c-item" wx:for="{{list}}" wx:key="{{index}}" bindtap='bindDetail'>
+        <view class="tip">{{item.tip}}</view>
+        <image class="c-img" src='{{item.img}}' mode='widthFix'></image>
+        <view class="c-txt">{{item.texts}}</view>
+    </view>
+</view>

@@ -1,0 +1,180 @@
+@import "../template/template.wxss";
+/*===========购物车=============*/
+.container{
+  padding-bottom:220rpx;
+}
+.shops{
+  width:100%;
+  height:198rpx;
+  overflow:hidden;
+  position:fixed;
+  left:0;
+  bottom:0;
+}
+/* =积分= */
+.fen{
+  width:100%;
+  height:98rpx;
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+  overflow:hidden;
+  background:#fff;
+}
+.fens{
+  width:463rpx;
+  height:50rpx;
+  float:left;
+  position:relative;
+  background:#f7f7f7;
+  border-radius:6rpx;
+  overflow:hidden;
+  margin-left:30rpx;
+  margin-top:25rpx;
+}
+.fens input{
+  width:293rpx;
+  padding-left:170rpx;
+  background:#f7f7f7;
+  height:50rpx;
+  font-size:30rpx;
+  color:rgb(177,174,171);
+  position:absolute;
+  left:0;
+}
+.fens .shi-fen{
+  font-size:30rpx;
+  color:rgb(177,174,171);
+  position:absolute;
+  left:13rpx;
+  display:block;
+  line-height:50rpx;
+}
+.choose{
+  float:right;
+  margin-top:20rpx;
+}
+.shopss{
+  width:100%;
+  height:100rpx;
+  overflow:hidden;
+  position:absolute;
+  bottom:0;
+  border-top:1rpx solid #eee;
+}
+.shops-fl{
+  width:550rpx;
+  height:100%;
+  background:#fff;
+  float:left;
+}
+.shops-fl .shops-number{
+  width:300rpx;
+  height:100rpx;
+  margin-left:30rpx;
+  float:left;
+  margin-right:50rpx;
+  font-size:28rpx;
+  color:#b481bb;
+  text-align:center;
+  line-height:100rpx;
+}
+.fu-money{
+  color:rgb(250,0,43);
+  font-size:28rpx;
+}
+.shops-fl .shops-money{
+  overflow:hidden;
+  float:left;
+}
+.shops-fr .shops-money .fu{
+  height:100rpx;
+  line-height:100rpx;
+  margin-left:20rpx;
+}
+.shops-money image{
+  width:35rpx;
+  height:35rpx;
+  display:block;
+  float:right;
+  margin-top:35rpx;
+  margin-right:20rpx;
+}
+
+.shops-fr{
+  width:200rpx;
+  height:100%;
+  background:#b481bb;
+  float:right;
+  font-size:36rpx;
+  color:#fff;
+  text-align:center;
+  line-height:100rpx;
+  overflow:hidden;
+}
+.shops-choose{
+  height:100%;
+  float:left;
+  font-size:36rpx;
+  color:#b481bb;
+  text-align:center;
+  line-height:100rpx;
+  margin-left:30rpx;
+}
+.shops-choose .all{
+  display:block;
+  margin-top:0;
+  float:left;
+  line-height:100rpx;
+}
+.shops-choose icon{
+  float:left;
+  display:block;
+  line-height:145rpx;
+  margin-right:10rpx;
+}
+/* ===优惠券== */
+.quan{
+  padding:0 30rpx;
+  background:#fff;
+  margin-top:20rpx;
+}
+.quan .quan-choose{
+  height:80rpx;
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1rpx solid #eee;
+}
+.quan .quan-choose .quan-title{
+  font-size:26rpx;
+  color:#333;
+  line-height:80rpx;
+}
+.quan .quan-choose .quan-more{
+  width:32rpx;
+  height:32rpx;
+  margin-top:24rpx;
+}
+.quans{
+  width:120rpx;
+  height:30rpx;
+  border:1rpx solid #b481bb;
+  color:#b481bb;
+  font-size:24rpx;
+  text-align:center;
+  line-height:30rpx;
+  background:#fff;
+  margin-right:20rpx;
+  margin-top:25rpx;
+}
+.quan-jian{
+  font-size:30rpx;
+  line-height:80rpx;
+  color:#333;
+  margin-right:10rpx;
+  font-weight:bold;
+}
+.quan-man{
+  font-size:26rpx;
+  line-height:80rpx;
+  color:#333;
+}

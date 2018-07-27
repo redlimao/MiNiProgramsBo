@@ -1,0 +1,20 @@
+/**personage.wxss**/
+/* 用户头像和名字 */
+.top{box-sizing: border-box;height: 266rpx;padding-top: 32rpx;width: 100%;position: relative;}
+    .bg{width: 100%;height: 276rpx;position: absolute;top: 0;left: 0;}
+    .img-user{box-sizing: border-box;height: 130rpx;width: 130rpx;border:4rpx solid #fff;border-radius: 50%;background-color: #ccc;margin: 0 auto;position: relative;z-index: 2;}
+    .txt-name{padding-top: 25rpx;font-size: 32rpx;color: #fff;text-align: center;width: 100%;display: block;position: relative;z-index: 2;}
+/* 收藏 优惠券 */
+.box{display: flex;align-items: center;width: 100%;background-color: #fff;padding: 0 24rpx;
+box-sizing: border-box;}
+    .line{height: 99rpx;width: 3rpx;background-color: #eeeeee;}
+    .box-item{height: 134rpx;flex: 1;display: flex;align-items: center;justify-content: center;}
+        .box-items{width: 120rpx;text-align: center;}
+            .info-nums{line-height: 38rpx;font-size: 26rpx;color: #59d0d0;}
+            .info-txt{line-height: 38rpx;font-size: 30rpx;color: #000000;}
+
+.lists{margin-top:16rpx;background-color:#fff;width: 100%;}
+	.list{padding:0 24rpx;border-top:1rpx solid rgb(238,238,238);display:flex;align-items:center;height:94rpx;box-sizing: border-box;}
+		.list-txt{font-size:28rpx;color:rgb(102,102,102);margin-left:20rpx;flex:1;}
+
+.bottom-txt{height:30rpx;margin-top: 100rpx;line-height:30rpx;color:rgb(177, 174, 171);font-size:24rpx;text-align:center;}

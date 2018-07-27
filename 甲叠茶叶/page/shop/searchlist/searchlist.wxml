@@ -1,0 +1,12 @@
+<!-- 主体 -->
+<view class="con" wx:if="{{empty == 1}}"> 
+    <view class="c-item" wx:for="{{list}}" wx:key="{{index}}" id='{{item.id}}' bindtap='bindDetail'>
+        <image class="c-img" src='{{item.banner}}' mode='aspectFit'></image>
+        <view class="c-txt">{{item.name}}</view>
+        <view class="info">
+            <view class="info-txt">{{item.xian_moneys}}</view>
+            <view class="info-btn">购买</view>
+        </view>
+    </view>
+</view>
+<view class="empty" wx:else>暂无内容</view>

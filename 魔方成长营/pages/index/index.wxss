@@ -1,0 +1,182 @@
+/**index.wxss**/
+/*===========轮播================*/
+.swiper{
+  width:100%;
+  height:350rpx;
+}
+.swiper image{
+  width:100%;
+  height:350rpx;
+}
+.swiper .wx-swiper-dots.wx-swiper-dots-horizontal{
+     margin-bottom: 2rpx;
+}
+/*=============搜索==============*/
+.search{
+  width:690rpx;
+  height:160rpx;
+  overflow:hidden;
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  top:260rpx;
+  border-radius:10rpx;
+  box-shadow:0 0 20rpx rgba(0,0,0,0.1);
+  background: -webkit-linear-gradient(left top, #fb970e , #fac51f);
+  background: -moz-linear-gradient(left top, #fb970e , #fac51f)
+}
+.search .inp-box{
+  display:block;
+  width:600rpx;
+  height:80rpx;
+  margin:0 auto;
+  border-radius:50rpx;
+  background:#fff;
+  position:relative;
+  top:40rpx;
+}
+.search form{
+  display:block;
+  width:600rpx;
+  height:80rpx;
+  margin:0 auto;
+  border-radius:50rpx;
+}
+.search input{
+  display:block;
+  font-size:30rpx;
+  width:600rpx;
+  height:80rpx;
+  border-radius:50rpx;
+  margin:0 auto;
+  text-align: center;
+  color:#b1b1b1;
+  overflow:hidden;
+}
+.search .se-img{
+  position: absolute;
+  width:50rpx;
+  height:50rpx;
+  z-index:999;
+  right:30rpx;
+  top:15rpx;
+}
+.search .cha{
+  position:absolute;
+  right:50rpx;
+  bottom:20rpx;
+  color:#fff;
+  font-size:32rpx;
+}
+.nav{
+  width:100%;
+  height:100rpx;
+  overflow:hidden;
+  border-top:2rpx solid #e5e5e5;
+  border-bottom:2rpx solid #e5e5e5;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display:flex;
+  background:#fff;
+  justify-content:space-around;
+  margin-top:120rpx;
+  margin-bottom:20rpx;
+}
+.nav picker{
+  flex-flow: 1;
+  position:relative;
+  height:100%;
+  line-height:100rpx;
+  font-size:28rpx;
+}
+.nav picker image{
+    width:20rpx;
+    height:20rpx;
+    position:absolute;
+    top:40rpx;
+    right:-30rpx;
+}
+/*=====================内容===============*/
+.inner{
+  width:100%;
+}
+ .inner-empty{
+  width:100%;
+  text-align:center;
+  line-height:500rpx;
+  font-size:36rpx;
+  color:#b2b2b2;
+}
+.inner .inner-list{
+  height:160rpx;
+  padding:30rpx;
+  background:#fff;
+  border-top:2rpx solid #e5e5e5;
+  border-bottom:2rpx solid #e5e5e5;
+  margin-bottom:20rpx;
+  overflow:hidden;
+}
+.inner .inner-list .image{
+  width:160rpx;
+  height:160rpx;
+  float:left;
+  border-radius:8rpx;
+  overflow:hidden;
+  margin-right:30rpx;
+}
+.inner .inner-list .image image{
+  width:100%;
+  height:100%;
+}
+.inner .inner-list .small{
+  float:left;
+  width:500rpx;
+  height:120rpx;
+  padding-top:40rpx;
+  overflow:hidden;
+}
+.inner .inner-list .small .small-name{
+  display:block;
+  font-size:32rpx;
+}
+.inner .inner-list .small .small-box{
+  overflow:hidden;
+}
+.inner .inner-list .small .small-box image{
+  width:23rpx;
+  height:30rpx;
+  display:block;
+  float:left;
+  margin-right:16rpx;
+}
+.inner .inner-list .small .small-address{
+  display:block;
+  font-size:28rpx;
+  color:#b2b2b2;
+  float:left;
+}
+.inner .inner-list .ren{
+  float:right;
+  width:74rpx;
+  height:80rpx;
+  padding:40rpx 0;
+}
+.inner .inner-list .ren image{
+  display:block;
+  width:56rpx;
+  height:66rpx;
+  margin:0 auto;
+}
+.inner .inner-list .ren .ren-intro{
+  display:block;
+  font-size:24rpx;
+  color:#b2b2b2;
+  width:100%;
+  text-align:center;
+}
+.decitsnce{
+  width:100%;
+  text-align:right;
+  font-size:28rpx;
+  color:#b2b2b2;
+}

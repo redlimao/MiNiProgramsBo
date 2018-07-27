@@ -1,0 +1,85 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+  <!-- *********个人信息********** -->
+  <view class="main-box">
+    <view class="main">
+      <!-- 个人 -->
+      <view class="main-message">
+        <view class="main-photo">
+          <image src="{{photo}}" class="main-img"></image>
+          <image src="../../images/party.png" class="main-party" wx:if="{{birthday==1}}"></image>
+        </view>
+        <view class="main-name">{{name}}</view>
+        <view class="er" bindtap='erName' wx:if="{{xiao==1}}">
+          <image src='../../images/er.png' class="er-icon"></image>
+        </view>
+        <!-- <view class="card"  bindtap='cardName'>
+          完善信息
+        </view> -->
+        <view class="main-main" bindtap='cardName' wx:if="{{message==1}}">
+          <image src="../../images/card.png" class="card-icon"></image>
+          <text class="main-choose">完善信息</text>
+        </view> 
+        <view class="main-main" bindtap='cardName' wx:else>
+          <image src="../../images/xiu.png" class="card-icon"></image>
+          <text class="main-choose main-chooses">修改信息</text>
+        </view> 
+      </view>
+      <!-- 需求 -->
+      <view class="main-xu">
+        <view class="xu-list" bindtap='jieName'>
+          <!-- <text class="list-zhi">{{zhuan}}</text> -->
+          <image src="../../images/main-jie.png" class="list-zhi"></image>
+          <text class="list-name">我的转介</text>
+        </view>
+        <view class="xu-list" bindtap='pointsName'>
+          <!-- <text class="list-zhi">{{points}}</text> -->
+          <image src="../../images/main-card.png" class="list-zhi"></image>
+          <text class="list-name">充值</text>
+        </view>
+        <view class="xu-list" bindtap='collectName'>
+          <!-- <text class="list-zhi">{{collect}}</text> -->
+          <image src="../../images/main-collect.png" class="list-zhi"></image>
+          <text class="list-name">我的收藏</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- *********订单********** -->
+  <view class="main-order">
+    <view class="order-title">
+      <text class="title-text">我的订单</text>
+      <text class="look-more" bindtap='moreName'>全部订单</text>
+    </view>
+    <view class="order-box">
+     <block wx:for="{{common}}" wx:key="{{item.id}}">
+        <template is="navs" data="{{...item}}" />
+      </block>
+    </view>
+  </view>
+  <!--**********收货地址***********  -->
+  <view class="box-list">
+     <view class="list" bindtap="bindyu">
+      <image src="../../images/user_4.png" class="symbol"></image>
+      <text class="font">我的预定</text>
+      <image src="../../images/mores.png" class="more"></image>
+    </view> 
+    <view class="list" bindtap="addName">
+      <image src="../../images/user_2.png" class="symbol"></image>
+      <text class="font">收货地址</text>
+      <image src="../../images/mores.png" class="more"></image>
+    </view>
+    <view class="list" bindtap="telName">
+      <image src="../../images/user_3.png" class="symbol"></image>
+      <text class="font">联系我们</text>
+      <image src="../../images/mores.png" class="more"></image>
+    </view>
+    <view class="list">
+      <image src="../../images/user_5.png" class="symbol"></image>
+      <text class="font">分享</text>
+      <image src="../../images/mores.png" class="more"></image>
+      <button open-type='share' hover-class="no"></button>
+    </view>
+  </view>
+</view>
+<view class='zhichi' bindtap='jiName'>©技术支持博智营销</view>

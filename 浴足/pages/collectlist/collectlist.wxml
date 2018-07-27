@@ -1,0 +1,26 @@
+<!--pages/collectlist/collectlist.wxml-->
+<view class="container">
+    <view class="list mt-20" wx:if="{{empty == 1}}">
+        <view class="item" wx:for="{{goods}}" wx:key="{{index}}" bindtap="bindDetails" data-id='{{item.id}}'>
+            <image class="item-img" src="{{item.banner}}"></image>
+            <view class="info">
+                <view class="wrap">
+                    <text class="tit lc-1">{{item.name}}</text>
+                    <text class="nums">{{item.xiao}}</text>
+                </view>
+                <text class="texts lc-1">{{item.ad_list}}</text>
+                <view class="wrap pt-44">
+                    <text class="people-num">{{item.fu}}</text>
+                    <view class="wrap-txt">
+                        <text class="color-a">{{item.moneys_one}}</text>{{item.moneys_two}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="empty-box1" wx:else>
+        <image class="empty-icon"  src="../../images/empty_icon.png"></image>
+        <text class="empty-txt">暂无内容</text>
+    </view>
+</view>
+

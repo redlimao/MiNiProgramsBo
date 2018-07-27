@@ -1,0 +1,80 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/xun/xun",
+    "pages/vip/vip",
+    "pages/shop/shop",
+    "pages/main/main",
+    "pages/ti/ti",
+    "pages/ceshi/ceshi",
+    "pages/result/result",
+    "pages/class/class",
+    "pages/bao/bao",
+    "pages/zi/zi",
+    "pages/order/order",
+    "pages/qian/qian",
+    "pages/peng/peng",
+    "pages/xiao/xiao",
+    "pages/quan/quan", 
+    "pages/shop_details/shop_details",
+    "pages/message/message",
+    "pages/allcomments/allcomments",
+    "pages/my_order/my_order",
+    "pages/cart/cart",
+    "pages/fabu/fabu",
+    "pages/mains/mains",
+    "pages/collect/collect",
+    "pages/texts/texts",
+    "pages/class_details/class_details",
+    "pages/bj/bj",
+    "pages/flower/flower",
+    "pages/er/er",
+    "pages/jie/jie",
+    "pages/rule/rule",
+    "pages/newpage/newpage",
+    "pages/ziliao/ziliao"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#FF7FAE",
+    "navigationBarTitleText": "寻爱服务",
+    "navigationStyle":"custom",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "寻爱服务",
+        "iconPath": "images/tab-icon1-1.png",
+        "selectedIconPath": "images/tab-icon1.png"
+      },
+      {
+        "pagePath": "pages/xun/xun",
+        "text": "寻爱",
+        "iconPath": "images/tab-icon2-2.png",
+        "selectedIconPath": "images/tab-icon2.png"
+      },
+      {
+        "pagePath": "pages/vip/vip",
+        "text": "会员卡",
+        "iconPath": "images/tab-icon3-3.png",
+        "selectedIconPath": "images/tab-icon3.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "商城",
+        "iconPath": "images/tab-icon4-4.png",
+        "selectedIconPath": "images/tab-icon4.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "个人中心",
+        "iconPath": "images/tab-icon5-5.png",
+        "selectedIconPath": "images/tab-icon5.png"
+      }
+    ],
+    "color": "#a0a0a0",
+    "selectedColor": "#FF7FAE"
+  }
+}

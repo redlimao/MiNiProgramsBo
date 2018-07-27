@@ -1,0 +1,269 @@
+/* pages/i-video/i-video.wxss */
+page{
+  background:#f8f8f8;
+}
+.container{
+  padding-bottom:100rpx;
+}
+.scroll {
+  width: 100%;
+  background: #fff;
+  white-space: nowrap;
+}
+.video{
+  width:100%;
+  height:422rpx;
+  position:relative;
+}
+.video video{
+  width:100%;
+  height:422rpx;
+}
+.video-img{
+  width:100%;
+  height:422rpx;
+}
+.play-icon{
+  width:130rpx;
+  height:130rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+.video-title{
+  width:100%;
+  padding-bottom:20rpx;
+  font-size:28rpx;
+  color:#fff;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  position:absolute;
+  left:0;
+  bottom:0;
+  background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.3));
+}
+/* ====视频详情==== */
+.video-info{
+  width:100%;
+  background:#fff;
+  overflow:hidden;
+  margin-bottom:20rpx;
+}
+.video-info .video-money{
+  display:block;
+  padding:0 20rpx;
+  font-size:48rpx;
+  color:#FF2613;
+  margin-bottom:10rpx;
+  margin-top:20rpx;
+}
+.video-class {
+  padding:0 20rpx;
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1rpx solid #eee;
+  padding-bottom:10rpx;
+}
+.video-class .video-ke{
+  font-size:28rpx;
+  color:#2b2b2b;
+}
+.video-class .video-study{
+  font-size:22rpx;
+  color:#9C9C9C;
+}
+.video-info .video-free{
+  font-size:22rpx;
+  color:#9C9C9C;
+  line-height:60rpx;
+  display:block;
+  padding:0 20rpx;
+}
+/* ====主讲老师==== */
+.teacher{
+  width:710rpx;
+  padding:0 20rpx;
+  height:84rpx;
+  margin-bottom:20rpx;
+  overflow:hidden;
+  background:#fff;
+}
+.teacher .teacher-img{
+  width:55rpx;
+  height:55rpx;
+  display:block;
+  float:left;
+  margin-top:15rpx;
+  margin-right:10rpx;
+}
+.teacher .teacher-name{
+  display:block;
+  float:left;
+  font-size:28rpx;
+  color:#2b2b2b;
+  line-height:84rpx;
+}
+.teacher .more{
+  display:block;
+  float:right;
+  font-size:22rpx;
+  color:#9C9C9C;
+  line-height:84rpx;
+}
+/* =====导航==== */
+.navs{
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  height:84rpx;
+  background:#fff;
+  border-bottom:2rpx solid #eee;
+}
+.navs-list{
+  font-size:30rpx;
+  color:#2b2b2b;
+  line-height:84rpx;
+  display:block;
+}
+.navs-list.active{
+  color:#FF7E00;
+  border-bottom:6rpx solid #FF7E00;
+}
+/* ====内容==== */
+.inner{
+  background:#fff;
+}
+.class{
+  width:710rpx;
+  padding:0 20rpx;
+  display:none;
+}
+.class.active{
+  display:block;
+}
+.intro{
+  display:none;
+}
+.intro.active{
+  display:block;
+}
+.class .class-nav{
+  display:inline-block;
+  padding:0 20rpx;
+  height:48rpx;
+  line-height:48rpx;
+  font-size:28rpx;
+  color:#9C9C9C;
+  background:#f8f8f8;
+  border-radius:50rpx;
+  margin:40rpx 0;
+  margin-right:30rpx;
+}
+.class .class-nav.active{
+  background:#FFC000;
+  color:#fff;
+}
+/* ===课程内容== */
+.class-box{
+  width:100%;
+}
+.class-list{
+  width:100%;
+  height:90rpx;
+  border-bottom:2rpx solid #eee;
+  overflow:hidden;
+}
+.class-list .class-name{
+  display:block;
+  float:left;
+  font-size:30rpx;
+  color:#2b2b2b;
+  line-height:90rpx;
+  max-width:490rpx;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.class-list.active .class-name{
+  color:#9C9C9C;
+}
+.class-list .class-free{
+  width:113rpx;
+  height:30rpx; 
+  background:rgba(255,243,243,1);
+  border-radius: 50rpx; 
+  text-align:center;
+  line-height:30rpx;
+  font-size:22rpx;
+  color:#FF2613;
+  float:left;
+  margin-left:20rpx;
+  margin-top:30rpx;
+}
+.class-list .class-time{
+  display:block;
+  float:right;
+  font-size:30rpx;
+  color:#9C9C9C;
+  line-height:90rpx;
+}
+/* ====底部导航=== */
+.bar{
+  width:100%;
+  height:84rpx;
+  position:fixed;
+  left:0;
+  bottom:0;
+  background:#fff;
+  box-shadow:0px -5rpx 10rpx 0px rgba(0,0,0,0.05);
+  overflow:hidden;
+  z-index:9;
+}
+.bar .share{
+  width:88rpx;
+  height:84rpx;
+  float:left;
+  margin:0 40rpx;
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+}
+.bar .share-icon{
+  width:36rpx;
+  height:36rpx;
+  display:block;
+  margin:0 auto;
+}
+.bar .text{
+  font-size:22rpx;
+  color:#2b2b2b;
+}
+.bar .buy{
+  width:355rpx;
+  height:66rpx; 
+  text-align:center;
+  line-height:66rpx;
+  font-size:34rpx;
+  color:#fff;
+  font-weight:bold;
+  background:linear-gradient(135deg,rgba(255,141,66,1),rgba(255,217,79,1));
+  border-radius: 50rpx ; 
+  float:right;
+  margin-right:20rpx;
+  margin-top:10rpx;
+}
+.hui{
+  width:70rpx;
+  height:70rpx;
+  position:fixed;
+  right:10rpx;
+  bottom:150rpx;
+}
+.hui .top-icon{
+  width:70rpx;
+  height:70rpx;
+}

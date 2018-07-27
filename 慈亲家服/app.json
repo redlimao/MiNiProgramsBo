@@ -1,0 +1,89 @@
+{
+  "pages":[
+    "pages/tabers/tabers",
+    "pages/lessons/lessons", 
+    "pages/i-video/i-video",
+    "pages/appraise/appraise",
+    "pages/my_log/my_log",
+    "pages/my_earnings/my_earnings",
+    "pages/pay_money/pay_money",
+    "pages/index/index",
+    "pages/gu/gu",
+    "pages/producet/producet",
+    "pages/xun/xun",
+    "pages/mains/mains",
+    "pages/template/template",
+    "pages/jia_list/jia_list",
+    "pages/jia_details/jia_details",
+    "pages/order/order",
+    "pages/gu_details/gu_details",
+    "pages/shop_details/shop_details",
+    "pages/shop/shop",
+    "pages/dian/dian",
+    "pages/xun_details/xun_details",
+    "pages/my_order/my_order",
+    "pages/my_orders/my_orders",
+    "pages/my_xu/my_xu",
+    "pages/zhu_fabu/zhu_fabu",
+    "pages/zhu_jie/zhu_jie",
+    "pages/jia_gu/jia_gu",
+    "pages/jia_tai/jia_tai",
+    "pages/jia_ation/jia_ation",
+    "pages/my_points/my_points",
+    "pages/collect/collect",
+    "pages/message/message",
+    "pages/shang_xiao/shang_xiao",
+    "pages/sao_message/sao_message",
+    "pages/card_choose/card_choose",
+    "pages/er/er",
+    "pages/qiye/qiye",
+    "pages/sou/sou",
+    "pages/guang_details/guang_details",
+    "pages/rule/rule",
+    "pages/fabu/fabu",
+    "pages/main/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FF9E33",
+    "navigationBarTitleText": "找家服",
+    "navigationBarTextStyle": "#fff",
+    "backgroundColor": "#fff"
+  },
+  "tabBar":{
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"找家服",
+        "iconPath":"pages/image/tab-icon1-1.png",
+        "selectedIconPath":"pages/image/tab-icon1.png"
+      },
+      {
+        "pagePath":"pages/gu/gu",
+        "text":"找雇主",
+        "iconPath": "pages/image/tab-icon2-2.png",
+        "selectedIconPath": "pages/image/tab-icon2.png"
+      },
+      {
+        "pagePath": "pages/lessons/lessons",
+        "text": "家政课堂",
+        "iconPath": "pages/image/tab-icon4-4.png",
+        "selectedIconPath": "pages/image/tab-icon4.png"
+      },
+      {
+        "pagePath":"pages/producet/producet",
+        "text":"良心产品",
+        "iconPath": "pages/image/tab-icon3-3.png",
+        "selectedIconPath": "pages/image/tab-icon3.png"
+      },
+      {
+        "pagePath":"pages/main/main",
+        "text":"个人中心",
+        "iconPath": "pages/image/tab-icon5-5.png",
+        "selectedIconPath": "pages/image/tab-icon5.png"
+      }
+    ],
+    "color":"#858585",
+    "selectedColor":"#FF9E33"
+  }
+}

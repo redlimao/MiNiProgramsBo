@@ -1,0 +1,34 @@
+<!--myCoupon.wxml-->
+<view class="container">
+    <!-- 滑动菜单 -->
+    <view class="slider-wrap">
+        <scroll-view scroll-x="true" style="width: 100%">
+            <view class="slider-box flex-sa">
+                <view bindtap="tabs" class="slider-menu {{currentIndex == 1 ? 'on':''}}" data-id="1">已领取</view>
+                <view bindtap="tabs" class="slider-menu {{currentIndex == 2 ? 'on':''}}" data-id="2">已使用</view>
+                <view bindtap="tabs" class="slider-menu {{currentIndex == 3 ? 'on':''}}" data-id="3">已查看</view>
+                <view bindtap="tabs" class="slider-menu {{currentIndex == 4 ? 'on':''}}" data-id="4">已到期</view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 优惠券列表1 -->
+    <view class="wrap" wx:if="{{empty == 1}}">
+        <view class="item {{flag_checked == 1 ? '' : 'on'}}" wx:for="{{list}}" wx:key="{{item.id}}" bindtap='bindDetail' data-couponid="{{item.coupons_id}}">
+            <view class="icon-box" catchtap='bindChecked' data-id='{{index}}'>
+                <icon color='#00A9E4' size='20' type='circle' wx:if="{{item.del_checked == 1}}"></icon> 
+                <icon color='#00A9E4' size='20' type='success' wx:else></icon>              
+            </view>
+            <image class="s-imgs" src="{{item.img}}"></image>
+        </view>
+    </view>
+    <image class="empty" src='../../images/empty.png' wx:else></image>
+</view>
+<view class="btn-box" wx:if="{{empty == 1}}">
+    <view class="btn-man {{flag_checked == 1 ? '' : 'on'}}" bindtap='bindManage'>管理</view>
+    <view class="btns {{flag_checked == 1 ? '' : 'on'}}">
+        <view class="btn-del" bindtap='bindDelete'>删除</view>
+        <view class="btn-cancel" bindtap='bindCancel'>取消</view>
+    </view>
+</view>
+
+ 

@@ -1,0 +1,23 @@
+/* pages/jia_tai/jia_tai.wxss */
+.container .time-box{
+  top:20rpx;
+}
+.container .time-box .time-list{
+  border-bottom:1rpx solid #eee;
+  background:#fff;
+}
+.container .time-box .time-list:nth-last-child(1){
+  border:none;
+}
+.container button{
+    width:650rpx;
+    height:90rpx;
+    background:rgb(255,153,31);
+    color:#fff;
+    border:none;
+    margin:0 auto;
+    margin-top:1000rpx;
+}
+.container .time-box .time-list .date{
+  color:rgb(55,54,52);
+}

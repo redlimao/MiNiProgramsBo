@@ -1,0 +1,43 @@
+/* pages/list/list.wxss */
+.notic{
+  background:#fff;
+  padding:20rpx 30rpx 0 30rpx;
+  border-top:2rpx solid #e5e5e5;
+  border-bottom:2rpx solid #e5e5e5;
+  margin-top:20rpx;
+}
+.notic image{
+  width:100%;
+  height:360rpx;
+  display:block;
+}
+.notic .title{
+  padding:0 20rpx;
+  height:100rpx;
+  line-height:100rpx;
+  overflow:hidden;
+}
+.notic .title .title-name{
+  float:left;
+  display:block;
+  height:100rpx;
+  line-height:100rpx;
+  width:70%;
+  font-size:32rpx;
+  color:#696969;
+}
+.notic .title .money{
+  float:left;
+  display:block;
+  width:30%;
+  text-align:right;
+  font-size:32rpx;
+  color:#f00;
+}
+.empty{
+  width:100%;
+  text-align:center;
+  line-height:600rpx;
+  color:#b2b2b2;
+  font-size:38rpx;
+}

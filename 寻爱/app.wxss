@@ -1,0 +1,100 @@
+/**app.wxss**/
+page{
+  background:#f8f8f8;
+  position:relative;
+}
+/*===========下划线导航================*/
+.pro_nav{
+  width:100%;
+  height:90rpx;
+  display:flex;
+  justify-content: space-around;
+  background:#fff;
+  border-bottom:1rpx solid #eee;
+}
+.pro_nav .pronav-list{
+  height:90rpx;
+  line-height:90rpx;
+  font-size:30rpx;
+  color:#ADA6A8;
+  overflow:hidden;
+  position:relative;
+  box-sizing: border-box;
+}
+
+.pro_nav .pronav-list.actives{
+  color:#FF7FAE;
+  border-bottom:6rpx solid #FF7FAE;
+}
+/* ========无内容=========*/
+
+.empty{
+  width:670rpx;
+  height:30rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  top:500rpx;
+}
+.empty .empty-icon{
+  width:100%;
+  height:2rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+.empty .empty-text{
+  display:block;
+  line-height:30rpx;
+  color:rgb(177, 174, 171);
+  font-size:24rpx;
+  text-align:center;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+/* ===顶部栏=== */
+.tops{
+  width:100%;
+  height:148rpx;
+  background:#FF7FAE;
+  text-align: center;
+  line-height:170rpx;
+  font-size:36rpx;
+  color:#fff;
+}
+/* ===返回箭头=== */
+.back{
+  width:100rpx;
+  height:60rpx;
+  position:absolute;
+  left:0rpx;
+  top:48rpx;
+  z-index:999;
+}
+.back-icon{
+  width:23rpx;
+  height:40rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}  
+.back-icons{
+  width:50rpx;
+  height:50rpx;
+}
+/*价格上升图标*/
+.price-icon{width: 14rpx;height: 14rpx;}
+.star-small{width: 18rpx;height: 18rpx;}
+.star-medium{width: 30rpx;height:30rpx;display: block;}
+.star-big{width: 40rpx;height:40rpx;}

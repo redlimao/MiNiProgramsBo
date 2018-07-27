@@ -1,0 +1,60 @@
+<!--pages/picVoting/picVoting.wxml-->
+<!-- 主体 -->
+<view class="con">
+    <!-- 标题 补充说明 -->
+    <view class="modules">
+        <view class="item">
+            <input class="input-txt" type='text' placeholder='标题（必填）' placeholder-class='p-c' name="title" value="{{title}}" bindinput='bindTitle'></input>
+            <image class="i-icon" src='../../../images/icon_audio.png'></image>
+        </view>
+        <view class="item">
+            <input class="input-txt" type='text' placeholder='补充说明（选填）' placeholder-class='p-c' name="titles" value="{{titles}}" bindinput='bindTitles'></input>
+        </view>
+    </view>
+    <!-- 图片上传 -->
+    <view class="pic-list">
+        <view class="pic-item" wx:for="{{pic_list}}" wx:key="{{index}}">
+            <view class="pic-box" bindtap='bindChooseImg' data-index='{{index}}'>
+                <image class="pic-normal" src='../../../images/icon_bg.png' wx:if="{{item.img == ''}}"></image>
+                <image class="pic-now" src='{{item.img}}' wx:if="{{item.img != ''}}" mode='aspectFill'></image>
+            </view>
+            <view class="item on">
+                <input class="input-txt p-c" type='text' placeholder='选项{{index+1}}' placeholder-class='p-c'  bindinput='bindInput' data-index='{{index}}' value='{{item.content}}'>添加选项</input>
+                <image class="subtract-icon" wx:if="{{item.flag == true}}" src='../../../images/icon_add.png' bindtap='bindAdd'></image>
+                 <image class="subtract-icon" wx:if="{{item.flag == false}}" src='../../../images/icon_delete.png' bindtap='bindDelete' data-index='{{index}}'></image> 
+            </view>
+        </view>
+    </view>
+    <!-- 日期以及选项 -->
+    <view class="modules">
+        <!-- 日期 -->
+        <view class="item">
+            <view class="input-txt">截止日期</view>
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange" class="p-box">
+                <view class="p-txt">{{date}}</view>
+            </picker>
+            <picker mode="time" value="{{time}}" bindchange="bindTimeChange" class="p-box">
+                <view class="p-txt">{{time}}</view>
+            </picker>
+        </view>
+        <!-- 是否公开 -->
+        <view class="item">
+            <view class="input-txt">是否公开</view>
+            <switch checked bindchange="switchPublicChange" color='#3699FB' />
+        </view>
+        <view class="item">
+            <view class="input-txt">开启评论功能</view>
+            <switch checked bindchange="switchCommentChange" color='#3699FB' />
+        </view>
+        <view class="item">
+            <view class="input-txt">开启打赏功能</view>
+            <switch checked bindchange="switchPayChange" color='#3699FB' />
+        </view>
+    </view>
+</view>
+<!-- 操作按钮 -->
+<view class="btns">
+    <view class="btn-one" bindtap='bindsubmit' data-index='1'>预览</view>
+    <view class="btn-two" bindtap='bindsubmit' data-index='2'>发布吧</view>
+</view>
+

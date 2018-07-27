@@ -1,0 +1,45 @@
+<view class="message">
+    <form bindsubmit="formSubmit">
+        <view class="view-message">
+            <view class="test name">
+                <text>姓名</text>
+                <input type="text" name="username" placeholder="请填写姓名"  value="{{name}}"/>
+            </view>
+            <view class="test">
+                <text>电话</text>
+                <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="phone"> </button>
+                <input type="number" name="phone"  placeholder="请输入正确的手机号码"  value="{{phone}}" class="phones" />
+            </view>
+        </view>
+        <view class="view-messages">
+            <view class="test name">
+                <text>性别</text>
+                <picker class="area test" bindchange="areaNames" value="{{indexs}}" range="{{array}}">{{array[indexs]}}
+                <image src="../../images/more.png"></image>
+                </picker>    
+            </view>
+             <view class="test">
+                <text>生日</text>
+                <picker class="area test"  mode="date" value="{{date}}" start="1949-09-01" end="2060-09-01" bindchange="bindDateChange">{{date}}
+                <image src="../../images/more.png"></image>
+                </picker> 
+            </view> 
+        </view> 
+        <view class="view-messages on">
+            <view class="test">
+                <text>支付密码</text>
+                <input type="password" name="password1" placeholder="请输入您的支付密码"  value="{{password1}}" disabled='{{flag_pass == 1 ? true : false}}'  />
+            </view> 
+            <view class="test" wx:if="{{flag_pass != 1}}">
+                <text>确认密码</text>
+                <input type="password" name="password2" placeholder="请再次输入支付密码"  value="{{password2}}" />
+            </view>
+        </view>
+        <view class="tip-box">
+            <text class="tip" bindtap='bindAmendPass' data-phone='{{phone}}'>修改密码</text>
+            <text class="tip" bindtap='bindPhone' data-phone='{{ke_phone}}'>如忘记密码请联系客服</text>
+        </view>
+        <button formType="submit">保存</button>
+    </form>
+</view>
+

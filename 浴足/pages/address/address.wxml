@@ -1,0 +1,14 @@
+<!--address.wxml-->
+<view class="container">
+    <view class="btn-add" bindtap='bindAdd'>新增地址</view>
+    <view class="lists" wx:if="{{empty == 1}}">
+        <view class="list bt-1" wx:for="{{address}}" wx:key="{{index}}" data-name='{{item.name}}' data-phone='{{item.phone}}' data-address='{{item.address}}' bindtap='bindChoose'>
+            <view class="box">
+                <text class="name">{{item.name}}</text>
+                <text class="phone">{{item.phone}}</text>
+            </view>
+            <text class="address">{{item.address}}</text>
+        </view>
+    </view>
+    <view class="empty" wx:else>地址为空，请新增地址</view>
+</view>

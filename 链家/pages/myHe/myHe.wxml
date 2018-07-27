@@ -1,0 +1,11 @@
+<!--myCoupon.wxml-->
+<view class="container">
+    <!-- 优惠券列表1 -->
+    <view class="wrap" wx:if="{{empty == 1}}">
+        <view class="item" wx:for="{{list}}" wx:key="{{item.id}}" bindtap='bindDetail' data-couponid="{{item.id}}">
+            <image class="s-imgs" src="{{item.img}}"></image>
+        </view>
+    </view>
+    <image class="empty" src='../../images/empty.png' wx:else></image>
+</view>
+ 

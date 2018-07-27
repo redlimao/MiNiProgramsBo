@@ -1,0 +1,101 @@
+/* pages/actives/actives.wxss */
+/*===========轮播================*/
+.swiper{
+  width:100%;
+  height:350rpx;
+}
+.swiper image{
+  width:100%;
+  height:350rpx;
+}
+.swiper .wx-swiper-dots.wx-swiper-dots-horizontal{
+     margin-bottom: 2rpx;
+}
+/*===========导航================*/
+.nav{
+  width:100%;
+  height:100rpx;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  display:flex;
+  background:#fff;
+  border-top:2rpx solid #e5e5e5;
+  justify-content:space-around;
+}
+.nav .nav-list{
+  height:98rpx;
+  line-height:98rpx;
+  font-size:40rpx;
+  color:#434545;
+  overflow:hidden;
+  position:relative;
+  width:120rpx;
+  text-align:center;
+}
+.nav .nav-list image{
+  
+  width:43rpx;
+  height:34rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  margin:auto;
+}
+.nav .nav-list.actives{
+  color:#ff9a0e;
+  border-bottom:4rpx solid #ff9a0e;
+}
+.inner-list{
+  display:none;
+}
+.inner-list.actives{
+  display:block;
+}
+/*===========内容================*/
+.list-box{
+  width:690rpx;
+  margin:0 auto;
+  margin-top:40rpx;
+  margin-bottom:60rpx;
+}
+.notic{
+  background:#fff;
+  border:2rpx solid #e5e5e5;
+  margin-top:20rpx;
+}
+.notic image{
+  width:100%;
+  height:360rpx;
+  display:block;
+}
+.notic .title{
+  padding:0 20rpx;
+  height:100rpx;
+  line-height:100rpx;
+  overflow:hidden;
+}
+.notic .title .title-name{
+  float:left;
+  display:block;
+  height:100rpx;
+  line-height:100rpx;
+  width:70%;
+  font-size:32rpx;
+  color:#696969;
+}
+.notic .title .money{
+  float:left;
+  display:block;
+  width:30%;
+  text-align:right;
+  font-size:32rpx;
+  color:#f00;
+}
+.empty{
+  width:100%;
+  text-align:center;
+  line-height:600rpx;
+  color:#b2b2b2;
+  font-size:38rpx;
+}

@@ -1,0 +1,103 @@
+<import src="../template/template.wxml"/>
+<view class="container" wx:if="{{empty==0}}">
+  <view class="cart1-box">
+     <block wx:for="{{carts}}" wx:key="{{item.id}}">
+       <template is="carList1" data="{{...item}}" />
+    </block>  
+    <!-- **优惠券** -->
+    <view class="quan" wx:if="{{quan_yong==1 && flag1s == false}}">
+      <view class="quan-choose">
+        <text class="quan-title">暂无可用优惠券</text>
+      </view> 
+    </view>
+    <view class="quan" wx:if="{{quan_yong==0 && flag1s == false}}">
+      <view class="quan-choose" bindtap='quanName' id="{{totalPrice}}" data-id="{{quan_id}}">
+        <text class="quan-title" wx:if="{{quan==1}}">已自动为您选择优惠券</text>
+        <text class="quan-title" wx:else>使用优惠券</text>
+        <image src="../../images/more.png" class="quan-more"></image>
+      </view>
+      <view class="quan-quan" wx:if="{{quan==1}}">
+        <text class="quans">优惠券</text>
+        <text class="quan-jian">-￥{{jian}}</text>
+        <text class="quan-man">满{{man}}可用</text>
+      </view>
+    </view>
+  </view>
+  <view class="shops">
+    <!-- 是否到店取货 -->
+    <view class="b-wrap">
+        <text class="box-txt">是否到店取货</text>
+        <switch bindchange="changeGet" checked='{{flag_icon}}' color="#bd8a39"></switch>
+    </view>
+    <view class="fen">
+      <view class="fens on">
+        <!-- <input value="{{pointss}}" bindinput="biName" wx:if="{{flag1==1}}"/> -->
+        <text class="box-txt" wx:if="{{flag1==1}}">使用茶币</text> 
+        <text class="box-txt" wx:else>可使用茶币：{{pointss}}</text>
+      </view>
+      <view class="choose">
+       <switch  bindchange="switchChange1" checked='{{flag1s}}' color="#bd8a39"/>
+      </view>
+    </view>
+    <view class="fen" wx:if="{{flag1s == false}}">
+      <view class="fens">
+        <input value="{{points}}" bindblur="moName" wx:if="{{flag==0}}"/>
+        <text class="shi-fen" wx:if="{{flag==1}}">使用积分</text> 
+        <text class="shi-fen" wx:else>可使用积分</text>
+      </view>
+      <view class="choose">
+        <switch  bindchange="switchChange" color="#bd8a39"/>
+      </view>
+    </view>
+    <view class="shopss">
+      <view class="shops-fl">
+        <view class="shops-choose">
+          <icon type="success" color="#bd8a39" bindtap="selectAll" wx:if="{{selectAllStatus}}" size="20"/>
+          <icon type="circle" wx:else bindtap="selectAll" />
+          <text class="all">全选</text>
+        </view>
+        <view class="shops-number">
+          共计：<text class="fu-money" >￥{{totalPrice}}</text>
+        </view>
+      </view>
+      <view class="shops-fr" wx:if="{{flag1s==false}}">
+          <view class="shops-money"  bindtap="payName">
+            <text class="fu">现金付款</text>
+          </view>
+      </view>
+      <view class="shops-fr" wx:if="{{flag1s==true}}">
+         <view class="shops-money"  bindtap="chaZhiName">
+            <text class="fu">茶币付款</text>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='empty' wx:else>
+  <image src="../../images/empty.png" class="empty-icon"></image>
+  <text class="empty-text">暂无内容</text>
+</view>
+<view class="pop-bg {{pop_flag == 1 ? 'on' : ''}}" bindtap='bindHide'></view>
+<view class="pop {{pop_flag == 1 ? 'on' : ''}}">
+    <form bindsubmit="formSubmit">
+        <text class="p-title">请输入支付密码</text>
+        <input class="p-input" type="password" value="{{password}}" name="password"></input>
+        <button class="p-btn" formType="submit">确认支付</button>
+    </form>
+</view>
+
+<view class="pop-bg {{flag2 == 2 ? 'on' : ''}}" bindtap='bindHide'></view>
+<view class="pop {{flag2 == 2 ? 'on' : ''}}">
+    <radio-group class="store" bindchange='bindGet'>
+        <label class="box" for="{{index}}" wx:for="{{store}}" wx:key="{{index}}">
+            <view class="info">
+                <radio id="{{index}}" checked='false' hidden='false' value="{{item.name}}"></radio>
+                <text class="box-txt">{{item.name}}</text>
+                <icon size='20' color='3bd8a39' type='circle' wx:if="{{item.checked == 1}}"></icon>
+                <icon size='20' color='#bd8a39' type='success' wx:if="{{item.checked == 2}}"></icon>
+            </view>
+            <view class="info-address">{{item.address}}</view>
+        </label>
+        <view class="p-btn" catchtap='chooseAddress'>确认</view>
+    </radio-group>
+</view>

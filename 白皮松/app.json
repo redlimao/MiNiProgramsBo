@@ -1,0 +1,58 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/discounts/discounts",
+    "pages/main/main",
+    "pages/collect/collect",  
+    "pages/er/er",
+    "pages/jie/jie",
+    "pages/message/message",
+    "pages/my_order/my_order",
+    "pages/my_points/my_points",
+    "pages/shop_details/shop_details",
+    "pages/myCollect/myCollect",
+    "pages/myAppointment/myAppointment",
+    "pages/Appointment/Appointment",
+    "pages/findTreePeople/findTreePeople",
+    "pages/fabu/fabu",
+    "pages/guang_details/guang_details",
+    "pages/mains/mains",
+    "pages/newPage/newPage",
+    "pages/fabumessage/fabumessage",
+    "pages/lookmessage/lookmessage",
+    "pages/lookinfo/lookinfo",
+    "pages/member/member"
+  ],
+  "window":{
+    "backgroundTextStyle":"drak",
+    "navigationBarBackgroundColor": "#24b24b",
+    "navigationBarTitleText": "白皮松",
+    "navigationBarTextStyle":"#fff",
+    "backgroundColor":"#efeff4"
+  },
+  "tabBar":{
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"白皮松",
+        "iconPath":"images/tab_icon1_1.png",
+        "selectedIconPath":"images/tab_icon1_2.png"
+      },
+      {
+        "pagePath":"pages/discounts/discounts",
+        "text":"陕西特产",
+        "iconPath": "images/tab_icon2_1.png",
+        "selectedIconPath":"images/tab_icon2_2.png"
+      },
+      {
+        "pagePath":"pages/main/main",
+        "text":"个人中心",
+        "iconPath": "images/tab_icon3_1.png",
+        "selectedIconPath":"images/tab_icon3_2.png"
+      }
+    ],
+    "color":"#7f8389",
+    "selectedColor":"#4fb94b"
+  }
+
+}

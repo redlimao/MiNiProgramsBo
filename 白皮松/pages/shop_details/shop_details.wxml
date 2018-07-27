@@ -1,0 +1,149 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<import src="../template/template.wxml"/>
+<view class="container">
+  <!-- *******商品信息****** -->
+  <view class="shop-message">
+          <!--**轮播***-->
+      <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"indicator-dots="true" indicator-active-color="#fff" indicator-color="rgba(255,255,255,0.3)"> 
+        <swiper-item   wx:for="{{shop_img}}" wx:key="{{item.id}}" id="{{id}}">  
+           <image src="{{item}}" class="shopde-img"></image>  
+        </swiper-item>
+      </swiper>
+      
+    <view class="shop-names">
+        <view class="txt-box">
+            <text class="money {{goods_type_id == 1 ? 'flexd':''}}">¥{{shop_money}}</text>
+            <text class="cutmoney {{goods_type_id == 1 ? 'hide':'show'}}">¥{{shop_ymoney}}</text>
+            <view class="share-wrap {{goods_type_id == 1 ? 'show':'hide'}}">
+              <image class="share" src="../../images/share_icon.png"></image>
+              <button open-type='share'></button>
+            </view>
+        </view>
+        <view class="box-txt">    
+            <text class="shop-name">{{shop_name}}</text>     
+            <text class="shop-txt {{goods_type_id == 1 ? 'show':'hide'}}">{{ji_bie}}级</text>
+        </view>
+    </view>
+  </view>
+<!-- 找挖树人 -->
+<view class="{{goods_type_id == 1 ? 'show':'hide'}}">
+<view class="box-tree" bindtap='findtreepeople'>
+  <image class="tree-icon" src="../../images/tree_icon.png"></image>
+  <text class="tree-txt1">找挖树人</text>
+  <text class="tree-txt2">嫌挖树麻烦，快来找人挖树吧</text>
+  <image class="tree-icon1" src="../../images/icon-jt.png"></image>
+</view>
+</view>
+
+  <!-- 商家保障 -->
+  <view class="{{goods_type_id == 1 ? 'hide':'show'}}">
+    <view class="detail-tips">
+      <view class="detaile-tip-box {{tags == ''? 'hide':''}}">
+        <image class="tip-icon" src="{{icon_a}}"></image>
+        <text class="detail-tip">{{tags}}</text>
+      </view>
+       <view class="detaile-tip-box {{fa == ''? 'hide':''}}">
+        <image class="tip-icon" src="{{icon_a}}"></image>
+        <text class="detail-tip">{{fa}}</text>
+      </view>
+      <view class="detaile-tip-box {{qi == ''? 'hide':''}}">
+        <image class="tip-icon" src="{{icon_a}}"></image>
+        <text class="detail-tip">{{qi}}</text>
+      </view> 
+      <view class="detaile-tip-box {{pei == ''? 'hide':''}}">
+        <image class="tip-icon" src="{{icon_a}}"></image>
+        <text class="detail-tip">{{pei}}</text>
+      </view> 
+    </view>
+  </view>
+  <!-- *******详情和评论****** -->
+  <view class="shop-inner"> 
+    <view class="shopInner-nav {{goods_type_id == 1 ? 'right':''}}" bindtap="tabFun">
+      <text class="shopInner-name {{curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0">产品详情</text>
+      <text class="shopInner-name {{curHdIndex=='1'? 'actives' : ''}} {{goods_type_id == 1 ? 'hide':'show'}}" id="tab-hd02" data-id="1" bindtap='pingName'>买家评论</text>
+    </view>
+    <view class="shopInner-info right-item {{curHdIndex=='0'? 'actives' : ''}}">
+      <view class="ben">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+      </view>
+    </view>
+    <view class="shopInner-ping right-item {{curHdIndex=='1'? 'actives' : ''}} {{goods_type_id == 1 ? 'hide':''}}">
+      <view wx:if="{{empty==0}}">
+         <block wx:for="{{ping}}" wx:key="{{item.id}}">
+          <template is="customerPing" data="{{...item}}" />
+        </block>
+      </view>
+      <view class="empty" wx:else>
+        <image src="../../images/empty.png" class="empty-icon"></image>
+        <text class="empty-text">暂无买家评论</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- *******购买导航****** -->
+<view class="buy-nav">
+<!-- 收藏按钮 -->
+  <view class="buy-list" bindtap='collectName'>
+    <block wx:if="{{collect==2}}">
+      <image src="../../images/collect1.png" class="buy-icon"></image>
+      <text class="buy-text buy-texts">收藏</text>
+    </block>
+      <block wx:else>
+      <image src="../../images/collect.png" class="buy-icon"></image>
+      <text class="buy-text buy-textss">已收藏</text>
+    </block>
+  </view>
+      <!-- 联系按钮 -->
+    <view class="buy-list" bindtap='telName' wx:if="{{goods_type_id =='1'}}">
+      <image src="../../images/user_6.png" class="buy-icon"></image>
+      <text class="buy-text">联系他</text>
+    </view>
+  <!-- 分享按钮 -->
+    <view class="buy-list" bindtap='shopName' wx:else>
+      <image src="../../images/kefu.png" class="buy-icon"></image>
+      <text class="buy-text">分享</text>
+      <button open-type='share'></button>
+    </view> 
+  <!-- 预定按钮 -->
+   <!-- <view wx:if="{{goods_type_id =='1'}}" class="buy-order" bindtap='orderAppointment' id='{{shop_id}}'>预定(￥{{shop_money}})</view> -->
+  <!-- 支付按钮 -->
+   <view wx:if="{{goods_type_id !='1'}}" class="buy-order" bindtap='orderName'>支付(￥{{shop_money}})</view> 
+ 
+</view>
+<!-- *******购买信息****** -->
+  <view wx:if="{{dan==1}}">
+ <view class="container-b {{flag ? 'active' : ''}}" bindtap='hideDetail'>
+</view>
+<view class="container-bg {{flag ? 'active' : ''}}">
+  <view wx:for="{{carts}}" id="{{item.id}}" wx:key="{{item.id}}">
+    <view class="item-tits"> 
+      <image class="item-img" src="{{item.shop_img[0]}}"></image>
+      <view class="item-box">
+        <text class="item-money">￥{{totalPrice}}</text>
+        <text class="item-tit">库存：{{item.nums}}</text>
+      </view>
+    </view>
+    <view class="item-type">
+      <text class="item-type-tit">型号</text>
+      <view class="item-type-lis">
+        <view class="item-type-lis" catchtap="tabFuns">
+          <view class="item-type-li {{styleIndex == index ? 'actives' : ''}}" id="tab-hd0{{index}}" data-id="{{index}}" data-money="{{item.size_money}}" data-name="{{item.size_name}}" wx:for="{{item.size}}" wx:key="{{item.id}}">{{item.size_name}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="item-numbers">
+      <view class="item-number">
+        <text class="item-number-txt">数量</text>
+        <view class="math-box">
+          <view class="btn-subtract" catchtap="minusCount" data-index="{{index}}">-</view>
+          <view class="shop-list-number">{{item.shop_num}}</view>
+          <view class="btn-add" catchtap="addCount" data-index="{{index}}">+</view>
+        </view>
+      </view>
+      <view class="item-result" catchtap='zhiName'>确定(￥{{totalPrice}})</view>
+    </view>
+  </view>
+</view> 
+</view>  
+
+

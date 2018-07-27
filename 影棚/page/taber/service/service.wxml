@@ -1,0 +1,13 @@
+<!--pages/kefu/kefu.wxml-->
+<view class="chose">
+  请选择一名客服进行咨询
+</view> 
+<view class="top" wx:for="{{list}}" wx:key="{{index}}">
+    <view class="top-fl">
+        <image src="{{item.img}}"></image>
+    </view>
+    <view class="top-fr">
+      <text class="school-name">{{item.name}}</text>
+    </view>
+    <button  open-type="contact" hover-class="none" ></button>
+</view>

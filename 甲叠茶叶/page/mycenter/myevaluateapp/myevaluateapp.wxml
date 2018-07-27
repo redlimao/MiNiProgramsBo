@@ -1,0 +1,39 @@
+<!--myevaluateapp.wxml-->
+<view class="container">
+    <view class="model-a">
+        <text class="tit">茶艺专业</text>
+        <view class="stars-big">
+            <image class="star-big{{index}}" src="../../../images/bigstar_icon.png" bindtap='bindstar1' wx:for="{{star1}}"  wx:key="{{index}}" data-id='{{index+1}}'></image>
+            <image class="star-bigs{{index}}" src="../../../images/bigstargrey_icon.png" wx:for="{{star}}"  wx:key="{{index}}" data-id='{{index+1}}' bindtap='bindstar1'></image>
+        </view>
+    </view>
+    <view class="model-a">
+        <text class="tit">饮茶环境</text>
+        <view class="stars-big">
+            <image class="star-big{{index}}" src="../../../images/bigstar_icon.png" bindtap='bindstar2' wx:for="{{star2}}"  wx:key="{{index}}" data-id='{{index+1}}'></image>
+            <image class="star-bigs{{index}}" src="../../../images/bigstargrey_icon.png" wx:for="{{star}}"  wx:key="{{index}}" data-id='{{index+1}}' bindtap='bindstar2'></image>
+        </view>
+    </view> 
+    <view class="model-a">
+        <text class="tit">茶点点评</text>
+        <view class="stars-big">
+            <image class="star-big{{index}}" src="../../../images/bigstar_icon.png" bindtap='bindstar3' wx:for="{{star3}}"  wx:key="{{index}}" data-id='{{index+1}}'></image>
+            <image class="star-bigs{{index}}" src="../../../images/bigstargrey_icon.png" wx:for="{{star}}"  wx:key="{{index}}" data-id='{{index+1}}' bindtap='bindstar3'></image>
+        </view>
+    </view>
+    <view class="model-a">
+        <text class="tit">服务态度</text>
+        <view class="stars-big">
+            <image class="star-big{{index}}" src="../../../images/bigstar_icon.png" bindtap='bindstar4' wx:for="{{star4}}"  wx:key="{{index}}" data-id='{{index+1}}'></image>
+            <image class="star-bigs{{index}}" src="../../../images/bigstargrey_icon.png" wx:for="{{star}}"  wx:key="{{index}}" data-id='{{index+1}}' bindtap='bindstar4'></image>
+        </view>
+    </view>
+    <view class="model-a">
+        <text class="tit">茶品品质</text>
+        <view class="stars-big">
+            <image class="star-big{{index}}" src="../../../images/bigstar_icon.png" bindtap='bindstar5' wx:for="{{star5}}"  wx:key="{{index}}" data-id='{{index+1}}'></image>
+            <image class="star-bigs{{index}}" src="../../../images/bigstargrey_icon.png" wx:for="{{star}}"  wx:key="{{index}}" data-id='{{index+1}}' bindtap='bindstar5'></image>
+        </view>
+    </view>  
+    <view class="btn" bindtap='bindTrue'>提交评论</view>     
+</view>

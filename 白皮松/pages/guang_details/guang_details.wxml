@@ -1,0 +1,9 @@
+<!--pages/guang_details/guang_details.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<import src="../template/template.wxml"/>
+<view class="page">
+  <text class="tit">{{title}}</text>
+  <text class="time">{{time}}</text>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+

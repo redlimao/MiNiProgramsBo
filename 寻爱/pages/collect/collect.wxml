@@ -1,0 +1,16 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+  <view class="back" bindtap='backName'>
+    <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="tops">我的收藏</view>
+  <view wx:if="{{empty==0}}">
+    <block wx:for="{{car}}" wx:key="{{item.id}}">
+      <template is="ordersList" data="{{...item}}" />
+    </block> 
+  </view>
+  <view class="empty" wx:else>
+    <image src="../../images/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无收藏的商品</text>
+  </view>
+</view>

@@ -1,0 +1,113 @@
+<import src="../template/template.wxml"/>
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+<!--*********详情***********-->
+  <block wx:for="{{list}}" wx:key="{{item.id}}">
+    <template is="orderList" data="{{...item}}" />
+  </block>
+  <!--*********成交量***********-->
+  <view class="info">
+   <view class="cheng">
+      年龄：
+      <text class="cheng-num">{{ages}}</text>
+    </view>
+    <view class="cheng">
+      从业：
+      <text class="cheng-num">{{agess}}</text>
+    </view>
+    <view class="cheng">
+      成交量：
+      <text class="cheng-num">{{num}}</text>
+    </view>
+    <view class="collect" bindtap='collectName'>
+      <block wx:if="{{collect==2}}">
+        <image src="../image/collect1.png"></image>
+        <text class="collect-text">收藏</text>
+      </block>
+       <block wx:else>
+        <image src="../image/collect.png"></image>
+        <text class="collect-text collect-texts">已收藏</text>
+      </block> 
+    </view>
+  </view>
+  <view class="tab-menu" bindtap='bindtabs'>
+    <view class="menus {{current == 1 ? 'on' : ''}}" data-index='1'>服务内容</view>
+    <view class="menus {{current == 2 ? 'on' : ''}}" data-index='2'>工作范围</view>
+    <view class="menus {{current == 3 ? 'on' : ''}}" data-index='3'>客户点评</view>
+  </view>
+  <!--*********服务内容***********-->
+  <view class="fu-inner" wx:if="{{current == 1}}">
+    <!-- <view class="common-title">
+      <text class="common-border"></text>
+      <text class="common-text">服务内容</text>
+    </view> -->
+    <view class="fu-cont">
+       <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+   <!--*********工作范围***********-->
+  <view class="fu-inner" wx:if="{{current == 2}}">
+    <!-- <view class="common-title">
+      <text class="common-border"></text>
+      <text class="common-text">工作范围</text>
+    </view> -->
+    <view class="fu-cont">
+       {{er}}
+    </view>
+  </view>
+  <!--*********顾客评价***********-->
+  <view class="customer" wx:if="{{current == 3}}">
+    <!-- <view class="common-title">
+      <text class="common-border"></text>
+      <text class="common-text">客户点评</text>
+      <text class="look-more">查看更多</text>
+    </view> -->
+    <view class="customer-ping">
+        <view class="ping-item">
+            <view class="ping-txt col">综合评价</view>
+            <view class="stars-wrap">
+                <image src="../image/{{item == 1 ? 'star-light.png' : 'star-grey.png'}}" class="stars" wx:for="{{stars_one}}" wx:key="{{index}}"></image>
+            </view>
+        </view>
+        <view class="ping-item">
+            <view class="ping-txt">礼仪礼节</view>
+            <view class="stars-wrap">
+                <image src="../image/{{item == 1 ? 'star-light.png' : 'star-grey.png'}}" class="stars" wx:for="{{stars_one}}" wx:key="{{index}}"></image>
+            </view>
+        </view>
+        <view class="ping-item">
+            <view class="ping-txt">服务技能</view>
+            <view class="stars-wrap">
+                <image src="../image/{{item == 1 ? 'star-light.png' : 'star-grey.png'}}" class="stars" wx:for="{{stars_one}}" wx:key="{{index}}"></image>
+            </view>
+        </view>
+        <view class="ping-item">
+            <view class="ping-txt">语言沟通</view>
+            <view class="stars-wrap">
+                <image src="../image/{{item == 1 ? 'star-light.png' : 'star-grey.png'}}" class="stars" wx:for="{{stars_one}}" wx:key="{{index}}"></image>
+            </view>
+        </view>
+        <view class="ping-item">
+            <view class="ping-txt">流程操作</view>
+            <view class="stars-wrap">
+                <image src="../image/{{item == 1 ? 'star-light.png' : 'star-grey.png'}}" class="stars" wx:for="{{stars_one}}" wx:key="{{index}}"></image>
+            </view>
+        </view>
+       <!-- wx:if="{{empty==0}}" -->
+      <!-- <block wx:for="{{ping}}" wx:key="{{item.id}}">
+        <template is="customerPing" data="{{...item}}" />
+      </block> -->
+
+    </view>
+    <!-- <view class="empty" wx:else>
+      <image src="../image/empty.png" class="empty-icon"></image>
+      <text class="empty-text">暂无内容</text>
+    </view> -->
+  </view>
+</view>
+ <!--*********预约***********-->
+<view class="customer-order">
+  <text class="zhuang" wx:if="{{date!=1}}">工作结束时间:{{date}}</text>
+  <text class="zhuang zhuangs" wx:else>目前处于空闲期，可预约</text>
+  <text class="customer-orders" bindtap='orderName'>预约</text>
+</view>

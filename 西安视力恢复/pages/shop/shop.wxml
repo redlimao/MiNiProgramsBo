@@ -1,0 +1,52 @@
+<import src="../template/template.wxml"/>
+ <!-- ***搜索*** -->
+  <view class="search-box">
+    <view class="search">
+      <input class="search-inp" placeholder='请输入搜索内容' placeholder-style="color:rgb(160,160,160)" bindinput="inpName" value="{{val}}" />
+      <view class="search-btn" bindtap='souName'>
+        <image src="../../images/search.png" class="search-icon"></image>
+      </view>
+    </view>
+  </view>
+<!--****************导航**********-->
+<scroll-view scroll-x class="scroll">
+<view class="pro_nav" bindtap="tabFun">
+  <view class="pronav-list {{curHdIndex==index ? 'actives' : ''}}" data-id="{{index}}" wx:for="{{nav}}" wx:key="{{item.id}}" id="{{item.id}}" data-ids="{{item.type_s}}">
+    {{item.name}}
+  </view>
+</view>
+</scroll-view>
+<!--*****************内容**********-->
+<view class="shop_inner">
+      <!--**轮播***-->
+    <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"indicator-dots="true" indicator-active-color="#fff" indicator-color="rgba(255,255,255,0.3)"> 
+      <swiper-item  bindtap="bannerName"  wx:for="{{banner}}" wx:key="{{item.id}}" id="{{item.id}}">  
+        <image src="{{item.banner}}"/>   
+      </swiper-item>
+    </swiper>
+    <!--**分类***-->
+    <view class="choe-title" >
+      <view class="choe-list {{curFenIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap="tabFuns">
+        <text class="time">综合</text>
+      </view>
+      <view class="choe-list {{curFenIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1"  data-type="{{types}}" bindtap="tabFuns">
+        <text class="time">销量</text>
+      </view>
+      <view class="choe-list {{curFenIndex=='2'? 'actives' : ''}}" id="tab-hd03" data-id="2" bindtap="tabFuns">
+        <text class="time">新品</text>
+      </view>  
+      <view class="choe-list {{curFenIndex=='3'? 'actives' : ''}}" id="tab-hd04" data-id="3"  data-type="{{types}}" bindtap="tabFuns">
+        <text class="time">价格</text>
+      </view>  
+    </view>
+    <!--**内容***-->
+    <view class="shop-box" wx:if="{{empty==0}}">
+      <block wx:for="{{list}}" wx:key="{{item.id}}">
+        <template is="shopList" data="{{...item}}" />
+      </block> 
+    </view>
+    <view class="empty" wx:else>
+      <image src="../../images/empty.png" class="empty-icon"></image>
+      <text class="empty-text">暂无内容</text>
+    </view>
+</view>

@@ -1,0 +1,58 @@
+<!--pages/orders/orders.wxml-->
+    <!-- 滑动菜单 -->
+<view class="container">
+    <view class="slider-wrap">
+        <scroll-view scroll-x="true" style="width: 100%">
+            <view class="slider-box flex-sa">
+                <view class="slider-menu {{currentIndex == 1 ? 'on':''}}" bindtap="tabs" data-id="1">待付款</view>
+                <view class="slider-menu {{currentIndex == 2 ? 'on':''}}" bindtap="tabs" data-id="2">进行中</view>
+                <view class="slider-menu {{currentIndex == 3 ? 'on':''}}" bindtap="tabs" data-id="3">已完成</view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 列表 -->
+    <view class="lists" wx:if="{{empty == 1}}">
+        <view class="list mt-20" wx:for="{{list}}" wx:key="{{index}}" data-id='{{item.goods_id}}'  bindtap='bindDetails'>
+            <view class="result bb-1">
+                <text class="info-txt">{{item.store_name}}</text>
+                <text class="info-active" wx:if="{{currentIndex == 1}}">待支付</text>
+                <text class="info-active" wx:elif="{{currentIndex == 2}}">已支付</text>
+                <text class="info-active" wx:elif="{{currentIndex == 3}}">已完成</text>
+            </view>
+            <view class="item">
+                <image class="item-img" src="{{item.banner}}"></image>
+                <view class="info">
+                    <view class="wrap">
+                        <text class="tit">{{item.name}}</text>
+                    </view>
+                    <text class="texts">{{item.ad_list}}</text>
+                    <view class="wrap pt-12 bb-1">
+                        <view class="list-time">{{item.create_at}}</view>
+                        <view class="wrap-txt">
+                            <text class="color-a">{{item.moneys_one}}</text>{{item.moneys_two}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="list-btn">
+                <view class="list-btn1" catchtap='bindDelet' data-id='{{item.orders_id}}' wx:if="{{currentIndex == 1 || currentIndex == 3}}">删除订单</view>
+                <view class="list-btn2" data-id='{{item.orders_id}}' data-shopid='{{item.goods_id}}'  wx:if="{{currentIndex == 1}}" catchtap='bindAppointment'>去支付</view>
+
+                <view class="list-btn1" data-id='{{item.orders_id}}' catchtap='bindLook' wx:if="{{currentIndex == 2}}">预订信息</view>
+                <view class="list-btn2" catchtap='bindComplete' data-id='{{item.orders_id}}' wx:if="{{currentIndex == 2}}">完成订单</view>
+
+                <view class="list-btn1" catchtap='bindComment' data-id='{{item.orders_id}}' wx:if="{{currentIndex == 3 && item.status != 5}}">服务评价</view>
+                <view class="list-btn1" data-id='{{item.orders_id}}' wx:if="{{currentIndex == 3 && item.status == 5}}">已评价</view>
+                <view class="list-btn2" data-id='{{item.orders_id}}' wx:if="{{currentIndex == 3}}" catchtap='bindAppointment'>再次预约</view>
+            </view>
+        </view>    
+    </view>
+
+    <view class="empty-box1" wx:else>
+        <image class="empty-icon"  src="../../images/empty_icon.png"></image>
+        <text class="empty-txt">暂无内容</text>
+    </view>
+    
+</view>
+
+

@@ -1,0 +1,13 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+    <!--**内容***-->
+    <view class="shop-box" wx:if="{{empty==0}}">
+      <block wx:for="{{list}}" wx:key="{{item.id}}">
+        <template is="shopList" data="{{...item}}" />
+      </block> 
+    </view>
+    <view class="empty" wx:else>
+      <image src="../../images/empty.png" class="empty-icon"></image>
+      <text class="empty-text">没有找到您想要的内容</text>
+    </view>
+</view>

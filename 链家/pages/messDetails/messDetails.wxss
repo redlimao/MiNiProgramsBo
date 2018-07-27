@@ -1,0 +1,11 @@
+/* pages/messDetails/messDetails.wxss */
+page{background-color: #fff;width: 100%;padding: 24rpx;box-sizing: border-box;}
+.title{line-height: 80rpx;color: #333;font-size: 36rpx;font-weight:bold;}
+.info-box{display: flex;height: 60rpx;align-items: center;width: 100%;}
+    .time{font-size: 24rpx;color: #8c8c8c;}
+    .icon-look{width: 30rpx;height: 30rpx;}
+    .txt-1,.txt-2{font-size: 24rpx;color: #8c8c8c;}
+    .txt-2{padding-left: 14rpx;}
+    .area{padding: 20rpx;width: 100%;box-sizing: border-box;}
+
+  

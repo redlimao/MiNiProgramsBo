@@ -1,0 +1,17 @@
+/* pages/want/want.wxss */
+.wrap-area{width: 100%;border-bottom: 1rpx solid #EEEEEE;}
+    .areas{height: 356rpx;width: 100%;font-size: 34rpx;color: #667176;padding:20rpx;box-sizing: border-box;}
+    .astyle{font-size: 34rpx;color: #667176;}
+    .area-tip{height: 84rpx;line-height: 84rpx;color: #7F7F7F;font-size: 26rpx;text-align: right;padding-right: 45rpx;}
+        .tip-color{color: #58BDF4;}
+.wrap-img{padding: 50rpx 20rpx;display: flex;align-items: center;}  
+    .close-box{width: 140rpx;height: 140rpx;position: absolute;z-index: 2;opacity:0.5;top: 0;left: 0;display: none;}
+    .close-box.on{display:block;}
+
+    .upload-close{padding: 10rpx;height: 30rpx;width: 30rpx;position: absolute;right: -20rpx;top: -20rpx;z-index: 3;display: none;}
+    .upload-close.on{display: block;}
+    .upload-img{position: relative;}
+    .upload-img,.upload-bg{width: 140rpx;height: 140rpx;}
+    .upload-imgs{position: absolute;width: 140rpx;height: 140rpx;top: 0;left: 0;}
+    .upload-txt{font-size: 24rpx;color: #ACACAC;padding-left: 26rpx;}
+.btn-true{width: 660rpx;height: 80rpx;background-color: #58BDF4;color: #FFFFFF;font-size: 36rpx;line-height: 80rpx;margin-top: 320rpx;}

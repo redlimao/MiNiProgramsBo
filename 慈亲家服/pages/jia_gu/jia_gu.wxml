@@ -1,0 +1,31 @@
+<view class="container">
+  <!--****************导航**********-->
+  <view class="pro_nav" bindtap="tabFun">
+    <view class="pronav-list {{curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap='wanName'>
+      已完成
+    </view>
+    <view  class="pronav-list {{curHdIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1" bindtap='yuName'>
+      预约中
+    </view>
+  </view>
+  <!--****************内容**********-->
+  <view class="inner" wx:if="{{empty==0}}">
+    <view class="gu_list {{item.pan== '0' ? 'actives' : ''}}" bindtap='guName' data-id="{{index}}" bindtouchstart="mytouchstart" bindtouchmove="mytouchmove" wx:for="{{list}}" wx:key="{{item.id}}" id="{{item.id}}">
+      <view class="gu_fl">
+        <text class="gu_xu">{{item.count}}</text>
+        <view class="gu_add">服务地址：<text>{{item.address}}</text> </view>
+      </view>
+      <view class="gu_fr">
+        <text class="gu_tel">提醒</text> 
+        <text class="gu_time">{{item.time}}</text>
+      </view>
+      <view class="gu-del" catchtap='delName' id="{{item.h_id}}">
+        <image src="../image/del.png" class="del-icon"></image>
+      </view>
+    </view>
+  </view>
+  <view class="empty" wx:else>
+    <image src="../image/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无联系过的雇主</text>
+  </view>
+</view>

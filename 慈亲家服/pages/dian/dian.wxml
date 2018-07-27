@@ -1,0 +1,49 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+  <!-- 店铺搜索 -->
+  <view class="dian-search">
+    <input placeholder='搜索本店产品' bindinput='inputName'/>
+     <icon type="search" size="20" />
+     <view class="sous" catchtap='souName'></view>
+  </view>
+  <!-- 店铺banner -->
+  <view class="dian_banner" wx:for="{{dian}}" wx:key="{{item.id}}">
+    <image src="{{item.dian}}" class="dian-bg"></image>
+    <view class="dian-message">
+      <image src="{{item.logo}}" class="dian-logo"></image>
+      <view class="dian-text">
+        <text class="dian-name">{{item.store_name}}</text>
+        <view class="dian-ping">
+           <block wx:for="{{item.xing}}" wx:key="{{item.id}}">
+            <image src="../image/start.png" class="xing"></image>
+          </block>
+          <block wx:for="{{item.xings}}" wx:key="{{item.id}}">
+            <image src="../image/start1.png" class="xing"></image>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+   <!--**分类***-->
+  <view class="choe-title">
+    <!-- <view class="choe-list {{curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap="tabFun">
+      <text class="time">分类</text>
+    </view> -->
+    <view class="choe-list {{curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" data-type="{{types}}" bindtap="tabFun">
+      <text class="time">销量</text>
+    </view>
+    <view class="choe-list {{curHdIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1" bindtap="tabFun">
+      <text class="time">新品</text>
+    </view>
+  </view>
+   <!--**内容***-->
+  <view class="shop-box" wx:if="{{empty==0}}">
+    <block wx:for="{{list}}" wx:key="{{item.id}}">
+      <template is="shopList" data="{{...item}}" />
+    </block> 
+  </view>
+  <view class="empty" wx:else>
+    <image src="../image/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无内容</text>
+  </view>
+</view>

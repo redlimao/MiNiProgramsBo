@@ -1,0 +1,173 @@
+/* pages/jia_details/jia_details.wxss */
+@import "../template/template.wxss";
+.inner-list{
+  margin:0;
+}
+/*======内容详情=======*/
+.gu-info{
+  background:#fff;
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+  padding:20rpx 30rpx;
+  width:690rpx;
+  height:180rpx;
+  overflow:hidden;
+  font-size:32rpx;
+  color:rgb(55,54,52);
+}
+/*======成交量=======*/
+.info{
+  width:100%;
+  height:50rpx;
+  padding:20rpx 0;
+  display:flex;
+  background:#fff;
+  border-bottom:1rpx solid #eee;
+}
+.fabu{
+  flex-grow:1;
+  border-right:1rpx solid #eee;
+  text-align:center;
+  font-size:30rpx;
+  color:rgb(177,174,171);
+  line-height:50rpx;
+  width:50%;
+  box-sizing: border-box;
+}
+.fabu .fabu-num{
+  color:rgb(250,0,43);
+  line-height:50rpx;
+}
+
+/*======服务内容=======*/
+.fu-inner{
+  width:100%;
+  background:#fff;
+  margin:20rpx 0;
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+}
+.common-title{
+  width:690rpx;
+  padding:25rpx 30rpx;
+  border-bottom:1rpx solid #eee;
+  overflow:hidden;
+  background:#fff;
+}
+.common-title .common-text{
+  font-size:30rpx;
+  font-weight:bold;
+  color:#3DC451;
+  display:block;
+  line-height:30rpx;
+  float:left;
+}
+.common-title .common-time{
+  font-size:30rpx;
+  font-weight:bold;
+  color:#3DC451;
+  display:block;
+  line-height:30rpx;
+  float:right;
+}
+.common-border{
+  width:6rpx;
+  height:30rpx;
+  background:#3DC451;
+  margin-right:10rpx;
+  display:block;
+  float:left;
+}
+.look-more{
+  font-size:26rpx;
+  color:rgb(177,174,171);
+  display:block;
+  line-height:30rpx;
+  float:right;
+}
+.fu-cont{
+  padding:20rpx 30rpx;
+  font-size:30rpx;
+}
+.fu-list{
+  margin-bottom:50rpx;
+  overflow:hidden;
+}
+.fu-message{
+  display:block;
+  float:left;
+  font-size:32rpx;
+  color:rgb(55,54,52);
+  width:160rpx;
+}
+.fu-info{
+  display:block;
+  float:left;
+  font-size:32rpx;
+  color:rgb(177,174,171);
+  width:530rpx;
+}
+/*======预约=======*/
+.customer-order{
+  width:100%;
+  height:99rpx;
+  overflow:hidden;
+  background:#fff;
+  position: fixed;
+  left:0;
+  bottom:0;
+  text-align:center;
+  line-height:99rpx;
+  font-size:36rpx;
+  color:rgb(250,0,43);
+  border-top:1rpx solid #eee;
+  display:flex;
+  justify-content:space-around;
+}
+.customer-order .zhuang{
+  width:500rpx;
+  display:block;
+  float:left;
+  line-height:99rpx;
+  color:#3DC451;
+  font-size:32rpx;
+  padding-left:30rpx;
+  overflow:hidden;
+}
+.customer-order .zhuangs{
+  color:#3DC451;
+}
+.customer-order .customer-orders{
+  display:block;
+  width:50%;
+  text-align:center;
+  line-height:99rpx;
+  background:#3DC451;
+  color:#fff;
+  font-size:30rpx;
+  flex-grow: 1
+}
+.collect{
+  flex-grow:1;
+  overflow:hidden;
+  width:50%;
+}
+.collect image{
+  display:block;
+  float:left;
+  width:30rpx;
+  height:30rpx;
+  margin-top:35rpx;
+  margin-left:35%;
+  margin-right:5%;
+}
+.collect .collect-text{
+  font-size:30rpx;
+  color:rgb(177,174,171);
+  display:block;
+  float:left;
+  line-height:100rpx;
+}
+.collect .collect-texts{
+  color:rgb(255,1,43);
+}

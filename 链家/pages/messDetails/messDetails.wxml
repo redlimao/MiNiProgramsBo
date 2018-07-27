@@ -1,0 +1,8 @@
+<!--pages/messDetails/messDetails.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+    <text class="title">{{list.title}}</text>
+    <view class="area">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+</view>

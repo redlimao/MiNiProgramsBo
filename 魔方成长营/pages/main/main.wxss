@@ -1,0 +1,199 @@
+/* pages/main/main.wxss */
+.main-box{
+  width:100%;
+  height:540rpx;
+  position:relative;
+  background:#fff;
+  box-shadow:0 0 20rpx rgba(0,0,0,0.1);
+  overflow:hidden;
+  margin-bottom:20rpx;
+}
+/*===========轮播================*/
+.banner{
+  width:100%;
+  height:300rpx;
+}
+/* ================个人信息=============== */
+.message{
+  width:100%;
+  height:320rpx;
+  overflow:hidden;
+  position:absolute;
+  left:0;
+  bottom:0;
+}
+.message image{
+  width:180rpx;
+  height:180rpx;
+  border-radius:50%;
+  display:block;
+  margin:0 auto;
+  margin-bottom:15rpx;
+  box-shadow:0 0 20rpx rgba(0,0,0,0.1);
+}
+.message .name{
+  display:block;
+  width:100%;
+  text-align:center;
+  font-size:32rpx;
+  margin-bottom:20rpx;
+}
+.dirnary{
+  display:block;
+  color:#fff;
+  background:#ff9a0e;
+  text-align:center;
+  line-height:40rpx;
+  width:160rpx;
+  border-radius:30rpx;
+  font-size:24rpx;
+  margin:0 auto;
+}
+.dirnarys{
+  display:block;
+  color:#fff;
+  background:#08A2F1;
+  text-align:center;
+  line-height:40rpx;
+  width:160rpx;
+  border-radius:30rpx;
+  font-size:24rpx;
+  margin:0 auto;
+}
+.self{
+  width:120rpx;
+  height:250rpx;
+  position:absolute;
+  right:0;
+  top:0;
+}
+.self text{
+  font-size:28rpx;
+  color:#b2b2b2;
+  margin-top:200rpx;
+  display:block;
+  float:left;
+}
+.self image{
+  float:left;
+  width:30rpx;
+  height:30rpx;
+  margin-top:200rpx;
+  margin-left:5rpx;
+}
+/* ===============id============== */
+.inner-box{
+  width:100%;
+  height:150rpx;
+  background:#fff;
+  border-top:2rpx solid #e5e5e5;
+  border-bottom:2rpx solid #e5e5e5;
+  overflow:hidden;
+  margin-bottom:20rpx;
+}
+.inner{
+  width:100%;
+  height:100rpx;
+  margin-top:25rpx;
+  overflow:hidden;
+  display:flex;
+}
+.fl{
+  width:50%;
+  flex-grow: 1;
+  border-right:2rpx solid #e5e5e5;
+  box-sizing:border-box;
+}
+.fl image{
+  width:51rpx;
+  height:60rpx;
+  display:block;
+  margin:0 auto;
+  margin-bottom:10rpx;
+}
+.fl text{
+  display:block;
+  width:100%;
+  text-align:center;
+  color:#888;
+  font-size:24rpx;
+}
+.fl .dou{
+  display:block;
+  font-size:48rpx;
+  color:#333;
+  line-height:60rpx;
+  margin-bottom:10rpx;
+}
+.fr{
+  width:50%;
+  flex-grow: 1;
+}
+.fr image{
+  width:65rpx;
+  height:60rpx;
+  display:block;
+  margin:0 auto;
+  margin-bottom:10rpx;
+}
+.fr text{
+  display:block;
+  width:100%;
+  text-align:center;
+  color:#888;
+  font-size:24rpx;
+}
+
+.box{
+  overflow:hidden;
+  height:100%;
+}
+.box-list{
+  border-top:2rpx solid #e5e5e5;
+  margin-bottom:20rpx;
+}
+.box-list .list{
+  width:100%;
+  background:#fff;
+  border-bottom:2rpx solid #e5e5e5;
+  height:80rpx;
+  overflow:hidden;
+  position:relative;
+}
+.box-list .symbol{
+  display:block;
+  float:left;
+  width:37rpx;
+  height:37rpx;
+  margin-left:30rpx;
+  margin-top:21rpx;
+  margin-right:30rpx;
+}
+.box-list .font{
+  display:block;
+  float:left;
+  line-height:80rpx;
+  font-size:30rpx;
+}
+.box-list .more{
+  display:block;
+  float:right;
+  width:14rpx;
+  height:25rpx;
+  margin-left:10rpx;
+  margin-top:28rpx;
+  margin-right:30rpx;
+}
+button{
+  display:block;
+  width:100%;
+  height:100%;
+  position:absolute;
+  left:0;
+  top:0;
+  border:none;
+  background:rgba(0,0,0,0);
+}
+button:after{
+  border:none;
+}

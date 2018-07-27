@@ -1,0 +1,12 @@
+/* createpackage */
+.title{height: 100rpx;line-height: 100rpx;padding: 0 20rpx;width: 100%;font-size: 30rpx;color: #333;background-color: #fff;margin-bottom: 10rpx;box-sizing: border-box;}
+.item{height: 90rpx;padding: 0 20rpx;width: 100%;box-sizing: border-box;background-color: #fff;align-items: center;justify-content: space-between;display: flex;border-bottom: 1rpx solid #ECECEC;}
+.item:last-child{border-bottom: 1rpx solid transparent;}
+    .i-tit{font-size: 26rpx;color: #333;}
+    .i-txt{font-size: 26rpx;color: #666;}
+/* 底部 */
+.foot{width: 100%;position: fixed;bottom: 0;left: 0;box-sizing: border-box;background-color: #fff;display: flex;align-items: center;height: 100rpx;}
+    .f-txt{flex: 1;font-size: 32rpx;color: #ef4136;text-align: right;padding-right: 20rpx;}
+    .btn-pay{height:100rpx;width: 220rpx;background-color:#ed622b;color: #fff;text-align: center;line-height: 100rpx;font-size: 32rpx;}
+
+

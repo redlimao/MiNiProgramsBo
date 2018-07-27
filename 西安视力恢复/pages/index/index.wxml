@@ -1,0 +1,88 @@
+<import src="../template/template.wxml"/>
+ <!-- ***搜索*** -->
+  <view class="search-box">
+    <view class="search">
+      <input class="search-inp" placeholder='请输入搜索内容' placeholder-style="color:rgb(160,160,160)" bindinput="inpName" value="{{val}}" />
+      <view class="search-btn" bindtap='souName'>
+        <image src="../../images/search.png" class="search-icon"></image>
+      </view>
+    </view>
+  </view>
+<!--****************导航**********-->
+<!-- <scroll-view scroll-x="true" class="scroll">
+<view class="pro_nav" bindtap="tabFun">
+  <view class="pronav-list {{curHdIndex==index ? 'actives' : ''}}" data-id="{{index}}" wx:for="{{nav}}" wx:key="{{item.id}}" id="{{item.id}}" data-ids="{{item.type_s}}">
+    {{item.name}}
+  </view>
+</view>
+</scroll-view> -->
+<view class="slider-wrap">
+    <scroll-view scroll-x="true" bindtap="tabFun" style="width: 100%">
+        <view class="slider-box d-box">
+            <view class="slider-menu {{curHdIndex == index ? 'on':''}}" data-id='{{index}}' wx:for="{{nav}}" id="{{item.id}}" wx:key="{{index}}" data-ids="{{item.type_s}}">{{item.name}}</view>
+        </view>
+    </scroll-view>
+</view>
+<!--*****************内容**********-->
+<view class="shop_inner">
+    <!--**轮播***-->
+    <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"indicator-dots="true" indicator-active-color="#fff" indicator-color="rgba(255,255,255,0.3)"> 
+      <swiper-item   wx:for="{{banner}}" wx:key="{{item.id}}" id="{{item.id}}">  
+        <image src="{{item.banner}}"/>   
+      </swiper-item>
+    </swiper>
+    <!-- **优惠卷** -->
+     <view class="img-boxs {{juan==0 ? '' : 'hide'}}">
+        <!-- <image class="close-img" src="../../images/close_icon1.png" bindtap='closeJuan'></image> -->
+        <image class="img-box" src="../../images/juan-bg.png" bindtap='lingName'></image>
+    </view>
+        <!--**分类***-->
+    <view class="choe-title" >
+      <view class="choe-list {{curFenIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap="tabFuns">
+        <text class="time">综合</text>
+      </view>
+      <view class="choe-list {{curFenIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1"  data-type="{{types}}" bindtap="tabFuns">
+        <text class="time">销量</text>
+      </view>
+      <view class="choe-list {{curFenIndex=='2'? 'actives' : ''}}" id="tab-hd03" data-id="2" bindtap="tabFuns">
+        <text class="time">新品</text>
+      </view>  
+      <view class="choe-list {{curFenIndex=='3'? 'actives' : ''}}" id="tab-hd04" data-id="3"  data-type="{{types}}" bindtap="tabFuns">
+        <text class="time">价格</text>
+      </view>  
+    </view>
+    <!--**内容***-->
+    <view class="shop-box" wx:if="{{empty==0}}">
+      <block wx:for="{{list}}" wx:key="{{item.id}}">
+        <template is="shopList" data="{{...item}}" />
+      </block> 
+    </view>
+    <view class="empty" wx:else>
+      <image src="../../images/empty.png" class="empty-icon"></image>
+      <text class="empty-text">暂无内容</text>
+    </view>
+    <!-- *****优惠卷弹窗**** -->
+    <view class="ling-mask" wx:if="{{tan==0}}">
+      <view class="pop {{tan==0 ? 'on' : ''}}">
+          <image class="pop-img" src="../../images/pop_bg.png"></image>
+          <view class="pop-content">
+              <view class="p-coupon-view">
+                  <view class="p-item" wx:for="{{juan_list}}" wx:key="{{index}}">
+                      <image class="p-item-img" src="../../images/coupon_bg.png"></image>
+                      <view class="p-item-con">
+                          <view class="p-money">
+                              <text class="p-money-icon">¥</text>
+                              <text class="p-moneys">{{item.money}}</text>
+                          </view>
+                          <text class="p-txts">满¥{{item.man}}可用</text>
+                      </view>
+                  </view>
+              </view>
+              <text class="p-texts">优惠券领取成功请到“我”-“优惠券”查看</text>
+              <view class="p-btn" bindtap='quanName' data-id='{{user_id}}'>查看详情</view>
+          </view>
+          <image class="p-close" bindtap='closeLing' src="../../images/close_icon.png"></image>
+      </view>
+    </view>
+
+</view>

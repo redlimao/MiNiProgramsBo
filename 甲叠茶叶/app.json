@@ -1,0 +1,87 @@
+{
+    "pages": [
+        "page/taber/index/index",
+        "page/taber/shop/shop",
+        "page/taber/mycenter/mycenter"
+    ],
+    "subPackages": [
+        {
+            "root": "page/index/",
+            "pages": [
+                "storedetail/storedetail",
+                "packagedetail/packagedetail",
+                "createpackage/createpackage",
+                "createpackagezi/createpackagezi",
+                "tagdetail/tagdetail"
+            ]
+        },
+        {
+            "root":"page/shop/",
+            "pages":[
+                "shoplist/shoplist",
+                "search/search",
+                "searchlist/searchlist",
+                "shopdetails/shopdetails",
+                "allcomments/allcomments",
+                "createorder/createorder"
+            ]
+        },
+        {
+            "root": "page/mycenter/",
+            "pages": [
+                "mycart/mycart",
+                "myorder/myorder",
+                "myevaluate/myevaluate",
+                "orderdetails/orderdetails",
+                "paymoney/paymoney",
+                "mymoney/mymoney",
+                "mycovers/mycovers",
+                "rule/rule",
+                "mycoupons/mycoupons",
+                "mycollect/mycollect",
+                "myappointmen/myappointmen",
+                "myevaluateapp/myevaluateapp",
+                "packagedetail/packagedetail",
+                "packagezidetail/packagezidetail",
+                "message/message",
+                "myshare/myshare",
+                "cartorder/cartorder",
+                "newpage/newpage"
+            ]
+        }
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "甲叠茶叶"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "page/taber/index/index",
+                "text": "品茗",
+                "iconPath": "images/tab-icon1-1.png",
+                "selectedIconPath": "images/tab-icon1.png"
+            },
+            {
+                "pagePath": "page/taber/shop/shop",
+                "text": "商城",
+                "iconPath": "images/tab-icon2-2.png",
+                "selectedIconPath": "images/tab-icon2.png"
+            },
+            {
+                "pagePath": "page/taber/mycenter/mycenter",
+                "text": "个人中心",
+                "iconPath": "images/tab-icon3-3.png",
+                "selectedIconPath": "images/tab-icon3.png"
+            }
+        ],
+        "color": "#a0a0a0",
+        "selectedColor": "#826540",
+        "backgroundColor":"#FFFFFF"
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    }
+}

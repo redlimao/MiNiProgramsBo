@@ -1,0 +1,23 @@
+/* pages/shop/shop.wxss */
+page{background-color: #fff;}
+/* 我的收益 */
+.i-wrap{width: 750rpx;height: 286rpx;position: relative;margin-top:148rpx;}
+    .i-img{width: 750rpx;height: 286rpx;}
+    .i-num{position: absolute;font-size: 64rpx;font-weight: bold;color: #fff;left: 50rpx;top: 80rpx;}
+/* 列表 */
+.tit{height: 84rpx;line-height: 84rpx;text-align: center;font-size: 34rpx;color: #2B2B2B;font-weight: bold;border-bottom: 1rpx solid #EEEEEE;}
+.list{padding: 0 20rpx;width: 100%;box-sizing: border-box;padding-bottom: 84rpx;}
+    .item{height: 128rpx;display: flex;align-items: center;border-bottom: 1rpx solid #EEEEEE;}
+        .i-info{flex: 1;}
+            .i-info-tit{font-size: 30rpx;color: #2B2B2B;font-weight: bold;}
+            .i-info-time{font-size: 26rpx;color: #9C9C9C;padding-top: 12rpx;}
+        .i-money{font-size: 34rpx;color: #FF2613;font-weight:bold;}
+        .i-moneys{font-size:28rpx;font-weight:bold;}
+    .empty{font-size: 26rpx;color: #9C9C9C;padding-top: 150rpx;text-align: center;}
+/*底部*/
+.b-wrap{width: 100%;height: 84rpx;box-shadow: 0rpx -5rpx 10rpx 0rpx rgba(0,0,0,0.05);background-color: #fff;position: fixed;bottom: 0;left: 0;display: flex;box-sizing: border-box;padding: 0 20rpx;align-items: center;}
+    .btn-con{width:355rpx;height:66rpx;font-size:28rpx;line-height:66rpx;text-align: center;color: #2b2b2b;display:flex;justify-content:center;}
+    .ti-icon{width:26rpx;height:26rpx;margin-top:20rpx;margin-right:10rpx;}
+    .btn-money{width:355rpx;height:66rpx; background:linear-gradient(135deg,rgba(255,141,66,1),rgba(255,217,79,1));border-radius: 42rpx;font-size:34rpx;color:rgba(255,255,255,1);line-height:66rpx;text-align: center;}
+
+

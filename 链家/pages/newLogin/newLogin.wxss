@@ -1,0 +1,23 @@
+/**index.wxss**/
+.b-bg{width: 750rpx;height: 708rpx;position: absolute;top: 0;left: 0;}
+.box{width: 750rpx;height: 708rpx;padding-top: 270rpx;position: relative;z-index: 2;}
+    .f-wrap{width:710rpx;height:600rpx; background:rgba(255,255,255,1);box-shadow: 0rpx 13rpx 25rpx 0rpx rgba(58,111,175,0.08);border-radius: 4rpx;margin: 0 auto;padding: 0 55rpx;box-sizing: border-box;display: block;}
+        .skip{font-size:26rpx;color:rgba(181,196,203,1);line-height:24rpx;padding-top: 40rpx;text-align: right;margin-bottom: 87rpx;}
+        .input-box{height: 70rpx;width: 100%;display: flex;align-items: center;border-bottom: 2rpx solid #EEEEEE;box-sizing: border-box;}
+        .input-box.on{border-bottom: 2rpx solid #58BDF4;}
+            .icon{width: 30rpx;height: 30rpx;}
+            .input-txt{width: 550rpx;color:rgba(102,113,118,1);line-height: 70rpx;padding-left: 20rpx;font-size: 30rpx;}
+        .btn-box{padding: 0 45rpx;margin-top: 135rpx;width: 510rpx;display: flex;justify-content: space-between;}
+            .btn-next{width: 168rpx;height: 60rpx;line-height: 60rpx;text-align: center;color: #58BDF4;font-size: 30rpx;}
+            .btn-ture{width:168rpx;height:60rpx; background:rgba(88,189,244,1);border-radius: 35rpx;display: flex;align-items: center;justify-content: center;position: relative;}
+            .btns{position: absolute;top: 0;left: 0;width: 168rpx;height: 60rpx;opacity: 0;}
+                .t-txt{color: #fff;font-size: 30rpx;}
+                .icon-ture{width: 23rpx;height: 20rpx;margin-left: 3rpx;}
+
+
+.box-logo{width: 750rpx;height: 132rpx;position: relative;padding-top: 106rpx;}
+    .logo{margin: 0 auto;width: 178rpx;height: 81rpx;display: block;}
+    .tip{position: absolute;top: 53rpx;right: 181rpx;width: 58rpx;height: 86rpx;}
+.box-foot{width: 750rpx;height: 118rpx;}
+
+.mt-50{margin-top: 50rpx;}

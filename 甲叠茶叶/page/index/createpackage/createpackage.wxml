@@ -1,0 +1,26 @@
+<view class="title">固定套餐：{{title}}</view>
+<view class="item">
+    <view class="i-tit">门店</view>
+    <view class="i-txt">{{store_name}}</view>
+</view>
+<view class="item">
+    <view class="i-tit">日期</view>
+    <view class="i-txt">{{date}}</view>
+</view>
+<view class="item">
+    <view class="i-tit">到店时间</view>
+    <view class="i-txt">{{time_start}}--{{ time_end}}</view>
+</view>
+<view class="item">
+    <view class="i-tit">价格</view>
+    <view class="i-txt">¥{{money}}/人</view>
+</view>
+<view class="item">
+    <view class="i-tit">人数</view>
+    <view class="i-txt">{{num}}</view>
+</view>
+<!-- 总金额  -->
+<view class="foot">
+    <view class="f-txt">合计金额：¥{{total_money}}</view>
+    <view class="btn-pay" bindtap='bindPay'>立即支付</view>
+</view>

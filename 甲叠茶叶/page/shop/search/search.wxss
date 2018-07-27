@@ -1,0 +1,11 @@
+/**search.wxss**/
+.box{width: 100%;height: 90rpx;padding: 23rpx 20rpx;box-sizing: border-box;position: relative;display: block;}
+    .f-txt{width: 610rpx;height: 64rpx;line-height: 64rpx;color: #333;font-size: 26rpx;padding: 0 30rpx;box-sizing: border-box;border-radius: 32rpx;background-color: #fff;position: absolute;}
+    .f-btn{height: 60rpx;width: 100rpx;text-align: center;font-size: 26rpx;color: #333;float: right;line-height: 60rpx;}
+
+.tit{padding: 0 20rpx;width: 100%;box-sizing: border-box;height: 90rpx;display:flex;align-items: center;}
+    .title{font-size: 30rpx;color: #333;flex: 1;}
+    .t-icon{width: 30rpx;height: 30rpx;padding: 10rpx;display: block;}
+.list{padding: 0 20rpx;width: 100%;box-sizing: border-box;display:flex;}
+    .item{height: 60rpx;padding: 0 20rpx;border-radius: 20rpx;line-height: 60rpx;font-size: 26rpx;background-color: #e5e5e5;margin: 0 20rpx 20rpx 0;}
+.empty{padding-top: 20rpx;font-size: 26rpx;color: #666666;text-align: center;}

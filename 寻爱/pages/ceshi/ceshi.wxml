@@ -1,0 +1,31 @@
+<!--pages/ceshi/ceshi.wxml-->
+<view class="container">
+    <view class="back" bindtap='backName'>
+      <image src="../../images/back.png" class="back-icon"></image>
+    </view>
+    <view class="tops">答题</view>
+    <!-- ***测试题**** -->
+    <swiper class="swiper" interval="5000" duration="1000"  current="{{currentTab}}" bindchange="switchTab"> 
+      <swiper-item wx:for="{{list}}" wx:key="{{indexs}}" wx:for-index="indexs">  
+         <view class="question">
+          {{item.name}}
+         </view>  
+         <view class="answer">
+          <view class="answer-list" wx:for="{{item.xuan}}" wx:key="{{index}}" bindtap="choose" data-indexs="{{indexs}}" data-index="{{index}}">
+            <text class="answer-text">{{item.biao}}{{item.xuan}}</text>
+            <icon type="success" color="#FF7FAE"  wx:if="{{item.selected}}"  size="18"/>
+            <icon type="circle"  wx:else size="18"  />
+          </view>
+         </view>
+      </swiper-item>
+    </swiper>
+    <!-- ***上一题** -->
+    <view class="ti-choose">
+      <text class="prev" bindtap='prevName'>上一题</text>
+      <view class="ti-num" bindtap='resultName'>
+        <text class="ti-active">{{currentTab+1}}</text>/{{all}}
+      </view>
+      <text class="next" bindtap='nextName' wx:if="{{guo==0}}">下一题</text>
+      <text class="next" bindtap='guoName' wx:else >结果分析</text>
+    </view>
+</view>

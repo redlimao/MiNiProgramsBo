@@ -1,0 +1,4 @@
+page{background-color: #fff;}
+.logo{width: 170rpx;height: 170rpx;margin: 0 auto;margin-top: 30rpx;}
+.texts{font-size: 34rpx;color: #666666;text-align: center;line-height: 100rpx;}
+.area{padding: 20rpx;width: 100%;box-sizing: border-box;}

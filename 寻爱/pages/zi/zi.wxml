@@ -1,0 +1,33 @@
+<!--pages/zi/zi.wxml-->
+<view class="container">
+  <view class="back" bindtap='backName'>
+    <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="tops">咨询预约</view>
+  <view class="zi">
+    <view class="zi-title">常见问题</view>
+    <view class="zi-box">
+      <view class="zi-list" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}" bindtap='answerName'>
+        <text class="zi-text">{{item.title}}</text>
+        <image src="../../images/icon_in.png" class="more-icon"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="tab-bar">
+  <text class="fl">客服咨询</text>
+  <button open-type='contact' show-message-card="true" hover-class="none"></button>  
+  <text class="border">|</text>
+  <text class="fr" bindtap='orderName'>在线预约</text>
+</view>
+
+<view class="mask-box" wx:if="{{flag==0}}">
+  <view class="mask"></view>
+  <view class="answer">
+    <view class="close" bindtap='closeName'>我知道了</view>
+    <view class="cont">
+      {{content}}
+    </view>
+  </view>
+</view>

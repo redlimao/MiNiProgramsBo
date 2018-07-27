@@ -1,0 +1,15 @@
+/**myevaluateapp.wxss**/
+page{background-color: #fff;}
+.model-a{padding: 0 100rpx;height: 76rpx;display: flex;align-items: center;width: 100%;box-sizing: border-box;}
+    .tit{font-size: 30rpx;color: #333;}
+    .stars-big{flex: 1;height: 40rpx;margin-left:45rpx;position: relative;display: flex;}
+        .star-bigs0,.star-bigs1,.star-bigs2,.star-bigs3,.star-bigs4{width: 40rpx;height: 40rpx;position: absolute;top: 0;left: 0;}
+        .star-big0,.star-big1,.star-big2,.star-big3,.star-big4{width: 40rpx;height: 40rpx;position: absolute;top: 0;left: 0;z-index: 2;}
+        .star-big1,.star-bigs1{left: 74rpx;}
+        .star-big2,.star-bigs2{left: 148rpx;}
+        .star-big3,.star-bigs3{left: 222rpx;}
+        .star-big4,.star-bigs4{left: 296rpx;}
+.btn{height: 80rpx;text-align: center;line-height: 80rpx;width: 500rpx;border-radius: 40rpx;background-color: #826540;font-size: 30rpx;color: #ffffff;position: absolute;transform: translate(-50%,0);left: 50%;bottom: 100rpx;}
+
+
+

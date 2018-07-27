@@ -1,0 +1,12 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+} 
+.empty{color:rgb(177, 174, 171);font-size:24rpx;text-align:center;padding-top: 100rpx;}
+/* ======滑动菜单===== s>=slider */
+.slider-wrap{padding:0 24rpx;background-color: #fff;box-sizing: border-box;width: 100%;}
+	.slider-box{height:80rpx;display:flex;white-space:nowrap;}
+	.slider-menu{margin: 0 10rpx;height:80rpx;line-height:80rpx;font-size:30rpx;color:rgb(51,51,51);box-sizing: border-box;padding: 0 20rpx;}
+    .slider-menu.on{border-bottom:4rpx solid #00A9E4;color: #00A9E4;}
+    
+.flex-sa{justify-content: space-around;}

@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="container">
+   <!--*****************轮播**********-->
+  <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"> 
+    <swiper-item  bindtap="guangName" wx:for="{{ad}}" id="{{item.id}}">  
+     <image src="{{item.img}}"/>   
+    </swiper-item>   
+  </swiper>
+   <!--*****************搜索**********-->
+  <view class="search">
+    <view class="inp-box">
+      <form>
+        <input placeholder="搜索幼儿园" bindinput="innerName"/>
+        <image src="../../image/search.png" class="se-img" bindtap="searchName"></image>
+      </form>
+    </view>
+  </view>
+   <!--**************搜索导航**********-->
+  <view class="nav">
+    <picker class="pro-list"  bindchange="proChange" value="{{pro_index}}" range="{{pro}}">{{pro[pro_index]}}<image src="../../image/xialas.png"></image></picker>
+    <picker class="city-list" bindchange="cityChange" value="{{city_index}}" range="{{city}}">{{city[city_index]}}<image src="../../image/xialas.png"></image></picker>
+    <picker class="area-list" bindchange="areaChange" value="{{area_index}}" range="{{area}}">{{area[area_index]}}<image src="../../image/xialas.png"></image></picker>
+    <!-- <picker class="kind-list" bindchange="kindChange" value="{{kind_index}}" range="{{kind}}">{{kind[kind_index]}}<image src="../../image/xialas.png"></image></picker> -->
+  </view>
+  <!--**************内容************* -->
+  <view class="inner" wx:if="{{sou==1}}">
+    <view class="inner-box" wx:if="{{empty==0}}">
+      <view class="inner-list"  bindtap="infoName"  wx:for="{{list}}" wx:key="item.id" data-id="{{item.id}}">
+        <view class="image">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="small">
+          <text class="small-name">{{item.school_name}}</text>
+          <!-- <text class="small-address">{{item.address}}</text> -->
+          <view class="small-box">
+            <image src="../../image/add.png"></image>
+            <text class="small-address">{{item.address}}</text>
+          </view>
+          <view class="decitsnce">{{item.ju}}</view>
+        </view>
+        <!-- <view class="ren">
+          <block wx:if="{{item.status==2}}">
+            <image src="../../image/ren.png"></image>  
+            <text class="ren-intro">认证</text>
+          </block>
+          <block wx:else>
+            <image src="../../image/wei-ren.png"></image>
+            <text class="ren-intro">未认证</text>
+          </block>
+        </view> -->
+      </view>
+    </view>
+    <view class="inner-empty" wx:else>暂无学校</view>
+  </view>
+  <view class="inner-empty" wx:else>
+    没有找到该学校
+  </view>
+</view>

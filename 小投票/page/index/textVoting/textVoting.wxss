@@ -1,0 +1,28 @@
+/* pages/textVoting/textVoting.wxss */
+/* 切换菜单 */
+.menu{width: 100%;height: 84rpx;background-color: #fff;display:flex;align-items: center;justify-content: center;background:rgba(255,255,255,1);box-shadow: 0rpx 5rpx 20rpx 0rpx rgba(0,76,152,0.1);}
+    .m-item1,.m-item2{width: 285rpx;height: 60rpx;line-height: 56rpx;text-align: center;color: #238BED;font-size: 34rpx;box-sizing: border-box;border-top: 2rpx solid #238BED;border-bottom: 2rpx solid #238BED;}
+    .m-item1{border-radius: 30rpx 0 0 30rpx;border-left: 2rpx solid #238BED;}
+    .m-item2{border-radius: 0 30rpx 30rpx 0;border-right: 2rpx solid #238BED;}
+    .m-item1.on,.m-item2.on{background:linear-gradient(-135deg,rgba(73,191,247,1),rgba(35,139,237,1));color: #fff;border-top: 2rpx solid transparent;border-bottom: 2rpx solid transparent;}
+    .m-item1.on{border-left: 2rpx solid transparent;}
+    .m-item2.on{border-left: 2rpx solid transparent;}
+/* 主体 */
+.con{padding-top: 40rpx;}
+    .modules{border-top: 1rpx solid #EEEEEE;border-bottom: 1px solid #EEEEEE;background-color: #fff;width: 100%;padding: 0 20rpx;box-sizing: border-box;margin-bottom: 20rpx;}
+        .item{width: 100%;height: 111rpx;display: flex;align-items: center;border-bottom: 1rpx solid #EEEEEE;}
+        .item:last-child{border-bottom: 0;}
+            .input-txt{flex: 1;font-size: 34rpx;color: #333333;}
+            .p-c{font-size: 34rpx;color: #9EA5B9;}
+            .i-icon{width: 64rpx;height: 64rpx;padding: 20rpx;}
+            .add-icon,.subtract-icon{width: 64rpx;height: 64rpx;padding: 20rpx;}
+        .p-box{width: 285rpx;height:111rpx;}    
+            .p-txt{font-size: 30rpx;color: #9EA5B9;text-align: center;width: 100%;height: 111rpx;line-height: 111rpx;}
+/* 操作按钮 */
+.btns{padding: 80rpx 40rpx;display: flex;justify-content: space-between;}
+    .btn-one,.btn-two{width:310rpx;height:84rpx; border-radius: 42rpx;text-align: center;box-sizing: border-box;}
+    .btn-one{border: 2rpx solid #238BED;color:#238BED;line-height: 80rpx;}
+    .btn-two{background:linear-gradient(-135deg,rgba(73,191,247,1),rgba(35,139,237,1));
+box-shadow: 0rpx 10rpx 15rpx 0rpx rgba(36,140,237,0.3);color: #fff;line-height: 84rpx;}
+
+

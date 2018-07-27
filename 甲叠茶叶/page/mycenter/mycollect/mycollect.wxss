@@ -1,0 +1,11 @@
+page{background-color: #fff;}
+.menu{display: flex;justify-content: space-around;}
+    .m-item{height: 90rpx;border-bottom: 4rpx solid transparent;box-sizing: border-box;text-align: center;line-height: 90rpx;font-size: 30rpx;color: #666;}
+    .m-item.on{border-bottom: 4rpx solid #826540;color: #826540;}
+.c-list{padding-bottom: 20rpx;}
+    .c-item{padding: 0 20rpx;height: 140rpx;display: flex;align-items: center;border-bottom: 1rpx solid #ececec;}
+    .c-item:last-child{border-bottom: 1rpx solid transparent;}
+        .c-img{width: 100rpx;height: 100rpx;display: block;}
+        .c-tit{font-size: 30rpx;color: #333;flex: 1;padding: 0 20rpx;}
+        .c-txt{font-size: 30rpx;color: #ef4136;}
+    .empty{font-size: 26rpx;color: #ccc;text-align: center;padding: 200rpx 0;}

@@ -1,0 +1,4 @@
+/* pages/rule/rule.wxss */
+page{
+  background:#fff;
+}

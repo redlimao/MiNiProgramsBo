@@ -1,0 +1,57 @@
+/* pages/class/class.wxss */
+.container{
+  padding-top:40rpx;
+}
+.classList{
+  width:710rpx;
+  height:500rpx;
+  margin:0 auto;
+  background:#fff;
+  border-radius:20rpx;
+  box-shadow: 0 0 20rpx rgba(0,0,0,0.1);
+  margin-bottom:30rpx;
+  overflow:hidden;
+}
+.classList .class-img{
+  width:710rpx;
+  height:350rpx;
+  display:block;
+  overflow:hidden;
+  margin-bottom:20rpx;
+}
+.intro{
+  width:60%;
+  float:left;
+  margin-left:20rpx;
+}
+.intro .intro-title{
+  width:100%;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  font-size:30rpx;
+  color:rgb(73,70,71);
+  font-weight:bold;
+}
+.intro .intro-cont{
+  width:100%;
+  overflow:hidden;
+  font-size:26rpx;
+  color:rgb(173,166,168);
+   display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.money{
+  float:right;
+  width:140rpx;
+  height:50rpx;
+  text-align:center;
+  line-height:50rpx;
+  border:1rpx solid rgb(255,127,174);
+  font-size:30rpx;
+  color:rgb(255,127,174);
+  margin-top:30rpx;
+  margin-right:20rpx;
+  border-radius:50rpx;
+}

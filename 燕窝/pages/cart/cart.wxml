@@ -1,0 +1,32 @@
+<import src="../template/template.wxml"/>
+<view class="container" wx:if="{{empty==0}}">
+  <view class="cart1-box">
+     <block wx:for="{{carts}}" wx:key="{{item.id}}">
+       <template is="carList1" data="{{...item}}" />
+    </block>  
+  </view>
+  <view class="shops">
+    <view class="shopss">
+      <view class="shops-fl">
+        <view class="shops-choose">
+          <icon type="success" color="#816540" bindtap="selectAll" wx:if="{{selectAllStatus}}" size="20"/>
+          <icon type="circle" wx:else bindtap="selectAll" />
+          <text class="all">全选</text>
+        </view>
+        <view class="shops-number">
+          共计：<text class="fu-money" >￥{{totalPrice}}</text>
+        </view>
+      </view>
+      <view class="shops-fr">
+        <view class="shops-money"  bindtap="payName">
+            <text class="fu">付款</text>
+            <image src="../../images/fu.png"></image>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="empty" wx:else>
+    <image src="../../images/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无商品</text>
+</view>

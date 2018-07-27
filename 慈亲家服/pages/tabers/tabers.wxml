@@ -1,0 +1,22 @@
+<view class="wrap">
+    <view class="item" bindtap='bindTabOne'>
+        <view class="i-top color-a"></view>
+        <image class="i-img" src='../image/tab-one.png'></image>
+        <view class="i-txt">找家政</view>
+    </view>
+    <view class="item" bindtap='bindTabTwo'>
+        <view class="i-top color-b"></view>
+        <image class="i-img" src='../image/tab-two.png'></image>
+        <view class="i-txt">找雇主</view>
+    </view>
+    <view class="item" bindtap='bindTabThree'>
+        <view class="i-top color-c"></view>
+        <image class="i-img" src='../image/tab-three.png'></image>
+        <view class="i-txt">家服课堂</view>
+    </view>
+    <view class="item" bindtap='bindTabFour'>
+        <view class="i-top color-d"></view>
+        <image class="i-img" src='../image/tab-four.png'></image>
+        <view class="i-txt">良心产品</view>
+    </view>
+</view>

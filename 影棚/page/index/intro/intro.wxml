@@ -1,0 +1,42 @@
+<import src="../../../wxParse/wxParse.wxml"/> 
+<!--intro.wxml-->
+<!-- 介绍内容 -->
+<view class="main">
+    <image class="m-img" src='{{photo}}' mode='widthFix'></image>
+    <view class="m-con">
+        <view class="m-tit">
+            <view class="tit">{{name}}</view>
+            <view class="collect" bindtap='bindCollect'>{{collect_flag == 1 ? '已收藏' : '收藏'}}</view>
+        </view>
+        <view class="c-tit">年龄：{{age}}</view>
+        <view class="c-tit">性别：{{sex==0 ? '男' : '女'}}</view>
+    </view>
+</view>
+<!-- 菜单 -->
+<view class="menu">
+    <view class="m-item" bindtap='bindTap' data-index='1'>
+        <view class="m-txt">个人简历</view>
+        <view class="m-bg" wx:if="{{current == 1}}"></view>
+    </view>
+    <view class="m-item" bindtap='bindTap' data-index='2' data-id='{{id}}'>
+        <view class="m-txt">过往作品</view>
+        <view class="m-bg" wx:if="{{current == 2}}"></view>
+    </view>
+</view>   
+<!-- 主要内容  -->
+<view class="con" wx:if="{{current == 1}}">
+    <view>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+</view>
+<view class="con" wx:if="{{current == 2}}">
+    <view class="c-item" wx:for="{{list}}" wx:key="{{index}}" bindtap='bindDetail' data-id='{{item.id}}' data-index='{{item.index}}' >
+        <image class="c-img" src='http://192.168.0.2:8080/img/{{item.photo}}' mode='widthFix'></image>
+        <view class="c-txt">{{item.name}}</view>
+    </view>
+</view>
+<!-- 计时以及预约 -->
+<view class="btn-box">
+    <!-- <view class="btn-time">开始计时</view> -->
+    <view class="btn-appoint" bindtap='bindAppoint' data-money='{{money}}' data-name='{{name}}' data-id='{{id}}'>我要预约</view>
+</view>

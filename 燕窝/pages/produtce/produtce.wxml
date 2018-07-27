@@ -1,0 +1,32 @@
+<import src="../template/template.wxml"/>
+<!--****************导航**********-->
+<view class="pro_nav" bindtap="tabFun" wx:if="{{types==1}}">
+  <view class="pronav-list {{curHdIndex==0 ? 'actives' : ''}}" data-id="0">
+    次卡/周卡
+  </view>
+  <view class="pronav-list {{curHdIndex==1 ? 'actives' : ''}}" data-id="1">
+    月卡
+  </view>
+  <view class="pronav-list {{curHdIndex==2 ? 'actives' : ''}}" data-id="2">
+    季卡
+  </view>
+  <view class="pronav-list {{curHdIndex==3 ? 'actives' : ''}}" data-id="3">
+    半年卡
+  </view>
+  <view class="pronav-list {{curHdIndex==4 ? 'actives' : ''}}" data-id="4">
+    年卡
+  </view>
+</view>
+<!--*****************内容**********-->
+<view class="shop_inner">
+    <!--**内容***-->
+    <view class="shop-box" wx:if="{{empty==0}}">
+      <block wx:for="{{list}}" wx:key="{{item.id}}">
+        <template is="shopList" data="{{...item}}" />
+      </block> 
+    </view>
+    <view class="empty" wx:else>
+      <image src="../../images/empty.png" class="empty-icon"></image>
+      <text class="empty-text">暂无内容</text>
+    </view>
+</view>

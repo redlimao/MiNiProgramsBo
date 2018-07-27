@@ -1,0 +1,19 @@
+<view class="wrap">
+    <view class="i-item">
+        <view class="i-tit">服务类型</view>
+        <view class="i-txt">摄影师</view>
+    </view>
+    <view class="i-item">
+        <view class="i-tit">标题</view>
+        <view class="i-txt">摄影师</view>
+    </view>
+    <view class="i-item">
+        <view class="i-tit">已选档期</view>
+        <view class="i-txt">{{time}}</view>
+    </view>
+    <view class="i-item">
+        <view class="i-tit">支付金额</view>
+        <view class="i-txt on">{{money}}</view>
+    </view>
+    <view class="btn" bindtap='bindTrue' >提交</view>
+</view>

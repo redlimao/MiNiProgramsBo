@@ -1,0 +1,24 @@
+<form bindsubmit="formSubmit">
+    <view class="model mt">
+        <view class="tit">姓名</view>
+        <input type='text' class="input-txt" placeholder='请输入姓名' name="name" value='{{name}}' ></input>
+    </view>
+    <view class="model">
+        <view class="tit">电话</view>
+        <input type='text' class="input-txt" placeholder='请输入电话' name="phone" value='{{phone}}'></input>
+    </view>
+    <view class="model mt">
+        <view class="tit">性别</view>
+        <picker class="pick-box" bindchange="bindSex" value="{{sex_index}}" range="{{sex}}" name="sex" >
+            <view class="pick-txt">{{sex[sex_index]}}</view>
+        </picker>
+    </view>
+    <view class="model">
+        <view class="tit">生日</view>
+        <picker mode="date" class="pick-box" bindchange="bindDate" value="{{date}}" name="date" >
+            <view class="pick-txt">{{date}}</view>
+        </picker>
+    </view>
+    <button formType="submit" class="btn">提交</button>
+</form>
+

@@ -1,0 +1,61 @@
+{
+  "pages":[
+        "pages/gong/gong",
+      "pages/classify/classify",
+    "pages/index/index",
+    "pages/guang_details/guang_details",
+    "pages/allcomments/allcomments",
+    "pages/shop/shop",
+    "pages/ideadata/ideadata",
+    "pages/shop_details/shop_details",
+    "pages/jie/jie",
+    "pages/rule/rule",
+    "pages/list/list",
+    "pages/message/message",
+    "pages/cart/cart",
+    "pages/yue/yue",
+    "pages/collect/collect",
+    "pages/my_order/my_order",
+    "pages/my_points/my_points",
+    "pages/fabu/fabu",
+    "pages/er/er",
+    "pages/newpage/newpage",
+    "pages/quan/quan",
+    "pages/main/main",
+    "pages/personage/personage",
+    "pages/createList/createList",
+    "pages/dian/dian",
+    "pages/messagePass/messagePass"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#bd8a39",
+    "navigationBarTitleText": "八马茶业经开区",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#bd8a39"
+  },
+  "tabBar":{
+    "list":[
+        {
+            "pagePath": "pages/gong/gong",
+            "text": "公司简介",
+            "iconPath": "images/tab-icon1-1.png",
+            "selectedIconPath": "images/tab-icon1.png"
+        },
+        {
+            "pagePath": "pages/classify/classify",
+            "text": "商城",
+            "iconPath": "images/tab-icon3-3.png",
+            "selectedIconPath": "images/tab-icon3.png"
+        },
+      {
+        "pagePath": "pages/main/main",
+        "text": "个人中心",
+        "iconPath": "images/tab-icon4-4.png",
+        "selectedIconPath": "images/tab-icon4.png"
+      }
+    ],
+    "color":"#a0a0a0",
+    "selectedColor":"#826540"
+  }
+}

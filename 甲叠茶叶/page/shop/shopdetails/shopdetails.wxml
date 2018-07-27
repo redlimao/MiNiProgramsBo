@@ -1,0 +1,115 @@
+<import src="../../../wxParse/wxParse.wxml"/> 
+<view class="container">
+    <!--**轮播***-->
+    <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"indicator-dots="true" indicator-active-color="#fff" indicator-color="rgba(255,255,255,0.3)" style='width:100%;height:500rpx;'> 
+        <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}" id="{{id}}">  
+            <image src="{{item}}" url="{{item}}" class="shop-img" mode='aspectFill' bindtap='bindPerview' ></image>  
+        </swiper-item>
+    </swiper>
+    <view class="shop-tit">
+        <!-- 价格 -->
+        <view class="shop-money">{{shop_money}}</view>
+        <!-- 标题 -->
+        <view class="shop-name">{{shop_name}}</view>
+        <!-- 已售 -->
+        <view class="shop-num">已售{{shop_self}}</view>
+    </view>
+    <!-- <view class="shop-tit mt">
+        <view class="shop-num">领取优惠券</view>
+        <view class="shop-title">满30减20</view>
+        <image class="icon-in" src='../../../images/icon_in.png'></image>
+    </view> -->
+    <!-- <view class="shop-tit">
+        <view class="shop-num">积分</view>
+        <view class="shop-title">购买商品后可获取10积分</view>
+    </view> -->
+    <!-- *******详情和评论****** -->
+    <view class="shop-inner"> 
+        <view class="shopInner-nav">
+            <text class="shopInner-name {{curHdIndex=='1'? 'actives' : ''}}" id="tab-hd01" data-id="1" bindtap="tabFun">产品详情</text>
+            <text class="shopInner-name {{curHdIndex=='2'? 'actives' : ''}}" id="tab-hd02" data-id="2"  bindtap="tabFun">买家评论</text>
+        </view>
+        <view class="shopInner-info right-item {{curHdIndex=='1'? 'actives' : ''}}">
+            <view class="ben">
+                <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+            </view>
+        </view>
+        <view class="shopInner-ping right-item {{curHdIndex=='2'? 'actives' : ''}}">
+            <view wx:if="{{empty==1}}">   
+                <!-- 评论等级 -->
+                <view class="c-tabs">
+                    <view class="tab-items" bindtap='bindTag' data-id='1'>好评({{ping_cont.great_one}})</view>
+                    <view class="tab-items" bindtap='bindTag' data-id='2'>一般({{ping_cont.great_two}})</view>
+                    <view class="tab-items" bindtap='bindTag' data-id='3'>不满意({{ping_cont.great_three}})</view>
+                </view>
+                <!-- 评论内容 -->
+                <view class="c-list bb-1">
+                    <view class="c-list-top">
+                        <image class="c-list-img" src='{{ping.headimgurl}}'></image>
+                        <text class="c-list-name">{{ping.nickname}}</text>
+                    </view>
+                    <text class="c-list-txt">{{ping.content}}</text>
+                    <view class="c-list-bottom">
+                        <text class="c-list-time">{{ping.create_at}}</text>
+                    </view>
+                </view>
+                <!-- 查看更多 -->
+                <view class="look_more" bindtap='bindAllcomments'>查看更多</view>
+            </view>
+            <view class="empty" wx:else>暂无评论</view>
+        </view>
+    </view>
+</view>
+<!-- *******收藏****** -->
+<view class="btn-box">
+    <view class="btn-collect" wx:if="{{flag_collect == 0}}" bindtap='bindCollect'>
+        <image class="c-icon" src='../../../images/collect1.png'></image>
+        <view class="c-txt1">收藏</view>
+    </view>
+    <view class="btn-collect" wx:else bindtap='bindCollect'>
+        <image class="c-icon" src='../../../images/collect.png'></image>
+        <view class="c-txt2">已收藏</view>
+    </view>
+    <!-- 跳转至购物车 -->
+    <view class="btn-collect" bindtap='bindmycart' >
+        <image class="car-icon" src='../../../images/icon-cars.png'></image>
+        <view class="c-txt1">购物车</view>
+    </view>
+    <view class="btn-infos">
+        <view class="btn-one grey" wx:if="{{!cut_flag}}" bindtap='bindCut' >加入购物车</view>
+        <view class="btn-two grey" wx:if="{{!cut_flag}}" bindtap='bindCut' >立即购买</view>
+        <view class="btn-one" wx:if="{{cut_flag}}" bindtap='bindPop' data-type='1'>加入购物车</view>
+        <view class="btn-two" wx:if="{{cut_flag}}" bindtap='bindPop' data-type='2'>立即购买</view>
+    </view>
+</view>
+<!-- 弹出层 -->
+<view class="pop-bg {{pop_flag ? 'show' : ''}} {{pop_anim ? 'on' : ''}}" bindtap='hidePop'></view>
+<view class="pop-con {{pop_flag ? 'show' : ''}} {{pop_anim ? 'on' : ''}}">
+    <!-- 商品主要内容 -->
+    <view class="p-box">
+        <image class="p-img" src="{{pop_img}}"></image>
+        <view class="p-info">
+            <view class="p-info-name">{{pop_name}}</view>
+            <view class="p-info-name">¥{{pop_money}}</view>
+        </view>
+    </view>
+    <!-- 商品标签 -->
+    <view class="p-con1">   
+        <view class="p-tit">类别</view>
+        <view class="p-tags">
+            <view bindtap='bindTags' class="p-item {{item.flag == 2 ? 'on' : ''}}" wx:for="{{tags}}" wx:key="{{index}}" data-index='{{index}}'>{{item.size_name}}</view>
+        </view>
+    </view>
+    <view class="p-con2">   
+        <view class="p-tit">数量</view>
+        <view class="p-boxs">
+            <view class="p-btn" bindtap='bindMinus' >-</view>
+            <view class="p-txt">{{numbers}}</view>
+            <view class="p-btn" bindtap='bindAdd' >+</view>
+        </view>
+    </view>
+    <view class="p-btns">
+        <view class="p-btn1" wx:if="{{btn_flag==1}}" bindtap='bindAddShop' >加入购物车</view>
+        <view class="p-btn2" wx:if="{{btn_flag==2}}" bindtap='bindBuyNow' >立即购买</view>
+    </view>
+</view>

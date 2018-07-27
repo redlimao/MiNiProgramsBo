@@ -1,0 +1,33 @@
+/**index.wxss**/
+/*=======banner切换=========*/
+.banner{width:100%;height:300rpx;}
+	.bannner-img{width:100%;height:300rpx;}
+  	.swiper .wx-swiper-dot{width:16rpx;height:16rpx;}
+  	.swiper .wx-swiper-dot-active{background:rgba(255,255,255,1);}
+/*========主菜单=========*/
+.nav{height:204rpx;display:flex;justify-content:space-around;align-items:center;background:#ffffff;padding:0 24rpx;width:702rpx;}
+	.nav-icon{width:94rpx;height:94rpx;}
+	.nav-text{text-align:center;color:#666666;font-size:26rpx;padding-top:16rpx;}
+/* 广告位 */
+.img-boxs{height:156rpx;width:100%;position: relative;display: block;}
+.img-boxs.hide{display: none;}
+    .img-box{height:156rpx;width:100%;}
+    
+    .close-img{width: 125rpx;height: 50rpx;position: absolute;z-index: 2;left: 0;top: 10rpx;}
+/* 列表 */
+.content{width: 100%;}
+.list{padding:0 24rpx;width:100%;box-sizing:border-box;background-color:#fff;}
+    .item{display:flex;padding:20rpx 0 20rpx 0;height:154rpx;}
+    .item:nth-last-child(1){border: none;}
+        .item-img{width:200rpx;height:144rpx;background-color:#ccc;}
+        .info{padding-left:20rpx;flex:1;}
+            .wrap{display:flex;height:48rpx;align-items:center;}
+                .tit{font-size:28rpx;height:48rpx;line-height:48rpx; color:#333333;flex:1;}
+                .nums{font-size:24rpx;color:#9a9a9a;padding-left:10rpx;}
+            .texts{height:36rpx;width:100%;line-height:36rpx;font-size:24rpx;color:#9a9a9a;overflow:hidden;-webkit-line-clamp:1;display:-webkit-box;-webkit-box-orient:vertical;}
+                .people-num{font-size:24rpx;color:#59d0d0;padding-right:14rpx;}
+                .tag-a{box-sizing:border-box;width:64rpx;height:32rpx;border:1rpx solid #fab91e;color:rgb(249,176,0);line-height:32rpx;text-align:center;font-size:22rpx;border-radius: 5rpx;}
+                .wrap-txt{font-size:26rpx;flex:1;text-align:right;color:#9a9a9a;}
+
+
+

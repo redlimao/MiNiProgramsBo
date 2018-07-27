@@ -1,0 +1,41 @@
+<!--pages/collect/collect.wxml-->
+<view class="container">
+   <view class="nav" bindtap="tabFun">
+    <!-- <view class="nav-list {{tabArr.curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap="xiaoName">
+     学校
+    </view> -->
+    <view  class="nav-list {{tabArr.curHdIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1" bindtap="activeName">
+     活动
+    </view>
+  </view>
+  <!-- <view class="right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+    <view class="inner" wx:if="{{empty==0}}">
+      <view class="inner-list" bindtouchstart="mytouchstart" bindtouchmove="mytouchmove" wx:for="{{list}}" id="{{item.id}}" data-index="{{index}}">
+        <view class="image" bindtap="infoName" id="{{item.id}}">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="small" bindtap="infoName" id="{{item.id}}">
+          <text class="small-name">{{item.school_name}}</text>
+          <text class="small-address">{{item.address}}</text>
+        </view>
+        <view class="del"  id="{{item.id}}" wx:if="{{item.pan}}" bindtap="delName" > 
+          删除
+        </view>
+      </view>
+    </view>
+    <view class="empty" wx:else>暂无收藏</view>
+  </view> -->
+  <view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+    <view class="inner inners" wx:if="{{emptys==0}}">
+      <view class="notic" bindtap="detailName" wx:for="{{active}}" id="{{item.business_id}}" wx:key="id">
+        <image src="{{item.img}}"></image>
+        <view class="title">
+          <text class="title-name">{{item.title}}</text>
+          <text class="money">{{item.money}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="emptys" wx:else>暂无收藏</view>
+  </view>
+  
+</view>

@@ -1,0 +1,29 @@
+<import src="../template/template.wxml"/>
+<!--*****************内容**********-->
+<view class="shop_inner">
+    <!--**分类***-->
+    <view class="choe-title" >
+      <view class="choe-list {{curFenIndex=='1'? 'actives' : ''}}" id="tab-hd01" data-id="1" bindtap="tabFuns">
+        <text class="time">综合</text>
+      </view>
+      <view class="choe-list {{curFenIndex=='2'? 'actives' : ''}}" id="tab-hd02" data-id="2"  data-type="{{types}}" bindtap="tabFuns">
+        <text class="time">销量</text>
+      </view>
+      <view class="choe-list {{curFenIndex=='3'? 'actives' : ''}}" id="tab-hd03" data-id="3" bindtap="tabFuns">
+        <text class="time">新品</text>
+      </view>  
+      <view class="choe-list {{curFenIndex=='4'? 'actives' : ''}}" id="tab-hd04" data-id="4"  data-type="{{types}}" bindtap="tabFuns">
+        <text class="time">价格</text>
+      </view>  
+    </view>
+    <!--**内容***-->
+    <view class="shop-box" wx:if="{{empty==0}}">
+      <block wx:for="{{list}}" wx:key="{{item.id}}">
+        <template is="shopList" data="{{...item}}" />
+      </block> 
+    </view>
+    <view class="empty" wx:else>
+      <image src="../../images/empty.png" class="empty-icon"></image>
+      <text class="empty-text">暂无内容</text>
+    </view>
+</view>

@@ -1,0 +1,84 @@
+<!--details.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+    <!-- banner切换 -->
+    <view class="banner">
+        <swiper class="swiper" style="height:345rpx" circular="true" indicator-color="rgba(255,255,255,0.8)" indicator-active-color="rgba(255,255,255,1)" indicator-dots="true" autoplay="false" interval="5000" duration="1000">
+            <block wx:for="{{img}}" wx:key="{{index}}">
+                <swiper-item>
+                    <image src="{{item}}" class="bannner-img"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- 优惠券 -->
+    <view class="con bb-1">
+        <view class="con-box">
+            <text class="title lc-1">{{name}}</text>
+            <view class="share-box">
+                <image class="icon-share" src='../../images/share_icon.png'></image>
+                <button open-type="share" class="button-share"></button>
+            </view>
+        </view>
+        <text class="moneys">{{moneys_one}}{{moneys_two}}</text>
+        <text class="texts lc-2">{{fu_list}}</text>
+    </view>
+    <view class="model" bindtap='bindCoupon'>
+        <text class="model-txt">优惠券</text>
+        <text class="model-num">{{you_counts}}</text>
+        <image class="icon-in" src="../../images/icon_in.png"></image>
+    </view>
+    <!-- 评价 -->
+    <view class="model mt-20 bb-1" bindtap='bindAllcomments'>
+        <text class="model-txt">商品评价（{{zong}}）</text>
+        <text class="model-in" wx:if="{{ping_info != 1}}">查看全部</text>
+        <image class="icon-in" src="../../images/icon_in.png" wx:if="{{ping_info != 1}}"></image>
+    </view>
+    <!-- 评论等级 -->
+    <view class="c-tabs" wx:if="{{ping_info != 1}}">
+        <view class="tab-items" bindtap='bindTag' data-id='1'>好评({{great_one}})</view>
+        <view class="tab-items" bindtap='bindTag' data-id='2'>一般({{great_two}})</view>
+        <view class="tab-items" bindtap='bindTag' data-id='3'>不满意({{great_three}})</view>
+    </view>
+    <!-- 评论内容 -->
+    <view class="c-list bb-1" wx:if="{{ping_info != 1}}">
+        <view class="c-list-top">
+            <image class="c-list-img" src='{{ping_info.headimgurl}}'></image>
+            <text class="c-list-name">{{ping_info.nickname}}</text>
+        </view>
+        <text class="c-list-txt">{{ping_info.content}}</text>
+        <view class="c-list-bottom">
+            <text class="c-list-time">{{ping_info.create_at}}</text>
+        </view>
+    </view>
+    <!-- 项目详情订单详情 -->
+    <view class="model-tag mt-20">
+        <view class="box-menu">
+            <view class="menus {{menu_flag == 1 ? 'on' : ''}}" bindtap='bindMenu' data-id='1'>项目详情</view>
+            <view class="menus {{menu_flag == 2 ? 'on' : ''}}" bindtap='bindMenu' data-id='2'>下单须知</view>
+        </view>
+        <view class="model-txt1">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        </view>
+    </view>
+
+</view>
+<!-- 页面底部模块 -->
+<view class="bottom-box">
+    <!-- 收藏 -->
+    <view class="b-item" wx:if="{{collect_flag == 2}}" bindtap='bindCollect'>
+        <image class="icon-b" src="../../images/collect_off.png"></image>
+        <text class="b-item-txt">收藏</text>
+    </view>
+     <view class="b-item" wx:else bindtap='bindCollect'>
+        <image class="icon-b" src="../../images/collect_on.png"></image>
+        <text class="b-item-txt color-b">已收藏</text>
+    </view>   
+    <!-- 咨询 -->
+    <view class="b-item" bindtap='bindPhone'>
+        <image class="icon-b" src="../../images/phone_icon.png"></image>
+        <text class="b-item-txt">咨询</text>
+    </view>
+    <!-- 下单 -->
+    <view class="btn-buy" bindtap='bindAppoint' data-userid='{{user_id}}'>下单</view>
+</view>

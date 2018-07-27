@@ -1,0 +1,17 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+  <view class="back" bindtap='backName'>
+    <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="tops">详情</view>
+<view class="container">
+  <!-- <text class="title">{{title}}</text> -->
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+
+<view class="botBar" wx:if="{{money!=0}}">
+  <view class="tel" bindtap='telName'>电话咨询</view>
+  <view class="buy"  bindtap='buyName'>
+    ￥{{money}}　购买
+  </view>
+</view>
+

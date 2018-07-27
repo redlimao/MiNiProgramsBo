@@ -1,0 +1,7 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+    <text class="title">{{title}}</text> 
+    <view class="intro">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+</view>

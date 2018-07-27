@@ -1,0 +1,13 @@
+<!--search.wxml-->
+<form class="box">
+    <input class="f-txt" placeholder='请输入要搜索的内容' placeholder-class='' type='text' focus="true" bindconfirm="bindConfirm"></input>
+    <view class="f-btn" bindtap='bindBack'>取消</view>
+</form>
+<view class="tit">
+    <view class="title">历史记录</view>
+    <image class="t-icon" src='../../../images/icon_del.png' bindtap='bindDelete' ></image>
+</view>
+<view class="list" wx:if="{{tags.length !== 0}}">
+    <view class="item" wx:for="{{tags}}" wx:key="{{index}}" bindtap='bindTag' data-name='{{item}}'>{{item}}</view>
+</view>
+<view class="empty" wx:else>空</view>

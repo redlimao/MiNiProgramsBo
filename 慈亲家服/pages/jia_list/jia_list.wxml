@@ -1,0 +1,70 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+  <!--*********选择***********-->
+  <view class="choe-title" wx:if="{{types!=3}}">
+    <view class="choe-list" bindtap='shouaNames'>
+      <text class="time">地区</text>
+      <image src="../image/la.png" class="pick-img"></image>
+    </view>
+    <view class="choe-list" wx:if="{{types==1}}">
+      <picker class="choe-picker"  value="{{status_index}}" range="{{status}}"  bindchange='staNames'>
+          {{status[status_index]}}
+      </picker>
+      <image src="../image/la.png" class="pick-img"></image>
+    </view>
+    <view class="choe-list" bindtap='shouNames' wx:if="{{types==2}}">
+      <text class="time">时间</text>
+      <image src="../image/la.png" class="pick-img"></image>
+    </view>
+    <view class="choe-list" wx:if="{{types==1}}">
+      <picker class="choe-picker"  value="{{money_index}}" range="{{money}}"  bindchange='moNames'>
+          {{money[money_index]}}
+      </picker> 
+      <image src="../image/la.png" class="pick-img"></image>
+    </view>
+    <view class="choe-list">
+      <picker class="choe-picker"  value="{{pai_index}}" range="{{pai}}" bindchange='paiNames'>
+          {{pai[pai_index]}}
+      </picker> 
+      <image src="../image/la.png" class="pick-img"></image>
+    </view>   
+    <!--*********时间***********-->
+    <view class="time-box" wx:if="{{flag==1}}">
+      <view class="time-list">
+        <text class="date">起始日期</text>
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2090-09-01" bindchange="bindDateChange" class="time-picker">{{date}}</picker>    
+      </view>
+      <view class="time-list">
+        <text class="date">截止日期</text>
+        <picker mode="date" value="{{dates}}" start="2015-09-01" end="2090-09-01" bindchange="bindDateChanges" class="time-picker">{{dates}}</picker>    
+      </view>
+    </view>
+     <!--*********地区***********-->
+    <view class="time-box" wx:if="{{flags==1}}">
+      <view class="time-list">
+        <text class="date">请选择市</text>
+        <picker class="time-picker" bindchange="cityChange" value="{{city_index}}" range="{{city}}">{{city[city_index]}}</picker>
+      </view>
+      <view class="time-list">
+        <text class="date">请选择区</text>
+        <picker class="time-picker" bindchange="areaChange" value="{{area_index}}" range="{{area}}">{{area[area_index]}}</picker>
+      </view>
+    </view>  
+  </view>
+
+  <!--*********内容***********-->
+  <view class="inner" wx:if="{{empty==0}}">
+    <!-- 找家政 -->
+    <block wx:for="{{list}}" wx:key="{{item.id}}" wx:if="{{types==1||types==3}}">
+      <template is="orderList" data="{{...item}}" />
+    </block>
+    <!-- 找雇主 -->
+    <block wx:for="{{list}}" wx:if="{{types==2}}" wx:key="{{item.id}}">
+      <template is="guList" data="{{...item}}" />
+    </block>
+  </view>
+  <view class="empty" wx:else>
+    <image src="../image/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无内容</text>
+  </view>
+</view>

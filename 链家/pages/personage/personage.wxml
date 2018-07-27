@@ -1,0 +1,84 @@
+<!--personage.wxml-->
+<view class="container">
+    <!-- 顶部banner信息 -->
+    <image class="banner" src='../../images/bg_a3.png'></image>
+    <view class="top">
+        <image class="user-img" src='{{headimgurl}}'></image>
+        <view class="info">
+            <text class="name">{{nickname}}</text>
+            <view class="tips" wx:if="{{he == 1}}">核销员</view>
+        </view>
+        <view class="btn-set" bindtap='bindSet'>
+            <image src='../../images/icon_set.png' class="icon-set"></image>
+            <text class="s-txt">设置</text>
+        </view>
+    </view>
+    <view class="con">
+        <!-- 优惠券 -->
+        <view class="module" bindtap='bindCoupon'>
+            <text class="m-tit">我的优惠券</text>
+            <text class="m-txt">查看全部</text>
+            <image class="icon-in" src='../../images/icon_in.png'></image>
+        </view>
+        <!-- 优惠券详情 -->
+        <view class="wrap">
+            <view class="w-info" bindtap='bindTab' data-typeid='1'>
+                <text class="w-num">{{ling}}</text>
+                <text class="w-txt">已领取</text>
+            </view>
+            <view class="w-info" bindtap='bindTab' data-typeid='2'>
+                <text class="w-num">{{shi}}</text>
+                <text class="w-txt">已使用</text>
+            </view>
+            <view class="w-info" bindtap='bindTab' data-typeid='3'>
+                <text class="w-num">{{cha}}</text>
+                <text class="w-txt">已查看</text>
+            </view>
+            <view class="w-info" bindtap='bindTab' data-typeid='4'>
+                <text class="w-num">{{guo}}</text>
+                <text class="w-txt">已到期</text>
+            </view>
+        </view>
+        <view class="w-wrap" wx:if="{{lists != 1}}">
+            <view class="w-item" bindtap='bindDetail' data-couponid="{{lists.id}}">
+                <image wx:if="{{hui == 1}}" class="w-img" src="../../images/mess_bg.png"></image>
+                <image wx:if="{{hui == 2}}" class="w-img" src="../../images/mess_bg1.png"></image>
+                <view class="w-tit">{{lists.name}}</view>
+                <view class="w-text">{{lists.title}}</view>
+            </view>
+        </view>
+        <!-- 我的核销 -->
+        <view class="module bt-1" wx:if="{{he == 1}}" bindtap='bindHe'>
+            <text class="m-tit">我的核销</text>
+            <text class="m-txt">查看全部</text>
+            <image class="icon-in" src='../../images/icon_in.png'></image>
+        </view>    
+        <!-- 联系客服 -->
+        <view class="item" bindtap='bindWant' data-wan='{{wan}}'>
+            <image class="icon-item" src='../../images/icon_i1.png'></image>
+            <text class="i-txt">说我想要</text>
+            <image class="icon-in" src='../../images/icon_in.png'></image>
+        </view>
+        <!-- 联系客服 -->
+        <view class="item" bindtap='bindPhone' data-phone='{{phone}}'>
+            <image class="icon-item" src='../../images/icon_i2.png'></image>
+            <text class="i-txt">联系客服</text>
+            <image class="icon-in" src='../../images/icon_in.png'></image>
+        </view>
+        <!-- 关于我们 -->
+        <view class="item" bindtap='bindAboutUs'>
+            <image class="icon-item" src='../../images/icon_i3.png'></image>
+            <text class="i-txt">关于我们</text>
+            <image class="icon-in" src='../../images/icon_in.png'></image>
+        </view>
+        <!-- 分享 -->
+        <view class="item">
+            <image class="icon-item" src='../../images/icon_i4.png'></image>
+            <text class="i-txt">分享</text>
+            <image class="icon-in" src='../../images/icon_in.png'></image>
+            <button open-type="share" class="btn-share"></button>
+        </view>
+    </view>
+    <image class="logo" src='../../images/logo.png'></image>
+
+</view>

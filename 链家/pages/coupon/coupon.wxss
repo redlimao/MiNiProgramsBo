@@ -1,0 +1,73 @@
+/**coupon.wxss**/
+.top{width: 100%;height: 100rpx;padding:0 20rpx;display: flex;align-items: center;box-sizing: border-box;background-color: #58BDF4;}
+    .tip{width: 130rpx;display: flex;align-items: center;}
+        .icon_gps{width: 19rpx;height: 23rpx;}
+        .tip-txt{padding-left: 11rpx;font-size: 34rpx;color:#F7FFFB;}
+    .search{flex: 1;background-color: rgba(255,255,255,0.7);height: 60rpx;border-radius: 30rpx;display: flex;align-items: center;}
+        .icon-search{width: 28rpx;height: 28rpx;margin-left: 30rpx;}
+        .search-txt{width: 100%;padding: 0 30rpx 0 15rpx; box-sizing: border-box;flex: 1;color: #00A9E4;font-size: 28rpx;}
+        .p-c{color: #00A9E4;}
+    
+    .btn-er{margin-left: 30rpx;width: 40rpx;height: 40rpx;}
+
+.s-wrap{position: relative;width: 750rpx;height: 299rpx;}
+.slide-image{width: 750rpx;height: 299rpx;}
+    .menu{display: flex;position: absolute;z-index: 2;left: 50%;transform: translate(-50%,0);bottom: 16rpx;}
+        .item{width:30rpx;height:4rpx;background:rgba(255,255,255,0.4);margin-right: 10rpx;}
+        .item.on{background:rgba(255,255,255,1);}
+.con{width: 100%;}
+    .c-tit{padding: 0 20rpx;height: 80rpx;align-items: center;display: flex;}
+        .c-tip{width: 6rpx;height: 30rpx;border-radius: 3rpx;background-color: #003041;}
+        .c-title{font-size: 34rpx;color: #003041;padding-left: 10rpx;font-weight: bold;}
+    /* 优惠券列表 */
+    .s-list{width: 100%;box-sizing: border-box;}
+	.s-box{height:300rpx;padding:20rpx 0 30rpx 0;box-sizing: border-box;display:flex;white-space:nowrap;display: -webkit-box;}
+	.s-item{margin-left: 20rpx;height:250rpx;width: 250rpx; background:rgba(255,255,255,1);
+box-shadow: 0rpx 10rpx 20rpx 0rpx rgba(0,0,0,0.15);border-radius: 14rpx;align-items: center;box-sizing: border-box;display: flex;flex-direction: column;}
+        .s-imgs{height:250rpx;width: 250rpx;}
+        .s-img{width: 100rpx;height: 100rpx;border-radius: 50%;overflow: hidden;background-color: #eee;}
+        .s-name{color: #003041;font-size: 24rpx;padding-top: 10rpx;}
+        .s-btn,.s-btns{width:145rpx;height:44rpx; border-radius: 4rpx;margin-top: 30rpx;text-align: center;line-height: 44rpx;font-size: 28rpx;}
+        .s-btn{color: #FF2D51;border:1rpx solid #FF2D51;}
+        .s-btns{color: #C6C6C6;border:1rpx solid #C6C6C6;}
+    /* 大分类 */
+    .c-list{padding: 0 20rpx;width: 100%;box-sizing: border-box;position: relative;height: 100rpx;overflow: hidden;}
+    .c-list.on{overflow:visible;}
+        .c-titles{height: 100rpx;line-height: 100rpx;text-align: center;color: #003041;font-size: 30rpx;font-weight: bold;position: relative;}
+        .c-scroll{position: absolute;top: 100rpx;right: 0;z-index: 3;transform: translateY(-100rpx);background-color: #fff;padding: 0 70rpx 0 20rpx;box-sizing: border-box;}
+        .c-scroll.on{display: none;}
+        .c-bg{position: absolute;width: 100rpx;height: 100rpx;top: 0;right: 0;z-index: 4;}
+            .c-bg-img{width: 100rpx;height: 100rpx;}
+            .img-menu{position: absolute;width: 22rpx;height: 21rpx;top: 30rpx;left:51rpx;transform: rotate(180deg);}
+            .img-menu.on{transform: rotate(0deg);}
+	.c-box{display:flex;display: -webkit-box;}
+    .b-menu{display:flex;flex-wrap: wrap;background-color: #fff;transition:transform .2s ease-out,opacity .1s ease-out;position: absolute;top: 0;left: 0;width: 100%;box-sizing: border-box;z-index: 2;padding: 0 20rpx;}
+    .b-menu.on{z-index:3;}
+        .c-item{width: 175rpx;height: 100rpx;display: flex;flex-direction: column;align-items: center;justify-content: center;box-sizing: border-box;border-bottom:2rpx solid transparent;}
+        .c-item.on{border-bottom:2rpx solid #00A9E4;}
+        
+            .c-img{width: 30rpx;height: 30rpx;}
+            .c-txt{font-size: 26rpx;color: #003041;padding-top: 10rpx;}
+    /* 优惠券列表 */
+    .wrap{padding: 0 20rpx;transition: all .2s ease-out;}
+    .w-item{margin-top: 30rpx;width:710rpx;height:250rpx; background:rgba(255,255,255,1);box-shadow: 0rpx 10rpx 20rpx 0rpx rgba(0,0,0,0.15);border-radius: 14rpx ;box-sizing: border-box;position: relative;display: block;}
+    .w-img{width:710rpx;height:250rpx;}
+        .t-info{display: flex;}
+            .t-img{width: 160rpx;height: 160rpx;background-color: #eee;}
+            .info-txt{padding-top: 15rpx;height: 145rpx;margin-left: 20rpx;border-bottom: 1rpx dotted #58BDF4;flex: 1;}
+                .t-tit{font-size: 34rpx;color: #003041;display: block;line-height: 34rpx;}
+                .t-txt{font-size: 34rpx;color: #FF2D51;line-height: 34rpx;padding-top: 20rpx;}
+                    .t-txt-f{font-size: 48rpx;}
+        .b-info{display: flex;align-items: center;font-size: 26rpx;color: #667176;height: 80rpx;}
+            .b-txt{width: 160rpx;}
+            .b-intro{flex: 1;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;padding-left: 20rpx;}
+        .btn-get,.btn-got{position: absolute;top: 20rpx;right: 20rpx;width: 144rpx;height: 44rpx;border-radius: 4rpx;font-size: 28rpx;color: #FF2D51;text-align: center;line-height: 44rpx;border:1rpx solid #FF2D51;box-sizing: border-box;}
+        .btn-got{color: #C6C6C6;border:1rpx solid #C6C6C6;}
+    .pb-100{padding-bottom: 200rpx;}
+
+/* 广告位 */
+.g-list{padding: 20rpx 0;width: 100%;box-sizing: border-box;}
+    .slide-images{height: 80rpx;width: 100%;}
+
+
+    

@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<!-- 轮播 -->
+<view class="s-wrap">
+    <swiper class="swiper" current='{{current}}' bindchange="bindCurrent">
+        <swiper-item wx:for="{{banner}}" wx:key="{{index}}">
+            <image class="s-item" src="{{item.img}}" mode='widthFix'></image>
+        </swiper-item>
+    </swiper>
+    <!-- 高亮 -->
+    <view class="dots">
+        <view class="dot {{current == index ? 'on' : ''}}" wx:for="{{banner}}" wx:key="{{index}}"></view>
+    </view>
+</view>
+<!-- 主题内容 -->
+<!-- 文字投票 -->
+<view class="con">
+    <view class="tit">
+        <view class="tit-tip"></view>
+        <view class="title">创建文字投票</view>
+    </view>
+    <view class="info" bindtap='bindWord'>
+        <view class="info-tit"></view>
+        <view class="info-item">
+            <image class="info-icon" src='../../../images/icon_1.png'></image>
+        </view>
+        <view class="info-item on"></view>
+    </view>
+</view>
+<!-- 图片投票 -->
+<view class="con">
+    <view class="tit">
+        <view class="tit-tip"></view>
+        <view class="title">创建图文投票</view>
+    </view>
+    <view class="info on" bindtap='bindPic'>
+        <image class="i-img" src="../../../images/icon_3.png"></image>
+        <view class="infos">
+            <view class="infos-tit"></view>
+            <view class="infos-item">
+                <image class="info-icon" src='../../../images/icon_1.png'></image>
+            </view>
+            <view class="infos-item on"></view>
+        </view>  
+    </view>
+</view>
+

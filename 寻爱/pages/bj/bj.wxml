@@ -1,0 +1,9 @@
+<!--pages/bj/bj.wxml-->
+<view class="container">
+  <view class="back" bindtap='backName'>
+      <image src="../../images/back.png" class="back-icon"></image>
+    </view>
+  <view class="bj-list {{item.choose?'actives':''}}" wx:for="{{list}}" wx:key="index" bindtap='bgName' data-id="{{item.id}}" data-index="{{index}}" >
+    <image src="{{item.img}}" mode="widthFix"></image>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<!--pages/healthydetails/healthydetails.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+    <text class="title">{{list.title}}</text>
+    <view class="info-box">
+        <text class="txt-1">{{list.create_at}}</text>
+        <text class="txt-2 flex-1">{{list.company}}</text>
+        <image class="icon-look" src='../../images/look_icon.png'></image>
+        <text class="txt-2">浏览</text>
+        <text class="txt-2">{{list.nums}}</text>
+    </view>
+    <view class="area">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+</view>

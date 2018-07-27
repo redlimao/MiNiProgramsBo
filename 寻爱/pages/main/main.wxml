@@ -1,0 +1,94 @@
+<!--pages/main/main.wxml-->
+<import src="../template/template.wxml"/>
+<view class="container">
+  <view class="banner">
+    <image src="{{info.back_img}}" class="bg"></image>
+    <text class="flowers" bindtap='flowerName'>鲜花数:{{info.flowers}}朵</text>
+  </view>
+  <!-- ***基本信息**** -->
+  <view class="message">
+    <image src="{{info.avatar}}" class="photo" mode="aspectFill"></image>
+    <view class="message-top">
+      <text class="name">{{info.nickname}}</text>
+      <text class="tags" bindtap='ationName' wx:if="{{info.shen==3}}">{{info.vip}}</text>
+      <text class="tags" wx:else>{{info.vip}}</text>
+      <view class="self" bindtap='selfName'>
+        资料设置
+        <text class="dian" wx:if="{{tian!=1}}"></text>
+      </view>
+    </view>
+    <view class="box">
+        <view class="box-item" bindtap='pengName' data-id='{{info.id}}'>
+            <view class="box-items">
+                <text class="info-nums">{{info.collect_cha}}</text>
+                <text class="info-txt">我的好友</text>
+            </view>        
+        </view>
+        <!-- <view class="box-item" bindtap='quanName' data-id='{{info.id}}'>
+            <view class="box-items">
+                <text class="info-nums">{{info.coupons}}</text>
+                <text class="info-txt">优惠券</text>
+            </view>        
+        </view> -->
+         <view class="box-item" bindtap='pointsName' data-id='{{info.id}}'>
+            <view class="box-items">
+                <text class="info-nums">{{info.covers}}</text>
+                <text class="info-txt">我的积分</text>
+            </view>        
+        </view>
+        <view class="box-item">
+            <view class="box-items">
+                <text class="info-nums">{{info.cishu}}</text>
+                <text class="info-txt">剩余活动次数</text>
+            </view>        
+        </view>
+    </view>
+  </view>
+  <!-- *********订单********** -->
+  <view class="main-order">
+    <view class="order-title">
+      <text class="title-text">商品订单</text>
+      <text class="look-more" bindtap='orderName'>全部订单</text>
+    </view>
+    <view class="order-box">
+    <block wx:for="{{common}}" wx:key="{{item.id}}">
+        <template is="navs" data="{{...item}}" />
+      </block>
+    </view>
+  </view>
+  <!-- ***展示列表****** -->
+  <view class="lists">
+    <view class="list" bindtap='bindMessage' bindtap='erName' data-id='{{info.id}}'>
+      <text class="list-txt">我的名片</text>
+      <image class="icon-in" src="../../images/icon_in.png"></image>
+    </view>
+    <view class="list" bindtap='xiaoName' data-id='{{info.id}}'>
+      <text class="list-txt">我的消息</text>
+      <text class="message-number" wx:if="{{info.users_jiaoinfo>0}}">{{info.users_jiaoinfo}}</text>
+      <image class="icon-in" src="../../images/icon_in.png" wx:else></image>
+    </view>
+    <view class="list" bindtap='jieName' data-id='{{info.id}}'>
+      <text class="list-txt">我的转介</text>
+      <image class="icon-in" src="../../images/icon_in.png"></image>
+    </view>
+      <view class="list" bindtap='collectName' data-id='{{info.id}}'>
+      <text class="list-txt">商品收藏</text>
+      <image class="icon-in" src="../../images/icon_in.png"></image>
+    </view>
+    <view class="list" bindtap='bindOur'>
+      <text class="list-txt">关于我们</text>
+      <image class="icon-in" src="../../images/icon_in.png"></image>
+    </view>
+  </view>
+  <view class="bottom-txt" bindtap='jiName'>©技术支持博智营销</view>
+</view>
+
+
+<!-- ***认证原因**** -->
+<view class="ation-mask" wx:if="{{ation}}">
+  <view class="ation-masks" bindtap='ationClose' ></view>
+  <view class="ation">
+    <text class="ation-title">您提交的资料未通过审核，原因如下</text>
+    <text class="ation-inner">{{info.why}}</text>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+/**index.wxss**/
+.b-bg{width: 750rpx;height: 708rpx;position: absolute;top: 0;left: 0;}
+.box{width: 750rpx;height: 708rpx;padding-top: 270rpx;position: relative;z-index: 2;}
+    .form-box{display: block;position: relative;}
+    .wrap{width:710rpx;height:250rpx; background:rgba(255,255,255,1);box-shadow: 0rpx 13rpx 25rpx 0rpx rgba(58,111,175,0.08);border-radius: 4rpx;margin: 0 auto;margin-top: 39rpx;display: flex; align-items: center;}
+        .btns{position: absolute;top: 0;left:20rpx;width: 710rpx;height: 250rpx;opacity: 0;z-index: 2;}
+        .img{width: 180rpx;height: 180rpx;margin-left: 35rpx;}
+        .info{margin-left: 30rpx;width: 366rpx;margin-right: 33rpx;}
+            .title,.title1{display: block;font-size:36rpx;color:rgba(88,189,244,1);line-height:36rpx;}
+            .title1{color: #159F59;}
+            .txts{display: block;padding-top: 23rpx;font-size:28rpx;color:rgba(156,156,156,1);line-height:36rpx;}
+.box-logo{width: 750rpx;height: 132rpx;position: relative;padding-top: 106rpx;}
+    .logo{margin: 0 auto;width: 178rpx;height: 81rpx;display: block;}
+    .tip{position: absolute;top: 53rpx;right: 181rpx;width: 58rpx;height: 86rpx;}
+.box-foot{width: 750rpx;height: 118rpx;}

@@ -1,0 +1,40 @@
+<view class="message">
+    <view class="banner">
+      <image src="../image/logo1.png"></image>
+    </view>
+    <form bindsubmit="formSubmit">
+        <view class="view-message">
+            <view class="test">
+                <image src="../image/name.png"></image>
+                <input type="text" name="username" placeholder='姓名' placeholder-style='font-size:32rpx;color:#808080'/>
+            </view>
+        </view>
+        <view class="view-message">
+            <view class="test">
+                <image src="../image/tel.png"></image>
+                <input type="text" name="tel"  placeholder='电话' placeholder-style='font-size:32rpx;color:#808080'/>
+            </view>
+        </view>
+        <view class="view-message" wx:if="{{types_id==1}}">
+            <view class="test">
+                <image src="../image/order_icon.png"></image>
+                <picker class="time-picker" value="{{arr_index}}" range="{{arr}}" bindchange="arrChange">
+                  {{arr[arr_index]}}
+                </picker>
+            </view>
+        </view>
+        <view class="view-message" wx:if="{{types_id==2}}">
+            <view class="test">
+                <image src="../image/add.png"></image>
+                <input type="text" name="add" placeholder='服务地址' placeholder-style='font-size:32rpx;color:#808080' value="{{address}}" class="adds" />
+                <view class="add" bindtap='chooseName'></view>
+            </view>
+        </view>
+        <view class="view-message" wx:if="{{types_id==2}}">
+            <textarea value='备注：' name="bei"></textarea>
+        </view>
+        <button formType="submit">
+          提交
+        </button>
+    </form>
+</view>

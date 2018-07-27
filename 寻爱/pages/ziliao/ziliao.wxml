@@ -1,0 +1,133 @@
+<!--pages/main/main.wxml-->
+<view class="container">
+  <view class="back" bindtap='backName'>
+      <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="banner">
+    <image src="{{bg}}" class="bg"></image>
+    <text class="flowers">鲜花数:{{duo}}朵</text>
+  </view>
+  <!-- ***相册**** -->
+  <view class="message">
+    <image src="{{message.avatar}}" class="photo" mode="aspectFill"></image>
+    <view class="message-top">
+      <text class="name">{{message.nick_name}}</text>
+      <block wx:if="{{cha==2}}">
+        <view class="tags {{message.sex==1 ?  'nans' : ''}}" wx:if="{{video_url!=1}}" bindtap='videoName'>
+          <image src="../../images/videos.png" class="video-icon" wx:if="{{message.sex==1}}"></image>
+          <image src="../../images/video.png" class="video-icon" wx:else></image>
+          <text class="tags-text">视频</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="tags {{message.sex==1 ?  'nans' : ''}}" wx:if="{{video_url!=1}}" bindtap='videoNames'>
+          <image src="../../images/videos.png" class="video-icon" wx:if="{{message.sex==1}}"></image>
+          <image src="../../images/video.png" class="video-icon" wx:else></image>
+          <text class="tags-text">视频</text>
+        </view>
+      </block>
+    </view>
+    <view class="album">
+      <view class="album-list" wx:for="{{message.img}}" wx:key="{{index}}">
+        <image src="{{item}}" class="img-list" bindtap='bigName' mode="aspectFill" data-index="{{index}}"></image>
+        <block wx:if="{{cha==2}}">
+          <image src="../../images/suo.png" class="mask-list" wx:if="{{message.sex==2}}"     bindtap='openVip' ></image>
+          <image src="../../images/suo1.png" class="mask-list" wx:else bindtap='openVip'></image>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!-- ***基本信息**** -->
+  <view class="info-box">
+    <view class="info-title {{message.sex==1 ?  'nans' : ''}}">
+      基本资料
+    </view>
+    <view class="list" wx:for="{{message.ji}}" wx:key="{{index}}">
+      <text class="list-txt">{{item.title}}</text>
+      <text class="list-texts">{{item.name}}</text>
+    </view>
+  </view>
+  <!-- ***择偶条件**** -->
+  <view class="ou-box">
+    <view class="info-title {{message.sex==1 ?  'nans' : ''}}">
+      择偶条件
+    </view>
+    <view class="tiao-box" wx:if="{{cha==2}}" bindtap='openVip'>
+      <image src="../../images/open.png" class="open"></image>
+    </view>
+    <view wx:else>
+      <view class="list" wx:for="{{ze}}" wx:key="{{index}}">
+        <text class="list-txt">{{item.title}}</text>
+        <text class="list-texts">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+   <!-- ***我的标签**** -->
+  <view class="qian-box">
+    <view class="info-title {{message.sex==1 ?  'nans' : ''}}">
+      我的标签
+    </view>
+   <view class="qian-tags">
+    <text class="qian-list" wx:for="{{tags}}" wx:key="{{index}}">{{item}}</text>
+   </view>
+  </view>
+  <!-- **送花** -->
+  <view class="flower">
+     <view class="guan" wx:if="{{guan!=2}}" bindtap='guanName'>
+      <image src="../../images/guan.png" class="guan-icon"></image>
+      <text class="guan-text">已关注</text>
+     </view>
+     <view class="guan" wx:else bindtap='guanName'>
+      <image src="../../images/guan1.png" class="guan-icon"></image>
+      <text class="guan-text">关注</text>
+     </view>
+     <view class="huan">
+      <form bindsubmit="formSubmit" report-submit='true'>
+        <button class="btn" hover-class='none' formType="submit">交换QQ或微信号</button>
+      </form>
+     </view>
+     <view class="song {{message.sex==1 ?  'nans' : ''}}" bindtap='songName'>
+      送花·
+       <text class="song-texts">￥{{flower_moneys}}/朵</text> 
+      </view>
+  </view>
+</view>
+
+
+
+<!-- ****送花弹框**** -->
+<view class="flower-box" wx:if="{{flower_flag}}">
+  <view class="flower-mask"></view>
+  <view class="flower-song">
+    <image src="../../images/flowers.png" class="flower-icon"></image>
+    <text class="flower-text">他/她能感受你的心意</text>
+    <view class="suan">
+      <text class="jian" bindtap='jianName'>-</text>
+      <input value="{{flower_num}}" class="inp" type="number" bindinput='inpName' />
+      <text class="jia" bindtap='jiaName'>+</text>
+    </view>
+    <view class="btns" bindtap='formSubmits'>
+      <image src="../../images/buttons.png" class="song-icon"></image>
+    </view>
+    <text class="flower-ze">本产品为虚拟产品，付款成功后不支持退款</text>
+  </view>
+  <view class="flower-close" bindtap='closeFlower'>
+    <image src="../../images/closes.png" class="closes-icon"></image>
+  </view>
+</view>
+
+<!--********图片放大*********-->
+<view class="big-mask" wx:if="{{big}}">
+  <swiper class="swipers" circular="true" current='{{current}}'> 
+    <swiper-item wx:for="{{message.img}}" wx:key="{{index}}">  
+        <image src="{{item}}" class="banners" mode="widthFix" bindtap='xiaoName'></image>  
+    </swiper-item>
+  </swiper>
+</view>
+<!-- *****视频查看****** -->
+<view class="videos" wx:if="{{video_flag}}">
+    <video src="{{video_url}}"></video>
+    <view class="video-close" bindtap='videoClose'>
+      <image src="../../images/closes.png" class="video-icon"></image>
+    </view>
+</view>

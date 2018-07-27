@@ -1,0 +1,107 @@
+
+<import src="../template/template.wxml"/>
+<view class="container">
+  <!--*********搜索**********-->
+  <view class="search-box">
+    <view class="search">
+      <form>
+        <image src="../image/logo.png"></image>
+        <view class="border"></view>
+        <input placeholder='找家服' bindinput='inputName' value="{{val}}"/>
+        <button bindtap='souName'>搜索</button>
+      </form>
+    </view>
+  </view>
+  <!--*********导航***********-->
+  <view class="nav">
+    <block wx:for="{{nav}}" wx:key="{{item.id}}">
+      <template is="navs" data="{{...item}}" />
+    </block>
+  </view>
+  <!--*********选择***********-->
+  <view class="choe-title">
+    <!-- 状态 -->
+    <view class="choe-list">
+      <picker class="choe-picker" value="{{status_index}}" range="{{status}}" bindchange='staNames'>
+          {{status[status_index]}}
+      </picker>
+      <image src="../image/la.png" class="pick-img"></image>
+    </view>
+    <!-- 成交量 -->
+    <view class="choe-list">
+      <picker class="choe-picker" value="{{liang_index}}" range="{{liang}}" bindchange='moNames'>
+          {{liang[liang_index]}}
+      </picker> 
+      <image src="../image/la.png" class="pick-img"></image>
+    </view>
+    <!-- 公司 -->
+    <view class="choe-list" wx:if="{{gong!=1}}">
+      <picker class="choe-picker" value="{{gong_index}}" range="{{gong}}" bindchange='gongNames'>
+          {{gong[gong_index]}}
+      </picker> 
+      <image src="../image/la.png" class="pick-img"></image>
+    </view>
+    <!-- 筛选 -->
+    <view class="choe-list" bindtap='shaiName' >
+      <text class="time">筛选</text>
+      <image src="../image/la.png" class="pick-img"></image>
+    </view>   
+  </view>
+  <!-- ***筛选内容*** -->
+  <view class="shai {{flag==1? 'on' :'hide'}}">
+      <form bindsubmit='formName'>
+        <view class="shai-list">
+          <text class="shai-title">地　　区:</text>
+          <view class="time-list">
+            <picker class="time-picker" bindchange="cityChange" value="{{city_index}}" range="{{city}}">{{city[city_index]}}</picker>
+          </view>
+          <view class="shai-border">-</view>
+          <view class="time-list">
+            <picker class="time-picker" bindchange="areaChange" value="{{area_index}}" range="{{area}}">{{area[area_index]}}</picker>
+          </view>
+        </view>
+        <view class="shai-list">
+          <text class="shai-title">价　　格:</text>
+          <view class="time-list">
+            <input type="number" placeholder='价格区间' class="time-picker" name="moneys_one"></input>
+          </view>
+          <view class="shai-border">-</view>
+          <view class="time-list">
+            <input type="number" placeholder='价格区间' class="time-picker" name="moneys_two"></input>
+          </view>
+        </view>
+        <view class="shai-list">
+          <text class="shai-title">年　　龄:</text>
+          <view class="time-list">
+            <input type="number" placeholder='年龄区间' class="time-picker" name="age_one"></input>
+          </view>
+          <view class="shai-border">-</view>
+          <view class="time-list">
+            <input type="number" placeholder='年龄区间' class="time-picker" name="age_two"></input>
+          </view>
+        </view>
+        <view class="shai-list">
+          <text class="shai-title">从业年限:</text>
+          <view class="time-list">
+            <input type="number" placeholder='从业年限' class="time-picker" name="year_one"></input>
+          </view>
+          <view class="shai-border">-</view>
+          <view class="time-list">
+            <input type="number" placeholder='从业年限' class="time-picker" name="year_two"></input>
+          </view>
+        </view>
+        <button form-type='submit'>确认</button> 
+      </form>
+
+    </view>
+  <!--*********内容***********-->
+  <view class="inner" wx:if="{{empty==0}}">
+    <block wx:for="{{list}}" wx:key="{{item.id}}">
+      <template is="orderList" data="{{...item}}" />
+    </block>
+  </view>
+  <view class="empty" wx:else>
+    <image src="../image/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无内容</text>
+  </view>
+</view>

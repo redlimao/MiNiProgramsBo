@@ -1,0 +1,40 @@
+<!--mycart.wxml-->
+<view class="t-con" wx:if="{{empty == 1}}">
+    <view class="t-btn" wx:if="{{btn_flag == 1}}" bindtap='bindShowBtn'>管理</view>
+    <view class="t-btn" wx:if="{{btn_flag == 2}}" bindtap='bindDelete'>删除</view>
+    <view class="t-btn" wx:if="{{btn_flag == 2}}" bindtap='bindHideBtn'>取消</view>
+</view>
+<view class="wrap" wx:if="{{empty == 1}}">
+    <view class="list" wx:for="{{list}}" wx:key="{{index}}" bindtap='bindChoose' data-index='{{index}}' >
+        <icon type='circle' color='#cccccc' size='20' wx:if="{{item.flag == 1}}"></icon>
+        <icon type='success' color='#ea5e5d' size='20' wx:if="{{item.flag == 2}}"></icon>
+        <view class="c-box">
+            <image class="c-img" src='{{item.shop_img}}'></image>
+            <view class="c-info">
+                <view class="c-title">{{item.shop_name}}</view>
+                <view class="c-tag">已选标签:{{item.xing}}</view>
+                <view class="c-infos">
+                    <view class="c-infos-txt1">{{item.moneys}}</view>
+                    <view class="c-infos-txt2">x{{item.nums}}</view>
+                    <!-- <view class="p-boxs">
+                        <view class="p-btn" catchtap='bindMinus' data-index='{{index}}'>-</view>
+                        <view class="p-txt">{{item.numbers}}</view>
+                        <view class="p-btn" catchtap='bindAdd' data-index='{{index}}'>+</view>
+                    </view> -->
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="empty" wx:else>购物车为空</view>
+<!-- 总金额  -->
+<view class="foot" wx:if="{{empty == 1}}">
+    <view class="btn-all" bindtap='bindAllChoose'>
+        <icon type='circle' color='#cccccc' size='20' wx:if="{{all_flag == 1}}"></icon>
+        <icon type='success' color='#ea5e5d' size='20' wx:if="{{all_flag == 2}}"></icon>   
+        <view class="btn-txt">全选</view>
+    </view>
+    <view class="f-txt">合计金额：¥{{total_money}}</view>
+    <view class="btn-pay {{total_money == 0 ? 'grey' : ''}}" bindtap='bindOrder'>结算</view>
+</view>
+

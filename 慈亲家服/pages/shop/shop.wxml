@@ -1,0 +1,59 @@
+ <!--pages/shop/shop.wxml-->
+<view class="container" wx:if="{{empty==0}}">
+  <view class="car-box">
+    <view class="car-list {{item.pan=='0'? 'actives' : ''}}" bindtouchstart="mytouchstart" bindtouchmove="mytouchmove" wx:for="{{carts}}" wx:key="{{item.id}}" id="{{id}}" data-id='{{index}}'>
+      <view class="car-choose">
+        <icon type="success" color="rgb(255,158,31)"  wx:if="{{item.selected}}"bindtap="selectList" data-index="{{index}}"/>
+         <icon type="circle" wx:else bindtap="selectList" data-index="{{index}}"/> 
+      </view>
+      <view class="car-info">
+        <view class="car-fl">
+          <image src="{{item.shop_img}}" class="car-img"></image>
+        </view>
+        <view class="car-fr">
+          <text class="car-name">{{item.shop_name}}</text>
+          <text class="car-money">￥{{item.shop_money}}</text>
+          <text class="car-num">商品数量:{{item.shop_num}}</text>
+        </view>
+      </view>
+      <view class="car-del" bindtap='delName' id="{{item.id}}" data-id='{{index}}'>
+        <image src="../image/del.png" class="del-icon"></image>
+        <text class="del-text">删除</text>
+      </view>
+    </view>
+  </view>
+  <view class="shops">
+    <view class="fen">
+      <view class="fens">
+        <input value="{{points}}" bindblur="moName" wx:if="{{flag==1}}"/>
+        <text class="shi-fen" wx:if="{{flag==0}}">使用积分</text> 
+        <text class="shi-fen" wx:else>可使用积分</text>
+      </view>
+      <view class="choose">
+        <switch  bindchange="switchChange" color="rgb(255,158,31)"/>
+      </view>
+    </view>
+    <view class="shopss">
+      <view class="shops-fl">
+        <view class="shops-choose">
+          <icon type="success" color="rgb(255,158,31)" bindtap="selectAll" wx:if="{{selectAllStatus}}" size="20"/>
+          <icon type="circle" wx:else bindtap="selectAll" />
+          <text class="all">全选</text>
+        </view>
+        <view class="shops-number">
+          共计：<text class="fu-money" >￥{{totalPrice}}</text>
+        </view>
+      </view>
+      <view class="shops-fr">
+        <view class="shops-money"  bindtap="payName">
+            <text class="fu">付款</text>
+            <image src="../image/fu.png"></image>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="empty" wx:else>
+    <image src="../image/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无内容</text>
+</view>

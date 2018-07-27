@@ -1,0 +1,16 @@
+/**myAppointment.wxss**/
+/*我的预约列表 */
+.list-boxs{margin-top: 20rpx;padding: 20rpx 24rpx 10rpx 24rpx;background-color: #fff;}
+  .list-con{height: 232rpx;display: flex;border-bottom:1rpx solid rgb(238,238,238);}
+    .list-img{width: 210rpx;height: 210rpx;}
+    .list-tits{padding-left: 24rpx;flex: 1;}
+      .list-tit{height: 104rpx;line-height: 52rpx;font-size: 30rpx;color: rgb(51,51,51);overflow: hidden;}
+      .list-txt1{font-size: 26rpx;color: rgb(154,154,154);line-height: 32rpx;}
+      .list-end{height: 74rpx;display: flex;align-items: flex-end;justify-content: space-between;}
+        .list-time{font-size: 24rpx;color: rgb(154,154,154);}
+        .list-momey{font-size: 34rpx;color: rgb(255,105,91);}
+  .result{height: 70rpx;display: flex;align-items: center;}
+    .result-txt{font-size: 26rpx;color: rgb(255,105,91);flex: 1;display: none;}
+    .btn-result,.btn-result1{width: 132rpx;height: 50rpx;border-radius: 5rpx;border:1rpx solid rgb(102,102,102);text-align: center;line-height: 50rpx;font-size: 26rpx;margin-left:30rpx;color:#666666;display: none;}
+    .btn-result1{display: block;}
+    .show{display: block;}

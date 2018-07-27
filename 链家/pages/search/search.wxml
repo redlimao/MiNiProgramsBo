@@ -1,0 +1,40 @@
+<!--search.wxml-->
+<view class="container">
+    <form report-submit="true" bindsubmit="bindSearch_in" class="f-box" wx:if="{{types==1}}">
+        <view class="top" >
+            <view class="search" >
+                <image src='../../images/icon_search.png' class="icon-search"></image>
+                <input class="search-txt" placeholder='输入商家优惠活动名称' placeholder-class='p-c' bindconfirm='bindSearch' value="{{search_txt}}" bindinput="bindInput"></input>
+            </view>
+            
+            <view class="s-txt" bindtap='bindSearch_in'>搜索</view>
+        </view>
+         <button formType="submit" class="btn-search"></button>  
+    </form>
+    <form report-submit="true" bindsubmit="bindSearch_in" class="f-box" wx:if="{{types==2}}">
+        <view class="top on">
+            <view class="search" >
+                <image src='../../images/icon_search1.png' class="icon-search"></image>
+                <input class="search-txt on" placeholder='输入商家优惠活动名称' placeholder-class='p-b' bindconfirm='bindSearch' value="{{search_txt}}" bindinput="bindInput"></input>
+            </view>
+            
+            <view class="s-txt" bindtap='bindSearch_in'>搜索</view>
+        </view>
+         <button formType="submit" class="btn-search"></button>  
+    </form>
+    <view class="wrap">
+        <view class="tit">热门搜索</view>
+        <view class="tags bb-1" wx:if="{{a_empty == 1}}">
+            <view class="tag" wx:for="{{tags}}" wx:key="{{index}}" bindtap='bindTags' data-name='{{item}}'>{{item}}</view>
+        </view>
+        <view class="empty-txt" wx:else>空</view>
+    </view>
+    <view class="wrap">
+        <image class="icon-del" src='../../images/icon_del.png' bindtap='bindDelete'></image>
+        <view class="tit">搜索历史</view>
+        <view class="tags" wx:if="{{b_empty == 1}}">
+            <view class="tag c-a" wx:for="{{keys}}" wx:key="{{index}}" bindtap='bindTags' data-name='{{item}}'>{{item}}</view>
+        </view>
+        <view class="empty-txt" wx:else>空</view>
+    </view>
+</view>

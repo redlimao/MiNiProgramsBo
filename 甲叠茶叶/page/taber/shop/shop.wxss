@@ -1,0 +1,14 @@
+/* pages/shop/shop.wxss */
+.con{display: flex;}
+    .side-menu{width: 160rpx;}
+        .s-item{height: 100rpx;width: 160rpx;text-align: center;line-height: 100rpx;color: #333;position: relative;font-size: 26rpx;background-color: #fff;}
+        .s-item::after{content:'';position: absolute;height: 50rpx;width: 7rpx;background-color: transparent;left: 0;top: 25rpx;display: block;z-index: 2;border-radius: 3rpx;}
+        .s-item.on::after{content:'';background-color: #826540;position: absolute;height: 50rpx;width: 7rpx;left: 0;top: 25rpx;display: block;z-index: 2;border-radius: 3rpx;} 
+        .s-item.on{background-color: #f8f8f8;color:#826540;}
+    .wrap{flex: 1;padding: 0 25rpx;}
+        .box{}
+            .tit{color: #666666;font-size: 26rpx;height: 100rpx;line-height: 100rpx;}
+            .list{padding: 35rpx 10rpx;background-color: #fff;width: 100%;box-sizing: border-box;border-radius: 20rpx;display: flex;flex-wrap: wrap;}
+                .l-item{flex:0 1 125rpx;margin: 0 25rpx;}
+                .l-img{width: 125rpx;height: 125rpx;display: block;background-color: #ccc;}
+                .l-txt{line-height: 60rpx;height: 60rpx;width: 100%;overflow: hidden;text-align: center;color: #666666;font-size: 26rpx;}

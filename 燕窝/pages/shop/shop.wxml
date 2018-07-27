@@ -1,0 +1,40 @@
+<import src="../template/template.wxml"/>
+<!--****************导航**********-->
+<scroll-view scroll-x scroll-left="{{views}}" scroll-with-animation>
+<view class="pro_nav pro_navs" bindtap="tabFun" style="width:{{width}}%">
+  <view class="pronav-list {{curHdIndex==index ? 'actives' : ''}}" data-id="{{index}}" wx:for="{{nav}}" wx:key="{{item.id}}" id="{{item.id}}" data-ids="{{item.id}}">
+    {{item.name}}
+  </view>
+</view>
+</scroll-view>
+<!--*****************内容**********-->
+<view class="shop_inner">
+    <!--**内容***-->
+    <!--************二级导航********** -->
+    <view class="pro_nav pro_navss" bindtap="tabFuns" wx:if="{{er==1}}">
+      <view class="pronav-list {{curHdIndexs==0 ? 'actives' : ''}}" data-id="0">
+        次卡/周卡
+      </view>
+      <view class="pronav-list {{curHdIndexs==1 ? 'actives' : ''}}" data-id="1">
+        月卡
+      </view>
+      <view class="pronav-list {{curHdIndexs==2 ? 'actives' : ''}}" data-id="2">
+        季卡
+      </view>
+      <view class="pronav-list {{curHdIndexs==3 ? 'actives' : ''}}" data-id="3">
+        半年卡
+      </view>
+      <view class="pronav-list {{curHdIndexs==4 ? 'actives' : ''}}" data-id="4">
+        年卡
+      </view>
+    </view>
+    <view class="shop-box" wx:if="{{empty==0}}">
+      <block wx:for="{{list}}" wx:key="{{item.id}}">
+        <template is="shopList" data="{{...item}}" />
+      </block> 
+    </view>
+    <view class="empty" wx:else>
+      <image src="../../images/empty.png" class="empty-icon"></image>
+      <text class="empty-text">暂无内容</text>
+    </view>
+</view>

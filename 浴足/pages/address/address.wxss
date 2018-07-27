@@ -1,0 +1,6 @@
+/**address.wxss**/
+.lists{background-color: #fff;width: 100%;}
+.list{padding: 40rpx 24rpx;background-color: #fff;display: flex;align-items: center;}
+    .name,.phone{line-height: 50rpx;color: #333333;font-size: 30rpx;}
+    .address{line-height: 40rpx;color: #333333;padding-left: 30rpx;font-size: 30rpx;flex: 1;}
+.btn-add{width:140rpx;height:50rpx;box-sizing:border-box;text-align:center;line-height:50rpx;font-size:26rpx;border-radius:4rpx;margin-top: 20rpx;color:#06c5b6;border:1rpx solid #06c5b6;margin-bottom: 20rpx;margin-left: 70%;}

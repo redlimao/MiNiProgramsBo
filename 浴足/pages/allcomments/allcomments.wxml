@@ -1,0 +1,71 @@
+<!--allcomments.wxml-->
+<view class="container">
+    <!-- 评论详情 -->
+    <view class="info mt-8">
+        <view class="info-a">
+            <text class="txt-1">综合评分</text>
+            <view class="txt-box">
+                <text class="txt-2">{{z_p.length}}.0</text>
+                <image class="price-icon" src="../../images/price_icon.png"></image>
+            </view>
+            <view class="stars-small">
+                <view class="star-s-box" wx:for="{{z_p}}" wx:key="{{key}}">
+                    <image class="star-small" src="../../images/smallstar_icon.png"></image>
+                </view>
+                <view class="star-s-box" wx:for="{{z_ps}}" wx:key="{{key}}">
+                    <image class="star-small" src="../../images/smallstargrey_icon.png"></image>
+                </view>                
+            </view>
+        </view>
+        <view class="info-b">
+            <view class="info-box">
+                <text class="txt-3">描述相符</text>
+                <view class="stars-medium">
+                    <view class="stars-m-box" wx:for="{{miao_p}}" wx:key="{{index}}">
+                        <image class="star-medium" src="../../images/mediumstar_icon.png"></image>
+                    </view>
+                    <view class="stars-m-box" wx:for="{{miao_ps}}" wx:key="{{index}}">
+                        <image class="star-medium" src="../../images/mediumstargrey_icon.png"></image>
+                    </view>                    
+                </view>   
+                <text class="txt-4">{{miao_p.length}}.0</text> 
+            </view>
+            <view class="info-box">
+                <text class="txt-3">服务质量</text>
+                <view class="stars-medium">
+                    <view class="stars-m-box" wx:for="{{fu_p}}" wx:key="{{index}}">
+                        <image class="star-medium" src="../../images/mediumstar_icon.png"></image>
+                    </view>
+                    <view class="stars-m-box" wx:for="{{fu_ps}}" wx:key="{{index}}">
+                        <image class="star-medium" src="../../images/mediumstargrey_icon.png"></image>
+                    </view>    
+                </view>   
+                <text class="txt-4">{{fu_p.length}}.0</text> 
+            </view>  
+        </view>
+    </view>
+    <!-- 评论等级 -->
+    <view class="c-tabs mt-20">
+        <view class="tab-items {{current == 1 ? 'on' : ''}}" bindtap='bindTag' data-id='1'>好评({{ping_counts.great_one}})</view>
+        <view class="tab-items {{current == 2 ? 'on' : ''}}" bindtap='bindTag' data-id='2'>一般({{ping_counts.great_two}})</view>
+        <view class="tab-items {{current == 3 ? 'on' : ''}}" bindtap='bindTag' data-id='3'>不满意({{ping_counts.great_three}})</view>
+    </view>
+    <!-- 评论内容 -->
+    <view class="c-lists" wx:if="{{empty == 1}}">
+        <view class="c-list bb-1" wx:for="{{ping_info}}" wx:key="{{index}}">
+            <view class="c-list-top">
+                <image class="c-list-img" src='{{item.headimgurl}}'></image>
+                <text class="c-list-name">{{item.nickname}}</text>
+            </view>
+            <text class="c-list-txt">{{item.content}}</text>
+            <view class="c-list-bottom">
+                <text class="c-list-time">{{item.create_at}}</text>
+            </view>
+        </view>   
+    </view>
+
+    <view class="empty-box mt-100" wx:else>
+        <image class="empty-icon"  src="../../images/empty_icon.png"></image>
+        <text class="empty-txt">暂无评价</text>
+    </view>
+</view>

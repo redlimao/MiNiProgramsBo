@@ -1,0 +1,75 @@
+/* pages/order/order.wxss */
+page{
+  background:#f8f8f8;
+}
+.box{
+  width:690rpx;
+  margin:0 auto;
+  margin-top:20rpx;
+}
+.test{
+    width:100%;
+    height:80rpx;
+    border:1px solid #f2f2f2;
+    overflow:hidden;
+    position:relative;
+    background:#fff;
+    margin-bottom:20rpx;
+}
+.test text{
+    display:block;
+    height:100%;
+    line-height:80rpx;
+    width:22%;
+    float:left;
+    font-size:34rpx;
+    color:#434545;
+    padding-left:4%;
+}
+.test input{
+    display:block;
+    height:100%;
+    line-height:80rpx;
+    width:70%;
+    float:left;
+    font-size:34rpx;
+}
+.test .area{
+   display:block;
+    height:100%;
+    line-height:80rpx;
+    width:70%;
+    float:left;
+    font-size:34rpx;
+}
+.area image{
+    width:16rpx;
+    height:26rpx;
+    display:inline-block;
+    overflow:hidden;
+    float:right;
+    margin-top:27rpx;
+    margin-right:60rpx;
+}
+.tests{
+    width:100%;
+    height:240rpx;
+    border:1px solid #f2f2f2;
+    overflow:hidden;
+    position:relative;
+    background:#fff;
+    margin-bottom:20rpx;
+}
+.tests textarea{
+  display:block;
+  padding:20rpx;
+  font-size:28rpx;
+}
+button{
+    background:#ff9a0e;
+    color:#fff;
+    width:670rpx;
+    height:94rpx;
+    margin:0 auto;
+    margin-top:300rpx;
+}

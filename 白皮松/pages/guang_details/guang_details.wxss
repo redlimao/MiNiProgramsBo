@@ -1,0 +1,5 @@
+/* pages/guang_details/guang_details.wxss */
+.page{padding: 24rpx;background-color: #fff;}
+.tit{line-height: 45rpx;font-size: 36rpx;text-align: center;padding: 0 10rpx;}
+.time{line-height: 50rpx;font-size: 26rpx;text-align: right;color: #ccc;border-bottom:1rpx solid rgb(238,238,238);margin-bottom: 20rpx;
+}

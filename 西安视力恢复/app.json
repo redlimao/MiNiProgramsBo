@@ -1,0 +1,56 @@
+{
+  "pages":[
+      "pages/gong/gong",
+      "pages/index/index",
+        "pages/guang_details/guang_details",
+        "pages/allcomments/allcomments",
+        "pages/shop/shop",
+        "pages/ideadata/ideadata",
+        "pages/shop_details/shop_details",
+        "pages/jie/jie",
+        "pages/rule/rule",
+        "pages/list/list",
+        "pages/message/message",
+        "pages/cart/cart",
+        "pages/yue/yue",
+        "pages/collect/collect",
+        "pages/my_order/my_order",
+        "pages/my_points/my_points",
+        "pages/fabu/fabu",
+        "pages/er/er",
+        "pages/newpage/newpage",
+        "pages/quan/quan",
+        "pages/main/main"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#26b4fc",
+        "navigationBarTitleText": "西安视力恢复",
+        "navigationBarTextStyle": "#fff",
+        "backgroundColor": "#26b4fc"
+    },
+  "tabBar":{
+    "list":[
+      {
+        "pagePath": "pages/gong/gong",
+        "text": "公司介绍",
+        "iconPath": "images/tab-icon1-1.png",
+        "selectedIconPath": "images/tab-icon1.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "商城",
+        "iconPath": "images/tab-icon3-3.png",
+        "selectedIconPath": "images/tab-icon3.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "个人中心",
+        "iconPath": "images/tab-icon4-4.png",
+        "selectedIconPath": "images/tab-icon4.png"
+      }
+    ],
+    "color":"#a0a0a0",
+    "selectedColor":"#26b4fc"
+  }
+}

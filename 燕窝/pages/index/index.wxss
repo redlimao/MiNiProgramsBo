@@ -1,0 +1,107 @@
+@import "../template/template.wxss";
+page{
+  background:#fff;
+  position:relative;
+}
+.swiper{
+  width:100%;
+  height:400rpx;
+}
+.swiper .company_img{
+  width:100%;
+  height:100%;
+}
+.nav{
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+}
+.nav .nav-list{
+  width:auto;
+  height:auto;
+}
+.nav .nav-list .nav-icon{
+  width:100rpx;
+  height:100rpx;
+}
+.nav nav-list .nav-text{
+  font-size:26rpx;
+  color:rgb(67,67,67);
+}
+.product{
+  padding:20rpx;
+}
+.product-title{
+  width:402rpx;
+  height:50rpx;
+  margin:0 auto;
+  display: block;
+  margin-bottom:20rpx;
+}
+.details-text{
+  font-size:30rpx;
+}
+.video{
+  padding:20rpx;
+}
+.video .video-img{
+  width:710rpx;
+  height:350rpx;
+  display:block;
+  margin:0 auto;
+  position: relative;
+}
+.video-img .mask{
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.2);
+  position: absolute;
+  left:0;
+  top:0;
+}
+.video-img .mask .plays{
+  width:110rpx;
+  height:110rpx;
+  position: absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+.video-mask{
+  width:100%;
+  height:1110rpx;
+  background:rgba(0,0,0,0.8);
+  position:fixed;
+  left:0;
+  top:0;
+  z-index:1
+}
+.video-mask video{
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+  z-index:2;
+}
+.close{
+  width:35rpx;
+  height:35rpx;
+  position:absolute;
+  top:30rpx;
+  right:30rpx;
+}
+.details-list{
+  margin-bottom:40rpx;
+}
+.shop_img{
+  width:100%;
+  display:block;
+}
+.img-details{
+  margin:20rpx 20rpx;
+}

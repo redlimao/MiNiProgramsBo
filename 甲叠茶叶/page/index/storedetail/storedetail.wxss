@@ -1,0 +1,19 @@
+/**storedetail.wxss**/
+page{
+  background:#f8f8f8;
+}
+.slide-image{width: 750rpx;height: 300rpx;background-color: #ccc;}
+/*主体样式*/
+.con{width: 100%;padding: 0 20rpx;box-sizing: border-box;background-color: #fff;margin-top: 10rpx;}
+    .l-item{padding: 20rpx 0;display: flex;align-items: center;border-bottom: 1rpx solid #f8f8f8;}
+        .l-img{width: 120rpx;height: 120rpx;display: block;}
+        .l-txt{font-size: 30rpx;color: #333;line-height: 40rpx;padding:0 20rpx;flex: 1;}
+    .item{width: 100%;padding: 0 20rpx;box-sizing: border-box;background-color: #fff;display: flex;}
+    .item.mt20{margin-top: 20rpx;}
+        .tit{font-size: 26rpx;color: #333;height: 90rpx;line-height: 90rpx;}
+        .txts{font-size: 26rpx;color: #333;padding: 0 20rpx;flex: 1;line-height: 40rpx;padding-top: 28rpx;padding-bottom: 10rpx;}
+        .icon-phone{width: 27rpx;height: 27rpx;display: block;margin-top: 32rpx;}
+        .icon-address{width: 27rpx;height: 35rpx;display: block;margin-top: 32rpx;}
+    .scroll-x{height: 240rpx;padding: 20rpx;white-space:nowrap;background-color: #fff;width: 100%;box-sizing: border-box;}
+        .item-img{width: 200rpx;height: 200rpx;display:inline-block;margin-right: 20rpx;}
+.con-wxParse{padding: 20rpx;width: 100%;box-sizing: border-box;background-color: #fff;}

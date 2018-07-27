@@ -1,0 +1,49 @@
+<view class="time-wrap">
+    <view class="t-box">
+        <!-- 选择年份 -->
+        <picker range="{{allyear}}" value="{{y_index}}"  bindchange="bindYearChange" class="picker-box">
+            <view class="picker">
+                <view class="p-txt">{{allyear[y_index]}}</view>
+                <image src='../../../images/la.png' class="t-img"></image>
+            </view>
+        </picker>
+    </view>
+    <view class="t-box">
+    <!-- 选择月份 -->
+        <picker range="{{data}}" value="{{d_index}}"  bindchange="bindDataChange" class="picker-box">
+            <view class="picker">
+                <view class="p-txt">{{data[d_index]}}</view>
+                <image src='../../../images/la.png' class="t-img"></image>
+            </view>
+        </picker>
+    </view>
+</view>
+<!-- 选择日期 -->
+<scroll-view scroll-x class="data-wrap" scroll-into-view="{{view_id}}" scroll-with-animation="true">
+    <view class="data-list">
+        <view class="data-time" wx:for="{{timeList}}" wx:key="{{index}}" data-index='{{index}}'   bindtap='bindChooseData' id="a{{index}}" data-day='{{item.data}}'>
+            <view class="d-txt1">{{item.week}}</view>
+            <view class="d-txt2 {{current == index ? 'on' : ''}}">{{item.data}}</view> 
+        </view>    
+    </view>
+</scroll-view>
+<!-- 选择时间段 -->
+<view class="time-box">
+    <view class="time-tit">
+        选择时间段
+    </view>
+    <view class="t-boxs">
+        <view class="t-item" wx:for="{{timeone}}" wx:key="{{index}}" data-index='{{index}}' bindtap='bindOneTime' data-flag='{{item.flag}}'>
+            <icon size='20' color='#979797' type='circle' wx:if="{{item.flag == 1}}"></icon>
+            <icon size='20' color='#FDCF44' type='success' wx:if="{{item.flag == 2}}"></icon>
+            <icon size='20' color='#e4e4e4' type='cancel' wx:if="{{item.flag == 3}}"></icon>
+            <view class="t-txt1">{{item.start_time}}</view>
+            <view class="t-txt2">~</view>
+            <view class="t-txt3">{{item.end_time}}</view>
+        </view>
+    </view>
+</view>
+<view class="btn" bindtap='bindNext'>下一步</view>
+
+
+

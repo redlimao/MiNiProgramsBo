@@ -1,0 +1,6 @@
+.con{width: 100%;padding: 20rpx 25rpx;box-sizing: border-box;}
+    .item{height: 215rpx;width: 700rpx;background: url(https://www.bozhiyingxiao.com/little_program/store_jiadie/Public/img/background.png) no-repeat;background-size: 100% 100%;padding: 20rpx 40rpx;box-sizing: border-box;margin-bottom: 20rpx;}
+    .tit{line-height: 75rpx;height: 75rpx;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;font-size: 36rpx;}
+    .txt{line-height: 50rpx;height: 50rpx;color: #ef4136;font-size: 26rpx;}
+    .time{line-height: 50rpx;height: 50rpx;font-size: 26rpx;color: #999999;}
+    .empty{text-align: center;color: #ccc;padding: 200rpx 0;font-size: 26rpx;}

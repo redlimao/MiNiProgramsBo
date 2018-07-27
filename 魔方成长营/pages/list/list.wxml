@@ -1,0 +1,11 @@
+ <!--pages/list/list.wxml-->
+<view class="container" wx:if="{{empty==0}}">
+  <view class="notic" bindtap="detailName" wx:for="{{list}}" wx:key="{{item.id}}" id="{{item.id}}" data-id="{{item.can}}">
+    <image src="{{item.img}}"></image>
+    <view class="title">
+      <text class="title-name">{{item.title}}</text>
+      <text class="money">{{item.money}}</text>
+    </view>
+  </view>
+</view>
+<view class="empty" wx:else>暂无内容</view>

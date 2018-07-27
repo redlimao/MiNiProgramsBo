@@ -1,0 +1,93 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container" wx:for="{{info_list}}">
+  <view class="banner">
+    <image src="{{item.imgs}}"></image>
+    <text class="collect" bindtap="collect" wx:if="{{shou==2}}">收藏</text>
+     <text class="collect" wx:else>已收藏</text>
+    <view class="banner-text">
+      <text class="name">{{item.school_name}}</text>
+      <image src="../../image/tel.png" bindtap="telName" id="{{item.phone}}"></image>
+    </view>
+  </view>
+  <!--*****地址*******-->
+  <view class="address" bindtap="addName" data-id="{{item.address}}">
+    <view class="left">
+      <image src="../../image/add.png"></image>
+    </view>
+    <view class="middle">{{item.address}}</view>
+    <view class="right">
+      <image src="../../image/jian.png"></image>
+    </view>
+  </view>
+  <!--*****导航**********-->
+  <!-- <view class="inner-box">
+    <view class="inner">
+      <view class="fl" bindtap="activeName">
+        <image src="../../image/zi.png"></image>
+        <text class="collect">最新消息</text>
+      </view>
+      <view class="fl" bindtap="zhaoName">
+        <image src="../../image/sheng.png"></image>
+        <text class="collect">招生情况</text>
+      </view>
+      <view class="fl" bindtap="class_form">
+        <image src="../../image/class.png"></image>
+        <text class="collect">课程表</text>
+      </view>
+    </view>
+  </view> -->
+  <!--*****学校简介**********-->
+  <view class="school-info">
+    <view class="school-title">学校介绍</view>
+     <text class="info-inner">{{item.intro}}</text> 
+    <view class="more" bindtap="moreName">
+      <image src="../../image/info.png"></image>
+      <text class="more-message">了解更多</text>
+    </view>
+  </view>
+   <!--*****招生简介**********-->
+  <view class="school-info">
+    <view class="school-title">招生情况</view>
+     <text class="info-inner" wx:if="{{item.con!=1}}">{{item.con}}</text> 
+     <text class="info-empty" wx:else>暂无</text> 
+    <view class="more" bindtap="zhaoName">
+      <image src="../../image/info.png"></image>
+      <text class="more-message">了解更多</text>
+    </view>
+  </view>
+   <!--*****开设课程**********-->
+  <!-- <view class="school-info">
+    <view class="school-title">开设课程</view>
+    <text class="info-inner">{{item.courses}}</text>
+  </view> -->
+  <!--**********食谱*************  -->
+  <view class="food">
+    <view class="food-title">营养食谱</view>
+    <view class="week" bindtap="tabFun">
+      <text class="{{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0" bindtap="one">周一</text>
+      <text class="{{tabArr.curHdIndex=='1'? 'active' : ''}}"  id="tab-hd02" data-id="1" bindtap="one">周二</text>
+      <text class="{{tabArr.curHdIndex=='2'? 'active' : ''}}"  id="tab-hd03" data-id="2" bindtap="one">周三</text>
+      <text class="{{tabArr.curHdIndex=='3'? 'active' : ''}}"  id="tab-hd04" data-id="3" bindtap="one">周四</text>
+      <text class="{{tabArr.curHdIndex=='4'? 'active' : ''}}"  id="tab-hd05" data-id="4" bindtap="one">周五</text>
+    </view>
+    <view class="food-info">
+      <view class="food-list" wx:for="{{list_food}}" wx:key="item.id">
+        <text class="food-food">早餐：{{item.one}}</text>
+        <text class="food-food">午餐：{{item.two}}</text>
+        <text class="food-food">午点：{{item.three}}</text>
+        <text class="food-food">晚餐：{{item.four}}</text>
+        <text class="food-food">晚点：{{item.five}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- **********加群****** -->
+  <view class="jia" bindtap="orderName">
+     <text class="qun">预约报名</text> 
+    <!-- <button open-type="share" >预约报名</button> -->
+  </view>
+   <!-- **********意见反馈****** -->
+  <view class="message-feedback" bindtap="missName">
+    <text>意见反馈</text>
+    <image src="../../image/feedback.png"></image>
+  </view>
+</view>

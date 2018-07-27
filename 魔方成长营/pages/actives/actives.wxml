@@ -1,0 +1,34 @@
+<!--pages/actives/actives.wxml-->
+<view class="container">
+   <!--*****************轮播**********-->
+  <swiper class="swiper" autoplay="true" interval="5000" 
+  duration="1000" circular="true" indicator-dots="true" 
+  indicator-active-color="#fff" indicator-color="rgba(255,255,255,0.3)"> 
+    <swiper-item  bindtap="guangName" wx:for="{{banner}}" wx:key="id" id="{{item.id}}">  
+     <image src="{{item.img}}"/>   
+    </swiper-item> 
+  </swiper>
+   <!--*****************导航**********-->
+   <view class="nav" bindtap="tabFun">
+    <view class="nav-list {{tabArr.curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap="youName">
+     游
+    </view>
+    <view  class="nav-list {{tabArr.curHdIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1" bindtap="studyName">
+      学
+    </view>
+     <view  class="nav-list {{tabArr.curHdIndex=='2'? 'actives' : ''}}" id="tab-hd03" data-id="2" bindtap="jiangName">
+      奖
+    </view>
+  </view>
+  <!--*****************内容**********-->
+  <view class="list-box" wx:if="{{empty==0}}">
+    <view class="notic" bindtap="detailName" wx:for="{{list}}" id="{{item.id}}" wx:key="id" data-id="{{item.lei}}">
+      <image src="{{item.img}}"></image>
+      <view class="title">
+        <text class="title-name">{{item.title}}</text>
+        <text class="money">{{item.money}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="empty" wx:else>暂无内容</view>
+</view>

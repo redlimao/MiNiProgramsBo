@@ -1,0 +1,31 @@
+<import src="../template/template.wxml"/>
+  <!-- <view class="pro_nav" bindtap="tabFun">
+    <view class="pronav-list {{curHdIndex=='0'? 'actives' : ''}}" id="tab-hd01" data-id="0" bindtap='shenName'>
+      审核中
+    </view>
+    <view  class="pronav-list {{curHdIndex=='1'? 'actives' : ''}}" id="tab-hd02" data-id="1" bindtap='faName'>
+      已发布
+    </view>
+  </view> -->
+ <!--*********内容***********-->
+<view class="inner" wx:if="{{empty==0}}">
+  <view class="gu_list {{item.pan== '0' ? 'actives' : ''}}" bindtap='xuName' data-id="{{index}}" bindtouchstart="mytouchstart" bindtouchmove="mytouchmove" wx:for="{{list}}" id="{{item.id}}" wx:key="{{item.id}}" data-he="{{item.he}}">
+    <view class="gu_fl">
+      <text class="gu_xu">{{item.title}}</text>
+      <view class="gu_add">服务地址：<text>{{item.address}}</text> </view>
+    </view>
+    <view class="gu_fr">
+      <text class="gu_tel" wx:if="{{item.he==2}}">已发布</text> 
+      <text class="gu_tel gu_tels" wx:if="{{item.he==1}}">审核中</text>
+      <text class="gu_tel gu_tels" wx:if="{{item.he==3}}">失败</text>
+      <text class="gu_time">{{item.create_at}}</text>
+    </view>
+    <view class="gu-del" catchtap='delName' id="{{item.id}}">
+      <image src="../image/del.png" class="del-icon"></image>
+    </view>
+  </view>
+</view>
+<view class="empty" wx:else>
+  <image src="../image/empty.png" class="empty-icon"></image>
+  <text class="empty-text">您发布需求</text>
+</view>

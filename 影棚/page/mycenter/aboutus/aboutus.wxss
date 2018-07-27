@@ -1,0 +1,90 @@
+/* pages/main/main.wxss */
+page{
+  background:#f8f8f8;
+}
+.tops{
+  width:100%;
+  height:127rpx;
+  background:#FDCF44;
+  display:flex;
+  justify-content:center;
+}
+.tops .top-list{
+  font-size:36rpx;
+  color:#fff;
+  line-height:170rpx;
+  padding:0 10rpx;
+  position:relative;
+}
+.company_img{
+  width:100%;
+  margin-bottom:20rpx;
+  background:#fff;
+}
+.company_img .company_banner{
+    margin:0 auto;
+  width: 300rpx;
+  display: block;
+}
+.company_info{
+  padding:30rpx;
+  background:#fff;
+  margin-bottom:20rpx;
+}
+.company_title .company_icon{
+  width:36rpx;
+  height:36rpx;
+  margin-top:2rpx;
+  float:left;
+  margin-right:10rpx;
+}
+.company_center{
+  text-align:center;
+  font-weight:bold;
+}
+.company_title{
+  height:40rpx;
+  overflow:hidden;
+  margin-bottom:30rpx;
+}
+.company_title .company_titles{
+  font-size:32rpx;
+  color:#FDCF44;
+  float:left;
+}
+.company_cont{
+  font-size:32rpx;
+}
+
+.company_adds{
+  padding:30rpx;
+  background:#fff;
+  margin-bottom:20rpx;
+}
+.company_adds .company_map{
+  width:690rpx;
+  height:276rpx;
+  margin:0 auto;
+  display: block;
+  margin-bottom:10rpx;
+}
+.company_adds .company_add-info{
+  font-size:32rpx;
+  color:#353433;
+}
+
+.company_tels{
+  width:300rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  margin:80rpx auto;
+  border-radius:60rpx;
+  text-align: center;
+  background-color:#FDCF44;
+  color: #fff;
+  font-size: 36rpx; 
+}
+.company_tels .company_phone{
+  width:100%;
+  height:100%;
+}

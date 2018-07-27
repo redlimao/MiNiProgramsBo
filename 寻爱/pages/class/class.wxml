@@ -1,0 +1,15 @@
+<!--pages/class/class.wxml-->
+<view class="container">
+  <view class="back" bindtap='backName'>
+    <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="classList" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}" bindtap='className'>
+    <image src="{{item.img}}" class="class-img"></image>
+    <view class="intro">
+      <text class="intro-title">{{item.title}}</text>
+      <view class="intro-cont">{{item.intro}}</view>
+    </view>
+    <view class="money" wx:if="{{item.moneys==0}}">免费</view>
+    <view class="money" wx:else>￥{{item.moneys}}</view>
+  </view>
+</view>

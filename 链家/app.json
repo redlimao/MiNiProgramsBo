@@ -1,0 +1,52 @@
+{
+    "pages":[
+        "pages/index/index",
+        "pages/coupon/coupon",
+        "pages/detail/detail",
+        "pages/myCoupon/myCoupon",
+        "pages/setting/setting",
+        "pages/newLogin/newLogin",
+        "pages/oldLogin/oldLogin",
+        "pages/vip/vip",
+        "pages/personage/personage",
+        "pages/er/er",
+        "pages/search/search",
+        "pages/newPage/newPage",
+        "pages/want/want",
+        "pages/myHe/myHe",
+        "pages/heDetail/heDetail",
+        "pages/list/list",
+        "pages/messDetails/messDetails",
+        "pages/myPin/myPin"
+    ],
+    "window":{
+        "backgroundTextStyle":"light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "链家",
+        "navigationBarTextStyle":"black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/coupon/coupon",
+                "text": "免费优品",
+                "iconPath": "images/tab-icon1-1.png",
+                "selectedIconPath": "images/tab-icon1-2.png"
+            },
+            {
+                "pagePath": "pages/vip/vip",
+                "text": "VIP爆款",
+                "iconPath": "images/tab-icon2-1.png",
+                "selectedIconPath": "images/tab-icon2-2.png"
+            },
+            {
+                "pagePath": "pages/personage/personage",
+                "text": "个人中心",
+                "iconPath": "images/tab-icon3-1.png",
+                "selectedIconPath": "images/tab-icon3-2.png"
+            }
+        ],
+        "color": "#7f8389",
+        "selectedColor": "#003041"
+    }
+}

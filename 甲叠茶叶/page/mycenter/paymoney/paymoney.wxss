@@ -1,0 +1,20 @@
+page{background-color: #fff;}
+.wrap{width: 100%;padding:30rpx 20rpx 0 20rpx;box-sizing: border-box;}
+    .card{width: 710rpx;height: 273rpx;position: relative;}
+        .card-bg{width: 710rpx;height: 273rpx;display: block;}
+        .card-txt{position: absolute;z-index: 2;font-size:56rpx;color: #fff;font-weight: bold;left:40rpx;top: 80rpx;}
+    .tit{height: 60rpx;display: flex;align-items: center;margin-top: 40rpx;}
+        .title{font-size: 32rpx;color: #373634;font-weight: bold;}
+        .pay-in{font-size: 26rpx;color:#B1AEAB;height: 60rpx;flex: 1;text-align: right;line-height: 60rpx;}
+    .list{display: flex;flex-wrap: wrap;padding-bottom: 280rpx;}
+        .item{width: 220rpx;height: 80rpx;box-sizing: border-box;margin: 15rpx 8rpx;border: 2rpx solid #B1AEAB;display: flex;align-items: center;justify-content: center;flex-direction: column;color: #B1AEAB;border-radius: 8rpx;}
+            .i-tit{font-size: 32rpx;}
+            .i-txt{font-size: 22rpx;padding-top: 12rpx;}
+        .item.on{border: 2rpx solid #FA9A1E;background-color: #FA9A1E;color: #fff;}
+    .input-box{padding: 0 20rpx;height: 80rpx;border: 1rpx solid #B1AEAB;box-sizing: border-box;margin: 40rpx 20rpx;display: flex;align-items: center;border-radius: 10rpx;}
+    .input-txt{font-size: 26rpx;padding: 0 20rpx;color:#333333;}
+    .txts{height: 26rpx;display: flex;justify-content: center;align-items: center;}
+        .t-txt{font-size: 26rpx;color: #7F7F7F;padding-left: 11rpx;}
+        .t-col{color: #826540;}
+    .btn-pay{width:670rpx;height:94rpx;background:#826540;border-radius: 10rpx;text-align: center;font-size: 36rpx;color: #FFFFFF;font-weight: bold;line-height: 94rpx;margin: 47rpx auto;}
+

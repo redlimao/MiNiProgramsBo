@@ -1,0 +1,68 @@
+<view class="container">
+  <!-- *********个人信息********** -->
+  <view class="main-box">
+    <view class="main">
+      <!-- 个人 -->
+      <view class="main-message">
+        <view class="main-photo">
+          <image src="{{headimg}}" class="main-img"></image>
+        </view>
+        <view class="main-name">{{nickname}}</view>
+        <view class="main-main" bindtap='pointsName'>
+          <image src="../../images/rule.png" class="card-icon"></image>
+          <text class="main-choose">转介规则</text>
+        </view> 
+      </view>
+       <view class="main-xu">
+        <text class="month-shou">本月收益：</text>￥{{all_money}}
+        <picker class="area test"  mode="date" value="{{date}}" start="1949-09-01" end="2060-09-01" bindchange="bindDateChange" fields='month'>{{date}}
+          <image src="../../images/xia.png" class="las"></image>
+        </picker> 
+      </view>
+    </view>
+  </view>
+   <!--****************内容**********-->
+   <view class="jie-box" wx:if="{{empty==0}}">
+    <view class="list-box {{item.pan=='1'? 'list_actives' : ''}}" wx:for="{{list}}" wx:key="{{item.id}}" id="{{item.id}}" data-id="{{index}}" bindlongpress="anName">
+      <!-- *转介详情** -->
+      <view class="jie-list" catchtap='laName' data-id="{{index}}">
+        <view class="info-box">
+          <view class="main-photo">
+            <image src="{{item.headimgurl}}" class="main-img"></image>
+          </view>
+          <view class="jie-info">
+            <text class="jie-name">{{item.nickname}}</text>
+            <text class="jie-phone">{{item.phone}}</text>
+          </view>
+          <view class="xiao-box">
+            <image src="../../images/wei.png" class="xiao-img" wx:if="{{item.zhuan==1}}"></image>
+            <image src="../../images/yi.png" class="xiao-img" wx:else></image>
+          </view>
+        </view>
+        <view class="jie-time" >
+          <text class="jie-text">转介时间:{{item.create_at}}</text>
+          <view class="jie-timess" wx:if="{{item.zhuan!=1}}">
+            <text class="look-info">查看详情</text>
+            <image src="../../images/xia.png" class="xiala {{item.pan=='1'? 'icon_actives' : ''}}"></image>
+          </view> 
+        </view> 
+      </view>
+      <!-- **消费记录** -->
+      <view class="fei-box  {{item.pan=='1'? 'box_actives' : ''}}" wx:if="{{curHdIndex==0 || curHdIndex==1}}">
+          <block  wx:if="{{item.zhuan!=1}}">
+            <view class="fei-info {{index % 2==0 ? 'fei-bg' : ''}}" wx:for="{{item.zhuan}}"  wx:key="{{item.goods_id}}">
+              <text class="riqi">日期：{{item.create_at}}</text>
+               <text class="riqi">{{item.goods_name}}</text>
+              <text class="fei-money">￥{{item.moneys}}</text>
+            </view>
+          </block>
+          
+      </view>
+    </view>
+   </view>
+   <view class="empty" wx:else>
+      <image src="../../images/empty.png" class="empty-icon"></image>
+      <text class="empty-text">您暂时还未介绍好友</text>
+   </view>
+</view> 
+

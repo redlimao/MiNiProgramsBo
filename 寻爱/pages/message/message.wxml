@@ -1,0 +1,310 @@
+<!--pages/main/main.wxml-->
+<view class="container">
+  <view class="back" bindtap='backName'>
+      <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="banner">
+    <image src="{{bg}}" class="bg"></image>
+    <text class="huan-bg" bindtap='bgName'>更换背景</text>
+  </view>
+  <!-- ***相册**** -->
+  <view class="message">
+    <view class="photo" bindtap='photoName' wx:if="{{headimgurl==0}}">
+      <image src="../../images/camre.png" class="camre-icon"></image>
+      <text class="up-text">上传头像</text>
+    </view>
+    <image src="{{headimgurl_tempFilePaths}}" class="photo" mode="aspectFill" bindtap='photoName' wx:else></image>
+    <view class="message-top">
+      <view class="tags" bindtap='videoName'>
+        <text class="tags-text">上传视频</text>
+      </view>
+    </view>
+    <view class="album">
+      <view class="album-list" bindtap='albumName1'>
+        <block wx:if="{{album1==0}}">
+          <image src="../../images/add.png" class="img-lists"></image>
+          <text class="up-album">添加相册</text>
+        </block>
+        <block wx:else>
+          <image src="{{album1_tempFilePaths}}" class="img-list" mode="aspectFill"></image>
+        </block>
+      </view>
+      <view class="album-list"  bindtap='albumName2'>
+        <block wx:if="{{album2==0}}">
+          <image src="../../images/add.png" class="img-lists"></image>
+          <text class="up-album">添加相册</text>
+        </block>
+        <block wx:else>
+          <image src="{{album2_tempFilePaths}}" class="img-list" mode="aspectFill"></image>
+        </block>
+      </view>
+      <view class="album-list"  bindtap='albumName3'>
+        <block wx:if="{{album3==0}}">
+          <image src="../../images/add.png" class="img-lists"></image>
+          <text class="up-album">添加相册</text>
+        </block>
+        <block wx:else>
+          <image src="{{album3_tempFilePaths}}" class="img-list" mode="aspectFill"></image>
+        </block>
+      </view>
+      <view class="album-list"  bindtap='albumName4'>
+       <block wx:if="{{album4==0}}">
+          <image src="../../images/add.png" class="img-lists"></image>
+          <text class="up-album">添加相册</text>
+        </block>
+        <block wx:else>
+          <image src="{{album4_tempFilePaths}}" class="img-list" mode="aspectFill"></image>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!-- ***基本信息**** -->
+  <view class="info-box">
+    <view class="list" bindtap='maskName' data-id='1'>
+      <text class="list-txt">基本资料</text>
+      <image src="../../images/icon_in.png" class="look-more"></image>
+      <text class="list-textss" wx:if="{{ji==1}}">待完善</text>
+      <text class="list-texts" wx:else>已完善</text>
+    </view>
+    <view class="list" bindtap='maskName' data-id='2'>
+      <text class="list-txt">择偶条件</text>
+      <image src="../../images/icon_in.png" class="look-more"></image>
+      <text class="list-textss" wx:if="{{ze==1}}">待完善</text>
+      <text class="list-texts" wx:else>已完善</text>
+    </view>
+    <view class="list" bindtap='maskName' data-id='3'>
+      <text class="list-txt">QQ或微信号</text>
+      <image src="../../images/icon_in.png" class="look-more"></image>
+      <text class="list-textss" wx:if="{{qq_wechat==1}}">待完善</text>
+      <text class="list-texts" wx:else>已完善</text>
+    </view>
+    <view class="list" bindtap='maskName' data-id='4'>
+      <text class="list-txt">性格标签</text>
+      <image src="../../images/icon_in.png" class="look-more"></image>
+      <text class="list-textss" wx:if="{{xing==1}}">待完善</text>
+      <text class="list-texts" wx:else>已完善</text>
+    </view>
+     <view class="list" bindtap='maskName' data-id='5'>
+      <text class="list-txt">休假情况</text>
+      <image src="../../images/icon_in.png" class="look-more"></image>
+      <text class="list-textss" wx:if="{{xiuJia==1}}">待完善</text>
+      <text class="list-texts" wx:else>已完善</text>
+    </view>
+  </view>
+  <!-- ***保存**** -->
+  <view class="bao" bindtap='baoName'>保存</view>
+</view>
+
+
+<!-- ***填写信息*** -->
+<view class="message-mask" wx:if="{{mask==1}}">
+  <view class="bg-mask"></view>
+  <view class="mask-inner">
+    <form bindsubmit="formSubmit" report-submit='true'>
+      <view class="mask-close">
+        <image src="../../images/close.png" class="close-icon" bindtap='closeName'></image>
+        <button class="btn" formType="submit">保存</button>
+      </view>
+      <!-- ***个人信息*** -->
+      <view class="mask-form {{types==1?'on' : ''}}" >
+        <view class="list">
+          <text class="list-txt">姓名</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <input placeholder='填写' placeholder-style='color:rgb(173,168,166);' class="inp" name="name"  value="{{ji.name}}" />
+        </view>
+        <view class="list">
+          <text class="list-txt">电话(仅平台可见)</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <input placeholder='填写' placeholder-style='color:rgb(173,168,166);' class="phones inp" name="phone" value="{{phone}}" />
+          <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="phone {{huo==1?'hide':''}}"> </button>
+        </view>
+        <view class="list">
+          <text class="list-txt">身份证号(仅平台可见)</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <input placeholder='填写' placeholder-style='color:rgb(173,168,166);' class="inp" name="idCard" value="{{ji.id_card}}" />
+        </view>
+        <view class="list">
+          <text class="list-txt">昵称</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <input placeholder='填写' placeholder-style='color:rgb(173,168,166);' class="inp" name="nickname" value="{{ji.nick_name}}" />
+        </view>
+        <view class="list">
+          <text class="list-txt">出生年月</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker"  mode="date" value="{{date}}" start="1949-09-01" end="2060-09-01" bindchange="DateChange">{{date}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">性别</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="sexNames" value="{{sex_index}}" range="{{sex}}">{{sex[sex_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">身高</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="heightNames" value="{{height_index}}" range="{{height}}">{{height[height_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">体重</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="weightNames" value="{{weight_index}}" range="{{weight}}">{{weight[weight_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">学历</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="educationNames" value="{{education_index}}" range="{{education}}">{{education[education_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">职业</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <input placeholder='填写' placeholder-style='color:rgb(173,168,166);' class="inp" name="jobs" value="{{ji.jobs}}" />
+        </view>
+        <view class="list">
+          <text class="list-txt">籍贯</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <input placeholder='填写' placeholder-style='color:rgb(173,168,166);' class="inp" name="place" value="{{ji.place}}" />
+        </view>
+        <view class="list">
+          <text class="list-txt">工作地区</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">{{region[0]}}，{{region[1]}}，{{region[2]}}</picker>
+        </view>
+        <view class="list">
+          <text class="list-txt">详细地址</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <input placeholder='填写' placeholder-style='color:rgb(173,168,166);' class="inp" name="addresss" value="{{ji.address}}"  />
+        </view>
+        <view class="list">
+          <text class="list-txt">买房情况</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="homeNames" value="{{home_index}}" range="{{home}}">{{home[home_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">买车情况</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="carNames" value="{{car_index}}" range="{{car}}">{{car[car_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">婚姻状况</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="marriageNames" value="{{marriage_index}}" range="{{marriage}}">{{marriage[marriage_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">有无小孩</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="childNames" value="{{child_index}}" range="{{child}}">{{child[child_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">月收入</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="moneysNames" value="{{moneys_index}}" range="{{moneys}}">{{moneys[moneys_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">是否抽烟</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="smokingNames" value="{{smoking_index}}" range="{{smoking}}">{{smoking[smoking_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">是否喝酒</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="drinkNames" value="{{drink_index}}" range="{{drink}}">{{drink[drink_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">何时结婚</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="marryDateNames" value="{{marryDate_index}}" range="{{marryDate}}">{{marryDate[marryDate_index]}}</picker>
+        </view>
+      </view>
+      <!-- ***择偶条件*** -->
+      <view class="mask-form {{types==2?'on' : ''}}" >
+        <view class="list">
+          <text class="list-txt">身高</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="heightsNames" value="{{heights_index}}" range="{{height}}">{{height[heights_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">体重</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="weightsNames" value="{{weights_index}}" range="{{weight}}">{{weight[weights_index]}}</picker> 
+        </view>
+       <view class="list">
+          <text class="list-txt">学历</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="educationsNames" value="{{educations_index}}" range="{{education}}">{{education[educations_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">工作地区</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" mode="region" bindchange="bindRegionChanges" value="{{regions}}" custom-item="{{customItem}}">{{regions[0]}}，{{regions[1]}}，{{regions[2]}}</picker>
+        </view>
+        <view class="list">
+          <text class="list-txt">详细地址</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <input placeholder='填写' placeholder-style='color:rgb(173,168,166);' class="inp" name="address" value="{{ze.address}}" />
+        </view>
+        <view class="list">
+          <text class="list-txt">买房情况</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="homesNames" value="{{homes_index}}" range="{{home}}">{{home[homes_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">买车情况</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="carsNames" value="{{cars_index}}" range="{{car}}">{{car[cars_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">婚姻状况</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="marriagesNames" value="{{marriages_index}}" range="{{marriage}}">{{marriage[marriages_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">有无小孩</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="childsNames" value="{{childs_index}}" range="{{child}}">{{child[childs_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">月收入</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="moneyssNames" value="{{moneyss_index}}" range="{{moneys}}">{{moneys[moneyss_index]}}</picker> 
+        </view>
+       <view class="list">
+          <text class="list-txt">是否抽烟</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="smokingsNames" value="{{smokings_index}}" range="{{smokings}}">{{smokings[smokings_index]}}</picker> 
+        </view>
+        <view class="list">
+          <text class="list-txt">是否喝酒</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <picker class="picker" bindchange="drinksNames" value="{{drinks_index}}" range="{{drinks}}">{{drinks[drinks_index]}}</picker> 
+        </view>
+      </view>
+       <!-- ***QQ或微信号*** -->
+      <view class="mask-form {{types==3?'on' : ''}}">
+        <view class="list">
+          <text class="list-txt">QQ</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <input placeholder='填写' placeholder-style='color:rgb(173,168,166);' class="inp" name="qq" value="{{qq_wechat.qq}}" />
+        </view>  
+        <view class="list">
+          <text class="list-txt">微信号</text>
+          <image src="../../images/icon_in.png" class="look-more"></image>
+          <input placeholder='填写' placeholder-style='color:rgb(173,168,166);' class="inp" name="wechat" value="{{qq_wechat.wechat}}" />
+        </view>     
+      </view>
+      <!-- ***性格标签*** -->
+      <view class="mask-form {{types==4?'on' : ''}}">
+        <text class="xing-tags {{item.choose==true ? 'actives' : ''}}" bindtap='tagName' wx:for="{{tag}}" wx:key="{{index}}" data-index="{{index}}">{{item.name}}</text>
+      </view>
+       <!-- ***休假情况*** -->
+      <view class="mask-form {{types==5?'on' : ''}}">
+        <text class="xing-tagss {{item.choose==true ? 'actives' : ''}}" bindtap='xiuName' wx:for="{{jia_tag}}" wx:key="{{index}}" data-index="{{index}}">{{item.week}}</text>
+      </view>
+    </form>
+  </view>
+</view>
+
+<view class="videos" wx:if="{{video_flag}}">
+    <video src="{{video_url}}"></video>
+    <view class="video-close" bindtap='videoClose'>
+      <image src="../../images/closes.png" class="video-icon"></image>
+    </view>
+</view>

@@ -1,0 +1,33 @@
+<view class="title">固定套餐：{{title}}</view>
+<view class="item">
+    <view class="i-tit">门店</view>
+    <view class="i-txt">{{store_name}}</view>
+</view>
+<!-- <view class="item">
+    <view class="i-tit">日期</view>
+    <view class="i-txt">{{date}}</view>
+</view> -->
+<view class="item">
+    <view class="i-tit">到店时间</view>
+    <view class="i-txt">{{time_start}}--{{ time_end}}</view>
+</view>
+<view class="item">
+    <view class="i-tit">价格</view>
+    <view class="i-txt">¥{{money}}/人</view>
+</view>
+<view class="item">
+    <view class="i-tit">人数</view>
+    <view class="i-txt">{{num}}</view>
+</view>
+<view class="item">
+    <view class="i-tit">总金额</view>
+    <view class="i-txt">¥{{total_money}}</view>
+</view>
+<view class="foot">
+    <view class="btns" bindtap='bindPhone'>联系商家</view>
+    <view class="btns" bindtap='bindLocation'>一键导航</view>
+    <view class="btns" bindtap='bindTrue' wx:if="{{current == 1}}">确认到店</view>
+    <view class="btns" bindtap='bindEvaluate' wx:if="{{current == 2 && status != 3 && types == 2}}">评价</view>
+    <view class="btns"  wx:if="{{current == 2 && status == 3 && types == 2}}">已评价</view>
+    <view class="btns" bindtap='bindDelete' wx:if="{{current == 2 && status == 3}}">删除</view>
+</view>

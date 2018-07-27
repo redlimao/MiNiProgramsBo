@@ -1,0 +1,16 @@
+<!--pages/xun/xun.wxml-->
+<view class="container">
+  <!--**轮播***-->
+  <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"indicator-dots="true" indicator-active-color="#fff" indicator-color="rgba(255,255,255,0.3)"> 
+    <swiper-item  bindtap="bannerName" wx:for="{{lun}}" id="{{item.id}}" data-id="{{type}}" wx:key="{{item.id}}">  
+      <image src="{{item.img}}"/>   
+    </swiper-item>
+  </swiper>
+  <!--**内容***-->
+  <view class="xun-inner">
+    <view class="xun-list" wx:for="{{list}}" id="{{item.id}}" wx:key="{{item.id}}" bindtap='xunName'>
+      <image src="{{item.img}}"></image>
+    </view>
+  </view>
+</view>
+

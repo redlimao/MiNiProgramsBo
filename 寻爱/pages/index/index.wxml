@@ -1,0 +1,56 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+    <!--**轮播***-->
+    <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"> 
+      <swiper-item wx:for="{{lun}}" wx:key="{{index}}" id="{{item.lun_id}}" data-status="{{item.status}}" bindtap="bannerName">  
+         <image src="{{item.img}}" class="company_banner"></image>   
+      </swiper-item>
+    </swiper>
+    <!--**公告信息**-->
+    <view class="index-info">
+      <view class="info-hui">
+        <image src="../../images/index-icon1.png" class="index-icon1"></image>
+        <swiper class="swipers" autoplay="true" interval="5000" duration="1000" circular="true" vertical="true"> 
+           <swiper-item  wx:for="{{gong}}" wx:key="{{item.id}}" bindtap="guangName" id="{{item.id}}">  
+             <text class="info-intro">{{item.title}}</text>  
+          </swiper-item> 
+        </swiper>
+      </view>
+    </view>
+    <!-- *****导航***** -->
+    <view class="nav">
+      <view class="nav-list" bindtap='tiName'>
+        <image src="../../images/nav-icon1.png" class="nav-icon"></image>
+        <text class="nav-title">测试题</text>
+      </view>
+       <view class="nav-list" bindtap='baoName'>
+        <image src="../../images/nav-icon2.png" class="nav-icon"></image>
+        <text class="nav-title">线上报名</text>
+      </view>
+       <view class="nav-list" bindtap='className'>
+        <image src="../../images/nav-icon3.png" class="nav-icon"></image>
+        <text class="nav-title">攻略课堂</text>
+      </view>
+       <view class="nav-list" bindtap='ziName'>
+        <image src="../../images/nav-icon4.png" class="nav-icon"></image>
+        <text class="nav-title">咨询预约</text>
+      </view>
+    </view>
+    <!-- *****内容***** -->
+    <view class="inner">
+      <view class="inner-list" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}" bindtap='detailName'>
+        <view class="inner-boxs">
+         <image src="{{item.img}}" class="inner-img"></image>
+          <text class="inner-bao" wx:if="{{item.lei==2}}">活动</text>
+        </view>
+        <view class="inner-cont">{{item.title}}</view>
+      </view>
+      <text class="nomore" wx:if="{{more==1}}">没有更多内容啦~</text>
+    </view>
+</view>
+
+
+<!-- ****签到**** -->
+<view class="qian" bindtap='qianName'>
+  <image src="../../images/qian.png" class="qian-icon"></image>
+</view>

@@ -1,0 +1,182 @@
+/**index.wxss**/
+page{
+  background:#f8f8f8;
+}
+.slide-image{width: 750rpx;height: 300rpx;background-color: #ccc;}
+/*主体样式*/
+.con{width: 100%;padding: 0 20rpx;box-sizing: border-box;background-color: #fff;margin-top: 10rpx;}
+.con1{width: 100%;box-sizing: border-box;background-color: #fff;margin-top: 10rpx;}
+    .title{display: flex;align-items: center;height: 90rpx;border-bottom: 1rpx solid #f8f8f8;}
+        .title-img{width: 32rpx;height: 32rpx;display: block;}
+        .title-name{padding-left: 20rpx;font-size: 30rpx;color: #333;}
+    .list{padding: 10rpx 20rpx;width: 100%;background-color: #fff;box-sizing: border-box;}
+        .l-item{padding: 10rpx 0;display: flex;align-items: center;border-bottom: 1rpx solid #f8f8f8;}
+        .l-item:last-child{border-bottom: 1rpx solid transparent;}
+            .l-img{width: 120rpx;height: 120rpx;display: block;}
+            .l-txt{font-size: 30rpx;color: #333;line-height: 40rpx;padding:0 20rpx;flex: 1;}
+            .btn-in{width: 100rpx;height: 40rpx;text-align: center;font-size: 26rpx;line-height: 40rpx;color: #fff;background-color: #826540;border-radius: 20rpx;}
+
+    .s-list{border-bottom: 1rpx solid #f8f8f8;}
+    .s-list:last-child{border-bottom: 1rpx solid #f8f8f8;}
+        .s-tit{display: flex;align-items: center;height: 90rpx;}
+            .s-name{font-size: 30rpx;flex: 1;color: #333;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;padding-right: 20rpx;}
+            .s-btn{height: 50rpx;padding: 0 20rpx;line-height: 50rpx;background-color: #826540;color: #fff;border-radius: 5rpx;margin-right: 20rpx;font-size: 24rpx;}
+        .scroll-y{height: 200rpx;padding: 20rpx 0;white-space:nowrap;}
+            .item-img{width: 200rpx;height: 200rpx;display:inline-block;margin-right: 20rpx;}
+/* 菜单 */
+.menu{display: flex;justify-content: space-around;}
+    .m-item{height: 90rpx;border-bottom: 4rpx solid transparent;box-sizing: border-box;text-align: center;line-height: 90rpx;font-size: 30rpx;color: #666;}
+    .m-item.on{border-bottom: 4rpx solid #826540;color: #826540;}
+.c-list{padding-bottom: 20rpx;}
+    .c-item{padding: 0 20rpx;height: 140rpx;display: flex;align-items: center;border-bottom: 1rpx solid #ececec;}
+    .c-item:last-child{border-bottom: 1rpx solid transparent;}
+        .c-img{width: 100rpx;height: 100rpx;display: block;}
+        .c-tit{font-size: 30rpx;color: #333;flex: 1;padding: 0 20rpx;}
+        .c-txt{font-size: 30rpx;color: #ef4136;}
+
+    .c-wrap{width: 100%;padding: 20rpx;box-sizing: border-box;}
+    /* 时间标签 */
+    .p-con1{border-bottom: 1rpx solid #e5e5e5;}
+    .p-con2{display: flex;align-items: center;height: 100rpx;justify-content: space-between;}
+        .p-tit{color: #333;font-size: 26rpx;height: 80rpx;line-height: 80rpx;}
+        .p-tit-txt{color: #ef4136;}
+        .pick-box{flex: 1;}
+        .pick-txt{width: 100%;height:60rpx;color: #333;font-size: 28rpx;line-height: 60rpx;padding: 0 40rpx;box-sizing: border-box;text-align: right}
+        .icon-in{width: 24rpx;height: 24rpx;display: block;}
+        /* 加减 */
+        .p-boxs{display: flex;}
+            .p-btn{width: 60rpx;height: 60rpx;background-color: #e5e5e5;color: #333;text-align: center;line-height: 60rpx;font-size: 50rpx;}
+            .p-txt{width: 100rpx;height: 60rpx;line-height: 60rpx;text-align: center;color: #333;background-color: #e5e5e5;font-size: 26rpx;margin: 0 5rpx;}
+
+        .p-tags{display: flex;padding-bottom: 20rpx;flex-wrap: wrap;padding-top: 10rpx;}
+            .p-item{height: 50rpx;text-align: center;width: 200rpx;line-height: 50rpx;border-radius: 20rpx;color: #333;font-size: 26rpx;background-color: #F5F6F7;margin:0 18rpx 20rpx 18rpx;box-sizing: border-box;}
+            .p-item.on{color: #fff;background-color: #826540;}
+        /* 下一步按钮 */
+        .p-txts{color: #ef4136;font-size: 26rpx;height: 80rpx;line-height: 80rpx;}
+        .btn-next{width: 200rpx;height: 70rpx;text-align: center;line-height: 70rpx;background-color: #826540;color: #fff;font-size: 26rpx;margin: 20rpx auto;border-radius: 35rpx;}
+        
+/*邀请码弹窗 */
+.invitPop{
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, .6);
+z-index: 3;
+}
+.invitation{
+z-index: 4;
+width: 76%;
+padding: 0 25rpx;
+height: 38%;
+background: #fff;
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+margin: auto;
+display: flex;
+flex-flow: column;
+align-items: center;
+justify-content: space-around;
+border-radius: 18rpx;
+}
+.invitation .logo{
+width: 120rpx;
+height: 120rpx;
+border-radius: 50%;
+margin-top: -60rpx;
+}
+.invitation .logo image{
+width: 100%;
+height: 100%;
+border-radius: 50%;
+}
+.invitation .info{
+font-size: 28rpx;
+color: #2B2B2B;
+
+}
+.invitation .main{
+width: 100%;
+display: flex;
+flex-flow: row nowrap;
+align-items: center;
+margin-top:-10rpx;
+justify-content: space-around;
+}
+.invitation .main input{
+width: 100%;
+height: 72rpx;
+background: #f8f8f8;
+font-size: 28rpx;
+border-radius: 5rpx;
+padding-left: 18rpx;
+}
+
+.invitation .butt-list{
+border-top: 1rpx solid rgba(238,238,238,1);
+width: 100%;
+display: flex;
+flex-flow: row nowrap;
+align-items: center;
+justify-content: space-around;
+padding: 10rpx 0;
+position: relative;
+}
+.invitation .butt-list .lineq{
+width:2rpx;
+height:40rpx;
+background:rgba(216,216,216,1);
+}
+.invitation .butt-list .text{
+padding:10rpx;
+position: relative;
+width: 30%;
+text-align: center;
+border-radius: 10rpx;
+font-size: 34rpx;
+color: #666;
+margin-top:10rpx;
+
+}
+.invitation .butt-list .text button{
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 60rpx;
+background:rgba(61,196,81,1);
+opacity: 0; 
+}
+.invitation .butt-list .button{
+padding:10rpx;
+position: relative;
+width: 30%;
+/* background: #f8f8f8; */
+text-align: center;
+border-radius: 10rpx;
+font-size: 34rpx;
+color: #3DC451;
+margin-top:10rpx;
+
+}
+.invitation .butt-list .button button{
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 80rpx;
+background:rgba(61,196,81,1);
+opacity: 0; 
+}
+.submit{
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 60rpx;
+background: #ff0;
+}

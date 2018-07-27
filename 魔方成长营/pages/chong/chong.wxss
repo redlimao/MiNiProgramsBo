@@ -1,0 +1,215 @@
+/* pages/myheart/myheart.wxss */
+page{
+  width:100%;
+  height:100%;
+  background:#f8f8f8;
+  overflow:hidden;
+}
+.zhang{
+  width:690rpx;
+  margin:0 auto;
+  height:900rpx;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  position:relative;
+  background:#fff;
+  margin-top:30rpx;
+  border-radius:10rpx;
+}
+.zhang .myxin{
+  width:100%;
+  height:240rpx;
+  border-bottom:2rpx solid #e5e5e5;
+  overflow:hidden;
+}
+.zhang .myxin  .fl{
+  height:100%;
+  position:relative;
+  width:50%;
+  float:left;
+}
+.zhang .myxin  .fl .photo{
+  width:140rpx;
+  height:140rpx;
+  border-radius:50%;
+  position:absolute;
+  top:0;
+  bottom:0;
+  margin:auto;
+  left:40rpx;
+}
+.zhang .myxin  .fl .name{
+  font-size:34rpx;
+  color:#434545;
+  height:240rpx;
+  line-height:240rpx;
+  position:absolute;
+  top:0;
+  left:200rpx;
+}
+.zhang .myxin  .fr{
+  height:100%;
+  position:relative;
+  width:50%;
+  float:left;
+}
+.zhang .myxin  .fr image{
+  width:308rpx;
+  height:100rpx;
+  position:absolute;
+  top:0;
+  bottom:0;
+  margin:auto;
+  right:-25rpx;
+}
+.xin_zhi{
+  color:#fff;
+  font-size:34rpx;
+  position: absolute;
+  right:20rpx;
+  display:block;
+  line-height:230rpx;
+  top:0;
+}
+.chong{
+  width:100%;
+}
+.chong .chong_money{
+  width:100%;
+  height:160rpx;
+  color:#434545;
+  font-size:46rpx;
+  text-align:center;
+  line-height:160rpx;
+  display:block;
+  font-weight:bold;
+}
+.chong .chong_title{
+  height:100rpx;
+  color:#c7c7c7;
+  font-size:34rpx;
+  line-height:100rpx;
+  display:block;
+  padding:0 20rpx;
+}
+.chong-list{
+  padding:0 20rpx;
+  height:130rpx;
+  display:flex;
+  justify-content: space-between; 
+}
+.chong-list text{
+  display:block;
+  float:left;
+  font-size:36rpx;
+  color:#434545;
+  width:20%;
+  line-height:100rpx;
+  padding-left:4%;
+}
+.chong-list1{
+  width:160rpx;
+  height:130rpx;
+  font-size:34rpx;
+  color:#fdad35;
+  text-align:center;
+  line-height:130rpx;
+  border:2rpx solid #fdad35;
+  border-radius:10rpx;
+}
+.chong-list2{
+   width:160rpx;
+  height:130rpx;
+  font-size:34rpx;
+  color:#fdad35;
+  text-align:center;
+  line-height:130rpx;
+  border:2rpx solid #fdad35;
+   border-radius:10rpx;
+}
+.chong-list3{
+  width:160rpx;
+  height:130rpx;
+  font-size:34rpx;
+  color:#fdad35;
+  text-align:center;
+  line-height:130rpx;
+  border:2rpx solid #fdad35;
+  border-radius:10rpx;
+}
+.zhi_money{
+  width:100%;
+  text-align:center;
+  height:160rpx;
+  line-height:160rpx;
+  font-size:34rpx;
+  color:#fdad35;
+  display:block;
+}
+.xin_chong{
+  background:#ff9a0e;
+  color:#fff;
+  width:670rpx;
+  height:94rpx;
+  margin:0 auto;
+  text-align: center;
+  line-height:94rpx;
+  border-radius:10rpx;
+  margin-top:40rpx;
+}
+.chong-list .active{
+  background:#ff9a0e;
+  color:#fff;
+}
+.xin_chongs{
+  background:#08A2F1;
+  color:#fff;
+  width:670rpx;
+  height:94rpx;
+  margin:0 auto;
+  text-align: center;
+  line-height:94rpx;
+  border-radius:10rpx;
+  margin-top:40rpx;
+}
+.right-item{ 
+ display: none; 
+} 
+ .right-item.active{ 
+ display: block; 
+}
+.xieyi{
+  padding:0 60rpx;
+  font-size:24rpx;
+  color:#c7c7c7;
+  position:absolute;
+  bottom:40rpx;
+}
+.xieyi .chongzhi{
+  color:#3cb2ef;
+}
+.chong-list input{
+  display:block;
+  height:100rpx;
+  float:left;
+  width:70%;
+  font-size:36rpx;
+}
+.tixian{
+  text-align:right;
+  font-size:32rpx;
+  color:#08A2F1;
+  line-height:60rpx;
+  padding:0 20rpx;
+}
+.ti{
+  width:100%;
+  text-align:center;
+  height:500rpx;
+  line-height:500rpx;
+  font-size:44rpx;
+  color:#434545;
+  font-weight:bold;
+}
+.blue{
+  color:#3cb2ef;
+}

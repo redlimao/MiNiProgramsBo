@@ -1,0 +1,78 @@
+/* pages/jia_tai/jia_tai.wxss */
+.container .time-box{
+  top:20rpx;
+  border:none;
+}
+.container .time-box .time-list{
+  border-bottom:1rpx solid #eee;
+  width:96%;
+  margin-left:4%;
+  display:flex;
+  justify-content:space-around;
+}
+.container .time-box .time-list:nth-last-child(1){
+  border:none;
+}
+.container button{
+    width:650rpx;
+    height:90rpx;
+    background:rgb(255,153,31);
+    color:#fff;
+    border:none;
+    margin:0 auto;
+    margin-top:1000rpx;
+}
+.container .time-box .time-list .date{
+  text-align:left;
+  color:rgb(55,54,52);
+}
+.message{
+  margin-bottom:20rpx;
+  background:#fff;
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+}
+.message .time-list picker{
+  flex-grow: 1;
+  position:relative;
+  height:100%;
+  line-height:90rpx;
+  font-size:28rpx;
+}
+.message .time-list picker image{
+    width:20rpx;
+    height:20rpx;
+    position:absolute;
+    top:40rpx;
+    right:-30rpx;
+}
+.container .time-box .time-lists{
+  height:120rpx;
+}
+.container .time-box .time-lists .date{
+  line-height:120rpx;
+}
+checkbox-group{
+  width:70%;
+  padding-left:30%;
+  overflow:hidden;
+}
+.message .time-list .checkbox{
+  overflow:hidden;
+  height:60rpx;
+  float:left;
+}
+.message .time-list .check{
+  display:block;
+  float:left;
+  transform:scale(.6)
+}
+.message .time-list .label-text{
+  font-size:28rpx;
+  color:#888;
+  display:block;
+  float:left;
+  margin-left:-4rpx;
+  margin-right:10rpx;
+  line-height:60rpx;
+}

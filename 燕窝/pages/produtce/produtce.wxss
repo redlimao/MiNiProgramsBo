@@ -1,0 +1,18 @@
+@import "../template/template.wxss";
+/*==========轮播=========*/
+page{
+  background:#fff;
+}
+.pro_nav{
+  border-bottom:1rpx solid #eee;
+}
+.choe-list.actives .time{
+  color:#41b9ad;
+}
+/*==========商城列表============*/
+#swiper-inner swiper-item{
+  overflow:auto;
+}
+.shop_inner .shop-list{
+  border-radius:0;
+}

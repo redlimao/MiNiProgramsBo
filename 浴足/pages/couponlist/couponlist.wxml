@@ -1,0 +1,37 @@
+<!--pages/couponlist/couponlist.wxml-->
+<view class="container">
+      <!-- 滑动菜单 -->
+    <view class="slider-wrap">
+        <scroll-view scroll-x="true" style="width: 100%">
+            <view class="slider-box flex-sa">
+                <view bindtap="tabs" class="slider-menu {{currentIndex == 1 ? 'on':''}}" data-id="1">未使用</view>
+                <view bindtap="tabs" class="slider-menu {{currentIndex == 2 ? 'on':''}}" data-id="2">已使用</view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 优惠券列表 -->
+    <view class="list" wx:if="{{empty == 1}}">
+        <view class="item" wx:for="{{list}}" wx:key="{{index}}">
+            <image class="item-img" src="../../images/coupon_on.png" wx:if="{{currentIndex == 1}}"></image>
+            <image class="item-img" src="../../images/coupon_off.png" wx:if="{{currentIndex == 2}}"></image>
+            <view class="infos">
+                <view class="info">
+                    <text class="title">{{item.name}}</text>
+                    <text class="times">{{item.end_at}}</text>
+                </view>
+                <view class="moneys-box">
+                    <view class="moneys">
+                        <text class="money-icon">¥</text>
+                        <text class="money">{{item.money}}</text>
+                    </view>     
+                    <text class="txt-money">满{{item.man}}减{{item.money}}</text>           
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="empty-box1" wx:else>
+        <image class="empty-icon"  src="../../images/empty_icon.png"></image>
+        <text class="empty-txt">暂无内容</text>
+    </view>
+</view>
+

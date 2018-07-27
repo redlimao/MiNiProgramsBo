@@ -1,0 +1,56 @@
+<view class="container">
+  <!-- *********个人信息********** -->
+  <view class="main-box">
+    <view class="box"></view>
+    <view class="main">
+      <!-- 个人 -->
+      <view class="main-message">
+        <view class="main-photo">
+          <image src="{{img}}" class="main-img"></image>
+        </view>
+        <view class="main-name">{{name}}</view>
+      </view>
+      <!-- 需求 -->
+      <view class="main-xu">
+        余额<text class="txt-in">¥{{account}}</text> 
+      </view>
+    </view>
+  </view>
+  <!-- *********积分********** -->
+  <view class="points">
+    <view class="points-nav" bindtap="tabFun">
+      <text class="{{current=='1'? 'active' : ''}}" data-id="1">充值记录</text>
+      <text class="{{current=='2'? 'active' : ''}}" data-id="2">消费记录</text>
+    </view>
+    <!--*******充值记录********-->
+    <view class="points-shou" wx:if="{{current == 1}}">
+        <view class="box" wx:if="{{empty==1}}">
+        <view class="shou-list" wx:for="{{list_in}}" wx:key="{{item.id}}">
+            <view class="list-fl">
+            <text class="text">{{item.name}}</text>
+            <text class="time">{{item.create_at}}</text>
+            </view>
+            <view class="list-fr green">{{item.moneys}}</view>
+        </view>
+        </view>
+        <view class="empty" wx:else>
+            <text class="empty-text">暂无充值记录</text>
+        </view>
+    </view>
+    <!--*******消费记录********-->
+    <view class="points-shou" wx:if="{{current == 2}}">
+        <view class="box" wx:if="{{empty==1}}">
+        <view class="shou-list" wx:for="{{list_out}}" wx:key="{{item.id}}">
+            <view class="list-fl">
+            <text class="text">{{item.name}}</text>
+            <text class="time">{{item.create_at}}</text>
+            </view>
+            <view class="list-fr red">{{item.moneys}}</view>
+        </view>
+        </view>
+        <view class="empty" wx:else>
+            <text class="empty-text">暂无消费记录</text>
+        </view>
+    </view>
+  </view>
+</view>

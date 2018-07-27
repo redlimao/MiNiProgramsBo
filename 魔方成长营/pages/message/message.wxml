@@ -1,0 +1,70 @@
+<!--pages/message/message.wxml-->
+<view class="container">
+  <!-- <view class="card">
+    <picker class="week-list" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">{{array[index]}}<image src="../../image/xialas.png"></image></picker>
+  </view> -->
+  <!-- *********设置信息************ -->
+  <view class="self-message">
+    <form bindsubmit="formSubmit" wx:for="{{list}}">
+      <!--商户-->
+      <view class="personal" wx:if="{{flag==2}}" id="{{index}}">
+        <view class="commont">
+          <view class="self-list">
+            <text class="list-name">联系人姓名</text>
+            <input type="text" name="username"  value="{{item.name}}"/>
+          </view>
+          <view class="self-list">
+            <text class="list-name">联系人手机号</text>
+            <input type="number" name="phone"  value="{{item.phone}}" />
+          </view>
+        </view>
+        <view class="com-box">
+          <view class="self-list">
+            <text class="list-name">企业名称</text>
+            <input type="text" name="qiname"  value="{{item.company}}"/>
+          </view>
+          <view class="self-list">
+            <text class="list-name">联系电话</text>
+            <input type="number" name="qiphone"  value="{{item.z_phone}}" />
+          </view>
+          <view class="self-list">
+            <text class="list-name">办公地址</text>
+            <input type="text" name="area"  value="{{item.address}}" />
+          </view>
+        </view>
+        <button formType="submit">认证</button>
+      </view>
+      <!--会员-->
+      <view class="personal"  wx:else id="{{index}}">
+        <view class="commont">
+          <view class="self-list">
+            <text class="list-name">姓名</text>
+            <input type="text" name="username"  value="{{item.name}}"/>
+          </view>
+          <view class="self-list">
+            <text class="list-name">手机号</text>
+            <input type="number" name="phone"  value="{{item.phone}}" />
+          </view>
+        </view>
+        <view class="com-box">
+          <view class="self-list">
+            <text class="list-name">宝宝年龄</text>
+            <input type="text" name="age"  value="{{item.age}}" />
+          </view>
+          <view class="self-list">
+            <text class="list-name">宝宝性别</text>
+            <picker bindchange="bindPickerChanges" value="{{indexs}}" range="{{arrays}}">
+              {{arrays[indexs]}}
+            </picker>
+          </view>
+          <view class="self-list">
+            <text class="list-name">所在社区</text>
+            <input type="text" name="add"  value="{{item.location}}" />
+          </view>
+        </view>
+         <button formType="submit">保存</button>
+      </view>
+      
+    </form>
+  </view>
+</view>

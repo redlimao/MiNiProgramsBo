@@ -1,0 +1,37 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+  <view class="back" bindtap='backName'>
+    <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="tops">关于我们</view>
+  <view class="company_img">
+    <image src="{{banner}}" class="company_banner"></image>
+  </view>
+
+  <view class="company_info">
+    <view class="company_title">
+      <image src="../../images/info.png" class="company_icon"></image>
+      <text class="company_titles">公司简介</text>
+    </view>
+    <view class="company_cont">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+
+  <view class="company_adds">
+    <view class="company_title">
+      <image src="../../images/adds.png" class="company_icon"></image>
+      <text class="company_titles">公司地址</text>
+    </view>
+    <view class="company_cont" bindtap="mapName">
+      <image src="{{map_img}}" class="company_map"></image>
+      <text class="company_add-info">{{address}}</text>
+    </view>
+  </view>
+
+  <view class="company_tels" bindtap='telName'>
+    <image src="{{phone_img}}" class="company_phone"></image>
+  </view>
+</view>
+
+

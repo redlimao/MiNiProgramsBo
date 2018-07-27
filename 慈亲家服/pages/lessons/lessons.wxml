@@ -1,0 +1,33 @@
+<view class="menu" bindtap='bindTab'>
+    <view class="item {{current == 1 ? 'on':''}}" data-index='1'>线上微课</view>
+    <view class="item {{current == 2 ? 'on':''}}" data-index='2'>线下培训</view>
+</view>
+<view class="s-wrap">
+    <swiper class="s-box" bindchange="bindChange">
+        <swiper-item wx:for="{{banner}}" wx:key="{{key}}">
+            <image class="w-img" src='{{item.img}}' mode='widthFix'></image>
+        </swiper-item>
+    </swiper>
+    <view class="swiper-dots">
+        <view wx:for="{{banner}}" wx:key="{{index}}" class="dots {{currentIndex == index ? 'on' : ''}}"></view>
+    </view>
+</view>
+<view class="l-wrap">
+    <view class="tit">
+        <view class="title">家务</view>
+        <view class="t-txt">查看更多</view>
+    </view>
+    <view class="list">
+        <view class="l-box" wx:for="{{list}}" wx:key="{{index}}">
+            <view class="l-item" bindtap='bindDetail'>
+                <image class="l-img" src='{{item.img}}'></image>
+                <view class="l-info">
+                    <view class="l-title">{{item.title}}</view>
+                    <view class="l-infos">已开{{item.num1}}节课 | 共{{item.num2}}节课</view>
+                    <view class="l-infos">15689人学习</view>
+                    <view class="moneys">¥100</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

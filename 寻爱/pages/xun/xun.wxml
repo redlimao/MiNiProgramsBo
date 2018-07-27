@@ -1,0 +1,24 @@
+<!--pages/xun/xun.wxml-->
+<view class="container">
+ <view class="tops">寻爱</view>
+  <view class="nav">
+    <text class="nav-list {{currentIndex==1 ? 'actives' : ''}}" bindtap='tabFun' data-id="1">寻女生</text>
+    <text class="nav-list nav-lists {{currentIndex==2 ? 'activess' : ''}}" bindtap='tabFun' data-id="2">寻男生</text>
+  </view>
+  <!-- ***内容**** -->
+  <view class="inner" wx:if="{{list!=1}}">
+    <view class="inner-list" bindtap='detailsName' wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}">
+      <image src="{{item.avatar}}" class="list-img" mode="aspectFill"></image>
+      <text class="inner-name">{{item.nick_name}}</text>
+      <view class="inner-tag">
+        <text class="tags {{currentIndex==2 ? 'activess' : ''}}">{{item.province}}-{{item.city}}</text>
+        <text class="tags {{currentIndex==2 ? 'activess' : ''}}">{{item.ages}}</text>
+      </view>
+      <text class="inner-flower">鲜花朵数：{{item.flowers}}</text>
+    </view>
+  </view>
+  <view class="empty" wx:else>
+    <image src="../../images/emptyss.png" class="empty-icon"></image>
+  </view>
+</view>
+

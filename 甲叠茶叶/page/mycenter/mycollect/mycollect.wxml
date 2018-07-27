@@ -1,0 +1,26 @@
+<view class="menu">
+    <view class="m-item {{current == 1 ? 'on' : ''}}" data-index='1' bindtap='bindTap' >固定套餐</view>
+    <view class="m-item {{current == 2 ? 'on' : ''}}" data-index='2' bindtap='bindTap' >商品</view>
+</view>
+<!-- 固定套餐 -->
+<view class="c-list" wx:if="{{current == 1}}">
+    <view class="con" wx:if="{{empty == 1}}">
+        <view class="c-item" wx:for="{{list_one}}" wx:key="{{index}}" bindtap='bindDetail' id="{{item.id}}">
+            <image class="c-img" src='{{item.img}}' mode='aspectFill'></image>
+            <view class="c-tit">{{item.name}}</view>
+            <view class="c-txt">¥{{item.money}}/人</view>
+        </view>   
+    </view>
+    <view class="empty" wx:else>暂无内容</view>
+</view>
+<!-- 商品 -->
+<view class="c-list" wx:if="{{current == 2}}">
+    <view class="con" wx:if="{{empty == 1}}">
+        <view class="c-item" wx:for="{{list_two}}" wx:key="{{index}}" bindtap='bindDetail' id="{{item.id}}">
+            <image class="c-img" src='{{item.img}}' mode='aspectFill'></image>
+            <view class="c-tit">{{item.name}}</view>
+            <view class="c-txt">¥{{item.money}}</view>
+    </view>
+    </view>
+    <view class="empty" wx:else>暂无内容</view>
+</view>

@@ -1,0 +1,28 @@
+<!--myAppointment.wxml-->
+<view class="container">
+  <block wx:if="{{empty==0}}">
+    <view class="list-boxs" wx:for="{{info}}" wx:key="{{itme.index}}" bindtap='bindtags' id="{{item.id}}">
+      <view class="list-con">
+        <image class="list-img" src="{{item.banner}}"></image>
+        <view class="list-tits">
+          <text class="list-tit">{{item.name}}</text>
+          <text class="list-txt1">库存{{item.nums}}件</text>
+          <view class="list-end">
+            <text class="list-time">{{item.create_at}}</text>
+            <text class="list-momey">已交定金：¥{{item.dan_moneys}}</text>
+          </view>
+        </view>  
+      </view>
+      <view class="result">
+        <text class="result-txt {{item.status == 2 ? 'show':''}}">交易正在进行中</text>
+        <text class="result-txt {{item.status == 5 ? 'show':''}}">交易已结束</text>
+        <view class="btn-result {{item.status == 2 ? 'show':''}}" bindtap='bindcomplete' id="{{item.orders_id}}">完成交易</view>
+        <view class="btn-result {{item.status == 5 ? 'show':''}}">已完成</view>
+      </view>
+    </view> 
+  </block>
+  <view class="empty" wx:else>
+    <image src="../../images/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无内容</text>
+  </view>
+</view>

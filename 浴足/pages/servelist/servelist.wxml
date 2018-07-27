@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- banner图 -->
+    <image class="banner" src="{{banner}}"></image>
+    <!-- 提示 -->
+    <text class="areas">{{content}}</text>
+    <!-- 列表 -->
+    <view class="list mt-8" wx:if="{{empty == 1}}">
+        <view class="item bb-1" wx:for="{{list}}" wx:key="{{index}}" bindtap='bindDetails' data-id='{{item.id}}'>
+            <image class="item-img" src="{{item.banner}}"></image>
+            <view class="info">
+                <view class="wrap">
+                    <text class="tit lc-1">{{item.name}}</text>
+                </view>
+                <text class="texts lc-1">{{item.ad_list}}</text>
+                <view class="wrap pt-12">
+                    <view class="wrap-txt">
+                        <text class="color-a">{{item.moneys_one}}</text>{{item.moneys_two}}
+                    </view>
+                    <view class="btn-a">立即预约</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="empty-box mt-100" wx:else>
+        <image class="empty-icon"  src="../../images/empty_icon.png"></image>
+        <text class="empty-txt">暂无\t\t敬请期待！</text>
+    </view>
+</view>

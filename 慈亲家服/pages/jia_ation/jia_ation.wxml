@@ -1,0 +1,29 @@
+<!--pages/ation/ation.wxml-->
+<view class="container">
+  <view class="top">
+    <image src="../image/ation.png"></image>
+    <text class="top-text">上传材料证明职业身份</text>
+    <text class="top-text" wx:if="{{status==1}}">审核中</text>
+    <text class="top-text" wx:if="{{status==2}}">已通过</text>
+    <text class="top-text" wx:if="{{status==3}}">审核失败</text>
+  </view>
+  <view class="bottom">
+    <view class="chuan-box" bindtap="chooseName" wx:if="{{status!=2}}">
+      <view class="chuan" wx:if="{{flag==0}}">
+        <image src="../image/shang.png"></image>
+        <text class="chuan-text">上传材料证明职业身份</text>
+        <text class="chuan-text">(在职证明、工牌拍照或截图)</text>
+      </view>
+      <view class="chuan"  wx:else>
+         <image src="{{tempFilePaths}}" class="chuan-tu"></image>
+      </view>
+    </view>
+    <view class="chuan-box"  wx:else>
+      <view class="chuan">
+         <image src="{{tempFilePaths}}" class="chuan-tu"></image>
+      </view>
+    </view>
+    <view class="sub" wx:if="{{flag==0}}">提交</view>
+    <view class="subs" wx:else bindtap="subName">提交</view>
+  </view>
+</view>

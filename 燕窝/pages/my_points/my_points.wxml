@@ -1,0 +1,61 @@
+<!--****************导航**********-->
+<view class="pro_nav" bindtap="tabFun">
+  <view class="pronav-list {{curHdIndex==0 ? 'actives' : ''}}" data-id="0">
+     次卡/周卡
+  </view>
+  <view class="pronav-list {{curHdIndex==1 ? 'actives' : ''}}" data-id="1">
+    月卡
+  </view>
+  <view class="pronav-list {{curHdIndex==2 ? 'actives' : ''}}" data-id="2">
+    季卡
+  </view>
+   <view class="pronav-list {{curHdIndex==3 ? 'actives' : ''}}" data-id="3">
+    半年卡
+  </view>
+  <view class="pronav-list {{curHdIndex==4 ? 'actives' : ''}}" data-id="4">
+    年卡
+  </view>
+</view>
+<!--****************内容**********-->
+   <view class="jie-box" wx:if="{{empty==0}}">
+    <view class="list-box {{item.pan=='1'? 'list_actives' : ''}}" wx:for="{{list}}" wx:key="{{item.id}}">
+      <!-- *转介详情** -->
+      <view class="jie-list" catchtap='laName' data-id="{{index}}">
+        <view class="car-info">
+          <view class="car-fl">
+            <image src="{{item.banner}}" class="car-img"></image>
+          </view>
+          <view class="car-fr">
+            <text class="car-name">{{item.name}}</text>
+            <text class="car-money">￥{{item.moneys}}</text>
+          </view>
+        </view>
+        <view class="jie-time" >
+          <text class="jie-text">下单时间：{{item.create_at}}</text>
+          <view class="jie-times" >
+            <text class="look-info">查看详情</text>
+            <image src="../../images/xia.png" class="xiala {{item.pan=='1'? 'icon_actives' : ''}}"></image>
+          </view> 
+        </view> 
+      </view>
+      <!-- **消费记录** -->
+      <view class="fei-box  {{item.pan=='1'? 'box_actives' : ''}}">
+          <block wx:for="{{item.ka}}" wx:key="{{item.id}}">
+            <view class="fei-info {{ index % 2 == 0? 'fei-bg' : ''}}" wx:if="{{item.nums==1}}">
+              <view class="ci-box"><text class="ci">{{item.batch}}</text></view>
+              <text class="riqi ripis">已送货</text>
+              <text class="fei-money fei-moneys">送货时间：{{item.fa_time}}</text>
+            </view>
+            <view class="fei-info {{ index % 2 == 0? 'fei-bg' : ''}}" wx:else>
+              <view class="ci-box ci-boxs"><text class="ci cis">{{item.batch}}</text></view>
+              <text class="riqi">未送货</text>
+              <text class="fei-money"></text>
+            </view>
+          </block>
+      </view>
+    </view>
+   </view>
+   <view class="empty" wx:else>
+      <image src="../../images/empty.png" class="empty-icon"></image>
+      <text class="empty-text">您没有订单</text>
+   </view>

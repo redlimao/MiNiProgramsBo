@@ -1,0 +1,15 @@
+<!--pages/createList/createList.wxml-->
+<view class="container">
+    <view class="c-list">
+        <view class="c-item {{item.select == 2 ? 'on' : '' }}" wx:for="{{list}}" wx:key="{{index}}" bindtap='bindSelect' data-id='{{index}}'>
+            <view class="c-txt">充{{item.money}}<text class="c-txts">送{{item.moneys}}</text></view>
+            <text class="c-title">{{item.title}}</text>
+            <icon type="success" wx:if="{{item.select === 2}}" color="#bd8a39" size="20"/>
+            <icon type="circle" size="20" wx:else/> 
+        </view>
+    </view>
+  <view class="botBar">
+    <view class="tel" bindtap='bindPhone' data-phone='{{phone}}'>电话咨询</view>
+    <view class="buy" bindtap='bindBuy'>立即充值</view>
+  </view>
+</view>

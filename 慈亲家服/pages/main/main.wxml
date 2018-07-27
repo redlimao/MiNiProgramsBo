@@ -1,0 +1,90 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+  <!-- *********个人信息********** -->
+  <view class="main-box">
+    <view class="box"></view>
+    <view class="main">
+      <!-- 个人 -->
+      <view class="main-message">
+        <view class="main-photo">
+          <image src="{{photo}}" class="main-img"></image>
+        </view>
+        <view class="main-name">{{name}}</view>
+        <view class="er" bindtap='erName'>
+          <image src='../image/er.png' class="er-icon"></image>
+        </view>
+        <!-- 游客 -->
+         <view class="main-main" wx:if="{{cards==1}}" bindtap='cardName'>
+          <image src="../image/card.png" class="card-icon"></image>
+          <text class="main-choose">身份选择</text>
+        </view> 
+        <!-- 主家 -->
+        <view class="card" wx:if="{{cards==3}}" bindtap='cardName'>
+          我是雇主
+        </view>
+         <!-- 家服 -->
+        <view class="card jiafu" wx:if="{{cards==4}}" bindtap='cardName'>
+          我是家服
+        </view>
+         <!-- 商家 -->
+        <view class="card shang" wx:if="{{cards==2}}" bindtap='cardName'>
+          我是商家
+        </view>
+        <!-- 公司 -->
+        <view class="card gong" wx:if="{{cards==5}}" bindtap='cardName'>
+          我是公司
+        </view>
+      </view>
+      <!-- 需求 -->
+      <view class="main-xu">
+        <view class="xu-list" bindtap='ordersName' wx:if="{{cards!=4}}">
+          <text class="list-zhi" wx:if="{{cards==3}}">{{yue}}</text>
+          <text class="list-zhi" wx:if="{{cards==1}}">0</text>
+          <text class="list-zhi shang-zhi" wx:if="{{cards==2}}">{{yue}}</text>
+          <text class="list-zhi jiafu-zhi" wx:if="{{cards==4}}" >{{yue}}</text>
+          <text class="list-zhi gong-zhi" wx:if="{{cards==5}}" >{{yue}}</text>
+          <text class="list-name">我的预约</text>
+        </view>
+        <view class="xu-list" bindtap='xuName' wx:if="{{cards==3||cards==5}}">
+          <text class="list-zhi" wx:if="{{cards==3}}">{{xu}}</text>
+          <text class="list-zhi" wx:if="{{cards==1}}">0</text>
+          <text class="list-zhi shang-zhi" wx:if="{{cards==2}}">{{xu}}</text>
+          <text class="list-zhi jiafu-zhi" wx:if="{{cards==4}}" >{{xu}}</text>
+          <text class="list-zhi gong-zhi" wx:if="{{cards==5}}" >{{xu}}</text>
+          <text class="list-name">我的需求</text>
+        </view> 
+        <view class="xu-list" bindtap='pointsName'>
+          <text class="list-zhi" wx:if="{{cards==3}}">{{points}}</text>
+          <text class="list-zhi" wx:if="{{cards==1}}">0</text>
+          <text class="list-zhi shang-zhi" wx:if="{{cards==2}}">{{points}}</text>
+          <text class="list-zhi jiafu-zhi" wx:if="{{cards==4}}" >{{points}}</text>
+          <text class="list-zhi gong-zhi" wx:if="{{cards==5}}" >{{points}}</text>
+          <text class="list-name">我的乐豆</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- *********订单********** -->
+  <view class="main-order">
+    <view class="order-title">
+      <text class="title-text">我的订单</text>
+      <text class="look-more" bindtap='moreName'>全部订单</text>
+    </view>
+    <view class="order-box">
+     <block wx:for="{{common}}" wx:key="{{item.id}}">
+        <template is="navs" data="{{...item}}" />
+      </block>
+    </view>
+  </view>
+  <!-- *********主家********** -->
+   <view class="main-zhu" wx:if="{{cards!=1}}">
+    <view class="order-box in">
+      <block wx:for="{{nav}}" wx:key="{{item.id}}">
+        <template is="navs" data="{{...item}}" />
+      </block>
+      <view class="address" bindtap='chooseName' wx:if="{{cards==3||cards==2||cards==5}}"></view>
+    </view>
+  </view> 
+</view>
+
+<view class="about" bindtap='aboutName'>关于慈亲家服</view>

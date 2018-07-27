@@ -1,0 +1,6 @@
+/* pages/rule/rule.wxss */
+page{
+  background:#fff;
+}
+.con{padding: 20rpx;font-size: 34rpx;width: 100%;box-sizing: border-box;}
+.con image{width: 100%!important;}

@@ -1,0 +1,33 @@
+@import "../template/template.wxss";
+.inner .gu_list{
+  width:890rpx;
+  height:140rpx;
+  padding: 40rpx 30rpx;
+  background:#fff;
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+  margin-bottom:20rpx;
+  overflow:hidden;
+  transition: all 0.5s linear;
+}
+.inner .gu_list .gu_fr .gu_tels{
+  width:100rpx;
+  height:40rpx;
+  border:1rpx solid rgb(254,1,55);
+  border-radius:6rpx;
+  text-align:center;
+  line-height:40rpx;
+  color: rgb(254,1,55);
+  font-size:26rpx;
+}
+.inner .gu_list .gu_fr{
+  display:flex;
+  justify-content:space-between;
+  flex-direction: column;
+  float:left;
+  height:140rpx;
+  margin-left:30rpx;
+}
+.inner .gu_list .gu-del{
+  float:right;
+}

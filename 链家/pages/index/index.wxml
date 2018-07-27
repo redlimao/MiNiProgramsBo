@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container" wx:if="{{flag != 1}}">
+    <image class="b-bg" src='../../images/bg_a1.png'></image>
+    <view class="box">
+        <form bindsubmit="bindNew" report-submit="true" class="form-box">
+            <view class="wrap" >
+                <image src='../../images/bg_new.png' class="img"></image>
+                <view class='info'>
+                    <text class="title">新用户</text>
+                    <text class="txts">您之前如果从未登记或使用过链家请选择这里</text>
+                </view>
+                <icon size='20' color='#208BEF' type='{{tip_a}}'></icon>    
+            </view>
+             <button formType="submit" class="btns"></button> 
+        </form>
+        <form bindsubmit="bindOld" report-submit="true" class="form-box">
+            <view class="wrap">
+                <image src='../../images/bg_old.png' class="img"></image>
+                <view class='info'>
+                    <text class="title1">老用户</text>
+                    <text class="txts">如果您在链家购买或租过房请选择这里。</text>
+                </view>
+                <icon size='20' color='#159F59' type='{{tip_b}}'></icon>     
+            </view>
+            <button formType="submit" class="btns"></button>   
+        </form>
+    </view>
+    <view class="box-logo">
+        <image src='../../images/logo.png' class="logo"></image>
+        <image src='../../images/tip.png' class="tip"></image>
+    </view>
+    <image class="box-foot" src="../../images/bg_a2.png"></image>
+</view>

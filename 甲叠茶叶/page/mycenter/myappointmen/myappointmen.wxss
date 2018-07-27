@@ -1,0 +1,11 @@
+.menu{display: flex;justify-content: space-around;background-color: #fff;}
+    .m-item{height: 90rpx;border-bottom: 4rpx solid transparent;box-sizing: border-box;text-align: center;line-height: 90rpx;font-size: 30rpx;color: #666;}
+    .m-item.on{border-bottom: 4rpx solid #826540;color: #826540;}
+.c-list{margin-top: 20rpx;padding: 0 20rpx;width: 100%;box-sizing: border-box;}
+    .c-item{padding:20rpx 25rpx 0 25rpx;margin-bottom: 20rpx;background-color: #fff;border-radius: 10rpx;}
+        .c-tit{font-size: 30rpx;color: #333;line-height: 60rpx;height: 60rpx;}
+        .c-txt{font-size: 30rpx;color: #666;border-bottom: 1rpx dotted #ececec;line-height: 60rpx;height: 60rpx;padding-bottom: 20rpx;}
+        .btns{height: 90rpx;display: flex;align-items: center;justify-content: flex-end;}
+            .btn-in{height: 50rpx;border: 1rpx solid #999999;border-radius: 25rpx;line-height: 50rpx;margin-left: 20rpx;font-size: 26rpx;box-sizing: border-box;color: #333;text-align: center;width: 150rpx;}
+    .empty{font-size: 26rpx;color: #ccc;text-align: center;padding: 200rpx 0;}
+    .pl{padding-left: 20rpx;}

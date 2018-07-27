@@ -1,0 +1,304 @@
+/* pages/main/main.wxss */
+page{
+  background:#f8f8f8;
+  position:relative;
+}
+.company_img{
+  width:100%;
+  height: 100%;
+  background:#fff;
+}
+.swiper{
+  width:100%;
+}
+.swiper .company_banner{
+  width:100%;
+  height:100%;
+}
+.company_info{
+  margin-bottom:20rpx;
+}
+.container .companys{
+  width:100%;
+  height:90rpx;
+  display:flex;
+  justify-content:space-around;
+    background:#fff;
+}
+.container .companys .company_titles{
+  display:block;
+  line-height:90rpx;
+  color:#a0a0a0;
+}
+.container .companys .company_titles.active{
+  color:#b481bb;
+  border-bottom:4rpx solid #b481bb;
+}
+.company_title .company_icon{
+  width:36rpx;
+  height:36rpx;
+  margin-top:2rpx;
+  float:left;
+  margin-right:10rpx;
+}
+.company_center{
+  text-align:center;
+  font-weight:bold;
+}
+.company_title{
+  height:40rpx;
+  overflow:hidden;
+  margin-bottom:30rpx;
+}
+.company_title .company_titles{
+  font-size:32rpx;
+  color:#b481bb;
+  float:left;
+}
+.company_cont{
+  font-size:32rpx;
+}
+.company_conts{
+  font-size:32rpx;
+}
+.gong-jie{
+  background:#fff;
+  margin-bottom:50rpx;
+  padding:0 30rpx;
+}
+.company_adds{
+  padding:30rpx;
+  background:#fff;
+  margin-bottom:20rpx;
+}
+.company_adds .company_map{
+  width:690rpx;
+  height:276rpx;
+  margin:0 auto;
+  display: block;
+  margin-bottom:10rpx;
+}
+.company_adds .company_add-info{
+  font-size:32rpx;
+  color:#353433;
+}
+
+.company_tels{
+  width:308rpx;
+  height:113rpx;
+  margin:0 auto;
+  margin-top:80rpx;
+}
+.company_tels .company_phone{
+  width:100%;
+  height:100%;
+}
+
+.people-list{
+  width:690rpx;
+  border-radius:6rpx;
+  margin:0 auto;
+  margin-bottom:20rpx;
+  position: relative;
+  overflow:hidden;
+}
+.people-box{
+  width:160rpx;
+  height:160rpx;
+  border-radius:50%;
+  position: absolute;
+  left:0;
+  right:0;
+  z-index:1;
+  margin:0 auto;
+  background:#fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+.people-img{
+  width:150rpx;
+  height:150rpx;
+  border-radius:50%;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+.people-cont{
+  width:650rpx;
+  border-radius:6rpx;
+  background:#fff;
+  margin:0 auto;
+  margin-top:80rpx;
+  padding:0 20rpx;
+  padding-top:80rpx;
+  padding-bottom:30rpx;
+  box-shadow: 0 4rpx 20px rgba(0,0,0,0.05);
+}
+.people-cont .people-name{
+  font-size:36rpx;
+  color:#434343;
+  margin-bottom:26rpx;
+}
+.people-cont .people-info{
+  font-size:30rpx;
+  color:#434343;
+}
+.right-item{
+  display:none;
+}
+.right-item.active{
+  display:block;
+}
+.mask{
+  width:100%;
+  height:1110rpx;
+  background:rgba(0,0,0,0.8);
+  position:fixed;
+  left:0;
+  top:0;
+  z-index:1
+}
+.mask .yuan{
+  width:100%;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+
+/* ===门店介绍==== */
+.index-common{
+  margin-top: 20rpx;
+  background:#fff;
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+}
+.index-show{
+  background:#fff;
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+  margin-top:20rpx;
+}
+.show-title{
+  padding:0 30rpx;
+  height:90rpx;
+  line-height: 90rpx;
+  overflow:hidden;
+  border-bottom:1rpx solid #eee;
+}
+.show-title .show-icon{
+  width:34rpx;
+  height:34rpx;
+  display:block;
+  float:left;
+  margin-right:16rpx;
+  margin-top:28rpx;
+}
+.show-text{
+  line-height:30rpx;
+  display:block;
+  float:left;
+  margin-top:30rpx;
+  color:rgb(0,24,52);
+  font-size:30rpx;
+  font-weight:bold;
+}
+.show-button{
+  width:130rpx;
+  height:50rpx;
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  float:right;
+  text-align: center;
+  line-height:50rpx;
+  border-radius:50rpx;
+  color:#ffffff;
+  font-size:22rpx;
+  margin-top:20rpx;
+    background-color: #58c807;
+}
+
+.inner{
+  width:100%;
+  background:#fff;
+}
+.inner-list{
+  width:710rpx;
+  height:160rpx;
+  padding:20rpx 0;
+  margin:0 auto;
+  border-bottom:1rpx solid #eee;
+  display: flex;
+}
+.inner-list:nth-last-child(1){
+  border:none;
+}
+.inner-list .inner-img{
+  width:160rpx;
+  height:160rpx;
+  border-radius:4rpx;
+  margin-right:20rpx;
+}
+.inner-list .inner-cont{
+  width:380rpx;
+  height:84rpx;
+  margin-top:37rpx;
+  font-size:30rpx;
+  color:#494647;
+  float:left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.inner-list .inner-inner{
+  flex: 1;
+}
+.inner-inner .inner-title{
+    overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;
+  font-size:30rpx;
+  color:#494647;
+}
+.inner-inner .inner-content{
+    padding-top: 30rpx;
+  font-size:26rpx;
+  color:rgb(173,166,168);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+    .emptye{
+  width:670rpx;
+  height:30rpx;
+    padding-top: 200rpx;
+    margin: 0 auto;
+    line-height:30rpx;
+  color:rgb(177, 174, 171);
+  font-size:24rpx;
+  text-align:center;
+}
+
+.address-wrap{height: 100rpx;display: flex;align-items: center;padding: 0 24rpx;}
+    .address{font-size:30rpx;color:rgb(127,127,127);flex: 1;}
+    .btn-in{width: 32rpx;height: 32rpx;margin-left: 20rpx;}
+    .wrap{margin-top: 20rpx;background-color: #fff;padding: 0 24rpx;}
+    .titleStyle{display: flex;flex-flow: row nowrap;align-items: center;}
+       .titleStyle image{width:36rpx;height:36rpx;margin-right: 20rpx;}
+        .title{line-height:80rpx;color:rgb(0,24,52);font-size:30rpx;font-weight:bold;display: block;}
+        .introl{font-size:30rpx;color:rgb(127,127,127);line-height: 40rpx;height: 120rpx;overflow: hidden;text-indent: 2em;}
+        .more{line-height: 80rpx;text-align: right;font-size: 30rpx;color:rgb(127,127,127);}
+        .introl.on{height: auto;}
+.show-cont{padding:40rpx;display:flex;flex-wrap: wrap;font-size:30rpx;color:rgb(127,127,127);}
+.show-cont .show-img{display:block;width:200rpx;height:200rpx;margin-bottom: 10rpx; margin-right: 35rpx;}
+.show-cont .show-img:nth-child(3n+3){margin: 0;}
+.mask{width:100%;height:100%;background:rgba(0,0,0,0.8);position:fixed;left:0;top:0;z-index:2}
+.mask .banner-bg{position:absolute;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);top: 50%; left: 50%;margin:auto;width:100%;height:100%;}
+.swiper image.yuan{width:100%;}

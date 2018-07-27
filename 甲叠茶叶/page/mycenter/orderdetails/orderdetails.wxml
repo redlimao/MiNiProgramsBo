@@ -1,0 +1,78 @@
+<!-- 收货地址 -->
+ <view class="wrap-address" bindtap='bindAddress'  wx:if="{{types == 1}}"> 
+    <image class="icon-address" src='../../../images/icon-address.png'></image>
+    <view class="w-infos">
+        <view class="w-infos-tit">
+            <view class="w-infos-txt">收货人：{{name}}</view>
+            <view class="w-infos-txt">{{phone}}</view>
+        </view>
+        <view class="w-infos-txts">{{address}}</view>
+    </view>
+    <image class="icon-in" src='../../../images/icon_in.png'></image>
+</view> 
+ <view class="wrap-address" wx:else> 
+    <image class="icon-address" src='../../../images/icon-address.png'></image>
+    <view class="w-infos">
+        <view class="w-infos-tit">
+            <view class="w-infos-txt">收货人：{{name}}</view>
+            <view class="w-infos-txt">{{phone}}</view>
+        </view>
+        <view class="w-infos-txts">{{address}}</view>
+    </view>
+    <!-- <image class="icon-in" src='../../../images/icon_in.png'></image> -->
+</view> 
+<!-- 分割线 -->
+<image src='../../../images/bottom-line.png' class="line"></image>
+<!-- 商品详情 -->
+<view class="con">
+    <!-- <view class="c-tit">{{store_name}}</view> -->
+    <view class="c-box" bindtap='bindDetail'>
+        <image class="c-img" src='{{shop_img}}'></image>
+        <view class="c-info">
+            <view class="c-title">{{shop_name}}</view>
+            <view class="c-tag">已选标签:{{tag_name}}</view>
+            <view class="c-infos">
+                <view class="c-infos-txt1">{{shop_money}}</view>
+                <view class="c-infos-txt2">x{{numbers}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 积分 优惠券 -->
+<view class="list">
+    <view class="item" wx:if="{{coupons_id !== 0}}">
+        <view class="item-txt">优惠券</view>
+        <view class="item-txts">满{{coupon_man}}减{{coupon_money}}</view>
+        <image class="icon-in" wx:if="{{types == 1}}" src='../../../images/icon_in.png'></image>
+    </view>
+    <view class="item" wx:if="{{covers !== 0}}">
+        <view class="item-txt">使用积分</view>
+        <view class="item-txts" wx:if="{{types == 1}}">可使用{{use_integra}}积分抵用{{use_integra * integra_data}}元</view>
+        <view class="item-txts" wx:if="{{types == 2 || types == 3 || types == 4 || types == 5}}">已使用{{covers}}积分抵用{{use_integra * integra_data}}元</view>
+        <view class="i-switch" wx:if="{{types == 1}}">
+            <switch bindchange="bindIntegral" checked='{{flag_check ? true : false}}' />
+        </view>
+    </view>
+    <!-- <view class="item">
+        <view class="item-txt">我的积分</view>
+        <view class="item-txt">{{my_integra}}</view>
+    </view> -->
+    <view class="item">
+        <view class="item-txt">实际支付金额</view>
+        <view class="item-txt">¥{{total_money}}</view>
+    </view>
+     <view class="item" wx:if="{{trade_no != 1 && (types == 2 || types == 3 || types == 4 || types == 5)}}">
+        <view class="item-txt">订单号</view>
+        <view class="item-txt">{{trade_no}}</view>
+    </view>
+</view>
+<!-- 总金额  -->
+<!-- 已完成状态 -->
+<view class="foot">
+    <view class="f-btn" catchtap='bindDelete' data-index='{{index}}' wx:if="{{types == 5 || types == 1}}" data-id='{{item.orders_id}}'>删除订单</view>
+    <view class="f-btn" wx:if="{{types == 5}}">已评价</view>
+    <view class="f-btn" data-id='{{item.orders_id}}' catchtap='bindDetail' wx:if="{{types == 1}}">立即支付</view>
+    <view class="f-btn" catchtap='bindSend' wx:if="{{types == 2}}">提醒发货</view>
+    <view class="f-btn" data-id='{{item.orders_id}}' catchtap='bindTake' wx:if="{{types == 3}}">确认收货</view>
+    <view class="f-btn" data-id='{{item.orders_id}}' catchtap='bindEvaluate' wx:if="{{types == 4}}">立即评价</view>
+</view>

@@ -1,0 +1,25 @@
+
+/*内容区域*/
+/* ======滑动菜单===== s>=slider */
+.slider-wrap{padding:0 24rpx;border-top:1rpx solid rgb(238,238,238);background-color: #fff;box-sizing: border-box;width: 100%;}
+	.slider-box{height:80rpx;display:flex;white-space:nowrap;justify-content: space-around;}
+	.slider-menu{margin: 0 10rpx;height:80rpx;line-height:80rpx;font-size:30rpx;color:rgb(51,51,51);box-sizing: border-box;padding: 0 20rpx;}
+    .slider-menu.on{border-bottom:4rpx solid #4fb94b;color: #4fb94b;}
+
+/* 会员信息 */
+.info{width: 100%;box-sizing:border-box;}
+.txt-box{margin-top: 10rpx;background-color: #fff;display: flex;padding: 24rpx 24rpx;align-items: center;}
+    .txt1,.txt2{font-size: 30rpx;line-height:60rpx;color:#ff695b;flex: 1;padding-right: 20rpx;}
+    .txt2{color: #c0c0c0;}
+    .btn-sure{width:140rpx;height:56rpx;line-height:56rpx;text-align:center;color:#fff;background:#ff695b;font-size:26rpx;border-radius:5rpx;}
+    .lists{width: 100%;}
+    .list{background-color: #fff;padding: 24rpx 24rpx;margin-top: 10rpx;}
+        .list-tit{font-size: 30rpx;color: #333;}
+        .list-title{width: 140rpx; height: 50rpx;border-radius: 20rpx;background-color:#4fb94b;line-height: 50rpx;color: #fff;font-size: 26rpx;text-align: center;margin: 0 auto;}
+        .list-money{line-height: 80rpx;font-size: 32rpx;color: #ff695b;}
+        .list-txt{font-size: 28rpx;line-height: 60rpx;color: #333;}
+
+        .text-box{display: flex;margin-top: 40rpx;}
+            .money{line-height:30rpx;font-size: 30rpx;font-weight: bold;color:#ff695b; flex: 1;}
+            .time{line-height: 30rpx;font-size: 24rpx;color: #c0c0c0;}
+

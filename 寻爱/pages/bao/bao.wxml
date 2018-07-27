@@ -1,0 +1,29 @@
+<!--pages/createList/createList.wxml-->
+<view class="container">
+  <view class="back" bindtap='backName'>
+    <image src="../../images/back.png" class="back-icon"></image>
+  </view>
+  <view class="create_list" wx:for="{{list}}" wx:key="{{index}}" bindtap='createName' data-index="{{index}}" data-money="{{item.moneys}}" data-id="{{item.id}}" data-phone="{{item.phone}}">
+    <view class="list-img">
+      <image src="{{item.img}}" class="img-guan"></image>
+    </view>
+    <view class="money-info">
+      <text class="money-fu">￥</text>{{item.pin}}
+    </view>
+    <view class="info-list {{item.flag==1 ? 'actives' :''}}">
+      <view class="info-title">
+        <text class="border"></text>
+        <text class="title-text">介绍</text>
+      </view>
+      <view class="info-inner">
+        <text class="info-intro">{{item.intro}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="botBar">
+    <view class="tel" bindtap='telName'>电话咨询</view>
+    <view class="buy"  bindtap='buyName'>
+      ￥{{money}}　购买
+    </view>
+  </view>
+</view>

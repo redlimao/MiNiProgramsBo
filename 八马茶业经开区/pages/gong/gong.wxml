@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="company_img">
+    <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"> 
+      <swiper-item  bindtap="bannerName"  wx:for="{{banner}}" wx:key="{{index}}">  
+        <image src="{{item.banner}}"  class="company_banner"/>   
+      </swiper-item>
+    </swiper> 
+  </view>
+   <view class="wrap">
+        <text class="title">公司简介</text>
+        <view class="introl {{flag_txt == 1 ? 'on' : ''}}">{{address[0].intro}}</view>
+        <view class="more" catchtap='bindMore'>{{flag_txt == 1 ? '收起' : '查看更多'}}</view>
+   </view>
+    <view class="index-common" bindtap='mapName' wx:for="{{address}}" wx:key="{{box_index}}" data-wei='{{ones.wei}}' data-jing='{{ones.jing}}' wx:for-item='ones' data-id='{{box_index}}' wx:for-index='box_index'>
+        <view class="show-title">
+            <image src="../../images/index-info.png" class="show-icon"></image>
+            <text class="show-text">{{ones.title}}</text>
+            <text class="show-button" catchtap='telName' data-phone='{{ones.phone}}'>一键拨号</text>
+        </view>
+        <view class="address-wrap">
+            <text class="address">{{ones.address}}</text>
+            <image class="btn-in" src='../../images/more.png'></image>
+        </view>
+        <!-- 店面图片 -->
+        <view class="show-cont">
+            <image wx:for="{{ones.one}}" data-index='{{box_index}}' wx:for-item='two' src="{{two}}" class="show-img" mode="aspectFill"  data-id="{{index}}" wx:key="{{index}}" catchtap='yuanName'></image>
+        </view>
+    </view>
+</view>
+<!-- 弹出层 -->
+<view class="mask" wx:if="{{flag==1}}" bindtap='huiName'>
+    <view class="banner-bg">
+        <swiper class="swiper" style="width:100%;height:100%" circular="true"  autoplay="false" interval="5000" duration="1000" current='{{img_index}}'>
+            <block wx:for="{{address[pop_index].one}}" wx:key="{{index}}" wx:key="{{index}}">
+                <swiper-item>
+                    <image src="{{item}}" class="yuan" mode="widthFix" ></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+</view>

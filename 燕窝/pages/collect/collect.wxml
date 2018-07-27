@@ -1,0 +1,12 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+  <view wx:if="{{emptyss==0}}">
+    <block wx:for="{{car}}" wx:key="{{item.id}}">
+      <template is="ordersList" data="{{...item}}" />
+    </block> 
+  </view>
+  <view class="empty" wx:else>
+    <image src="../image/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无收藏的商品</text>
+  </view>
+</view>

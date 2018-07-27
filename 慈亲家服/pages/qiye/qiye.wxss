@@ -1,0 +1,95 @@
+/* pages/geren/geren.wxss */
+
+.test text {
+  font-size: 32rpx;
+  width: 33%;
+  color: #666;
+}
+
+.test input {
+  width: 470rpx;
+}
+
+.picker {
+  line-height: 88rpx;
+  font-size: 26rpx;
+}
+
+.zhao {
+  margin-top: 10rpx;
+  background: #fff;
+  text-align: center;
+  height: 336rpx;
+  border-bottom: 2rpx solid #dde2e7;
+  display:flex;
+  justify-content:space-around;
+}
+
+.wid {
+  width: 45%;
+  float:left;
+}
+.photo-box{
+  border:2rpx dashed rgb(255,158,31);
+  height:220rpx;
+  position: relative;
+}
+.fabu {
+  margin-top: 30rpx;
+}
+
+.chuan {
+  width: 100rpx;
+  height: 100rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+
+.zheng {
+  margin: 20rpx auto;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.zhengjian {
+  font-size: 30rpx;
+  color: #333;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+button {
+  width: 670rpx;
+  height: 88rpx;
+  background: rgb(255,158,31);
+  color: #fff;
+  margin-top:200rpx;
+}
+
+.tong {
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+}
+
+.ico {
+  margin-right: 20rpx;
+}
+
+.tong span {
+  font-size: 26rpx;
+}
+.he{
+  width:100%;
+  text-align:center;
+  font-size:30rpx;
+  color:#888;
+  margin-top:100rpx;
+}
+.yingye {
+  width: 256rpx;
+  padding-left: 47.5rpx;
+}

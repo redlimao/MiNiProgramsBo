@@ -1,0 +1,6 @@
+/**addAddress.wxss**/
+.box-form{padding-top: 20rpx;width: 100%;}
+    .box{background-color: #fff;display: flex;padding: 0 24rpx;}
+        .lable-txt{line-height: 80rpx;color: #333333;font-size: 32rpx;width: 140rpx;}
+        .input-txt{line-height: 80rpx;color: #333333;font-size: 32rpx;height: 80rpx;flex: 1;}
+    .btn-submit{background:#59d0d0;color:#fff;width:670rpx;height:94rpx;margin:0 auto;margin-top:500rpx;}

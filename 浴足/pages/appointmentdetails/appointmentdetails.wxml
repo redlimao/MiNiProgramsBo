@@ -1,0 +1,110 @@
+<!--pages/appointmentdetails/appointmentdetails.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+    <form class="box-f" bindsubmit="formSubmit">
+        <!-- 项目信息 -->
+        <view class="model mt-20">
+            <text class="tit flex-1">{{info.name}}</text>
+            <view class="txt-a pl-20"><text class="color-c">{{info.moneys_one}}{{info.moneys_two}}</text></view>
+        </view>
+        <!-- 附带服务 -->
+        <view class="model-list" wx:if="{{list_info != 1}}">
+            <view class="model bt-1" bindtap="bindIcon" wx:for="{{list_info}}" wx:key="{{index}}" data-id='{{index}}'>
+                <icon type="success" size="18" color="#dbe1e2" wx:if="{{item.pan == 1}}"/>
+                <icon type="success" size="18" color="#59d0d0" wx:else  />
+                <text class="tit pl-20">{{item.name}}</text>
+                <text class="txt-a flex-1 pl-30">{{item.fu_moneys}}</text>
+                <image class="help-icon" src="../../images/help_icon.png" catchtap='bindopenpop' data-id='{{index}}' data-flag='1'></image>
+            </view>        
+        </view>
+        <view class="model flex-end bt-1">
+            <view class="box">
+                <view class="box-txt1" bindtap='bindSubtract'>-</view>
+                <view class="box-txt2 flex-1">{{nums}}</view>
+                <view class="box-txt3" bindtap='bindAdd'>+</view>
+            </view>        
+        </view>
+        <!-- 服务地点 -->
+        <view class="model-d bb-1 mt-20" bindtap='bindAddress'>
+            <image class="icon-c mt-28" src="../../images/mess_icon3.png"></image>
+            <text class="txt-b pl-20">服务地点</text>
+             <text class="txt-d txt-b flex-1 pl-20" wx:if="{{address_flag == 1}}" >请选择服务地址</text>
+             <text class="txt-e tit flex-1 pl-20" wx:if="{{address_flag == 2}}" >{{address}}</text> 
+            <input name="address" placeholder='请选择服务地址' wx:if="{{address_flag == 3}}" type='text' value='{{address}}' class="txt-d txt-b flex-1 pl-20"></input>
+            <image class="icon-in mt-32" src="../../images/icon_in.png" wx:if="{{address_flag == 1 || address_flag == 2}}"></image> 
+        </view>        
+        <!-- 姓名 -->
+         <view class="model bb-1">
+            <image class="icon-c" src="../../images/mess_icon4.png"></image>
+            <text class="txt-b pl-20">联系姓名</text>
+            <input type='text' name="name" value="{{name}}" class="input-txt" placeholder-style="z-index1" placeholder="请填写姓名"></input>
+        </view>                                                     
+        <!-- 联系电话 -->
+         <view class="model bb-1">
+            <image class="icon-c" src="../../images/mess_icon1.png"></image>
+            <text class="txt-b pl-20">联系电话</text>
+            <input type='number' name="phone" value="{{phone}}" class="input-txt" placeholder-style="z-index1" placeholder="请填写手机号码"></input>
+        </view> 
+        <!-- 上门时间 -->
+        <view class="model bb-1 pr">
+            <image class="icon-c" src="../../images/mess_icon2.png"></image>
+            <text class="txt-b pl-20">上门时间</text>
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange" name="date" class="box-picker">
+                <text class="picker-tit1">{{date}}</text>
+            </picker>
+            <text class="picker-tit"></text>
+            <picker mode="time" value="{{time}}" bindchange="bindTimeChange" name="time">
+                <text class="picker-tit">{{time}}</text>
+            </picker>
+        </view>
+        <!-- 备注信息 -->
+        <view class="area-box">
+            <input name="remark" placeholder-style="z-index1" class="areas" placeholder="请输入备注信息" value='{{remark}}'></input>
+            <view class="tags" wx:if="{{tags != 1}}">
+                <view class="item {{item.pan == 1 ? '' : 'on'}}" wx:for="{{tags}}" wx:key="{{index}}" data-id='{{index}}' bindtap='bindTags'>{{item.name}}</view>
+            </view>
+        </view>
+        <!-- 晚班加费 -->
+        <view class="model mt-20" wx:if="{{jia != 1}}">
+            <text class="tit">晚班加费</text>
+            <text class="txt-a flex-1 pl-20">{{info.jia_moneys}}元</text>
+        </view>
+        <!-- 优惠券 -->
+        <view class="model mt-20">
+            <text class="tit">优惠券</text>
+            <text class="txt-a flex-1 pl-20" wx:if="{{coupons.coupons == 1}}">暂无优惠券</text>
+            <text class="txt-a flex-1 pl-20" wx:if="{{coupon_flag == 2}}">已使用优惠券满{{man}}减{{money}}</text>
+            <text class="txt-a flex-1 pl-20" wx:if="{{coupon_flag == 1}}">暂无优惠券可用</text>
+        </view>
+        <!-- 定金 -->
+        <view class="model bt-1">
+            <view class="tit">总价：<text class="color-c">¥{{total}}</text></view>
+        </view>
+        <!-- 服务条款 -->
+        <view class="info">
+            <icon type="success" size="18" color="#dbe1e2" wx:if="{{flag == 1}}" bindtap='bindIn'/>
+            <icon type="success" size="18" color="#59d0d0" wx:else bindtap='bindIn' />
+            <view class="txt-a pl-20" bindtap='bindIn'>支付说明，</view>
+            <text class="url" bindtap='bindopenpop' data-flag='2'>查看详情</text>
+        </view>
+        <button class="btn-sure" formType="submit">确定预约</button>
+    </form>
+</view>
+<!-- 弹窗 -->
+<view class="pop-bg {{pop_flag == 1 ? '' : 'on'}}" bindtap='bindclosepop'>
+    <view class="pop1" wx:if="{{item_flag == 1}}">
+        <text class="p-close" bindtap='bindclosepop'>关闭</text>
+        <text class="p-tit bb-1">服务介绍</text>
+        <text class="p-txt">{{list_info[pop_index].intro}}</text>
+    </view>
+    <view class="pop1" wx:else>
+        <text class="p-close" bindtap='bindclosepop'>关闭</text>
+        <text class="p-tit bb-1">支付说明</text>
+        <view class="p-txt">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </view>
+    </view>
+</view>
+
+
+

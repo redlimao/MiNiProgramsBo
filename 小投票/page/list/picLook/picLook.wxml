@@ -1,0 +1,63 @@
+<view class="container">
+<!-- 参与人数 分享 -->
+    <view class="top">
+        <image class="t-img" src='{{user.img}}'></image>
+        <view class="t-num">参与人数：{{user.numbers}}</view>
+        <image class="t-share" src="../../../images/icon_share.png"></image>
+        <button open-type='share' class="btn-share"></button>
+    </view>
+    <!-- 标题 -->
+    <view class="title">{{user.title}}</view>
+    <!-- 补充说明 -->
+    <view class="titles">补充说明：{{user.titles}}</view>
+    <!-- 截止时间 -->
+    <view class="time">截止时间：{{user.date}}      {{user.time}}</view>
+    <!-- 投票选项 -->
+    <view class="list">
+        <view class="item" wx:for="{{list_item}}" wx:key="{{index}}">
+            <image class="i-img" src='{{item.img}}' mode='aspectFill' bindtap='bindPrevie' data-img='{{item.img}}'></image>
+            <view class="info-box">
+                <view class="info">
+                    <view class="info-tit">{{item.content}}   <text class="col">{{item.num}}票</text></view>
+                    <!-- 投票进度条 -->
+                    <view class="info-grey">
+                        <view class="info-light" style='width:{{item.percent}}'></view>
+                    </view>
+                </view>
+                <view class="info-btn" bindtap='bindOpenPop' data-index='{{index}}'>
+                    <!-- 弹出框 -->
+                    <image class="info-icon" src="../../../images/icon_more.png"></image>
+                    <view class="info-num">{{item.percent}}</view>
+                </view>            
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 弹窗 -->
+<view class="pop-bg {{flag_pop == true ? 'on' : ''}}" bindtap='bindHidePop'></view>
+<view class="pop {{flag_pop == true ? 'on' : ''}}">
+    <view class="pop_list">
+        <!-- 排名 -->
+        <view class="p-item">
+            <view class="p-tit">{{ranking}}</view>
+            <view class="p-txt">排名</view>
+        </view>
+        <view class="p-item" bindtap='bindcomment'>
+            <image class="p-icon" src="../../../images/icon_words.png"></image>
+            <view class="p-txt">说点什么</view>
+        </view>
+        <view class="p-item" bindtap='bindGood' data-index='{{pop_index}}'>
+            <image class="p-icon" wx:if="{{flag_good == false}}" src="../../../images/icons_grey.png"></image>
+            <image class="p-icon" wx:if="{{flag_good == true}}" src="../../../images/icons_light.png"></image>
+            <view class="p-txt">投一票</view>
+        </view>
+        <view class="p-item" wx:for="{{list_money}}" wx:key="{{index}}">
+            <view class="p-tits">¥{{item.money}}</view>
+            <view class="p-txt">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="pop-tip" bindtap='bindWarn'>
+        <image class="pop-tip-i" src='../../../images/icon_warn.png'></image>
+        <view class="pop-tip-t">举报投票</view>
+    </view>
+</view>

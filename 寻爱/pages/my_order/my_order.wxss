@@ -1,0 +1,20 @@
+@import "../template/template.wxss";
+.empty{
+  width:670rpx;
+  height:278rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  top:600rpx;
+}
+.empty .empty-icon{
+  width:249rpx;
+  height:278rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}

@@ -1,0 +1,42 @@
+<import src="../template/template.wxml"/>
+<!--index.wxml-->
+<view class="container">
+      <!-- 滑动菜单 -->
+    <view class="slider-wrap">
+        <scroll-view scroll-x="true" bindtap="tabs" style="width: 100%">
+            <view class="slider-box">
+                <view class="slider-menu {{currentIndex == 1 ? 'on':''}}" data-id="1">已发布商品</view>
+                <view class="slider-menu {{currentIndex == 2 ? 'on':''}}" data-id="2">成交订单</view>
+            </view>
+        </scroll-view>
+    </view>
+  <block wx:if="{{empty==0}}">
+    <view class="list-boxs" wx:for="{{goods}}" wx:key="{{itme.index}}" bindtap='bindtags' id="{{item.id}}" data-phone='{{item.phone}}'>
+      <view class="list-con">
+        <image class="list-img" src="{{item.banner}}"></image>
+        <view class="list-tits">
+          <text class="list-tit">{{item.name}}</text>
+            <text class="list-txt1 lh-40" wx:if="{{currentIndex==1}}">库存：{{item.nums}}</text>
+            <text class="list-txt1 lh-40" wx:if="{{currentIndex==2}}">姓名：{{item.user_name}}</text>
+            <text class="list-txt1 lh-40" wx:if="{{currentIndex==2}}">电话：{{item.phone}}</text>
+          <view class="list-end">
+            <text class="list-time {{currentIndex == 2 ? 'hide' : ''}}">{{item.create_at}}</text>
+            <text class="list-momey {{currentIndex == 2 ? 'hide' : ''}}">已交定金：¥{{item.moneys}}</text>
+          </view>
+        </view>  
+        <text class="list-txt1 lh-40" wx:if="{{currentIndex==2}}">订单编号:{{item.trade_no}}</text>
+      </view>
+      <view class="result">
+         <text class="result-txt {{currentIndex == 2 ? 'show':''}}" wx:if="{{item.status==2}}">交易正在进行中</text>
+         <text class="result-txt {{currentIndex == 2 ? 'show':''}}" wx:if="{{item.status!=2}}">交易已结束</text>  
+        <view class="btn-result {{currentIndex == 1 ? 'show':''}}" bindtap='bindcomplete' id="{{item.id}}" data-user='{{item.user_id}}'>内容编辑</view>
+        <view class="btn-result {{currentIndex == 2 ? 'show':''}}">已完成</view>
+      </view>
+    </view> 
+  </block>
+  <view class="empty" wx:else>
+    <image src="../../images/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无内容</text>
+  </view>
+
+</view>

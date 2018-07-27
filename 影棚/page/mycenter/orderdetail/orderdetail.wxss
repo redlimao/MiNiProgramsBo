@@ -1,0 +1,6 @@
+.wrap{width: 100%;padding: 40rpx 20rpx 0 20rpx;box-sizing: border-box;}
+    .i-item{padding-bottom:80rpx;}
+        .i-tit{font-size: 24rpx;color: #9C9C9C;}
+        .i-txt{line-height: 74rpx;color: #2B2B2B;font-size: 34rpx;}
+        .i-txt.on{color: #FF2613;}
+.btn{width: 520rpx;height: 80rpx;text-align: center;line-height: 80rpx;font-size: 34rpx;color: #2B2B2B;background-color: #FDCF44;border-radius: 5rpx;margin: 0 auto;margin-top: 300rpx;}

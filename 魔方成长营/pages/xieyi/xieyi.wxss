@@ -1,0 +1,21 @@
+/* pages/xieyi/xieyi.wxss */
+page{
+  background:#fff;
+}
+.xieyi{
+  font-size:28rpx;
+  color:#434545;
+  padding:40rpx;
+}
+.xieyi text{
+  font-size:28rpx;
+  display:block;
+  margin-bottom:10rpx;
+  width:100%;
+}
+.title{
+  width:100%;
+  text-align:center;
+  margin-bottom:10rpx;
+  font-size:28rpx;
+}

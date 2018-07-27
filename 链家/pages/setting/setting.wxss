@@ -1,0 +1,7 @@
+/**setting.wxss**/
+.wrap{padding: 0 20rpx;width: 100%;box-sizing: border-box;display: block;}
+    .box{display: flex;align-items: center;border-bottom: 1rpx solid #EEEEEE;height: 100rpx;}
+        .txt{display: block;width: 170rpx;font-size: 34rpx;color: #003041;}
+        .input-txt{flex: 1;font-size: 30rpx;color: #667176;}
+    
+    .btn-sure{position: absolute;left: 50%;transform: translate(-50%,0);bottom: 124rpx;background-color: #58BDF4;width: 660rpx;height: 80rpx;color: #fff;line-height: 80rpx;}

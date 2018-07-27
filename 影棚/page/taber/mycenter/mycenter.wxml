@@ -1,0 +1,65 @@
+<view class="container">
+    <!-- 用户头像和名字 -->
+    <view class="top">
+        <view class="btn-box">
+            <button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo' class="btn {{user_flag == 1 ? 'on' : ''}}"></button>
+            <image class="btn-login {{user_flag == 1 ? 'on' : ''}}" src="../../../images/user_img.png"></image>     
+            <image class="img-user {{user_flag == 1 ? '' : 'on'}}" src='{{avatarUrl}}'></image>  
+        </view>
+        <text class="txt-name">{{nickName}}</text>
+    </view>
+    <!-- 订单 优惠券 -->
+    <view class="box">
+        <view class="box-item" bindtap='bindOrder'>
+            <view class="box-items">
+                <text class="info-nums">0</text>
+                <view class="info-txt">
+                    <view class="m-txt">我的订单</view>
+                    <view class="m-bg"></view>
+                </view>
+            </view>        
+        </view>
+         <view class="box-item" bindtap='bindCollect'>
+            <view class="box-items">
+                <text class="info-nums">0</text>
+                <view class="info-txt">
+                    <view class="m-txt">我的收藏</view>
+                    <view class="m-bg"></view>
+                </view>
+            </view>        
+        </view>
+    </view>
+    <view class="inner">
+        <!-- ***展示列表****** -->
+        <view class="lists">
+        <view class="list" bindtap='messageName'>
+            <image class="list-icon" src="../../../images/list-icon5.png" ></image>
+            <text class="list-txt">资料设置</text>
+            <image class="icon-in" src="../../../images/icon_in.png"></image>
+        </view>
+        <view class="list" bindtap='keName'>
+            <image class="list-icon" src="../../../images/list-icon1.png" ></image>
+            <text class="list-txt">联系客服</text>
+            <image class="icon-in" src="../../../images/icon_in.png"></image>
+        </view>
+        <view class="list" bindtap='bindOur'>
+            <image class="list-icon" src="../../../images/list-icon2.png" ></image>
+            <text class="list-txt">关于我们</text>
+            <image class="icon-in" src="../../../images/icon_in.png"></image>
+        </view>
+        <view class="list">
+            <image class="list-icon" src="../../../images/list-icon3.png" ></image>
+            <text class="list-txt">分享</text>
+            <image class="icon-in" src="../../../images/icon_in.png"></image>
+            <button open-type='share' hover-class='no'></button>
+        </view>
+        <view class="list" bindtap='bindSet'>
+            <button open-type="openSetting" bindopensetting="bindOpenSetting" class="btn-set"></button>
+            <image class="list-icon" src="../../../images/list-icon6.png" ></image>
+            <text class="list-txt">授权管理</text>
+            <image class="icon-in" src="../../../images/icon_in.png"></image>
+        </view>
+        </view>
+        <view class="bottom-txt" bindtap='jiName' data-url='{{url}}'>©技术支持博智营销</view>
+    </view>
+</view>

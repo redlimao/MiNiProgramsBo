@@ -1,0 +1,124 @@
+<view class="container">
+    <!-- 用户头像和名字 -->
+    <view class="top">
+        <view class="btn-box">
+            <button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo' class="btn {{user_flag == 1 ? 'on' : ''}}"></button>
+            <image class="btn-login {{user_flag == 1 ? 'on' : ''}}" src="../../../images/user_img.png"></image>     
+            <image class="img-user {{user_flag == 1 ? '' : 'on'}}" src='{{avatarUrl}}'></image>  
+        </view>
+        <text class="txt-name">{{nickName}}</text>
+    </view>
+    <!-- 分享 余额 积分 -->
+    <view class="box">
+        <!-- 分享人数 -->
+        <view class="box-item" bindtap='bindShare' data-index='2'>
+            <view class="box-items">
+                <text class="info-nums">{{share_num}}</text>
+                <view class="m-txt">分享人数</view>
+            </view>        
+        </view>
+        <!-- 账户余额 -->
+         <view class="box-item" bindtap='bindMoney' >
+            <view class="box-items">
+                <text class="info-nums">{{account}}</text>
+                <view class="m-txt">账户余额</view>
+            </view>        
+        </view>
+        <!-- 我的积分 -->
+         <view class="box-item" bindtap='bindPoints'>
+            <view class="box-items">
+                <text class="info-nums">{{covers}}</text>
+                <view class="m-txt">我的积分</view>
+            </view>        
+        </view>
+    </view>
+    <!-- 订单 购物车 -->
+    <view class="con">
+        <view class="c-tit" bindtap='bindOrder' data-index='5'>
+            <view class="c-title">我的订单</view>
+            <view class="c-more">全部订单</view>
+        </view>
+        <view class="c-list">
+            <view class="c-item" bindtap='bindCart'>
+                <view class="c-tip" wx:if="{{num[0] != 0}}">{{num[0]}}</view>
+                <image class="c-img" src="../../../images/icon-1.png"></image>
+                <view class="c-txt">购物车</view>
+            </view>
+            <view class="c-item" bindtap='bindOrder' data-index='1'>
+                <view class="c-tip" wx:if="{{num[1] != 0}}">{{num[1]}}</view>
+                <image class="c-img" src="../../../images/icon-2.png"></image>
+                <view class="c-txt">待付款</view>
+            </view>
+            <view class="c-item" bindtap='bindOrder' data-index='2'>
+                <view class="c-tip" wx:if="{{num[2] != 0}}">{{num[2]}}</view>
+                <image class="c-img" src="../../../images/icon-3.png"></image>
+                <view class="c-txt">待发货</view>
+            </view>
+            <view class="c-item" bindtap='bindOrder' data-index='3'>
+                <view class="c-tip" wx:if="{{num[3] != 0}}">{{num[3]}}</view>
+                <image class="c-img" src="../../../images/icon-4.png"></image>
+                <view class="c-txt">待收货</view>
+            </view>
+            <view class="c-item" bindtap='bindOrder' data-index='4'>
+                <view class="c-tip" wx:if="{{num[4] != 0}}">{{num[4]}}</view>
+                <image class="c-img" src="../../../images/icon-5.png"></image>
+                <view class="c-txt">待评价</view>
+            </view>
+        </view>
+    </view>
+    <view class="inner">
+        <!-- ***展示列表****** -->
+        <view class="lists">
+            <!-- 我的优惠券 -->
+            <view class="list" bindtap='bindCoupon'>
+                <image class="list-icon" src="../../../images/list-icon1.png" ></image>
+                <text class="list-txt">我的优惠券</text>
+                <image class="icon-in" src="../../../images/icon_in.png"></image>
+            </view>
+            <!-- 余额充值 -->
+            <view class="list" bindtap='bindPaymoney'>
+                <image class="list-icon" src="../../../images/list-icon8.png" ></image>
+                <text class="list-txt">余额充值</text>
+                <image class="icon-in" src="../../../images/icon_in.png"></image>
+            </view>
+            <!-- 我的预约 -->
+            <view class="list" bindtap='bindMyappointment'>
+                <image class="list-icon" src="../../../images/list-icon2.png" ></image>
+                <text class="list-txt">我的预约</text>
+                <image class="icon-in" src="../../../images/icon_in.png"></image>
+            </view>
+            <!-- 我的收藏 -->
+            <view class="list" bindtap='bindCollect'>
+                <image class="list-icon" src="../../../images/list-icon3.png" ></image>
+                <text class="list-txt">我的收藏</text>
+                <image class="icon-in" src="../../../images/icon_in.png"></image>
+            </view>
+            <!-- 资料设置 -->
+            <view class="list" bindtap='bindMessage'>
+                <image class="list-icon" src="../../../images/list-icon4.png" ></image>
+                <text class="list-txt">资料设置</text>
+                <image class="icon-in" src="../../../images/icon_in.png"></image>
+            </view>
+            <!-- 收货地址 -->
+            <view class="list" bindtap='bindAddress'>
+                <image class="list-icon" src="../../../images/list-icon5.png" ></image>
+                <text class="list-txt">收货地址</text>
+                <image class="icon-in" src="../../../images/icon_in.png"></image>
+            </view>
+            <!-- 分享 -->
+            <view class="list" bindtap='bindShare' data-index='1'>
+                <image class="list-icon" src="../../../images/list-icon6.png" ></image>
+                <text class="list-txt">分享</text>
+                <image class="icon-in" src="../../../images/icon_in.png"></image>
+            </view>
+            <!-- 授权管理 -->
+            <view class="list">
+                <button open-type="openSetting" bindopensetting="bindOpenSetting" class="btn-set"></button>
+                <image class="list-icon" src="../../../images/list-icon7.png" ></image>
+                <text class="list-txt">授权管理</text>
+                <image class="icon-in" src="../../../images/icon_in.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="bottom-txt" bindtap='jiName' data-url='{{url}}'>©技术支持博智营销</view>
+</view>

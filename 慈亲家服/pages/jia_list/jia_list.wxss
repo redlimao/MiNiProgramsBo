@@ -1,0 +1,4 @@
+@import "../template/template.wxss";
+.time-list{
+  background:#fff;
+}

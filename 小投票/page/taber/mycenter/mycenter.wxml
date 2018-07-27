@@ -1,0 +1,48 @@
+<!--pages/mycenter/mycenter.wxml-->
+<view class="wrap">
+    <view class="img-box">
+        <view class="i-txt {{user_flag == 1 ? 'on' : ''}}">立即登录</view>
+        <button class="i-btn {{user_flag == 1 ? 'on' : ''}}" open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'></button>
+        <image class="w-img {{user_flag == 1 ? '' : 'on'}}" src="{{avatarUrl}}"></image>
+    </view>
+    
+    <view class="w-txt">{{nickName}}</view>
+    <view class="btn-in" bindtap='bindEarnings'>
+        <view class="btn-txt">我的收益</view>
+        <image class="btn-icon" src='../../../images/icon_4.png'></image>
+    </view>
+    <view class="menu">
+        <view class="m-item {{current == 1 ? 'on' : ''}}" data-index='1' bindtap='bindTap' >
+            <view class="m-item-t">我的创建</view>
+            <view class="m-line"></view>
+        </view>
+        <view class="m-item {{current == 2 ? 'on' : ''}}" data-index='2' bindtap='bindTap'>
+            <view class="m-item-t">我的投票</view>
+            <view class="m-line"></view>
+        </view>
+    </view>
+</view>
+
+<!-- 列表 -->
+<view class="con">
+    <view class="list" wx:if="{{empty == 1}}">
+        <view class="item" wx:for="{{list}}" wx:key="{{index}}" bindtap='bindDetail' data-index='{{item.flag}}'>
+            <!-- flag判断是文字还是图文 -->
+            <image class="tip" wx:if="{{item.flag == 1}}" src="../../../images/icon_word.png"></image>
+            <image class="tip" wx:if="{{item.flag == 2}}" src="../../../images/icon_pic.png"></image>
+            <view class="info-t">
+                <image class="info-img" src='{{item.img}}'></image>
+                <view class="info-name">{{item.name}}</view>
+            </view>
+            <view class="info-tit">{{item.title}}</view>
+            <view class="info-b">
+                <view class="info-txt">截止时间：{{item.time}}</view>
+                <view class="info-txt">参与人数：<text class="col">{{item.num}}</text></view>
+            </view>
+        </view>
+    </view>
+    <image class="empty" src="../../../images/icon_empty.png" wx:else></image>
+</view>
+
+
+                                                                                                                                                                                                                                                                                                                                                

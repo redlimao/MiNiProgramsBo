@@ -1,0 +1,174 @@
+/* pages/zhu_jie/zhu_jie.wxss */
+.main-box{
+  width:100%;
+  height:330rpx;
+  position:relative;
+}
+/* ========个人信息==-=== */
+.main-box .box{
+  width:100%;
+  height:150rpx;
+  background: rgb(255,158,31);
+  position:absolute;
+  left:0;
+  top:0;
+}
+.main-box .main{
+  width:690rpx;
+  height:280rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  top:25rpx;
+  background:#fff;
+  border-radius:6rpx;
+  box-shadow: 0 4rpx 20px rgba(0,0,0,0.05);
+}
+.main .main-message{
+  width:100%;
+  height:120rpx;
+  border-bottom:1rpx solid #eee;
+  padding:20rpx 0;
+  overflow:hidden;
+}
+.main-message .main-photo{
+  width:120rpx;
+  height:120rpx;
+  background:#fff;
+  border-radius:50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  position:relative;
+  margin-left:20rpx;
+  margin-right:10rpx;
+  float:left;
+}
+.main-message .main-photo .main-img{
+  width:100rpx;
+  height:100rpx;
+  border-radius:50%;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+.main-message .main-name{
+  font-size:30rpx;
+  color:rgb(55,54,52);
+  line-height:120rpx;
+  width:200rpx;
+  margin-right:10rpx;
+  float:left;
+  overflow:hidden;
+}
+.main-message .main-main{
+  float:right;
+  margin-right:20rpx;
+}
+.main-message .main-main .card-icon{
+  width:26rpx;
+  height:26rpx;
+  display:block;
+  float:left;
+  margin-top:48rpx;
+  margin-right:10rpx;
+}
+.main-message .main-main .main-choose{
+  font-size:26rpx;
+  color:rgb(254,1,55);
+  line-height:120rpx;
+  display:block;
+  float:left;
+}
+.jie-box{
+  width:100%;
+  overflow:hidden;
+}
+.jie-list{
+  width:900rpx;
+  height:120rpx;
+  padding:20rpx 0;
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+  background:#fff;
+  margin-top:20rpx;
+  overflow:hidden;
+  transition: all 0.5s linear;
+}
+.jie-list.actives{
+  transform: translate(-150rpx);
+}
+.jie-list .main-photo{
+  width:120rpx;
+  height:120rpx;
+  background:#fff;
+  border-radius:50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  position:relative;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  float:left;
+}
+.jie-list .main-photo .main-img{
+  width:100rpx;
+  height:100rpx;
+  border-radius:50%;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+.jie-list .jie-info{
+  float:left;
+  height:80rpx;
+  padding:20rpx 0;
+  width:300rpx;
+  overflow:hidden;
+  display:flex;
+  justify-content:space-between;
+  flex-direction: column;
+}
+.jie-info .jie-name{
+  font-size:30rpx;
+  color:rgb(55,54,52);
+}
+.jie-info .jie-phone{
+  font-size:30rpx;
+  color:rgb(55,54,52);
+}
+.jie-list .jie-time{
+  float:right;
+  width:150rpx;
+  height:80rpx;
+  padding:20rpx 0;
+  overflow:hidden;
+  display:flex;
+  justify-content:space-between;
+  flex-direction: column;
+  margin-right:20rpx;
+}
+.jie-time .jie-text{
+  font-size:26rpx;
+  color:rgb(177,174,171);
+}
+.jie-time .jie-times{
+  font-size:26rpx;
+  color:rgb(177,174,171);
+}
+.jie-list .del{
+  width:150rpx;
+  height:80rpx;
+  float:right;
+}
+.jie-list .del .del-icon{
+  width:44rpx;
+  height:50rpx;
+  display:block;
+  margin:0 auto;
+  margin-top:18rpx;
+}
+

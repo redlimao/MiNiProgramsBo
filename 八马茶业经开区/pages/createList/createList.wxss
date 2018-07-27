@@ -1,0 +1,112 @@
+/* pages/createList/createList.wxss */
+.container{
+  overflow:hidden;
+  padding-bottom:120rpx;
+}
+.c-list{width: 100%;box-sizing: border-box;padding: 0 24rpx;}
+    .c-item{display: flex;align-items: center;margin-top: 20rpx;padding: 20rpx;border:1rpx solid #cccccc;border-radius: 5rpx;height: 150rpx;}
+    .c-item.on{border:1rpx solid #bd8a39;}
+        .c-title{line-height: 150rpx;font-size: 30rpx;color: #333;display: block;flex: 1;text-align: right;padding-right: 20rpx;}
+        .c-txt{line-height: 150rpx;font-size: 50rpx;color: #bd8a39;display: block;}
+            .c-txts{font-size: 30rpx;padding-left: 10rpx;}
+   
+
+
+.create_list{
+  width:690rpx;
+  margin:0 auto;
+  margin-top:40rpx;
+  position:relative;
+  padding-top:240rpx;
+}
+/* ===图片展示== */
+.create_list .list-img{
+  width:100%;
+  height:240rpx;
+  border-radius:10rpx;
+  box-shadow: 0 4rpx 10px rgba(0,0,0,0.1);
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:1;
+}
+.list-img .img-guan{
+  width:100%;
+  height:100%;
+}
+/* ====详情介绍=== */
+.info-list{
+  width:610rpx;
+  height:0;
+  overflow:hidden;
+  padding:0 20rpx;
+  background:#fff;
+  margin:0 auto;
+  transform: translateY(-100rpx);
+  transition: all 0.5s linear;
+}
+.info-list.actives{
+  transform: translateY(0rpx);
+  height:auto;
+}
+.info-title{
+  width:100%;
+  overflow:hidden;
+  height:60rpx;
+}
+.info-title .border{
+  display:block;
+  float:left;
+  width:4rpx;
+  height:30rpx;
+  border-radius:10rpx;
+  background:rgb(17,17,17);
+  margin-right:15rpx;
+  margin-top:15rpx;
+}
+.info-title .title-text{
+  display:block;
+  float:left;
+  height:60rpx;
+  line-height:60rpx;
+  font-size:30rpx;
+  color:rgb(17,17,17);
+  font-weight:bold;
+}
+.info-inner{
+  width:100%;
+}
+.info-inner .info-intro{
+  width:100%;
+  font-size:30rpx;
+  color:rgb(160,160,160);
+  height:60rpx;
+  line-height:60rpx;
+  display:block;
+}
+/* =====底部导航==== */
+.botBar{
+  width:100%;
+  height:100rpx;
+  display: flex;
+  justify-content:space-between;
+  border-top:1rpx solid #eee;
+  position:fixed;
+  bottom:0;
+  left:0;
+}
+.botBar .tel{
+  width:50%;
+  text-align: center;
+  font-size:36rpx;
+  color:#434343;
+  line-height:100rpx;
+}
+.botBar .buy{
+  width:50%;
+  text-align: center;
+  font-size:36rpx;
+  color:#fff;
+  line-height:100rpx;
+  background:#bd8a39;
+}

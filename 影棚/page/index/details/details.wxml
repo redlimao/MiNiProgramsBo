@@ -1,0 +1,22 @@
+<!--details.wxml-->
+<!-- 当列表页为咨询无分类标签 -->
+<view class="menu" wx:if="{{index != 6}}">
+    <view class="m-item on" wx:for="{{tag}}" wx:key="{{index}}">{{item}}</view>
+    <view class="m-item" bindtap='bindShowPop'>条件筛选</view>
+</view>
+<view class="con" wx:if="{{empty == 1}}">
+    <view class="c-item" wx:for="{{list}}" wx:key="{{index}}" bindtap='bindDetail' data-id="{{item.id}}" data-index='{{item.index}}'>
+        <image class="c-img" src='http://192.168.0.2:8080/img/{{item.photo}}' mode='widthFix'></image>
+        <view class="c-txt">{{item.name}}</view>
+    </view>
+</view>
+<view class="empty" wx:else>暂无信息</view>
+<!-- 弹出层 -->
+<view class="pop-bg {{flag_pop ? 'on' : ''}}" bindtap='bindHidePop'></view>
+<view class="pop-con {{flag_pop ? 'on' : ''}}">
+    <view class="tags">
+        <view class="t-item {{item.flag ? 'on' : ''}}" wx:for="{{tags}}" wx:key="{{index}}" bindtap='bindTag' data-index='{{index}}'>{{item.code2_name}}</view>
+    </view>
+    <view class="btn-choose" bindtap='bindTrue'>我选好了</view>
+</view>
+

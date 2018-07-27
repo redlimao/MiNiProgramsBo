@@ -1,0 +1,30 @@
+<!--login.wxml-->
+<view class="container">
+    <image class="b-bg" src='../../images/bg_a1.png'></image>
+    <view class="box">
+        <form class="f-wrap" bindsubmit="formSubmit" report-submit="true">
+            <view class="skip" catchtap='bindSkip'>下次再说</view>
+            <view class="input-box {{flag1 == 1 ? '' : 'on'}}">
+                <image class="icon" src="../../images/icon_name.png"></image>
+                <input name="name" type='text' class="input-txt" placeholder='姓名' bindfocus="bindFocus1" bindblur="bindBlur1"></input>
+            </view> 
+            <view class="input-box mt-50 {{flag2 == 1 ? '' : 'on'}}">
+                <image class="icon" src="../../images/icon_phone.png"></image>
+                <input name="phone" type='number' class="input-txt" placeholder='手机号' bindfocus="bindFocus2" bindblur="bindBlur2"></input>
+            </view>
+            <view class="btn-box">
+                <view class="btn-next" bindtap='bindLastStep'>上一步</view>
+                <view class="btn-ture">
+                    <text class="t-txt">确认</text> 
+                    <image class="icon-ture" src='../../images/icon_true.png'></image>
+                    <button formType="submit" class="btns" loading="true"></button>
+                </view>
+            </view>
+        </form>
+    </view>
+    <view class="box-logo">
+        <image src='../../images/logo.png' class="logo"></image>
+        <image src='../../images/tip.png' class="tip"></image>
+    </view>
+    <image class="box-foot" src="../../images/bg_a2.png"></image>
+</view>

@@ -1,0 +1,187 @@
+.inner{
+  background:#fff;
+  position:relative;
+  width:100%;
+  background:#fff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.tou-title{
+  width:100%;
+  text-align:center;
+  font-size:36rpx;
+  color:#FC8F3E;
+  margin-bottom:20rpx;
+}
+.progress-all{
+  width:690rpx;
+  height:16rpx;
+  border-radius:30rpx;
+  background:#eee;
+  position:relative;
+}
+.progress{
+  width:560rpx;
+  height:16rpx;
+  border-radius:30rpx;
+  position:absolute;
+  left:0;
+  top:0;
+  background: -webkit-linear-gradient(left top, #FFBC21 , #FF8C18);
+  background: -moz-linear-gradient(left top, #FFBC21 , #FF8C18);
+}
+.progress-num{
+  width:100%;
+  text-align:right;
+  font-size:30rpx;
+  color:#FC8F3E;
+  margin-bottom:5rpx;
+}
+.tags{
+  width:100%;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+}
+.tags-num{
+  padding: 0 20rpx;
+  height:36rpx;
+  display:block;
+  text-align:center;
+  line-height:36rpx;
+  font-size:26rpx;
+  color:#fff;
+  background: -webkit-linear-gradient(left top, #FFBC21 , #FF8C18);
+  background: -moz-linear-gradient(left top, #FFBC21 , #FF8C18);
+  margin-right:5rpx;
+  border-radius: 5rpx;
+}
+.tags-sheng{
+  display:block;
+  font-size:30rpx;
+  color:#3E3E3E;
+  line-height:36rpx;
+}
+.tags-sheng .tags-point{
+  color:#FC8F3E;
+}
+.lists{
+  margin-top:16rpx;
+  background-color:#fff;
+}
+.list{
+  display:flex;
+  align-items:center;
+  height:94rpx;
+  position: relative;
+}
+button{
+  width:100%;
+  height:94rpx;
+  position:absolute;
+  left:0;
+  top:0;
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+  opacity: 0;
+}
+button::after{
+  border:none;
+}
+.list-icon{
+  display:block;
+  width:34rpx;
+  height:34rpx;
+  margin-right:10rpx;
+}
+.message-number{
+  width:29rpx;
+  height:29rpx;
+  color:#fff;
+  background:#ff2f61;
+  text-align:center;
+  line-height:29rpx;
+  font-size:20rpx;
+  border-radius:50%;
+}
+.list-txt{
+  font-size:34rpx;
+  color:#3E3E3E;
+  flex:1;
+}
+.bottom-txt{
+  height:30rpx;
+  margin-top: 50rpx;
+  line-height:30rpx;
+  color:rgb(177, 174, 171);
+  font-size:24rpx;
+  text-align:center;
+}
+/* ========订单======= */
+.icon-in{width: 24rpx;height: 24rpx;}
+.main-order{
+  width:690rpx;
+  background:#fff;
+  border-radius:6rpx;
+  margin-bottom:30rpx;
+}
+.order-title{
+  width:690rpx;
+  height:80rpx;
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1rpx solid #eee;
+}
+.order-title .title-text{
+  font-size:34rpx;
+  color:#3E3E3E;
+  line-height:80rpx;
+}
+.order-title .look-more{
+  font-size:26rpx;
+  color:#9C9C9C;
+  line-height:80rpx;
+}
+.order-box{
+  width:100%;
+  padding:10rpx 0;
+  display:flex;
+  justify-content:space-around;
+  position:relative;
+  flex-wrap: wrap;
+}
+.order-list{
+  display:flex;
+  justify-content:space-around;
+  flex-direction: column;
+  width:120rpx;
+  height: 100rpx;
+  position: relative;
+}
+
+.top{box-sizing: border-box;height: 248rpx;padding-top: 25rpx;width: 100%;position: relative;}
+    .bg{width: 100%;height: 276rpx;position: absolute;top: 0;left: 0;}
+    .btn-box{width: 130rpx;height: 130rpx;margin: 0 auto;position: relative;z-index: 2;}
+        .btn{width: 130rpx;height: 130rpx;position: absolute;top: 0;left: 0;opacity: 0;display: none;z-index: 3;}
+        .btn-login{width: 130rpx;height: 130rpx;position: absolute;top: 0;left: 0;text-align: center;display: none;}
+        .btn.on,.btn-login.on{display: block;}
+        .img-user{width: 130rpx;height: 130rpx;border-radius: 50%;box-sizing: border-box;border:4rpx solid #fff;background-color: #ccc;position: absolute;left:0;top:0;display: none;}
+        .img-user.on{display: block;}
+
+    .txt-name{padding-top: 25rpx;font-size: 32rpx;color: #333;text-align: center;width: 100%;display: block;position: relative;z-index: 2;}
+
+/* 收藏 优惠券 */
+.box{display: flex; justify-content: space-around; width: 100%;background-color: #fff;padding: 0 24rpx; margin-bottom:20rpx;
+box-sizing: border-box;}
+    .line{height: 99rpx;width: 3rpx;background-color: #eeeeee;margin-top:17rpx;}
+    .box-item{height: 134rpx;flex: 1;display: flex;align-items: center;justify-content: center;}
+        .box-items{width: 120rpx;text-align: center;}
+            .info-nums{line-height: 38rpx;font-size: 26rpx;display:block;}
+            .info-txt{height: 38rpx;position: relative;}
+                .m-txt{font-size: 30rpx;color: #000000;line-height: 38rpx;position: relative;z-index: 2;}
+                .m-bg{position: absolute;left: 0;bottom: -3rpx;background-color:#FDCF44;width: 100%;height: 20rpx;}
+
+.bottom-txt{height:30rpx;margin-top: 50rpx;line-height:30rpx;color:rgb(177, 174, 171);font-size:24rpx;text-align:center;}

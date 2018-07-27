@@ -1,0 +1,123 @@
+<!--index.wxml-->
+<!-- 首页轮播 -->
+<swiper indicator-dots="true" style="width:750rpx;height:300rpx;">
+    <swiper-item wx:for="{{img}}" wx:key="{{index}}">
+        <image src="http://192.168.0.2:8080/img/{{item.photo}}" class="slide-image"/>
+    </swiper-item>
+</swiper>
+<!-- 主要内容 -->
+<view class="con">
+    <!-- 策划案例 -->
+    <view class="contain">
+        <view class="tit-wrap" bindtap='bindMore' data-index='0'>
+            <view class="tit-box">
+                <view class="tit-txt">策划案例</view>
+                <view class="tit-bg"></view>
+            </view>
+            <view class="btn-more">查看更多</view>
+        </view>
+        <scroll-view class="slider-con" scroll-x style="width:100%;">
+            <view class="slider-item" bindtap='bindDetail' wx:for="{{list_a}}" wx:key="{{index}}"  data-type='1' data-id="{{item.id}}" data-index='0'>
+                <image class="slider-img" src='http://192.168.0.2:8080/img/{{item.photo}}'></image>
+                <view class="slider-txt">{{item.name}}</view>
+            </view>           
+        </scroll-view>
+    </view>
+    <!-- 摄影师简历 -->
+    <view class="contain">
+        <view class="tit-wrap" bindtap='bindMore' data-index='1'>
+            <view class="tit-box">
+                <view class="tit-txt">摄影师</view>
+                <view class="tit-bg"></view>
+            </view>
+            <view class="btn-more">查看更多</view>
+        </view>
+        <scroll-view class="slider-con" scroll-x style="width:100%;">
+            <view class="slider-item" bindtap='bindDetail' wx:for="{{list_b}}" wx:key="{{index}}" data-type='2' data-id="{{item.id}}" data-index='1'>
+                <image class="slider-img" src='http://192.168.0.2:8080/img/{{item.photo}}'></image>
+                <view class="slider-txt">{{item.name}}</view>
+            </view>           
+        </scroll-view>
+    </view>
+    <!-- 模特简历 -->
+    <view class="contain">
+        <view class="tit-wrap" bindtap='bindMore' data-index='2'>
+            <view class="tit-box">
+                <view class="tit-txt">模特</view>
+                <view class="tit-bg"></view>
+            </view>
+            <view class="btn-more">查看更多</view>
+        </view>
+        <scroll-view class="slider-con" scroll-x style="width:100%;">
+            <view class="slider-item" bindtap='bindDetail' wx:for="{{list_c}}" wx:key="{{index}}" data-type='2' data-id="{{item.id}}" data-index='2'>
+                <image class="slider-img" src='http://192.168.0.2:8080/img/{{item.photo}}'></image>
+                <view class="slider-txt">{{item.name}}</view>
+            </view>           
+        </scroll-view>
+    </view>
+    <!-- 化妆师师简历 -->
+    <view class="contain">
+        <view class="tit-wrap" bindtap='bindMore' data-index='3'>
+            <view class="tit-box">
+                <view class="tit-txt">化妆师</view>
+                <view class="tit-bg"></view>
+            </view>
+            <view class="btn-more">查看更多</view>
+        </view>
+        <scroll-view class="slider-con" scroll-x style="width:100%;">
+            <view class="slider-item" bindtap='bindDetail' wx:for="{{list_d}}" wx:key="{{index}}" data-type='2' data-id="{{item.id}}" data-index='3'>
+                <image class="slider-img" src='http://192.168.0.2:8080/img/{{item.photo}}'></image>
+                <view class="slider-txt">{{item.name}}</view>
+            </view>           
+        </scroll-view>
+    </view>
+    <!-- 道具 -->
+    <view class="contain">
+        <view class="tit-wrap" bindtap='bindMore' data-index='4'>
+            <view class="tit-box">
+                <view class="tit-txt">道具</view>
+                <view class="tit-bg"></view>
+            </view>
+            <view class="btn-more">查看更多</view>
+        </view>
+        <scroll-view class="slider-con" scroll-x style="width:100%;">
+            <view class="slider-item" bindtap='bindDetail' wx:for="{{list_e}}" wx:key="{{index}}" data-type='3' data-id="{{item.id}}" data-index='4'>
+                <image class="slider-img" src='http://192.168.0.2:8080/img/{{item.photo}}'></image>
+                <view class="slider-txt">{{item.name}}</view>
+            </view>           
+        </scroll-view>
+    </view>
+    <!--场景 -->
+    <view class="contain">
+        <view class="tit-wrap" bindtap='bindMore' data-index='5'>
+            <view class="tit-box">
+                <view class="tit-txt">场景</view>
+                <view class="tit-bg"></view>
+            </view>
+            <view class="btn-more">查看更多</view>
+        </view>
+        <scroll-view class="slider-con" scroll-x style="width:100%;">
+            <view class="slider-item" bindtap='bindDetail' wx:for="{{list_f}}" wx:key="{{index}}" data-type='3' data-id="{{item.id}}" data-index='5'>
+                <image class="slider-img" src='http://192.168.0.2:8080/img/{{item.photo}}'></image>
+                <view class="slider-txt">{{item.name}}</view>
+            </view>           
+        </scroll-view>
+    </view>
+    <!--咨询 -->
+    <view class="contain">
+        <view class="tit-wrap" bindtap='bindMore' data-index='6'>
+            <view class="tit-box">
+                <view class="tit-txt">咨询</view>
+                <view class="tit-bg"></view>
+            </view>
+            <view class="btn-more">查看更多</view>
+        </view>
+        <scroll-view class="slider-con" scroll-x style="width:100%;">
+            <view class="slider-item" bindtap='bindDetail' wx:for="{{list_g}}" wx:key="{{index}}" data-type='4' data-index='6' data-id="{{item.id}}">
+                <image class="slider-img" src='{{item.img}}'></image>
+                <view class="slider-txt">{{item.texts}}</view>
+            </view>           
+        </scroll-view>
+    </view>
+</view>
+

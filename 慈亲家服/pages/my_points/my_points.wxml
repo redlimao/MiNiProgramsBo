@@ -1,0 +1,61 @@
+<view class="container">
+  <!-- *********个人信息********** -->
+  <view class="main-box">
+    <view class="box"></view>
+    <view class="main">
+      <!-- 个人 -->
+      <view class="main-message">
+        <view class="main-photo">
+          <image src="{{img}}" class="main-img"></image>
+        </view>
+        <view class="main-name">{{name}}</view>
+         <view class="main-main" bindtap='pointsName'>
+          <image src="../image/rule.png" class="card-icon"></image>
+          <text class="main-choose">乐豆规则</text>
+        </view> 
+      </view>
+      <!-- 需求 -->
+      <view class="main-xu">
+        {{point}}乐豆
+      </view>
+    </view>
+  </view>
+  <!-- *********积分********** -->
+  <view class="points">
+    <view class="points-nav" bindtap="tabFun">
+      <text class="{{tabArr.curHdIndex=='0'? 'active' : ''}}" id="1" data-id="0">收入</text>
+      <text class="{{tabArr.curHdIndex=='1'? 'active' : ''}}"  id="2" data-id="1">支出</text>
+    </view>
+    <view class="points-inner">
+      <!--*******收入********-->
+      <view class="points-shou">
+          <view class="box" wx:if="{{empty==0}}">
+            <view class="shou-list" wx:for="{{list}}" wx:key="{{item.id}}">
+              <view class="list-fl">
+                <text class="text">{{item.names}}</text>
+                <text class="time">{{item.create_at}}</text>
+              </view>
+              <view class="list-fr {{tabArr.curHdIndex=='1'? 'list-frs' : ''}}">{{item.covers}}</view>
+              <!-- <view class="list-fr list-frs" wx:else>-20</view> -->
+            </view>
+          </view>
+          <view class="empty" wx:else>
+            <image src="../image/empty.png" class="empty-icon"></image>
+            <text class="empty-text">暂无乐豆记录</text>
+          </view>
+      </view>
+      <!--*******支出********-->
+      <!-- <view class="points-shou right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+        <view class="box">
+          <view class="shou-list" >
+            <view class="list-fl">
+              <text class="text">粉粉粉粉粉粉粉粉粉粉更</text>
+              <text class="time">2018-7-80</text>
+            </view>
+            <view class="list-fr list-frs">-20</view>
+          </view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+</view>

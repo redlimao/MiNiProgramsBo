@@ -1,0 +1,33 @@
+<view class="container">
+    <view class="back" bindtap='backName'>
+      <image src="../../images/back.png" class="back-icon"></image>
+    </view>
+    <!--**轮播***-->
+    <swiper class="swiper" autoplay="true" interval="5000" duration="1000" circular="true"> 
+      <swiper-item wx:for="{{lun}}" wx:key="{{index}}" id="{{item.lun_id}}" data-status="{{item.status}}" bindtap="bannerName">  
+         <image src="{{item.img}}" class="company_banner"></image>   
+      </swiper-item>
+    </swiper>
+    <!--**公告信息**-->
+    <view class="index-info">
+      <view class="info-hui">
+        <image src="../../images/index-icon1.png" class="index-icon1"></image>
+        <swiper class="swipers" autoplay="true" interval="5000" duration="1000" circular="true" vertical="true"> 
+          <swiper-item  wx:for="{{gong}}" wx:key="{{item.id}}" bindtap="guangName" id="{{item.id}}">  
+             <text class="info-intro">{{item.title}}</text>  
+          </swiper-item>
+        </swiper>
+      </view>
+    </view>
+    <!-- *****内容***** -->
+    <view class="inner">
+      <view class="inner-list" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}">
+        <image src="{{item.img}}" class="inner-img"></image>
+        <view class="inner-inner">
+          <text class="inner-title">{{item.name}}</text>
+          <view class="inner-content">{{item.intro}}</view>
+        </view>
+        <text class="begin" bindtap='beginName' id="{{item.id}}">开始答题</text>
+      </view>
+    </view>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/qiye/qiye.wxml-->
+<form bindsubmit="formSubmit">
+  <view class='zhao'>
+    <view class='fl wid'>
+      <view class='zheng'>身份证正面照片</view>
+      <view class='photo-box'>
+        <image src="../image/shang.png" class='chuan' bindtap='zhengzhaoqian' wx:if="{{flag==0}}"></image>
+         <image src='{{zheng}}' class='chuan' bindtap='zhengzhaoqian' wx:else></image>
+      </view>
+    </view>
+    <view class='fl wid'>
+      <view class='zheng'>身份证背面照片</view>
+      <view class='photo-box'>
+        <image src="../image/shang.png" class='chuan' bindtap='zhengzhaohou' wx:if="{{flags==0}}"></image>
+        <image src='{{fan}}' class='chuan' bindtap='zhengzhaohou' wx:else></image>
+      </view>
+    </view>
+  </view>
+  <view class='zhao'>
+    <view class='yingye'>
+      <view class='zhengjian'>营业执照照片</view>
+      <view class='photo-box'>
+        <image src="../image/shang.png" class='chuan' bindtap='license' wx:if="{{flagss==0}}"></image>
+        <image src='{{license}}' class='chuan' bindtap='license' wx:else></image>
+      </view>
+    </view>
+  </view>
+  <view>
+  </view>
+  <view class="he" wx:if="{{status==1}}">审核中</view>
+  <view class="he" wx:if="{{status==2}}">已通过</view>
+  <view class="he" wx:if="{{status==3}}">未通过</view>
+  <view class='fabu'>
+    <button formType="submit">提交认证</button>
+  </view>
+</form>

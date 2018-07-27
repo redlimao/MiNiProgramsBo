@@ -1,0 +1,34 @@
+/* pages/appointmentdetails/appointmentdetails.wxss */
+.box-f{width: 100%;}
+.model{width: 100%;height: 90rpx;display: flex;align-items: center;background-color: #fff;padding: 0 24rpx;box-sizing: border-box;}
+.model-list{width: 100%;}
+    .tit{font-size: 28rpx;color: #333333;}
+    .txt-a{font-size: 26rpx;color: #9a9a9a;}
+    .txt-b{font-size: 30rpx;color: #9a9a9a;}
+    .box-txt2{color: #333333;font-size: 26rpx;}
+
+    .input-txt{height: 90rpx;line-height: 90rpx;color:#333333;font-size: 28rpx;flex: 1;margin-left: 20rpx;}
+    .picker-box{height:90rpx;width: 250rpx;display: flex;align-items: center;justify-content: center;}
+    .model-a{padding: 0 24rpx;width: 100%;box-sizing: border-box;background-color:#fff;display:flex;}
+        .txt-c{font-size: 30rpx;color: #9a9a9a;height: 90rpx;line-height: 90rpx;}
+        .texts{font-size: 30rpx;color: #333333;line-height: 90rpx;padding-left: 20rpx;}
+    .txt-a{line-height: 60rpx;}
+    .tags{display: flex;flex-wrap: wrap;background-color: #fff;padding: 24rpx 0 20rpx 160rpx;}
+        .item{height: 50rpx;padding: 0 20rpx;line-height: 50rpx;border:1rpx solid #59d0d0;color: #59d0d0;font-size: 24rpx;margin: 0 20rpx 10rpx 0;border-radius: 5rpx;}
+
+    .info{height: 100rpx;align-items: center;padding: 0 24rpx;display: flex;}
+    .url{color: #59d0d0;text-decoration: underline;font-size: 26rpx;}
+    .btn-sure{width: 685rpx;height: 92rpx;text-align: center;line-height: 92rpx;color: #fff;font-weight: bold;font-size: 32rpx;background-color:#59d0d0;}
+    .txt-a.color-c{color:#ff6c6c;}
+
+    .model-c{height: 88rpx;background-color: #fff;width: 100%;box-sizing: border-box;padding: 11rpx 24rpx;display: flex;}
+        .m-icon{width: 34rpx;height: 34rpx;}
+        .m-item{height: 66rpx;flex: 1;display: flex;justify-content: center;align-items: center;}
+        .m-txt{font-size: 30rpx;color: #666666;padding-left: 14rpx;}
+/* 服务地址 */
+.model-d{width: 100%;display: flex;line-height: 90rpx;background-color: #fff;padding: 0 24rpx;box-sizing: border-box;}
+    .txt-d{padding-top: 14rpx;line-height: 60rpx;}
+
+
+
+

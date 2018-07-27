@@ -1,0 +1,64 @@
+{
+    "pages": [
+        "page/taber/index/index",
+        "page/taber/service/service",
+        "page/taber/mycenter/mycenter"
+    ],
+    "subPackages": [
+        {
+            "root": "page/index/",
+            "pages": [
+                "details/details",
+                "intro/intro",
+                "appoint/appoint",
+                "appointT/appointT",
+                "texts/texts",
+                "webview/webview"
+            ]
+        },
+        {
+            "root": "page/mycenter/",
+            "pages": [
+                "message/message",
+                "aboutus/aboutus",
+                "newpage/newpage",
+                "collect/collect",
+                "orderlist/orderlist",
+                "orderdetail/orderdetail"
+            ]
+        }
+    ],
+    "window":{
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "影棚小程序"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "page/taber/index/index",
+                "text": "公司简介",
+                "iconPath": "images/tab-icon1-1.png",
+                "selectedIconPath": "images/tab-icon1.png"
+            },
+            {
+                "pagePath": "page/taber/service/service",
+                "text": "客服",
+                "iconPath": "images/tab-icon2-2.png",
+                "selectedIconPath": "images/tab-icon2.png"
+            },
+            {
+                "pagePath": "page/taber/mycenter/mycenter",
+                "text": "个人中心",
+                "iconPath": "images/tab-icon3-3.png",
+                "selectedIconPath": "images/tab-icon3.png"
+            }
+        ],
+        "color": "#a0a0a0",
+        "selectedColor": "#FDCF44"
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    }
+}

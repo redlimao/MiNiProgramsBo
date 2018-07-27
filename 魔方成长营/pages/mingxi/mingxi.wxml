@@ -1,0 +1,46 @@
+<!--pages/mingxi/mingxi.wxml-->
+<view class="container">
+  <view class="main-box">
+     <!--*****************轮播**********-->
+       <image src="../../image/banner.png" class="banner"/> 
+    <!--**************个人信息展示***********-->
+    <view class="message">
+      <image src="{{userInfo.avatarUrl}}"></image>
+      <text class="name">￥{{yu}}</text>
+    </view>
+  </view>
+  <view class="points">
+    <view class="points-nav" bindtap="tabFun">
+      <text class="{{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0" bindtap="shouName">收入</text>
+      <text class="{{tabArr.curHdIndex=='1'? 'active' : ''}}"  id="tab-hd02" data-id="1" bindtap="chuName">支出</text>
+    </view>
+    <view class="points-inner">
+      <!--*******收入********-->
+      <view class="points-shou right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+          <view class="box" wx:if="{{empty==0}}">
+            <view class="shou-list" wx:for="{{shou}}" wx:key="item.id">
+              <view class="list-fl">
+                <text class="text">{{item.status}}</text>
+                <text class="time">{{item.create_at}}</text>
+              </view>
+              <view class="list-fr">{{item.money}}</view>
+            </view>
+          </view>
+          <view class="empty" wx:else>暂无</view>
+      </view>
+      <!--*******支出********-->
+      <view class="points-shou right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+        <view class="box" wx:if="{{emptys==0}}">
+          <view class="shou-list" wx:for="{{chu}}" wx:key="item.id">
+            <view class="list-fl">
+              <text class="text">{{item.status}}</text>
+              <text class="time">{{item.create_at}}</text>
+            </view>
+            <view class="list-fr">{{item.money}}</view>
+          </view>
+        </view>
+        <view class="empty" wx:else>暂无</view>
+      </view>
+    </view>
+  </view>
+</view>
